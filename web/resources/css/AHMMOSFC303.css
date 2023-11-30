@@ -1,0 +1,222 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 7, 2023, 1:40:04 PM
+    Author     : lenre
+*/
+
+/*Id Based Style*/
+#AHMMOSFC303 .flex{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -moz-flex;display: -webkit-flex;display: flex;}
+#AHMMOSFC303 .flex-right{justify-content: flex-end;}
+#AHMMOSFC303 .flex-left{justify-content: flex-start;}
+#AHMMOSFC303 .flex-center{justify-content: center;}
+#AHMMOSFC303 .flex-middle{align-items: center;}
+#AHMMOSFC303 .flex-top{align-items: flex-start;}
+#AHMMOSFC303 .flex-bottom{align-items: flex-end;}
+#AHMMOSFC303 .flex-stretch{align-items: stretch;}
+#AHMMOSFC303 .flex-line-stretch{justify-content: space-between;}
+#AHMMOSFC303 .flex-g1{flex-grow: 1;}
+#AHMMOSFC303 .flex-g2{flex-grow: 2;}
+#AHMMOSFC303 .flex-g3{flex-grow: 3;}
+#AHMMOSFC303 .flex-g4{flex-grow: 4;}
+#AHMMOSFC303 .flex-g5{flex-grow: 5;}
+#AHMMOSFC303 .flex-g6{flex-grow: 6;}
+#AHMMOSFC303 .flex-g7{flex-grow: 7;}
+#AHMMOSFC303 .flex-g8{flex-grow: 8;}
+#AHMMOSFC303 .flex-g9{flex-grow: 9;}
+#AHMMOSFC303 .flex-g10{flex-grow: 10;}
+#AHMMOSFC303 .flex-g11{flex-grow: 11;}
+#AHMMOSFC303 .flex-g12{flex-grow: 12;}
+#AHMMOSFC303 .flex-wrap{-webkit-flex-wrap: wrap;flex-wrap: wrap;}
+#AHMMOSFC303 .flext-wrap-reverse{-webkit-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;}
+#AHMMOSFC303 .flex-reverse{flex-direction: row-reverse;}
+#AHMMOSFC303 .flex-c-reverse{flex-direction: column-reverse;}
+#AHMMOSFC303 .flex-column{flex-direction: column;}
+#AHMMOSFC303 .btn.btn-default{background: #808080;color: #fff;}
+
+#AHMMOSFC303 .btn > div > i {
+    margin-left: 2px;
+    margin-right: 7px;
+}
+
+#AHMMOSFC303 hr{
+    margin-top:10px !important;
+    margin-bottom:10px !important;
+    border-top: 2px solid #eee;
+}
+
+#AHMMOSFC303 .switch-field {
+    display: flex;
+    overflow: hidden;
+}
+
+#AHMMOSFC303 .switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+#ahmmosfc303p01_nrpdesc:read-only{
+    background-color: transparent !important;
+    border:none !important;
+}
+
+#AHMMOSFC303 .switch-field label {
+    background-color: white;
+    color: rgb(51,122,183);
+    font-size: 11px;
+    line-height: 1;
+    text-align: center;
+    padding: 8px 16px;
+    margin-right: -1px;
+    border: 1px solid rgb(51,122,183);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+.ahmmosfc303_offlineText{
+    color:red;
+    font-weight: 700;
+}
+
+.ahmmosfc303_onlineText{
+    color:green;
+    font-weight: 700;
+}
+
+#AHMMOSFC303 .switch-field label:hover {
+    cursor: pointer;
+}
+
+#AHMMOSFC303 .switch-field input:checked + label {
+    background-color: rgb(51,122,183);
+    color:white;
+    box-shadow: none;
+}
+
+#AHMMOSFC303 .switch-field label:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+#AHMMOSFC303 .switch-field label:last-of-type {
+    border-radius: 0 4px 4px 0;
+}
+
+#ahmmosfc303submitbtnarea{
+    height: fit-content;
+    padding:1rem;
+}
+
+#ahmmosfc303_lastsyncarea{
+    margin-bottom: 20px !important;
+}
+
+#ahmmosfc303_currenststatusarea{
+    margin-bottom:0 !important;
+}
+
+#ahmmosfc303_lastsyncarea > div > span, #ahmmosfc303_lastsyncarea >div > label{
+    font-weight: 700 !important;
+    max-height: 25px;
+    height:22px !important;
+}
+
+#ahmmosfc303_currenststatusarea> div> span, #ahmmosfc303_currenststatusarea > div > label{
+    font-weight: 700 !important;
+    max-height: 25px;
+    height:22px !important;
+}
+
+#ahmmosfc303_tablereceivebypart >thead > tr > th:first-child, #ahmmosfc303_tablereceivebypart > tbody > tr >td:first-child{
+    max-width: 20% !important;
+    width: 15% !important; 
+}
+#ahmmosfc303_tablereceivebypart >thead > tr > th:last-child,#ahmmosfc303_tablereceivebypart > tbody > tr >td:last-child{
+    max-width: 20% !important;
+    width: 15% !important;
+}
+
+#ahmmosfc303_tablereceivebypart >tbody > tr > td:nth-child(2){
+    text-align: left !important;
+}
+@media (max-width: 576px) {
+    /*Media XSmall*/
+
+    #ahmmosfc303_currenststatusarea,#ahmmosfc303_lastsyncarea{
+        padding-left:20%;
+
+    }
+    #ahmmosfc303_currenststatusarea > div,#ahmmosfc303_lastsyncarea > div{
+        text-align: left !important;
+        vertical-align: middle;
+    }
+    #ahmmosfc303_currenststatusarea >div > label,#ahmmosfc303_lastsyncarea>div > label{
+        vertical-align: middle;
+        padding-top: 0;
+    }
+
+    #ahmmosfc303_tablereceivebypart >thead > tr > th:first-child, #ahmmosfc303_tablereceivebypart > tbody > tr >td:first-child{
+        max-width: 30% !important;
+        width: 25% !important; 
+    }
+    #ahmmosfc303_tablereceivebypart >thead > tr > th:last-child,#ahmmosfc303_tablereceivebypart > tbody > tr >td:last-child{
+        max-width: 30% !important;
+        width: 25% !important;
+    }
+}
+
+@media (min-width: 576px) {
+    /*Media XSmall*/
+    #ahmmosfc303_currenststatusarea > div,#ahmmosfc303_lastsyncarea > div,#ahmmosfc303_currenststatusarea > div > label,#ahmmosfc303_lastsyncarea>div > label{
+        text-align: center !important;
+        vertical-align: middle;
+    }
+    #ahmmosfc303_currenststatusarea > div > label,#ahmmosfc303_lastsyncarea>div > label{
+        padding:0 !important;
+    }
+    #ahmmosfc303_currenststatusarea > div > span,#ahmmosfc303_lastsyncarea>div > span{
+        padding:0 !important;
+    }
+}
+
+@media (min-width: 768px) {
+    /*Media Small*/
+
+
+}
+
+@media (min-width: 992px) {
+    /*Media Medium*/
+    #ahmmosfc303_currenststatusarea,#ahmmosfc303_lastsyncarea{
+        padding-left:25%;
+
+    }
+
+    #ahmmosfc303_currenststatusarea > div,#ahmmosfc303_lastsyncarea > div,#ahmmosfc303_currenststatusarea>div > label,#ahmmosfc303_lastsyncarea>div > label{
+        text-align: left !important;
+        font-size: 15px !important;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*Media Large*/
+    #ahmmosfc303_tablereceiveareabypartnumber, #ahmmosfc303_tablereceiveareabyidkreta {
+        padding:0px 15px;
+    }
+}
+
+@media (min-width: 1400px) {
+    /*Media XLarge*/
+
+}
+
+
+
+
+

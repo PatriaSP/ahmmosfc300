@@ -1,0 +1,912 @@
+<div id="AHMMOSFC344" class="div-app" data-version="1.0">
+	<div class="global_message"></div>
+	<div id="ahmmosfc344p01" class="subpage subpage-default" data-path="Entry Production Progress">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="row form-panel form-horizontal">
+					<div class="panel-heading flex flex-middle">
+						<div class="w-12 text-left">
+							<div class="p-5 pl-10 text-bold">Search</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_date_from" class="col-xs-4 control-label">Date</label>
+							<div class="col-xs-8">
+								<div class="input-group">
+									<input id="ahmmosfc344p01_date_from" class="form-control" placeholder="dd-mon-yyyy" />
+									<div class="input-group-addon">To</div>
+									<input id="ahmmosfc344p01_date_to" class="form-control" placeholder="dd-mon-yyyy" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_posting_date_from" class="col-xs-4 control-label">Posting Date</label>
+							<div class="col-xs-8">
+								<div class="input-group">
+									<input id="ahmmosfc344p01_posting_date_from" class="form-control" placeholder="dd-mon-yyyy" />
+									<div class="input-group-addon">To</div>
+									<input id="ahmmosfc344p01_posting_date_to" class="form-control" placeholder="dd-mon-yyyy" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_wct_id" class="col-xs-4 control-label">WCT ID</label>
+							<div class="col-xs-8">
+								<div class="input-group lookup" data-lookup-change-func="ahmmosfc344p01_wct_id_after" data-lookup-pre-func="ahmmosfc344p01_wct_id_params" data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc344/get-list-lov?type=lovwct" data-query-params-type="limit" data-columns='[{"id":"wctId","name":"WCT ID","visible":"true","sortable": "true"},{"id":"wctDesc","name":"WCT Description","visible":"true","sortable": "true"}]' data-callback='{"ahmmosfc344p01_wct_id":"wctId","ahmmosfc344p01_wct_description":"wctDesc"}'>
+									<input id="ahmmosfc344p01_wct_id" class="form-control input-lookup" placeholder="" />
+									<span class="input-group-btn">
+										<button class="btn btn-default large-button btn-lookup" type="button"></button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_wct_description" class="col-xs-4 control-label">WCT Description</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344p01_wct_description" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_plant_id" class="col-xs-4 control-label">Plant ID</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344p01_plant_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_plant_description" class="col-xs-4 control-label">Plant Description</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344p01_plant_description" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_shift_id" class="col-xs-4 control-label">Shift ID</label>
+							<div class="col-xs-8">
+								<div class="input-group lookup" data-lookup-change-func="ahmmosfc344p01_shift_id_after" data-lookup-pre-func="ahmmosfc344p01_shift_id_params" data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc344/get-list-lov?type=lovwct" data-query-params-type="limit" data-columns='[{"id":"shiftId","name":"Shift ID","visible":"true","sortable": "true"},{"id":"shiftDesc","name":"Shift Description","visible":"true","sortable": "true"}]' data-callback='{"ahmmosfc344p01_shift_id":"shiftId","ahmmosfc344p01_shift_description":"shiftDesc"}'>
+									<input id="ahmmosfc344p01_shift_id" class="form-control input-lookup" placeholder="" />
+									<span class="input-group-btn">
+										<button class="btn btn-default large-button btn-lookup" type="button"></button>
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p01_periode_id" class="col-xs-4 control-label">Periode ID</label>
+							<div class="col-xs-8">
+								<div class="input-group lookup" data-lookup-change-func="ahmmosfc344p01_periode_id_after" data-lookup-pre-func="ahmmosfc344p01_periode_id_params" data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc344/get-list-lov?type=lovwct" data-query-params-type="limit" data-columns='[{"id":"periodeId","name":"Periode ID","visible":"true","sortable": "true"},{"id":"wctDesc","name":"Periode Description","visible":"true","sortable": "true"}]' data-callback='{"ahmmosfc344p01_periode_id":"periodeId","ahmmosfc344p01_periode_description":"periodeDesc"}'>
+									<input id="ahmmosfc344p01_periode_id" class="form-control input-lookup" placeholder="" />
+									<span class="input-group-btn">
+										<button class="btn btn-default large-button btn-lookup" type="button"></button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer row">
+						<div class="col-xs-6 col-xs-6 text-left">
+							<button class="btn large-button btn-dark" id="ahmmosfc344p01_reset_btn"><i class="glyphicon mr-10 glyphicon-refresh fg-white"></i> Refresh</button>
+						</div>
+						<div class="col-xs-6 col-xs-6 text-right">
+							<button class="btn large-button btn-primary" id="ahmmosfc344p01_search_btn"><i class="glyphicon mr-10 glyphicon-search fg-white"></i> Search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-9">
+				<div class="row form-panel form-horizontal">
+					<div class="panel-heading flex flex-middle">
+						<div class="col-xs-12 text-left">
+							<div class="p-5">
+								<button id="ahmmosfc344p01_deactivate_ipp_btn" class="btn large-button btn-dark"><i class="fa fa-ban mr-10 fg-white"></i> Deactivate IPP <span></span></button>
+							</div>
+						</div>
+						<div class="col-xs-12 text-right">
+							<div class="p-5">
+								<button id="ahmmosfc344p01_export_btn" class="btn large-button btn-success"><i class="glyphicon glyphicon-export mr-10 fg-white"></i> Export To Excel <span></span></button>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<table id="ahmmosfc344p01_table" data-method="post" data-url="/imo05/ahmmosfc300-ahs/resources/json/ahmmosfc344_p01_table.json" data-content-type="application/json" data-data-type="json" data-query-params-type="limit" data-side-pagination="server" data-pagination="true" data-query-params="ahmmosfc344p01_table" data-page-size="10" data-response-handler="ahmmosfc344p01_table_handler" data-side-pagination="server" data-pagination="true" data-unique-id="transactionId">
+							<thead>
+								<tr>
+									<th data-field="sort_date" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Date</th>
+									<th data-field="sort_wctId" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">WCT ID</th>
+									<th data-field="sort_wctDesc" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">WCT Description</th>
+									<th data-field="sort_shiftId" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Shift ID</th>
+									<th data-field="sort_periodeId" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Periode ID</th>
+									<th data-field="sort_partNumber" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Number</th>
+									<th data-field="sort_partDesc" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Description</th>
+									<th data-field="sort_identifier" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Identifier</th>
+									<th data-field="sort_adjustPlanProdQty" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Adjust Plan Prod Qty</th>
+									<th data-field="sort_okActualQty" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">OK Actual Qty</th>
+									<th data-field="sort_nokActualQty" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">NOK Actual Qty</th>
+									<th data-field="sort_variantQty" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Variant Qty</th>
+									<th data-field="sort_actualNote" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Actual Note</th>
+									<th data-field="sort_pic" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">PIC</th>
+									<th data-field="sort_transactionId" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Transaction ID</th>
+									<th data-field="sort_sapMatdoc" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">SAP Matdoc</th>
+									<th data-field="sort_postingDate" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Posting Date</th>
+									<th data-field="sort_action" data-sortable="false" data-visible="true" data-valign="middle" data-align="center">Actions</th>
+								</tr>
+								<tr>
+									<th data-field="date" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<div class="input-group flex flex-stretch ahmmosfc344_table_filter_date">
+											<input name="ahmmosfc344p01_table_filter_date" id="ahmmosfc344p01_table_filter_date" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" placeholder="dd-mon-yyyy" />
+											<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+										</div>
+									</th>
+									<th data-field="wctId" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_wctId" id="ahmmosfc344p01_table_filter_wctId" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" readonly />
+									</th>
+									<th data-field="wctDesc" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_wctDesc" id="ahmmosfc344p01_table_filter_wctDesc" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="shiftId" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_shiftId" id="ahmmosfc344p01_table_filter_shiftId" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" readonly />
+									</th>
+									<th data-field="periodeId" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_periodeId" id="ahmmosfc344p01_table_filter_periodeId" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" readonly />
+									</th>
+									<th data-field="partNumber" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_partNumber" id="ahmmosfc344p01_table_filter_partNumber" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="partDesc" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_partDesc" id="ahmmosfc344p01_table_filter_partDesc" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="identifier" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_identifier" id="ahmmosfc344p01_table_filter_identifier" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="adjustPlanProdQty" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_adjustPlanProdQty" id="ahmmosfc344p01_table_filter_adjustPlanProdQty" type="number" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="okActualQty" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_okActualQty" id="ahmmosfc344p01_table_filter_okActualQty" type="number" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="nokActualQty" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_nokActualQty" id="ahmmosfc344p01_table_filter_nokActualQty" type="number" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="variantQty" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_variant_qty" id="ahmmosfc344p01_table_filter_variant_qty" type="number" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="actualNote" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_actualNote" id="ahmmosfc344p01_table_filter_actualNote" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="pic" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_pic" id="ahmmosfc344p01_table_filter_pic" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="transactionId" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_transactionId" id="ahmmosfc344p01_table_filter_transactionId" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="sapMatdoc" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p01_table_filter_sapMatdoc" id="ahmmosfc344p01_table_filter_sapMatdoc" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="postingDate" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<div class="input-group flex flex-stretch ahmmosfc344_table_filter_date">
+											<input name="ahmmosfc344p01_table_filter_postingDate" id="ahmmosfc344p01_table_filter_postingDate" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" placeholder="dd-mon-yyyy" />
+											<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+										</div>
+									</th>
+									<th data-field="action" data-sortable="false" data-visible="true" data-valign="middle" data-align="center" data-formatter="ahmmosfc344p01_table_action_formatter"></th>
+								</tr>
+
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ahmmosfc344p02" class="subpage" data-path="Entry Production Progress/Detail Entry Production Progress">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="row form-panel form-horizontal">
+					<div class="panel-heading flex flex-middle">
+						<div class="w-12 text-left">
+							<div class="p-5 pl-10 text-bold">Detail Entry Production Progress</div>
+						</div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_date" class="col-xs-5 control-label">Date</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_date" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_wct_id" class="col-xs-5 control-label">WCT ID</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_wct_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_wct_desc" class="col-xs-5 control-label">WCT Description</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_wct_desc" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_shift_id" class="col-xs-5 control-label">Shift ID</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_shift_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_periode_id" class="col-xs-5 control-label">Periode ID</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_periode_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_part_number" class="col-xs-5 control-label">Part Number</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_part_number" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_part_description" class="col-xs-5 control-label">Part Description</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p02_detail_part_description" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_identifier" class="col-xs-5 control-label">Identifier</label>
+							<div class="col-xs-7">
+								<input type="text" id="ahmmosfc344p02_detail_identifier" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+						<!-- 
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_adjust_plan_prod_qty" class="col-xs-5 control-label">Adjust Plan Prod Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_adjust_plan_prod_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div> -->
+
+						<!-- <div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_ok_actual_qty" class="col-xs-5 control-label">OK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_ok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_nok_actual_qty" class="col-xs-5 control-label">NOK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_nok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_variant_qty" class="col-xs-5 control-label">Variant Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_variant_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div> -->
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_actual_note" class="col-xs-5 control-label">Actual Note</label>
+							<div class="col-xs-7">
+								<input type="text" id="ahmmosfc344p02_detail_actual_note" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+
+						<!-- <div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_rework_qty" class="col-xs-5 control-label">Rework Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_rework_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div> -->
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_confirmation_qty" class="col-xs-5 control-label">Confirmation Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_confirmation_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<!-- <div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_adjust_confirmation_qty" class="col-xs-5 control-label">Adjust Confirmation Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_adjust_confirmation_qty" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_adjust_ok_actual_qty" class="col-xs-5 control-label">Adjust OK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_adjust_ok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_adjust_nok_actual_qty" class="col-xs-5 control-label">Adjust NOK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_adjust_nok_actual_qty" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_adjust_variant_qty" class="col-xs-5 control-label">Adjust Variant Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_adjust_variant_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p02_detail_adjust_actual_note" class="col-xs-5 control-label">Adjust Actual Note</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p02_detail_adjust_actual_note" class="form-control text-right" placeholder="" />
+							</div>
+						</div> -->
+
+
+
+
+					</div>
+					<div class="panel-footer row">
+						<div class="col-xs-12 col-xs-6 text-left">
+							<button class="btn large-button btn-dark ahmmosfc344_subpageTrigger" subpage="ahmmosfc344p01" id="ahmmosfc344p02_back_btn"><i class="glyphicon mr-10 glyphicon-arrow-left fg-white"></i> Back</button>
+						</div>
+
+						<div class="col-xs-12 col-xs-6 text-right">
+							<button id="ahmmosfc344p02_edit_btn" class="btn large-button btn-warning"><i class="glyphicon glyphicon-edit mr-10 fg-white"></i> Edit <span></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-9">
+				<div class="row form-panel form-horizontal">
+					<div class="panel-heading flex flex-middle">
+						<div class="col-xs-12 text-right">
+							<div class="p-5">
+								<button id="ahmmosfc344p02_export_btn" class="btn large-button btn-success"><i class="glyphicon glyphicon-export mr-10 fg-white"></i> Export To Excel <span></span></button>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<table id="ahmmosfc344p02_table" data-method="post" data-url="/imo05/ahmmosfc300-ahs/resources/json/ahmmosfc344_p02_table.json" data-content-type="application/json" data-data-type="json" data-query-params-type="limit" data-side-pagination="server" data-pagination="true" data-query-params="ahmmosfc344p02_table" data-page-size="10" data-response-handler="ahmmosfc344p02_table_handler" data-side-pagination="server" data-pagination="true" data-unique-id="transactionId">
+							<thead>
+								<tr>
+									<th data-field="sort_partNumberChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Number Child</th>
+									<th data-field="sort_partDescChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Description</th>
+									<th data-field="sort_uom" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">UOM</th>
+									<th data-field="sort_wctIdChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">WCT ID Child</th>
+									<th data-field="sort_wctDescChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">WCT Description</th>
+									<th data-field="sort_maker" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Maker</th>
+									<th data-field="sort_backflushQty" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Backflush Qty</th>
+									<th data-field="sort_adjustNote" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Adjust Note</th>
+								</tr>
+								<tr>
+									<th data-field="partNumber" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_partNumber" id="ahmmosfc344p02_table_filter_partNumber" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="partDesc" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_partDesc" id="ahmmosfc344p02_table_filter_partDesc" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="uom" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_uom" id="ahmmosfc344p02_table_filter_uom" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+
+									<th data-field="wctIdChild" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_wctIdChild" id="ahmmosfc344p02_table_filter_wctIdChild" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="wctDescChild" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_wctDescChild" id="ahmmosfc344p02_table_filter_wctDescChild" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="maker" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_periodeId" id="ahmmosfc344p02_table_filter_periodeId" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="backflushQty" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_backflushQty" id="ahmmosfc344p02_table_filter_backflushQty" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="adjustNote" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p02_table_filter_adjustNote" id="ahmmosfc344p02_table_filter_adjustNote" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+								</tr>
+
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ahmmosfc344p03" class="subpage" data-path="Entry Production Progress/Detail Rework Entry Production Progress">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="row form-panel form-horizontal">
+					<div class="panel-heading flex flex-middle">
+						<div class="w-12 text-left">
+							<div class="p-5 pl-10 text-bold">Detail Rework Entry Production Progress</div>
+						</div>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_date" class="col-xs-5 control-label">Date</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_date" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_wct_id" class="col-xs-5 control-label">WCT ID</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_wct_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_wct_desc" class="col-xs-5 control-label">WCT Description</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_wct_desc" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_shift_id" class="col-xs-5 control-label">Shift ID</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_shift_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_periode_id" class="col-xs-5 control-label">Periode ID</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_periode_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_part_number" class="col-xs-5 control-label">Part Number</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_part_number" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_part_description" class="col-xs-5 control-label">Part Description</label>
+							<div class="col-xs-7">
+								<input id="ahmmosfc344p03_detail_part_description" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_identifier" class="col-xs-5 control-label">Identifier</label>
+							<div class="col-xs-7">
+								<input type="text" id="ahmmosfc344p03_detail_identifier" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+						<!-- 
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_adjust_plan_prod_qty" class="col-xs-5 control-label">Adjust Plan Prod Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_adjust_plan_prod_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div> -->
+
+						<!-- <div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_ok_actual_qty" class="col-xs-5 control-label">OK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_ok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_nok_actual_qty" class="col-xs-5 control-label">NOK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_nok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_variant_qty" class="col-xs-5 control-label">Variant Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_variant_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div> -->
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_actual_note" class="col-xs-5 control-label">Actual Note</label>
+							<div class="col-xs-7">
+								<input type="text" id="ahmmosfc344p03_detail_actual_note" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_rework_qty" class="col-xs-5 control-label">Rework Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_rework_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<!-- <div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_confirmation_qty" class="col-xs-5 control-label">Confirmation Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_confirmation_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div> -->
+						<!-- <div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_adjust_confirmation_qty" class="col-xs-5 control-label">Adjust Confirmation Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_adjust_confirmation_qty" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_adjust_ok_actual_qty" class="col-xs-5 control-label">Adjust OK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_adjust_ok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_adjust_nok_actual_qty" class="col-xs-5 control-label">Adjust NOK Actual Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_adjust_nok_actual_qty" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_adjust_variant_qty" class="col-xs-5 control-label">Adjust Variant Qty</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_adjust_variant_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344p03_detail_adjust_actual_note" class="col-xs-5 control-label">Adjust Actual Note</label>
+							<div class="col-xs-7">
+								<input type="number" id="ahmmosfc344p03_detail_adjust_actual_note" class="form-control text-right" placeholder="" />
+							</div>
+						</div> -->
+
+
+
+
+					</div>
+					<div class="panel-footer row">
+						<div class="col-xs-12 col-xs-12 text-left">
+							<button class="btn large-button btn-dark ahmmosfc344_subpageTrigger" subpage="ahmmosfc344p01" id="ahmmosfc344p03_back_btn"><i class="glyphicon mr-10 glyphicon-arrow-left fg-white"></i> Back</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-9">
+				<div class="row form-panel form-horizontal">
+					<div class="panel-heading flex flex-middle">
+						<div class="col-xs-12 text-right">
+							<div class="p-5">
+								<button id="ahmmosfc344p03_export_btn" class="btn large-button btn-success"><i class="glyphicon glyphicon-export mr-10 fg-white"></i> Export To Excel <span></span></button>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<table id="ahmmosfc344p03_table" data-method="post" data-url="/imo05/ahmmosfc300-ahs/resources/json/ahmmosfc344_p03_table.json" data-content-type="application/json" data-data-type="json" data-query-params-type="limit" data-side-pagination="server" data-pagination="true" data-query-params="ahmmosfc344p03_table" data-page-size="10" data-response-handler="ahmmosfc344p03_table_handler" data-side-pagination="server" data-pagination="true" data-unique-id="transactionId">
+							<thead>
+								<tr>
+									<th data-field="sort_partNumberChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Number Child</th>
+									<th data-field="sort_partDescChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Description</th>
+									<th data-field="sort_uom" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">UOM</th>
+									<th data-field="sort_wctIdChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">WCT ID Child</th>
+									<th data-field="sort_wctDescChild" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">WCT Description</th>
+
+									<th data-field="sort_reworkStdUsing" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Rework Std Using</th>
+									<th data-field="sort_reworkUom" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Rework UoM</th>
+									<th data-field="sort_backflush_rework_qty" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Backflush Rework Qty</th>
+								</tr>
+								<tr>
+									<th data-field="partNumber" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_partNumber" id="ahmmosfc344p03_table_filter_partNumber" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="partDesc" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_partDesc" id="ahmmosfc344p03_table_filter_partDesc" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="uom" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_uom" id="ahmmosfc344p03_table_filter_uom" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+
+									<th data-field="wctIdChild" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_wctIdChild" id="ahmmosfc344p03_table_filter_wctIdChild" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="wctDescChild" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_wctDescChild" id="ahmmosfc344p03_table_filter_wctDescChild" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="reworkStdUsing" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_reworkStdUsing" id="ahmmosfc344p03_table_filter_reworkStdUsing" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="reworkUom" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_reworkUom" id="ahmmosfc344p03_table_filter_reworkUom" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+									<th data-field="backflush_rework_qty" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+										<input name="ahmmosfc344p03_table_filter_backflush_rework_qty" id="ahmmosfc344p03_table_filter_backflush_rework_qty" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+									</th>
+								</tr>
+
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="ahmmosfc344_edit" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Edit Entry Production Progress</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_date" class="col-xs-4 control-label">Date</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_date" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_wct_id" class="col-xs-4 control-label">WCT ID</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_wct_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_wct_desc" class="col-xs-4 control-label">WCT Description</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_wct_desc" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_shift_id" class="col-xs-4 control-label">Shift ID</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_shift_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_periode_id" class="col-xs-4 control-label">Periode ID</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_periode_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_part_number" class="col-xs-4 control-label">Part Number</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_part_number" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_part_description" class="col-xs-4 control-label">Part Description</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_edit_part_description" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_identifier" class="col-xs-4 control-label">Identifier</label>
+							<div class="col-xs-8">
+								<input type="text" id="ahmmosfc344_edit_identifier" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_adjust_plan_prod_qty" class="col-xs-4 control-label">Adjust Plan Prod Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_adjust_plan_prod_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_ok_actual_qty" class="col-xs-4 control-label">OK Actual Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_ok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_nok_actual_qty" class="col-xs-4 control-label">NOK Actual Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_nok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_variant_qty" class="col-xs-4 control-label">Variant Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_variant_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_actual_note" class="col-xs-4 control-label">Actual Note</label>
+							<div class="col-xs-8">
+								<input type="text" id="ahmmosfc344_edit_actual_note" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_rework_qty" class="col-xs-4 control-label">Rework Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_rework_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_confirmation_qty" class="col-xs-4 control-label">Confirmation Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_confirmation_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_adjust_confirmation_qty" class="col-xs-4 control-label">Adjust Confirmation Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_adjust_confirmation_qty" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_adjust_ok_actual_qty" class="col-xs-4 control-label">Adjust OK Actual Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_adjust_ok_actual_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_adjust_nok_actual_qty" class="col-xs-4 control-label">Adjust NOK Actual Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_adjust_nok_actual_qty" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_adjust_variant_qty" class="col-xs-4 control-label">Adjust Variant Qty</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_adjust_variant_qty" class="form-control text-right" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_edit_adjust_actual_note" class="col-xs-4 control-label">Adjust Actual Note</label>
+							<div class="col-xs-8">
+								<input type="number" id="ahmmosfc344_edit_adjust_actual_note" class="form-control text-right" placeholder="" />
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-xs-6 text-left">
+							<button type="button" class="btn btn-default large-button" data-dismiss="modal"><i class="fa fa-times mr-10"></i>Cancel</button>
+						</div>
+						<div class="col-xs-6 text-right">
+							<button type="button" class="btn btn-primary large-button"><i class="fa fa-save mr-10"></i>Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="ahmmosfc344_deactivate_ipp" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Deactivate IPP</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_deactivate_ipp_date" class="col-xs-4 control-label">Date</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_deactivate_ipp_date" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_deactivate_ipp_wct_id" class="col-xs-4 control-label">WCT ID</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_deactivate_ipp_wct_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_deactivate_ipp_wct_desc" class="col-xs-4 control-label">WCT Description</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_deactivate_ipp_wct_desc" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_deactivate_ipp_plant_id" class="col-xs-4 control-label">Plant ID</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_deactivate_ipp_plant_id" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+						<div class="form-group large-font col-xs-12">
+							<label for="ahmmosfc344_deactivate_ipp_plant_desc" class="col-xs-4 control-label">Plant Description</label>
+							<div class="col-xs-8">
+								<input id="ahmmosfc344_deactivate_ipp_plant_desc" class="form-control" placeholder="" readonly />
+							</div>
+						</div>
+
+						<div class="col-xs-12">
+							<table id="ahmmosfc344_deactivate_ipp_table" data-checkbox-table="ahmmosfc344_deactivate_ipp_table_checked" data-unique-id="bookingIppNo" data-method="post" data-url="/imo05/ahmmosfc300-ahs/resources/json/ahmmosfc344_deactivate_ipp.json" data-content-type="application/json" data-data-type="json" data-query-params-type="limit" data-side-pagination="server" data-pagination="true" data-query-params="ahmmosfc344_deactivate_ipp_table" data-page-size="10" data-response-handler="ahmmosfc344_deactivate_ipp_table_handler" data-side-pagination="server" data-pagination="true" data-unique-id="transactionId">
+								<thead>
+									<tr>
+										<th data-field="sort_state" data-checkbox="false" data-align="center" data-valign="middle" data-visible="true"></th>
+										<th data-field="sort_bookingIppNo" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Booking IPP No</th>
+										<th data-field="sort_partApprovalNo" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Approval No</th>
+										<th data-field="sort_partNumber" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Number</th>
+										<th data-field="sort_partDescription" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Description</th>
+									</tr>
+									<tr>
+										<th data-field="state" data-checkbox="true" data-align="center" data-valign="middle" data-visible="true"></th>
+										<th data-field="bookingIppNo" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+											<input name="ahmmosfc344_deactivate_ipp_table_filter_bookingIppNo" id="ahmmosfc344_deactivate_ipp_table_filter_bookingIppNo" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+										</th>
+										<th data-field="partApprovalNo" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+											<input name="ahmmosfc344_deactivate_ipp_table_filter_partApprovalNo" id="ahmmosfc344_deactivate_ipp_table_filter_partApprovalNo" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+										</th>
+										<th data-field="partNumber" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+											<input name="ahmmosfc344_deactivate_ipp_table_filter_partNumber" id="ahmmosfc344_deactivate_ipp_table_filter_partNumber" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+										</th>
+										<th data-field="partDescription" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+											<input name="ahmmosfc344_deactivate_ipp_table_filter_partDescription" id="ahmmosfc344_deactivate_ipp_table_filter_partDescription" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+										</th>
+									</tr>
+
+								</thead>
+							</table>
+
+
+							<div class="hide">
+								<table id="ahmmosfc344_deactivate_ipp_table_checked" data-source-id="ahmmosfc344_deactivate_ipp_table" data-unique-id="bookingIppNo" data-pagination="true" data-page-size="10">
+									<thead>
+										<tr>
+											<th data-field="sort_bookingIppNo" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Booking IPP No</th>
+											<th data-field="sort_partApprovalNo" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Approval No</th>
+											<th data-field="sort_partNumber" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Number</th>
+											<th data-field="sort_partDescription" data-sortable="true" data-visible="true" data-valign="middle" data-align="left">Part Description</th>
+										</tr>
+										<tr>
+											<th data-field="bookingIppNo" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+												<input name="ahmmosfc344_deactivate_ipp_table_filter_bookingIppNo" id="ahmmosfc344_deactivate_ipp_table_filter_bookingIppNo" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+											</th>
+											<th data-field="partApprovalNo" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+												<input name="ahmmosfc344_deactivate_ipp_table_filter_partApprovalNo" id="ahmmosfc344_deactivate_ipp_table_filter_partApprovalNo" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+											</th>
+											<th data-field="partNumber" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+												<input name="ahmmosfc344_deactivate_ipp_table_filter_partNumber" id="ahmmosfc344_deactivate_ipp_table_filter_partNumber" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+											</th>
+											<th data-field="partDescription" data-sortable="false" data-visible="true" data-valign="middle" data-align="left">
+												<input name="ahmmosfc344_deactivate_ipp_table_filter_partDescription" id="ahmmosfc344_deactivate_ipp_table_filter_partDescription" type="text" class="form-control ahmmosfc344_table_filter" maxlength="100" />
+											</th>
+										</tr>
+
+									</thead>
+								</table>
+							</div>
+
+						</div>
+
+
+
+					</div>
+
+
+
+
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-xs-6 text-left">
+							<button type="button" class="btn btn-default large-button" data-dismiss="modal"><i class="fa fa-times mr-10"></i>Cancel</button>
+						</div>
+						<div class="col-xs-6 text-right">
+							<button type="button" class="btn btn-warning large-button" id="ahmmosfc344_uncheck_all_btn"><i class="fa fa-times mr-10"></i>Uncheck All <span></span></span></button>
+							<button type="button" class="btn btn-dark large-button" id="ahmmosfc344_deactivate_ipp_btn"><i class="fa fa-check mr-10"></i>Deactivate <span></span></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<link rel=" stylesheet" href="/imo05/ahmmosfc300-ahs/resources/css/AHMMOSFC344.css?v=3" />
+	<script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC344.js?v=3"></script>
+</div>

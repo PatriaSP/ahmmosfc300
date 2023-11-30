@@ -1,0 +1,1074 @@
+<style>
+    .sfc341fixedLCol, .sfc341fixedRCol {
+        display: block;
+        position: absolute;
+    }
+</style>
+<div id="AHMMOSFC341" class="div-app" data-version="1.0">
+    <div class="global_message"></div>    
+
+    <div id="ahmmosfc341" class="subpage subpage-default" data-path="Monitoring SN Accs EV">
+        <!--SEARCH PANEL-->
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH HEADER-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <!--SEARCH BODY-->
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc341plantId" class="col-sm-6 control-label">
+                            PLANT ID <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc341plantId" class="form-control" onchange="ahmmosfc341SearchEvt(event, true)">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc341status" class="col-sm-6 control-label">
+                            Status <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc341status" class="form-control" onchange="ahmmosfc341SearchEvt(event, true)">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group-button">
+                        <button class="btn btn-primary large-button" onclick="ahmmosfc341Search(this);return false;">
+                            <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                        <button class="btn btn-danger large-button" onclick="_fw_refreshForm(this, event)">
+                            <i class="glyphicon glyphicon-cog fg-white"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--TABLE PANEL-->
+        <div class="col-md-9">
+            <div class="row form-panel">
+                <div class="panel-body">
+                    <style>
+                        .sfc341-minwidth125{
+                            min-width: 125px;
+                        }
+                    </style>
+                    <!--Radio Button-->
+                    <div class="form-group-button" id="ahmmosfc341DivRadioSwitch" style="display:none">
+                        <div class="switch-field">
+                            <input type="radio" id="ahmmosfc341RadioSwitchOEM" name="ahmmosfc341RadioSwitch" value="OEM"/>
+                            <label for="ahmmosfc341RadioSwitchOEM"><b>OEM</b></label>
+                            &nbsp;
+                            <input type="radio" id="ahmmosfc341RadioSwitchREM" name="ahmmosfc341RadioSwitch" value="REM" />
+                            <label for="ahmmosfc341RadioSwitchREM"><b>REM</b></label>
+                        </div>
+                    </div>
+                    <!--Button-->
+                    <div id="buttonTable" class="form-group-button">
+                        <button class="btn btn-primary large-button" onclick="ahmmosfc341DownloadHistory(this); return false;">
+                            <i class="glyphicon glyphicon-download-alt fg-white"></i> Download Transactional History</button> 
+                        <button class="btn btn-success large-button" onclick="ahmmosfc341ExportExcel(this); return false;">
+                            <i class="glyphicon glyphicon-export fg-white"></i> Export To Excel</button> 
+                        <button class="btn btn-info large-button" onclick="ahmmosfc341UpdateFlag(this); return false;">
+                            <i class="glyphicon glyphicon-saved fg-white"></i> Update Flag Charge</button> 
+                    </div>
+                    <h4 id="authInfo" style="display:none">Roles invalid</h4>
+                    <!--Table-->
+                    <table id="ahmmosfc341SearchTable" 
+                           data-method="post"
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-query-params-type="limit"
+                           data-query-params="ahmmosfc341TableSearch"
+                           data-response-handler="_fw_loadData"
+                           data-unique-id="rownum"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-checkbox-header="true"
+                           data-single-select="false"
+                           >
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th  data-sortable="true" data-field="srnSort" data-align="center">Serial  Number</th>
+                                <th  data-sortable="true" data-field="categorySort" data-align="center">Category</th>
+                                <th  data-sortable="true" data-field="srcaccSort" data-align="center">REM /  OEM</th>
+                                <!--PROD COLUMN-->
+                                <th  data-class="prod" data-sortable="true" data-field="kumamotoSort" data-align="center">Kumamoto  Serial Number</th>
+                                <th  data-class="prod" data-sortable="true" data-field="palletSort" data-align="center">Pallet  Barcode Number</th>
+                                <th  data-class="prod" data-sortable="true" data-field="proddateSort" data-align="center">Production  Date</th>
+                                <th  data-class="prod" data-sortable="true" data-field="exwdateSort" data-align="center">EXW  Date</th>
+                                <th  data-class="prod" data-sortable="true" data-field="durationSort" data-align="center">Duration</th>
+                                <th  data-class="prod" data-sortable="true" data-field="ponoSort" data-align="center">PO No.</th>
+                                <th  data-class="prod" data-sortable="true" data-field="suppidSort" data-align="center">Supplier  ID</th>
+                                <th  data-class="prod" data-sortable="true" data-field="suppdescSort" data-align="center">Supplier  Desc</th>
+                                <th  data-class="prod" data-sortable="true" data-field="matdocSort" data-align="center">Matdoc  GR</th>
+                                <th  data-class="prod" data-sortable="true" data-field="laststatusSort" data-align="center">Last  Status</th>
+                                <th  data-class="prod" data-sortable="true" data-field="plantSort" data-align="center">Plant</th>
+                                <th  data-class="prod" data-sortable="true" data-field="slocidSort" data-align="center">Sloc  ID</th>
+                                <th  data-class="prod" data-sortable="true" data-field="delslocSort" data-align="center">Sloc  ID Dest  (if move)</th>
+                                <th  data-class="prod" data-sortable="true" data-field="inputinSort" data-align="center">Input  IN</th>
+                                <th  data-class="prod" data-sortable="true" data-field="delnoSort" data-align="center">Delivery  Note  No.</th>
+                                <th  data-class="prod" data-sortable="true" data-field="delplantSort" data-align="center">Plant  Supplier</th>
+                                <th  data-class="prod" data-sortable="true" data-field="partnumSort" data-align="center">Part  Number</th>
+                                <th  data-class="prod" data-sortable="true" data-field="partdescSort" data-align="center">Part Desc</th>
+                                <th  data-class="prod" data-sortable="true" data-field="inputoutSort" data-align="center">Input  OUT</th>
+                                <th  data-class="prod" data-sortable="true" data-field="shplistSort" data-align="center">Shipping  List</th>
+                                <th  data-class="prod" data-sortable="true" data-field="shplistdateSort" data-align="center">Shipping  List  Date</th>
+                                <th  data-class="prod" data-sortable="true" data-field="vocaccsSort" data-align="center">Voucher  Accessories</th>
+                                <th  data-class="prod" data-sortable="true" data-field="txnidSort" data-align="center">Transaction  ID</th>
+                                <th  data-class="prod" data-sortable="true" data-field="txndateSort" data-align="center">Transaction  Date</th>
+                                <th  data-class="prod" data-sortable="true" data-field="vcreaSort" data-align="center">Transaction  By</th>
+                                <th  data-class="prod" data-sortable="true" data-field="txstatusSort" data-align="center">Transaction  Status</th>
+                                <th  data-class="prod" data-sortable="true" data-field="asnSort" data-align="center">No ASN</th>
+                                <th  data-class="prod" data-sortable="true" data-field="boxSort" data-align="center">Box No</th>
+                                <th  data-class="prod" data-sortable="true" data-field="packSort" data-align="center">Packing Sheet No</th>
+                                <th  data-class="prod" data-sortable="true" data-field="cartonSort" data-align="center">Karton No</th>
+                                <th  data-class="prod" data-sortable="true" data-field="slSort" data-align="center">No Shipping List</th>
+                                <th  data-class="prod" data-sortable="true" data-field="trucknoSort" data-align="center">Truck  No.</th>
+                                <th  data-class="prod" data-sortable="true" data-field="expidSort" data-align="center">Expedition  Code</th>
+                                <th  data-class="prod" data-sortable="true" data-field="expdescSort" data-align="center">Expedition  Name</th>
+                                <th  data-class="prod" data-sortable="true" data-field="mdcodeSort" data-align="center">Main  Dealer  Code</th>
+                                <th  data-class="prod" data-sortable="true" data-field="mddescSort" data-align="center">Main  Dealer  Description</th>
+                                <th  data-class="prod" data-sortable="true" data-field="flagSort" data-align="center">Flag  Charge</th>
+                                <th  data-class="prod" data-sortable="true" data-field="chargedateSort" data-align="center">Last  Charge  Date</th>
+
+                                <!--MKT COLUMN-->
+                                <th  data-class="mkt" data-sortable="true" data-field="kumamotoSort" data-align="center">Kumamoto  Serial Number</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="palletSort" data-align="center">Pallet  Barcode Number</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="proddateSort" data-align="center">Production  Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="exwdateSort" data-align="center">EXW  Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="durationSort" data-align="center">Duration</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="laststatusSort" data-align="center">Last  Status</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="plantSort" data-align="center">Plant</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="slocidSort" data-align="center">Sloc  ID</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="shplistSort" data-align="center">Shipping  List</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="vocaccsSort" data-align="center">Voucher  Accessories</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="txnidSort" data-align="center">Transaction  ID</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="txndateSort" data-align="center">Transaction  Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="vcreaSort" data-align="center">Transaction  By</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="txstatusSort" data-align="center">Transaction  Status</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="asnSort" data-align="center">No ASN</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="boxSort" data-align="center">Box No</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="packSort" data-align="center">Packing Sheet No</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="cartonSort" data-align="center">Karton No</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="slSort" data-align="center">No Shipping List</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="trucknoSort" data-align="center">Truck  No.</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="expidSort" data-align="center">Expedition  Code</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="expdescSort" data-align="center">Expedition  Name</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="mdcodeSort" data-align="center">Main  Dealer  Code</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="mddescSort" data-align="center">Main  Dealer  Description</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="shplistdateSort" data-align="center">Shipping  List  Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="flagSort" data-align="center">Flag  Charge</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="chargedateSort" data-align="center">Last  Charge  Date</th>                                
+                                <th  data-class="mkt" data-sortable="true" data-field="recmddateSort" data-align="center">MD Receive Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="mdoutdateSort" data-align="center">MD Out Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="dlrcode3Sort" data-align="center">MD Out (Dealer Code)</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="dlrdescmdoutSort" data-align="center">Dealer Desc.</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="recdlrdateSort" data-align="center">Dealer Receive Date</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="dlrcode4Sort" data-align="center">Receave (Dealer Code)</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="dlrdescrecSort" data-align="center">Dealer Desc.</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="bastSort" data-align="center">No. BASTK</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="bastdateSort" data-align="center">BASTK Date (Unit)</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="frmnoSort" data-align="center">No. Frame </th>
+                                <th  data-class="mkt" data-sortable="true" data-field="engnoSort" data-align="center">No. Engine </th>
+                                <th  data-class="mkt" data-sortable="true" data-field="typecodeSort" data-align="center">Kode Tipe (3 digit)</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="colorSort" data-align="center">Warna</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="dlrcodefinSort" data-align="center">Dealer Code</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="dlrdescSort" data-align="center">Dealer Desc.</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="phoneSort" data-align="center">Nomor HP</th>
+                                <th  data-class="mkt" data-sortable="true" data-field="nameSort" data-align="center">Nama</th>
+                            </tr>
+                            <tr> 
+                                <th data-checkbox="true" data-valign="middle"></th>
+                                <th data-field="srnnum"  data-align="left">
+                                    <input name="srnnum" id="ahmmosfc341srn" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>
+                                <th data-field="category"  data-align="left">
+                                    <input name="category" id="ahmmosfc341category" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-field="srcacc"  data-align="left">
+                                    <select id="ahmmosfc341srcacc" class="form-control" onchange="ahmmosfc341SearchEvt(event, true)">
+                                        <option value="">All</option>
+                                        <option value="REM">REM</option>
+                                        <option value="OEM">OEM</option>
+                                    </select>
+                                </th>  
+                                <!--PROD COLUMN-->
+                                <th data-class="prod" data-field="kumamotonum"  data-align="left">
+                                    <input name="kumamotonum" id="ahmmosfc341kumamotonumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="palletnum"  data-align="left">
+                                    <input name="palletnum" id="ahmmosfc341palletnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="prdaccdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341prdaccdateprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="prod" data-field="exaccdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341exaccdateprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="prod" data-field="duration"  data-align="right">
+                                    <input name="duration" id="ahmmosfc341durationprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="ponum"  data-align="left">
+                                    <input name="ponum" id="ahmmosfc341ponumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="suppid"  data-align="left">
+                                    <input name="suppid" id="ahmmosfc341suppidprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="venddesc"  data-align="left">
+                                    <input name="venddesc" id="ahmmosfc341venddescprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="matdoc"  data-align="left">
+                                    <input name="matdoc" id="ahmmosfc341matdocprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="laststts"  data-align="left">
+                                    <input name="laststts" id="ahmmosfc341laststtsprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="recplant"  data-align="right">
+                                    <input name="recplant" id="ahmmosfc341recplantprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="recsloc"  data-align="left">
+                                    <input name="recsloc" id="ahmmosfc341recslocprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="delsloc"  data-align="left">
+                                    <input name="delsloc" id="ahmmosfc341delslocprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="inputin"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341inputinprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="prod" data-field="delnum"  data-align="left">
+                                    <input name="delnum" id="ahmmosfc341delnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="delplant"  data-align="left">
+                                    <input name="delplant" id="ahmmosfc341delplantprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="partnum"  data-align="left">
+                                    <input name="partnum" id="ahmmosfc341partnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="partdesc"  data-align="left">
+                                    <input name="partdesc" id="ahmmosfc341partdescprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="inputout"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341inputoutprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="prod" data-field="shplistnum"  data-align="left">
+                                    <input name="shplistnum" id="ahmmosfc341shplistnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="sldate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341sldateprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="prod" data-field="accvoc"  data-align="left">
+                                    <input name="accvoc" id="ahmmosfc341accvocprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="txnid"  data-align="left">
+                                    <input name="txnid" id="ahmmosfc341txnidprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="txndate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341txndateprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="prod" data-field="vcrea"  data-align="left">
+                                    <input name="vcrea" id="ahmmosfc341vcreaprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="txstatus"  data-align="left">
+                                    <input name="txstatus" id="ahmmosfc341txstatusprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="asnnum"  data-align="right">
+                                    <input name="asnnum" id="ahmmosfc341asnnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="boxnum"  data-align="left">
+                                    <input name="boxnum" id="ahmmosfc341boxnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="packnum"  data-align="left">
+                                    <input name="packnum" id="ahmmosfc341packnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="cartonnum"  data-align="left">
+                                    <input name="cartonnum" id="ahmmosfc341cartonnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="slnum"  data-align="left">
+                                    <input name="slnum" id="ahmmosfc341slnumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="trucknum"  data-align="left">
+                                    <input name="trucknum" id="ahmmosfc341trucknumprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="expid"  data-align="left">
+                                    <input name="expid" id="ahmmosfc341expidprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="expdesc"  data-align="left">
+                                    <input name="expdesc" id="ahmmosfc341expdescprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="mdcode"  data-align="left">
+                                    <input name="mdcode" id="ahmmosfc341mdcodeprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="mdname"  data-align="left">
+                                    <input name="mdname" id="ahmmosfc341mdnameprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="flagcharge"  data-align="right">
+                                    <input name="flagcharge" id="ahmmosfc341flagchargeprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="prod" data-field="lastchargedate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341lastchargedateprod" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th> 
+
+                                <!--MKT COLUMN-->
+                                <th data-class="mkt" data-field="kumamotonum"  data-align="left">
+                                    <input name="kumamotonum" id="ahmmosfc341kumamotonummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="palletnum"  data-align="left">
+                                    <input name="palletnum" id="ahmmosfc341palletnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="prdaccdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341prdaccdatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="mkt" data-field="exaccdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341exaccdatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="mkt" data-field="duration"  data-align="right">
+                                    <input name="duration" id="ahmmosfc341durationmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="laststts"  data-align="left">
+                                    <input name="laststts" id="ahmmosfc341laststtsmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="recplant"  data-align="right">
+                                    <input name="recplant" id="ahmmosfc341recplantmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="recsloc"  data-align="left">
+                                    <input name="recsloc" id="ahmmosfc341recslocmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="shplistnum"  data-align="left">
+                                    <input name="shplistnum" id="ahmmosfc341shplistnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="accvoc"  data-align="left">
+                                    <input name="accvoc" id="ahmmosfc341accvocmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="txnid"  data-align="left">
+                                    <input name="txnid" id="ahmmosfc341txnidmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="txndate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341txndatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="mkt" data-field="vcrea"  data-align="left">
+                                    <input name="vcrea" id="ahmmosfc341vcreamkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="txstatus"  data-align="left">
+                                    <input name="txstatus" id="ahmmosfc341txstatusmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>
+                                <th data-class="mkt" data-field="asnnum"  data-align="right">
+                                    <input name="asnnum" id="ahmmosfc341asnnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="boxnum"  data-align="left">
+                                    <input name="boxnum" id="ahmmosfc341boxnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="packnum"  data-align="left">
+                                    <input name="packnum" id="ahmmosfc341packnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="cartonnum"  data-align="left">
+                                    <input name="cartonnum" id="ahmmosfc341cartonnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="slnum"  data-align="left">
+                                    <input name="slnum" id="ahmmosfc341slnummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="trucknum"  data-align="left">
+                                    <input name="trucknum" id="ahmmosfc341trucknummkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="expid"  data-align="left">
+                                    <input name="expid" id="ahmmosfc341expidmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="expdesc"  data-align="left">
+                                    <input name="expdesc" id="ahmmosfc341expdescmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="mdcode"  data-align="left">
+                                    <input name="mdcode" id="ahmmosfc341mdcodemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="mdname"  data-align="left">
+                                    <input name="mdname" id="ahmmosfc341mdnamemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="sldate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341sldatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>  
+                                <th data-class="mkt" data-field="flagcharge"  data-align="right">
+                                    <input name="flagcharge" id="ahmmosfc341flagchargemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="lastchargedate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341lastchargedatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th> 
+                                <th data-class="mkt" data-field="recmddate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341recmddatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th> 
+                                <th data-class="mkt" data-field="mdoutdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341mdoutdatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-class="mkt" data-field="dlrcode3"  data-align="left">
+                                    <input name="dlrcode3" id="ahmmosfc341dlrcode3mkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th>  
+                                <th data-class="mkt" data-field="dlrdescmdout"  data-align="left">
+                                    <input name="dlrdescmdout" id="ahmmosfc341dlrdescmdoutmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="recdlrdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341recdlrdatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-class="mkt" data-field="dlrcode4"  data-align="left">
+                                    <input name="dlrcode4" id="ahmmosfc341dlrcode4mkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="dlrdescrec"  data-align="left">
+                                    <input name="dlrdescrec" id="ahmmosfc341dlrdescrecmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="bast"  data-align="left">
+                                    <input name="bast" id="ahmmosfc341bastmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="bastdate"  data-align="left" data-formatter="ahmmosfc341dateFormatter">
+                                    <div class="input-group date sfc341-minwidth125">
+                                        <input id="ahmmosfc341bastdatemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)" autocomplete="off" style="height: 28px;">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-class="mkt" data-field="frmno"  data-align="left">
+                                    <input name="frmno" id="ahmmosfc341frmnomkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="engno"  data-align="left">
+                                    <input name="engno" id="ahmmosfc341engnomkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="typecode"  data-align="left">
+                                    <input name="typecode" id="ahmmosfc341typecodemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="color"  data-align="left">
+                                    <input name="color" id="ahmmosfc341colormkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="dlrcodefin"  data-align="left">
+                                    <input name="dlrcodefin" id="ahmmosfc341dlrcodefinmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="dlrdesc"  data-align="left">
+                                    <input name="dlrdesc" id="ahmmosfc341dlrdescmkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="phone"  data-align="right">
+                                    <input name="phone" id="ahmmosfc341phonemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                                <th data-class="mkt" data-field="name"  data-align="left">
+                                    <input name="name" id="ahmmosfc341namemkt" type="text" class="form-control" onkeydown="ahmmosfc341SearchEvt(event, 1)">
+                                </th> 
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var ahmmosfc341Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc341/';
+    var roleUser = '';
+    var sort = '';
+    var order = '';
+    
+    $(document).ready(function () {
+        ahmmosfc341lovPlant();
+        ahmmosfc341lovStatus();
+        ahmmosfc341getUser();
+
+        //Freeze table
+        $('#ahmmosfc341SearchTable').on('load-success.bs.table', function (e) {
+            var totalDataTabel = $('#ahmmosfc341SearchTable').bootstrapTable('getData');
+            if (totalDataTabel.length > 0) {
+                window.setTimeout(function () {
+                    ahmmosfc341FreezeTable('ahmmosfc341SearchTable', 4, 0);
+                }, 1000);
+            } else {
+                $('#ahmmosfc341SearchTable').parent().css({marginLeft: 0});
+                $('#ahmmosfc341SearchTable').find('th').removeClass('sfc341fixedLCol');
+                $('#ahmmosfc341SearchTable').find('td').removeClass('sfc341fixedLCol');
+            }
+        });
+        $('#ahmmosfc341SearchTable').on('post-body.bs.table', function (e) {
+            $('#ahmmosfc341SearchTable').parent().css({marginLeft: 0});
+            $('#ahmmosfc341SearchTable').find('th').removeClass('sfc341fixedLCol');
+            $('#ahmmosfc341SearchTable').find('td').removeClass('sfc341fixedLCol');
+        });
+        $('#ahmmosfc341SearchTable').on('sort.bs.table', function (e) {
+            $('#ahmmosfc341SearchTable').parent().css({marginLeft: 0});
+            $('#ahmmosfc341SearchTable').find('th').removeClass('sfc341fixedLCol');
+            $('#ahmmosfc341SearchTable').find('td').removeClass('sfc341fixedLCol');
+        });
+    });
+
+    function ahmmosfc341lovPlant() {
+        _fw_post(ahmmosfc341Url + 'get-volist-plant', null, function (data) {
+            if (data.status === '1') {
+                init341DropdownList('ahmmosfc341', 'ahmmosfc341plantId', data.data);
+            }
+        });
+    }
+
+    function ahmmosfc341lovStatus() {
+        _fw_post(ahmmosfc341Url + 'get-volist-status', null, function (data) {
+            if (data.status === '1') {
+                init341DropdownList('ahmmosfc341', 'ahmmosfc341status', data.data);
+            }
+        });
+    }
+
+    function init341DropdownList(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+        if (value.length > 0) {
+            $page.append('<option value="">ALL</option>');
+            value.forEach(function (item, index) {
+                $page.append('<option value="' + item + '">' + item + '</option>');
+            });
+
+        }
+    }
+
+    function ahmmosfc341getUser() {
+        _fw_post(ahmmosfc341Url + 'get-user', null, function (data) {
+            if (data.status === '1') {
+                if (data.data[0] === 'RO_MONITORING_BATT_OEM') {
+                    ahmmosfc341rolesProd();
+                } else if (data.data[0] === 'RO_MONITORING_BATT_REM') {
+                    ahmmosfc341rolesMkt();
+                } else if (data.data[0] === 'RO_ALL') {
+                    $('#ahmmosfc341SearchTable').attr('data-url', ahmmosfc341Url + 'get-monitoring-data');
+                    $('#buttonTable').hide();
+                    $('#ahmmosfc341SearchTable').on('load-success.bs.table', function (e) {
+                        $("div[class='bootstrap-table']").hide();
+                    });
+                    $('#ahmmosfc341DivRadioSwitch').show();
+                    $('#ahmmosfc341SearchTable').hide();
+                } else {
+                    $('#buttonTable').hide();
+                    $('#ahmmosfc341SearchTable').hide();
+                    $('#authInfo').show();
+                }
+
+            }
+        });
+    }
+
+    $('input[type=radio][name=ahmmosfc341RadioSwitch]').on('change', function () {
+        $('#buttonTable').show();
+        $('#ahmmosfc341SearchTable').show();
+        $('#ahmmosfc341SearchTable').on('load-success.bs.table', function (e) {
+            $("div[class='bootstrap-table']").show();
+        });
+        $('#ahmmosfc341srn').val('');
+        $('#ahmmosfc341category').val('');
+        $('#ahmmosfc341srcacc').val('');
+        if (this.value === 'OEM') {
+            ahmmosfc341rolesAllProd();
+        } else {
+            ahmmosfc341rolesAllMkt();
+        }
+    });
+
+    function ahmmosfc341rolesAllProd() {
+        roleUser = 'RO_MONITORING_BATT_OEM';
+        $("#ahmmosfc341SearchTable").bootstrapTable("refresh");
+        $('#ahmmosfc341SearchTable').on('load-success.bs.table', function (e) {
+            $("#ahmmosfc341SearchTable th[class='prod']").removeClass().addClass('prod');
+            $("#ahmmosfc341SearchTable th[class='prod hidden']").removeClass().addClass('prod');
+            $("#ahmmosfc341SearchTable th[class='mkt']").removeClass().addClass('mkt hidden');
+
+            $("#ahmmosfc341SearchTable td[class='prod']").removeClass().addClass('prod');
+            $("#ahmmosfc341SearchTable td[class='mkt']").removeClass().addClass('mkt hidden');
+            $("#ahmmosfc341SearchTable td[class='prod hidden']").removeClass().addClass('prod');
+        });
+    }
+
+    function ahmmosfc341rolesAllMkt() {
+        roleUser = 'RO_MONITORING_BATT_REM';
+        $("#ahmmosfc341SearchTable").bootstrapTable("refresh");
+        $('#ahmmosfc341SearchTable').on('load-success.bs.table', function (e) {
+            $("#ahmmosfc341SearchTable th[class='prod']").removeClass().addClass('prod hidden');
+            $("#ahmmosfc341SearchTable th[class='mkt']").removeClass().addClass('mkt');
+            $("#ahmmosfc341SearchTable th[class='mkt hidden']").removeClass().addClass('mkt');
+
+            $("#ahmmosfc341SearchTable td[class='prod']").removeClass().addClass('prod hidden');
+            $("#ahmmosfc341SearchTable td[class='mkt']").removeClass().addClass('mkt');
+            $("#ahmmosfc341SearchTable td[class='mkt hidden']").removeClass().addClass('mkt');
+        });
+    }
+
+    function ahmmosfc341rolesProd() {
+        roleUser = 'RO_MONITORING_BATT_OEM';
+        $("#ahmmosfc341SearchTable th[data-class='prod']").attr('data-visible', 'true');
+        $("#ahmmosfc341SearchTable th[data-class='mkt']").attr('data-visible', 'false');
+        $('#ahmmosfc341SearchTable').attr('data-url', ahmmosfc341Url + 'get-monitoring-data-prod');
+        $("#ahmmosfc341SearchTable").bootstrapTable("refresh");
+    }
+
+    function ahmmosfc341rolesMkt() {
+        roleUser = 'RO_MONITORING_BATT_REM';
+        $("#ahmmosfc341SearchTable th[data-class='prod']").attr('data-visible', 'false');
+        $("#ahmmosfc341SearchTable th[data-class='mkt']").attr('data-visible', 'true');
+        $('#ahmmosfc341SearchTable').attr('data-url', ahmmosfc341Url + 'get-monitoring-data-mkt');
+        $("#ahmmosfc341SearchTable").bootstrapTable("refresh");
+    }
+
+    function ahmmosfc341TableSearch(params) {
+        if (roleUser === 'RO_MONITORING_BATT_OEM') {
+            params.search = {
+                //Filter Panel
+                "PLANT": $('#ahmmosfc341plantId').val().trim(),
+
+                //Filter Table
+                "SRN": $('#ahmmosfc341srn').val().trim(),
+                "CATEGORY": $('#ahmmosfc341category').val().trim(),
+                "SRCACC": $('#ahmmosfc341srcacc').val().trim(),
+                "KUMAMOTO": $('#ahmmosfc341kumamotonumprod').val(),
+                "PALLETNUM": $('#ahmmosfc341palletnumprod').val().trim(),
+                "PRODDATE": $('#ahmmosfc341prdaccdateprod').val().trim(),
+                "EXACCDATE": $('#ahmmosfc341exaccdateprod').val().trim(),
+                "DURATION": $('#ahmmosfc341durationprod').val().trim(),
+                "PONO": $('#ahmmosfc341ponumprod').val().trim(),
+                "SUPPID": $('#ahmmosfc341suppidprod').val().trim(),
+                "VENDDESC": $('#ahmmosfc341venddescprod').val().trim(),
+                "MATDOC": $('#ahmmosfc341matdocprod').val().trim(),
+                "LASTSTATUS": $('#ahmmosfc341laststtsprod').val().trim(),
+                "RECPLANT": $('#ahmmosfc341recplantprod').val().trim(),
+                "RECSLOC": $('#ahmmosfc341recslocprod').val().trim(),
+                "DELSLOC": $('#ahmmosfc341delslocprod').val().trim(),
+                "INPUTIN": $('#ahmmosfc341inputinprod').val().trim(),
+                "DELNUM": $('#ahmmosfc341delnumprod').val().trim(),
+                "DELPLANT": $('#ahmmosfc341delplantprod').val().trim(),
+                "PARTNUM": $('#ahmmosfc341partnumprod').val().trim(),
+                "PARTDESC": $('#ahmmosfc341partdescprod').val().trim(),
+                "INPUTOUT": $('#ahmmosfc341inputoutprod').val().trim(),
+                "SHPLISTNUM": $('#ahmmosfc341shplistnumprod').val().trim(),
+                "SLDATE": $('#ahmmosfc341sldateprod').val().trim(),
+                "ACCVOC": $('#ahmmosfc341accvocprod').val().trim(),
+                "TXNID": $('#ahmmosfc341txnidprod').val().trim(),
+                "TXNDATE": $('#ahmmosfc341txndateprod').val().trim(),
+                "VCREA": $('#ahmmosfc341vcreaprod').val().trim(),
+                "TXSTATUS": $('#ahmmosfc341txstatusprod').val().trim(),
+                "TRUCKNUM": $('#ahmmosfc341trucknumprod').val().trim(),
+                "EXPID": $('#ahmmosfc341expidprod').val().trim(),
+                "EXPDESC": $('#ahmmosfc341expdescprod').val().trim(),
+                "MDCODE": $('#ahmmosfc341mdcodeprod').val().trim(),
+                "MDNAME": $('#ahmmosfc341mdnameprod').val().trim(),
+                "FLGCHANGE": $('#ahmmosfc341flagchargeprod').val().trim(),
+                "LASTCHARGEDATE": $('#ahmmosfc341lastchargedateprod').val().trim(),
+                "ASNNUM": $('#ahmmosfc341asnnumprod').val().trim(),
+                "BOXNUM": $('#ahmmosfc341boxnumprod').val().trim(),
+                "PACKNUM": $('#ahmmosfc341packnumprod').val().trim(),
+                "CARTONNUM": $('#ahmmosfc341cartonnumprod').val().trim(),
+                "SLNUM": $('#ahmmosfc341slnumprod').val().trim()
+            };
+        } else if (roleUser === 'RO_MONITORING_BATT_REM') {
+            params.search = {
+                //Filter Panel
+                "PLANT": $('#ahmmosfc341plantId').val().trim(),
+
+                //Filter Table
+                "SRN": $('#ahmmosfc341srn').val().trim(),
+                "CATEGORY": $('#ahmmosfc341category').val().trim(),
+                "SRCACC": $('#ahmmosfc341srcacc').val().trim(),
+                "KUMAMOTO": $('#ahmmosfc341kumamotonummkt').val(),
+                "PALLETNUM": $('#ahmmosfc341palletnummkt').val().trim(),
+                "PRODDATE": $('#ahmmosfc341prdaccdatemkt').val().trim(),
+                "EXACCDATE": $('#ahmmosfc341exaccdatemkt').val().trim(),
+                "DURATION": $('#ahmmosfc341durationmkt').val().trim(),
+                "LASTSTATUS": $('#ahmmosfc341laststtsmkt').val().trim(),
+                "RECPLANT": $('#ahmmosfc341recplantmkt').val().trim(),
+                "RECSLOC": $('#ahmmosfc341recslocmkt').val().trim(),
+                "SHPLISTNUM": $('#ahmmosfc341shplistnummkt').val().trim(),
+                "ACCVOC": $('#ahmmosfc341accvocmkt').val().trim(),
+                "TXNID": $('#ahmmosfc341txnidmkt').val().trim(),
+                "TXNDATE": $('#ahmmosfc341txndatemkt').val().trim(),
+                "VCREA": $('#ahmmosfc341vcreamkt').val().trim(),
+                "TXSTATUS": $('#ahmmosfc341txstatusmkt').val().trim(),
+                "TRUCKNUM": $('#ahmmosfc341trucknummkt').val().trim(),
+                "EXPID": $('#ahmmosfc341expidmkt').val().trim(),
+                "EXPDESC": $('#ahmmosfc341expdescmkt').val().trim(),
+                "MDCODE": $('#ahmmosfc341mdcodemkt').val().trim(),
+                "MDNAME": $('#ahmmosfc341mdnamemkt').val().trim(),
+                "SLDATE": $('#ahmmosfc341sldatemkt').val().trim(),
+                "FLGCHANGE": $('#ahmmosfc341flagchargemkt').val().trim(),
+                "LASTCHARGEDATE": $('#ahmmosfc341lastchargedatemkt').val().trim(),
+
+                "RECMDDATE": $('#ahmmosfc341recmddatemkt').val().trim(),
+                "MDOUTDATE": $('#ahmmosfc341mdoutdatemkt').val().trim(),
+                "DLRCODE3": $('#ahmmosfc341dlrcode3mkt').val().trim(),
+                "DLRDESCMDOUT": $('#ahmmosfc341dlrdescmdoutmkt').val().trim(),
+                "RECDLRDATE": $('#ahmmosfc341recdlrdatemkt').val().trim(),
+                "DLRCODE4": $('#ahmmosfc341dlrcode4mkt').val().trim(),
+                "DLRDESCREC": $('#ahmmosfc341dlrdescrecmkt').val().trim(),
+                "BAST": $('#ahmmosfc341bastmkt').val().trim(),
+                "BASTDATE": $('#ahmmosfc341bastdatemkt').val().trim(),
+                "FRMNO": $('#ahmmosfc341frmnomkt').val().trim(),
+                "ENGNO": $('#ahmmosfc341engnomkt').val().trim(),
+                "TYPECODE": $('#ahmmosfc341typecodemkt').val().trim(),
+                "COLOR": $('#ahmmosfc341colormkt').val().trim(),
+                "DLRCODEFIN": $('#ahmmosfc341dlrcodefinmkt').val().trim(),
+                "DLRDESC": $('#ahmmosfc341dlrdescmkt').val().trim(),
+                "PHONE": $('#ahmmosfc341phonemkt').val().trim(),
+                "NAME": $('#ahmmosfc341namemkt').val().trim(),
+                "ASNNUM": $('#ahmmosfc341asnnummkt').val().trim(),
+                "BOXNUM": $('#ahmmosfc341boxnummkt').val().trim(),
+                "PACKNUM": $('#ahmmosfc341packnummkt').val().trim(),
+                "CARTONNUM": $('#ahmmosfc341cartonnummkt').val().trim(),
+                "SLNUM": $('#ahmmosfc341slnummkt').val().trim()
+            };
+        }
+        if ($('#ahmmosfc341status').val().trim() === 'IN AHM') {
+            params.search = {
+                ...params.search, "STATUSIN": "IN"
+            }
+        } else {
+            params.search = {
+                ...params.search, "STATUS": $('#ahmmosfc341status').val().trim()
+            }
+        }
+
+        if (params.sort !== undefined) {
+            order = params.order;
+            sort = params.sort;
+        }
+
+        return params;
+    }
+
+    function ahmmosfc341Search(obj) {
+        _fw_validation_clear(obj);
+        $("#ahmmosfc341SearchTable").bootstrapTable("refresh");
+    }
+
+    function ahmmosfc341UpdateFlag(obj) {
+        _fw_validation_clear(obj);
+        const checkSelection = $("#ahmmosfc341SearchTable").bootstrapTable("getSelections")[0];
+        if (checkSelection) {
+            const dataSelection = $("#ahmmosfc341SearchTable").bootstrapTable("getSelections");
+            var param = {
+                "DATASELECTION": dataSelection
+            };
+            _fw_post(ahmmosfc341Url + 'update-flag-charge', param, function (data) {
+                if (data.status === '1') {
+                    _fw_setMessage(obj, 1, data.message.message);
+                    $("#ahmmosfc341SearchTable").bootstrapTable("refresh");
+                } else {
+                    _fw_setMessage(obj, 0, data.message.message);
+                }
+            });
+        } else {
+            _fw_setMessage(obj, 0, "Pilih salah satu data!");
+        }
+    }
+
+    function ahmmosfc341dateFormatter(val) {
+        if (val !== null) {
+            const date = new Date(val);
+
+            const day = date.getDate().toString().padStart(2, '0');
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const month = monthNames[date.getMonth()];
+            const year = date.getFullYear();
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const seconds = date.getSeconds().toString().padStart(2, '0');
+
+            const formattedDate = `${day}-${month}-${year}`;
+            return formattedDate;
+        } else {
+            return '';
+        }
+    }
+
+    function ahmmosfc341SearchEvt(event, fromDropdown) {
+        if (event.keyCode === 13 || fromDropdown === true) {
+            event.preventDefault();
+            $("#ahmmosfc341SearchTable").bootstrapTable('refresh');
+        }
+    }
+
+    function ahmmosfc341FreezeTable(tblid, left, right) {
+        var tbl = $('table#' + tblid);
+        var vmarginleft = 0;
+        var vmarginright = 0;
+        $('tr', tbl).each(function (ix, ox) {
+            var len = $('td', this).length;
+            var h_trh = $(this).outerHeight();
+            var vleft = 0;
+            var vright = 0;
+            $('td', this).each(function (i, val) {
+                if (i < left) {
+                    var w_th = $('td:nth(' + i + ')', $('#' + tblid + ' tbody tr:first')).outerWidth() >
+                            $(this).outerWidth() ? $('td:nth(' + i + ')', $('#' + tblid + ' tbody tr:first')).outerWidth()
+                            : $(this).outerWidth();
+                    $(this).css({height: h_trh, width: w_th, left: vleft});
+                    vleft = vleft + w_th;
+                    vmarginleft = vleft;
+                } else if (i >= (len - right)) {
+                    var w_th = $('td:nth(' + i + ')', $('#' + tblid + ' tbody tr:first')).outerWidth() >
+                            $(this).outerWidth() ? $('td:nth(' + i + ')', $('#' + tblid + ' tbody tr:first')).outerWidth()
+                            : $(this).outerWidth();
+                    $(this).css({height: h_trh, width: w_th, right: vright});
+                    vright = vright + w_th;
+                    vmarginright = vright;
+                }
+            });
+        });
+
+        $('tr', tbl).each(function (ix, ox) {
+            var len = $('th', this).length;
+            var h_trh = $(this).outerHeight();
+            var vleft = 0;
+            var vright = 0;
+            $('th', this).each(function (i, val) {
+                if (i < left) {
+                    var w_th = $('th:nth(' + i + ')', $('#' + tblid + ' thead tr:nth(2)')).outerWidth() >
+                            $(this).outerWidth() ? $('th:nth(' + i + ')', $('#' + tblid + ' thead tr:nth(2)')).outerWidth()
+                            : $(this).outerWidth();
+                    $(this).css({height: h_trh, width: w_th, left: vleft});
+                    vleft = vleft + w_th;
+                    vmarginleft = vleft;
+                } else if (i >= (len - right)) {
+                    var w_th = $('th:nth(' + i + ')', $('#' + tblid + ' thead tr:nth(2)')).outerWidth() >
+                            $(this).outerWidth() ? $('th:nth(' + i + ')', $('#' + tblid + ' thead tr:nth(2)')).outerWidth()
+                            : $(this).outerWidth();
+                    $(this).css({height: h_trh, width: w_th, right: vright});
+                    vright = vright + w_th;
+                    vmarginright = vright;
+                }
+            });
+        });
+
+        $('tr', tbl).each(function (ix, ox) {
+            var len = $('td,th', this).length;
+            $('td,th', this).each(function (i, val) {
+                if (i < left) {
+                    $(this).addClass('sfc341fixedLCol');
+                } else if (i >= (len - right)) {
+                    $(this).addClass('sfc341fixedRCol');
+                }
+            });
+        });
+
+        $('#' + tblid).parent().css({marginLeft: vmarginleft, marginRight: vmarginright});
+    }
+
+    function ahmmosfc341ExportExcel(obj) {
+        _fw_validation_clear(obj);
+
+        let params
+        if (roleUser.trim() === 'RO_MONITORING_BATT_OEM') {
+            params = {
+                //Filter Panel
+                "PLANT": $('#ahmmosfc341plantId').val().trim(),
+
+                //Filter Table
+                "SRN": $('#ahmmosfc341srn').val().trim(),
+                "CATEGORY": $('#ahmmosfc341category').val().trim(),
+                "SRCACC": $('#ahmmosfc341srcacc').val().trim(),
+                "KUMAMOTO": $('#ahmmosfc341kumamotonumprod').val(),
+                "PALLETNUM": $('#ahmmosfc341palletnumprod').val().trim(),
+                "PRODDATE": $('#ahmmosfc341prdaccdateprod').val().trim(),
+                "EXACCDATE": $('#ahmmosfc341exaccdateprod').val().trim(),
+                "DURATION": $('#ahmmosfc341durationprod').val().trim(),
+                "PONO": $('#ahmmosfc341ponumprod').val().trim(),
+                "SUPPID": $('#ahmmosfc341suppidprod').val().trim(),
+                "VENDDESC": $('#ahmmosfc341venddescprod').val().trim(),
+                "MATDOC": $('#ahmmosfc341matdocprod').val().trim(),
+                "LASTSTATUS": $('#ahmmosfc341laststtsprod').val().trim(),
+                "RECPLANT": $('#ahmmosfc341recplantprod').val().trim(),
+                "RECSLOC": $('#ahmmosfc341recslocprod').val().trim(),
+                "DELSLOC": $('#ahmmosfc341delslocprod').val().trim(),
+                "INPUTIN": $('#ahmmosfc341inputinprod').val().trim(),
+                "DELNUM": $('#ahmmosfc341delnumprod').val().trim(),
+                "DELPLANT": $('#ahmmosfc341delplantprod').val().trim(),
+                "PARTNUM": $('#ahmmosfc341partnumprod').val().trim(),
+                "PARTDESC": $('#ahmmosfc341partdescprod').val().trim(),
+                "INPUTOUT": $('#ahmmosfc341inputoutprod').val().trim(),
+                "SHPLISTNUM": $('#ahmmosfc341shplistnumprod').val().trim(),
+                "SLDATE": $('#ahmmosfc341sldateprod').val().trim(),
+                "ACCVOC": $('#ahmmosfc341accvocprod').val().trim(),
+                "TXNID": $('#ahmmosfc341txnidprod').val().trim(),
+                "TXNDATE": $('#ahmmosfc341txndateprod').val().trim(),
+                "VCREA": $('#ahmmosfc341vcreaprod').val().trim(),
+                "TXSTATUS": $('#ahmmosfc341txstatusprod').val().trim(),
+                "TRUCKNUM": $('#ahmmosfc341trucknumprod').val().trim(),
+                "EXPID": $('#ahmmosfc341expidprod').val().trim(),
+                "EXPDESC": $('#ahmmosfc341expdescprod').val().trim(),
+                "MDCODE": $('#ahmmosfc341mdcodeprod').val().trim(),
+                "MDNAME": $('#ahmmosfc341mdnameprod').val().trim(),
+                "FLGCHANGE": $('#ahmmosfc341flagchargeprod').val().trim(),
+                "LASTCHARGEDATE": $('#ahmmosfc341lastchargedateprod').val().trim(),
+                "ASNNUM": $('#ahmmosfc341asnnumprod').val().trim(),
+                "BOXNUM": $('#ahmmosfc341boxnumprod').val().trim(),
+                "PACKNUM": $('#ahmmosfc341packnumprod').val().trim(),
+                "CARTONNUM": $('#ahmmosfc341cartonnumprod').val().trim(),
+                "SLNUM": $('#ahmmosfc341slnumprod').val().trim(),
+
+                "ROLES": roleUser.trim()
+            };
+        } else if (roleUser.trim() === 'RO_MONITORING_BATT_REM') {
+            params = {
+                //Filter Panel
+                "PLANT": $('#ahmmosfc341plantId').val().trim(),
+
+                //Filter Table
+                "SRN": $('#ahmmosfc341srn').val().trim(),
+                "CATEGORY": $('#ahmmosfc341category').val().trim(),
+                "SRCACC": $('#ahmmosfc341srcacc').val().trim(),
+                "KUMAMOTO": $('#ahmmosfc341kumamotonummkt').val(),
+                "PALLETNUM": $('#ahmmosfc341palletnummkt').val().trim(),
+                "PRODDATE": $('#ahmmosfc341prdaccdatemkt').val().trim(),
+                "EXACCDATE": $('#ahmmosfc341exaccdatemkt').val().trim(),
+                "DURATION": $('#ahmmosfc341durationmkt').val().trim(),
+                "LASTSTATUS": $('#ahmmosfc341laststtsmkt').val().trim(),
+                "RECPLANT": $('#ahmmosfc341recplantmkt').val().trim(),
+                "RECSLOC": $('#ahmmosfc341recslocmkt').val().trim(),
+                "SHPLISTNUM": $('#ahmmosfc341shplistnummkt').val().trim(),
+                "ACCVOC": $('#ahmmosfc341accvocmkt').val().trim(),
+                "TXNID": $('#ahmmosfc341txnidmkt').val().trim(),
+                "TXNDATE": $('#ahmmosfc341txndatemkt').val().trim(),
+                "VCREA": $('#ahmmosfc341vcreamkt').val().trim(),
+                "TXSTATUS": $('#ahmmosfc341txstatusmkt').val().trim(),
+                "TRUCKNUM": $('#ahmmosfc341trucknummkt').val().trim(),
+                "EXPID": $('#ahmmosfc341expidmkt').val().trim(),
+                "EXPDESC": $('#ahmmosfc341expdescmkt').val().trim(),
+                "MDCODE": $('#ahmmosfc341mdcodemkt').val().trim(),
+                "MDNAME": $('#ahmmosfc341mdnamemkt').val().trim(),
+                "SLDATE": $('#ahmmosfc341sldatemkt').val().trim(),
+                "FLGCHANGE": $('#ahmmosfc341flagchargemkt').val().trim(),
+                "LASTCHARGEDATE": $('#ahmmosfc341lastchargedatemkt').val().trim(),
+
+                "RECMDDATE": $('#ahmmosfc341recmddatemkt').val().trim(),
+                "MDOUTDATE": $('#ahmmosfc341mdoutdatemkt').val().trim(),
+                "DLRCODE3": $('#ahmmosfc341dlrcode3mkt').val().trim(),
+                "DLRDESCMDOUT": $('#ahmmosfc341dlrdescmdoutmkt').val().trim(),
+                "RECDLRDATE": $('#ahmmosfc341recdlrdatemkt').val().trim(),
+                "DLRCODE4": $('#ahmmosfc341dlrcode4mkt').val().trim(),
+                "DLRDESCREC": $('#ahmmosfc341dlrdescrecmkt').val().trim(),
+                "BAST": $('#ahmmosfc341bastmkt').val().trim(),
+                "BASTDATE": $('#ahmmosfc341bastdatemkt').val().trim(),
+                "FRMNO": $('#ahmmosfc341frmnomkt').val().trim(),
+                "ENGNO": $('#ahmmosfc341engnomkt').val().trim(),
+                "TYPECODE": $('#ahmmosfc341typecodemkt').val().trim(),
+                "COLOR": $('#ahmmosfc341colormkt').val().trim(),
+                "DLRCODEFIN": $('#ahmmosfc341dlrcodefinmkt').val().trim(),
+                "DLRDESC": $('#ahmmosfc341dlrdescmkt').val().trim(),
+                "PHONE": $('#ahmmosfc341phonemkt').val().trim(),
+                "NAME": $('#ahmmosfc341namemkt').val().trim(),
+                "ASNNUM": $('#ahmmosfc341asnnummkt').val().trim(),
+                "BOXNUM": $('#ahmmosfc341boxnummkt').val().trim(),
+                "PACKNUM": $('#ahmmosfc341packnummkt').val().trim(),
+                "CARTONNUM": $('#ahmmosfc341cartonnummkt').val().trim(),
+                "SLNUM": $('#ahmmosfc341slnummkt').val().trim(),
+
+                "ROLES": roleUser.trim()
+            };
+        }
+        if ($('#ahmmosfc341status').val().trim() === 'IN AHM') {
+            params = {
+                ...params, "STATUSIN": "IN"
+            }
+        } else {
+            params = {
+                ...params, "STATUS": $('#ahmmosfc341status').val().trim()
+            }
+        }
+        var exportUrl = ahmmosfc341Url + 'export-excel?' + $.param(params) + "&SORT=" + sort + "&ORDER=" + order + "&JXID=" + encodeURIComponent(getJxid());
+
+        var win = window.open(exportUrl, '_blank');
+        win.focus();
+
+    }
+
+    function ahmmosfc341DownloadHistory(obj) {
+        _fw_validation_clear(obj);
+        const checkSelection = $("#ahmmosfc341SearchTable").bootstrapTable("getSelections")[0];
+        if (checkSelection) {
+            const dataSelection = $("#ahmmosfc341SearchTable").bootstrapTable("getSelections");
+            var srnNum = [];
+            dataSelection.forEach((val, index) => {
+                srnNum[index] = val.srnnum;
+            });
+
+            var exportUrl = ahmmosfc341Url + 'download-log?' + "ROLES=" + roleUser.trim() + "&SRN=" + srnNum + "&JXID=" + encodeURIComponent(getJxid());
+
+            var win = window.open(exportUrl, '_blank');
+            win.focus();
+        } else {
+            _fw_setMessage(obj, 0, "Pilih salah satu data!");
+        }
+    }
+
+</script>

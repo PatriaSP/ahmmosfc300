@@ -1,0 +1,303 @@
+<style>
+    #AHMMOSFC316 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc316p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc316p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc316p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC316" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+    <div id="ahmmosfc316p01" class="subpage subpage-default" data-path="Report Progress Produksi Unit">
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc316p01DateFrom" class="col-sm-6 control-label">
+                            Begin Period <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group date" id="ahmmosfc301p01DateToGroup">
+                                <input id="ahmmosfc316p01DateFrom" name="ahmmosfc316p01DateFrom" type="text" placeholder="dd-mmm-yyyy" class="form-control" maxlength="11"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc316p01DateTo" class="col-sm-6 control-label">
+                            End Period <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group date" id="ahmmosfc301p01DateToGroup">
+                                <input id="ahmmosfc316p01DateTo" name="ahmmosfc316p01DateTo" type="text" placeholder="dd-mmm-yyyy" class="form-control" maxlength="11"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc316p01MCTYpeStat" class="col-sm-6 control-label">
+                            M/C Type ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc316/get-lov-mctype"
+                                 data-lookup-pre-func="ahmmosfc316p01MCTypeLookup" 
+                                 data-columns='[{"id":"vmctypeid","name":"M/C Type Id","visible":"true","sortable":"true"},
+                                 {"id":"vmcdesc","name":"M/C Type Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc316p01MCTYpeStat":"vmctypeid", "ahmmosfc316p01MCTYpeStatDesc":"vmcdesc"}'>
+                                <input id="ahmmosfc316p01MCTYpeStat" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc316p01MCTYpeStatDesc" class="col-sm-6 control-label">
+                            M/C Type  Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc316p01MCTYpeStatDesc" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font row">
+                        <label for="ahmmosfc316p01ColorIdStat" class="col-sm-6 control-label">
+                            Color ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc316/get-lov-color"
+                                 data-lookup-pre-func="ahmmosfc316p01ColorLookup" 
+                                 data-columns='[{"id":"vcolorid","name":"Color ID","visible":"true","sortable":"true"},
+                                 {"id":"vcolordesc","name":"Color Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc316p01ColorIdStat":"vcolorid", "ahmmosfc316p01ColorIdStatDesc":"vcolordesc"}'>
+                                <input id="ahmmosfc316p01ColorIdStat" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc316p01ColorIdStatDesc" class="col-sm-6 control-label">
+                            Color  Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc316p01ColorIdStatDesc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc316p01Plant" class="col-sm-6 control-label">
+                            Plant Id 
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc316p01Plant" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font row">
+                        <label for="ahmmosfc316p01WctIdStat" class="col-sm-6 control-label">
+                            WCT ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc316/get-lov-wct"
+                                 data-lookup-pre-func="ahmmosfc316p01WctLookup" 
+                                 data-columns='[{"id":"vkodewct","name":"Kode WCT","visible":"true","sortable":"true"},
+                                 {"id":"vwctdesc","name":"Wct Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc316p01WctIdStat":"vkodewct", "ahmmosfc316p01WctIdStatDesc":"vwctdesc"}'>
+                                <input id="ahmmosfc316p01WctIdStat" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc316p01WctIdStatDesc" class="col-sm-6 control-label">
+                            WCT Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc316p01WctIdStatDesc" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc316p01Report(this)">
+                            <i class="glyphicon glyphicon-cog fg-white"></i> Run Report</button>
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc316p01ResetBtn(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END HEADER-->
+
+<script type="text/javascript">
+    var offsetUnitLoad = 0;
+    var ahmmosfc316ParamsTable = [];
+    var ahmmosfc316Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc316/';
+    $(document).ready(function () {
+        ahmmomsc316GetPlant();
+        
+    });
+
+    function AHMMOMSC316p01TableNumbering(obj, row, index) {
+        return offsetTable + index + 1;
+    }
+
+    function ahmmosfc316p01_Filter(event) {
+        console.log(event.keyCode);
+        _fw_validation_clear($('#ahmgawms018p01_search_table'));
+        if (event.keyCode === 13) {
+            console.log("masuk sini");
+            $('#ahmmosfc316p01SearchTable').bootstrapTable('refresh');
+
+        }
+    }
+
+    function ahmmomsc316GetPlant() {
+        _fw_post(ahmmosfc316Url + 'get-lov-plant', null, function (data) {
+            if (data.status === '1') {
+                init316DropdownListPlant('ahmmosfc316p01', 'ahmmosfc316p01Plant', data.data);
+            }
+        });
+    }
+
+    function init316DropdownListPlant(subpage, idInput, value) {
+        console.log(value)
+        console.log(subpage)
+        var $page = $("#" + subpage).find("#" + idInput);
+        if (value.length > 0) {
+
+            $page.append('<option value="">ALL</option>');
+            value.forEach(function (item, index) {
+
+                $page.append('<option value=' + item.vplantid + '>' + item.vplantdesc + '</option>');
+            });
+
+        }
+    }
+
+    function ahmmosfc316p01WctLookup(params) {
+        params.search = {
+            plantid: $("#ahmmosfc316p01Plant").val(),
+            wctid: $("#ahmmosfc316p01WctIdStat").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+    function ahmmosfc316p01MCTypeLookup(params) {
+        params.search = {
+            mctypeid: $("#ahmmosfc316p01MCTYpeStat").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc316p01ColorLookup(params) {
+        params.search = {
+            colorid: $("#ahmmosfc316p01ColorIdStat").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+
+//    VALIDASI SEARCH
+
+//    BUTTON SEARCH
+    function ahmmosfc316p01Report(obj) {
+        _fw_validation_clear(obj);
+        let dayDiff = _fw_dayDiff($('#ahmmosfc316p01DateFrom').val(), $('#ahmmosfc316p01DateTo').val());
+        _fw_validation_add(obj, 'ahmmosfc316p01DateFrom', 'required');
+        _fw_validation_add(obj, 'ahmmosfc316p01DateTo', 'required');
+        if (_fw_validation_validate(obj)) {
+            if (dayDiff < 0) {
+                _fw_setMessage(obj, 0, ' Date To must be equal or more than Date From');
+            }else{
+                var dateFrom = $('#ahmmosfc316p01DateFrom').val()
+                var dateTo = $('#ahmmosfc316p01DateTo').val()
+                var wctid = $('#ahmmosfc316p01WctIdStat').val()
+                var plantid = $('#ahmmosfc316p01Plant').val()
+                var mctypeid = $('#ahmmosfc316p01MCTYpeStat').val()
+                var colorid = $('#ahmmosfc316p01ColorIdStat').val()   
+                var JXID = getJxid();
+
+                var dateFrom = dateFrom? encodeURIComponent(dateFrom) : '';
+                var dateTo = dateTo? encodeURIComponent(dateTo) : '';
+                var wctid = wctid? encodeURIComponent(wctid) : '';
+                var plantid = plantid? encodeURIComponent(plantid) : '';
+                var mctypeid = mctypeid? encodeURIComponent(mctypeid) : '';
+                var colorid = colorid? encodeURIComponent(colorid) : '';
+                var JXID = JXID? encodeURIComponent(JXID) : '';
+
+                var url = ahmmosfc316Url + "generate-pdf?"
+                + "JXID=" + JXID
+                + "&dateFrom=" + dateFrom
+                + "&dateTo=" + dateTo
+                + "&wctid=" + wctid
+                + "&plantid=" + plantid
+                + "&mctypeid=" + mctypeid
+                + "&colorid=" + colorid
+
+                // Membuka URL di jendela baru
+                var win = window.open(url, '_blank');
+                win.focus();
+            }
+        } else {
+            _fw_setMessage(obj, 0, data.message.m);
+        }
+    }
+    
+
+    function ahmmosfc316p01ResetBtn(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc316p01"));
+    }
+
+</script>

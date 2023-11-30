@@ -1,0 +1,164 @@
+<div id="AHMMOSFC303" class="div-app" data-version="1.0">
+    <link rel="stylesheet" href="/imo05/ahmmosfc300-ahs/resources/css/AHMMOSFC303.css">
+    <div class="global_message">
+    </div>
+
+    <div id="ahmmosfc303p01" class="subpage subpage-default" data-path="Scan Receiving Part">
+        <div class="panel">
+            <div class="panel-body">
+                <div  class="row form-filter-panel" id="ahmmosfc303p01formarea">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group" id="ahmmosfc303_groupdelcode">
+                                    <label for="ahmmosfc303p01_delivertycodeid" class="col-xs-12 col-sm-3 control-label">Delivery Code<span style="color: red;">*</span></label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-5">
+                                        <div class="lookup flex flex-stretch" id="ahmmosfc303_delLov"
+                                             data-lookup-pre-func="ahmmosfc303p01_lookupDelCode"
+                                             data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc303/get-lov-delcode"
+                                             data-query-params-type="limit" 
+                                             data-columns='[
+                                             {"id":"delcode","name":"Delivery Code","visible":"true","sortable":"true"},
+                                             {"id":"description","name":"WCT","visible":"true","sortable":"true"},
+                                             {"id":"vid","name":"Transaction Type","visible":"false","sortable":"false"}
+                                             ]' 
+                                             data-callback='{"ahmmosfc303p01_delivertycodeid":"vid","ahmmosfc303p01_delivertycode":"delcode"}'
+                                             >
+                                            <input id="ahmmosfc303p01_delivertycode" class="form-control input-lookup" placeholder="Delivery Code..">
+                                            <input id="ahmmosfc303p01_delivertycodeid" class="form-control input-lookup" type="hidden">
+                                            <button class="btn btn-default btn-lookup" type="button"><i class="glyphicon glyphicon-search"></i> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc303p01_oprid" class="col-xs-12 col-sm-3 control-label">Operator ID<span style="color: red;">*</span></label>
+                                    <div  class="lookup-wrapper col-xs-12 col-sm-5">
+                                        <div  class="lookup" 
+                                              data-lookup-pre-func="ahmmosfc303p01_lookupOperator"
+                                              data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc303/get-lov-nrp"
+                                              data-query-params-type="limit"
+                                              data-columns='[
+                                              {"id":"idnrp", "name":"Nrp","visible":"false","sortable": "true"},
+                                              {"id":"name", "name":"Name","visible":"false","sortable": "true"}
+                                              ]'
+                                              data-callback='{
+                                              "ahmmosfc303p01_nrpdesc":"name"
+                                              }'
+                                              >                                            
+                                            <input id="ahmmosfc303p01_oprid" class="form-control input-lookup" maxlength="7" placeholder="Type Operator ID" onkeyup="ahmmosfc303_triggerSearchbyEnter(event,this)" type="password"   />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc303p01_nrpdesc" class="col-xs-12 col-sm-3 control-label">Operator Name</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-6">
+                                        <input id="ahmmosfc303p01_nrpdesc" class="form-control" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label class="col-xs-12 col-sm-3 control-label">Action</label>
+                                    <div class="col-xs-12 col-sm-3">
+                                        <div class="switch-field">
+                                            <input type="radio" id="ahmmosfc303_switchreceivebypart" name="ahmmosfc303switchlayout" value="part" checked/>
+                                            <label for="ahmmosfc303_switchreceivebypart">Receive By Part Number</label>
+                                            <input type="radio" id="ahmmosfc303_switchreceivebykereta" name="ahmmosfc303switchlayout" value="kereta" />
+                                            <label for="ahmmosfc303_switchreceivebykereta">Receive By ID Kereta</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row filter-buttons p-0-im">
+                                    <div class="col-xs-6 form-group-button">
+                                        <div class="flex flex-top no-wrap">
+                                            <div class="w-100 text-left">
+                                                <button class="btn btn-primary" id="ahmmosfc303p01_search_btn" onclick="ahmmosfc303_GetScanReceiveData(this)">
+                                                    <div class="flex flex-middle no-wrap">
+                                                        <i class="fa fa-search fg-white mr-10"></i>Search
+                                                    </div>
+                                                </button>
+                                                 <button class="btn btn-warning" id="ahmmosfc303p01_reset_btn" onclick="ahmmosfc303_ResetField('ahmmosfc303p01formarea')">
+                                                    <div class="flex flex-middle no-wrap">
+                                                        <i class="fa fa-refresh fg-white mr-10"></i>Reset
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ahmmosfc303_tablereceiveareabypartnumber" >
+                    <div id="ahmmosfc303_receivebypartnumberlabel"><h5>SCAN RECEIVING PART by Part Number</h5></div>
+                    <table id="ahmmosfc303_tablereceivebypart" class="table"
+                           data-method="post"
+                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc303/get-search"
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-query-params="ahmmosfc303p01_table_paramSearch"
+                           data-response-handler="ahmmosfc303_ResponseHandler"
+                           data-query-params-type="limit"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-checkbox-header="true"
+                           >
+                        <thead>
+                            <tr>
+                                <th data-sortable="true" data-field="partnum" data-align="center"
+                                    data-valind="center">Part Number</th>
+                                <th data-sortable="true" data-field="partdesc" data-align="center"
+                                    data-valind="center">Part Description</th>
+                                <th data-sortable="true" data-field="qty" data-align="center"
+                                    data-valind="center">Qty</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="ahmmosfc303_tablereceiveareabyidkreta" hidden>
+                    <div id="ahmmosfc303_receivebypartnumberlabel"><h5>SCAN RECEIVING PART by ID Kereta</h5></div>
+                    <table id="ahmmosfc303_tablereceivebyidkreta" class="table"
+                           data-method="post"
+                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc303/get-search"
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-query-params="ahmmosfc303p01_table_param2Search"
+                           data-response-handler="ahmmosfc303_ResponseHandler"
+                           data-query-params-type="limit"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-checkbox-header="true">
+                        <thead>
+                            <tr>
+                                <th data-sortable="true" data-field="vkrtid" data-align="center"
+                                    data-valind="center">ID Kereta</th>
+                                <th data-sortable="true" data-field="partnum" data-align="center"
+                                    data-valind="center">Part Number</th>
+                                <th data-sortable="true" data-field="partdesc" data-align="center"
+                                    data-valind="center">Part Description</th>
+                                <th data-sortable="true" data-field="qty" data-align="center"
+                                    data-valind="center">Qty</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer" id="ahmmosfc303submitbtnarea">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="flex flex-top no-wrap">
+                            <div class="w-100 text-left">
+                                <button class="btn btn-primary" id="ahmmosfc303p01_submit_btn" onclick="ahmmosfc303_SubmitReceive(this)" disabled>
+                                    <div class="flex flex-middle no-wrap">
+                                        <i class="glyphicon glyphicon-floppy-disk fg-white mr-10"></i>Submit
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC303.js"></script>
+</div>

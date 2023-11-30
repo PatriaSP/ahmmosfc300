@@ -1,0 +1,1052 @@
+<style>
+    #ahmmosfc338p03TableSerialNumber {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid grey;
+    }
+
+    #ahmmosfc338p03TableSerialNumber thead,
+    #ahmmosfc338p03TableSerialNumber tbody {
+        display: block;
+    }
+
+    #ahmmosfc338p03TableSerialNumber thead {
+        position: sticky;
+        top: 0;
+        background-color: #f0f0f0;
+    }
+
+    #ahmmosfc338p03TableSerialNumber tbody {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    #ahmmosfc338p03TableSerialNumber tr {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+    }
+
+    #ahmmosfc338p03TableSerialNumber th,
+    #ahmmosfc338p03TableSerialNumber td {
+        flex: 1;
+        padding: 5px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+<div id="AHMMOSFC338" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+
+    <!--PAGE 1-->
+    <div id="ahmmosfc338p01" class="subpage subpage-default" data-path="Scan In REM">
+        <div style="margin: auto; float: none" class="col-lg-5">
+            <div class="row form-panel form-horizontal">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-log-in fg-green"></i><span>IN Transaction S/N part Accessories
+                            (REM)</span></h6>
+                </div>
+                <div class="panel-body" style="padding-left : 50px">
+                    <div class="col-md-12">
+                        <div class="form-group large-font">
+                            <div class="col-sm-3">
+                                <label for="ahmmosfc338p01Nrplbl" class="control-label">Nrp Operator <span
+                                        style="color: red">*</span></label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="ahmmosfc338p01Nrp" class="form-control" id="ahmmosfc338p01Nrp"
+                                    onkeypress="ahmmosfc338p01Submit(this, event)" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <div class="col-sm-3">
+                                <label for="ahmmosfc338p01Sloclbl" class="control-label"> Sloc ID</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="ahmmosfc338p01Sloc" id="ahmmosfc338p01Sloc" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <!--BUTTON-->
+                        <div class="form-group-button" style="text-align: center">
+                            <button id="ahmmosfc338p01_submit" class="btn large_button btn-primary"
+                                onclick="ahmmosfc338p01Login(this, event)">
+                                <i class="glyphicon glyphicon-log-in fg-white"></i> Submit
+                            </button>
+                            <button id="ahmmosfc338p02_reset" class="btn large_button btn-danger"
+                                onclick="ahmmosfc338p01Reset(this)">
+                                <i class="glyphicon glyphicon-refresh fg-white"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Page 2-->
+    <div id="ahmmosfc338p02" class="subpage col-md-7" style="margin: auto; float: none"
+        data-path="Scan In REM/Transaction Header">
+        <div class="row form-panel">
+            <div class="panel-heading">
+                <h6 style="padding-left: 20px"><span>IN Transaction S/N part Accessories</span></h6>
+            </div>
+            <div class="panel-body ">
+                <div class="row" style="width: 80%;margin: auto;">
+                    <form class="form-horizontal">
+                        <div class="col-md-12">
+                            <div class="form-group large-font ">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc338p02TransDate" class="control-label">Transaction Date</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc338p02TransDate" name="ahmmosfc338p02TransDate"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc338p02TransType" class="control-label"> Transaction Type</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc338p02TransType" name="ahmmosfc338p02TransType"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc338p02TransID" class="control-label">Transaction ID</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc338p02TransID" name="ahmmosfc338p02TransID" class="form-control"
+                                        disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc338p02Status" class="control-label">Status</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc338p02Status" name="ahmmosfc338p02SlocID" class="form-control"
+                                        disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc338p02SlocIDlbl" class="control-label">Sloc ID</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc338p02SlocID" name="ahmmosfc338p02SlocID" class="form-control"
+                                        disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font" style="margin-top: 3rem">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc338p02InputASNNo"> ASN No. <span
+                                            class="text-danger">*</span></label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc338p02InputASNNo" name="ahmmosfc338p02InputASNNo"
+                                        class="form-control" onkeypress="ahmmosfc338p02btnASNInput(this, event)" />
+                                </div>
+                            </div>
+                            <div id="ahmmosfc338p02CloseTxbyUserDiv" class="form-group large-font"
+                                style="margin-top: 2rem; display: none;">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-7">
+                                    <div style="display: flex; align-items: center; margin-right: 8px">
+                                        <input type="checkbox" id="ahmmosfc338p02CloseTxbyUser"
+                                            name="ahmmosfc338p02CloseTxbyUser" style="margin: 0px" disabled
+                                            onclick="ahmmosfc338p02CloseTxbyUserOnClick(this, event)">
+                                        <label for="ahmmosfc338p02CloseTxbyUser"
+                                            style="margin-left: 4px; margin-bottom: 0px">Close Transaction by
+                                            User</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--TABLE PANEL 2-->
+                <div class="row" style="width: 100%; margin-top: 3rem">
+                    <table id="ahmmosfc338p02table" data-method="post"
+                        data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc338/get-asn-detail"
+                        data-content-type="application/json" data-data-type="json"
+                        data-query-params="ahmmosfc338p02TableParam" data-response-handler="ahmmosfc338ResponseHandler"
+                        data-pagination="true" data-init-callback="ahmmosfc338p02tableInitCallback">
+                        <thead>
+                            <tr>
+                                <th data-visible="true" data-sortable="false" data-align="center"
+                                    data-formatter="ahmmosfc338p02rowNumFormatter"> No. </th>
+                                <th data-visible="true" data-sortable="false" data-align="center" data-field="pono">
+                                    PO No.
+                                </th>
+                                <th data-visible="true" data-sortable="false" data-align="center" data-field="partNum">
+                                    Part Number
+                                </th>
+                                <th data-visible="true" data-sortable="false" data-align="center" data-field="partDesc">
+                                    Part Desc
+                                </th>
+                                <th data-visible="true" data-sortable="false" data-align="right" data-halign="center"
+                                    data-field="totalQty">
+                                    Total Qty
+                                </th>
+                                <th data-visible="true" data-sortable="false" data-align="right" data-halign="center"
+                                    data-formatter="ahmmosfc338p02InputQty">
+                                    Input Qty
+                                </th>
+                                <th data-visible="true" data-sortable="false" data-align="center"
+                                    data-formatter="ahmmosfc338p02ActionTable">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="form-group-button" style="text-align: center">
+                    <button id="ahmmosfc338p02BackBtn" class="btn large_button btn-primary"
+                        onclick="ahmmosfc338p02toPage01(this)">
+                        <i class="glyphicon glyphicon-arrow-left fg-white"></i> Back
+                    </button>
+                    <button id="ahmmosfc338p02SaveBtn" class="btn large_button btn-success"
+                        onclick="ahmmosfc338btnSave(this)" style="display: none;">
+                        <i class="glyphicon glyphicon-saved fg-white"></i> Save
+                    </button>
+                    <button id="ahmmosfc338p02ResetBtn" class="btn large_button btn-danger"
+                        onclick="ahmmosfc338p02ResetBtn(this)">
+                        <i class="glyphicon glyphicon-refresh fg-white"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Page 3-->
+    <div id="ahmmosfc338p03" class="subpage col-md-4" style="margin: auto; float: none"
+        data-path="Scan In REM/Transaction Header/Transaction Detail">
+        <div class="row form-panel">
+            <div class="panel-heading">
+                <h6 style="padding-left: 20px"><span>Detail IN Transaction S/N part Accessories</span></h6>
+            </div>
+            <div class="panel-body ">
+                <div class="row" style="width: 80%;margin: auto;">
+                    <form class="form-horizontal">
+                        <div class="col-md-12">
+                            <div class="form-group large-font ">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03TransDate" class="control-label">Transaction Date</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03TransDate" name="ahmmosfc338p03TransDate"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03TransType" class="control-label"> Transaction Type</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03TransType" name="ahmmosfc338p03TransType"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03TransID" class="control-label">Transaction ID</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03TransID" name="ahmmosfc338p03TransID" class="form-control"
+                                        disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03SlocID" class="control-label">Sloc ID</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03SlocID" name="ahmmosfc338p03SlocID" class="form-control"
+                                        disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputASNNo"> ASN No</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputASNNo" name="ahmmosfc338p03InputASNNo"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputPONo"> PO No </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputPONo" name="ahmmosfc338p03InputPONo"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputSupplierId"> Supplier ID </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputSupplierId" name="ahmmosfc338p03InputSupplierId"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputSupplierDesc"> Supplier Desc </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputSupplierDesc" name="ahmmosfc338p03InputSupplierDesc"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputPartNum"> Part Number </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputPartNum" name="ahmmosfc338p03InputPartNum"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputPartDesc"> Part Desc </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputPartDesc" name="ahmmosfc338p03InputPartDesc"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputPartType">Part Type </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputPartType" name="ahmmosfc338p03InputPartType"
+                                        class="form-control" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputTotalQty"> Total Qty </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputTotalQty" name="ahmmosfc338p03InputTotalQty"
+                                        class="form-control text-right" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputInputQty"> Input Qty </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputInputQty" name="ahmmosfc338p03InputInputQty"
+                                        class="form-control text-right" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-4">
+                                    <label for="ahmmosfc338p03InputSerialNum"> Scan SN </label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input id="ahmmosfc338p03InputSerialNum" name="ahmmosfc338p03InputSerialNum"
+                                        onkeypress="ahmmosfc338p03btnInputSerialNum(this, event)"
+                                        class="form-control" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group large-font">
+                            <div class="col-sm-4">
+                                <label for="ahmmosfc338p03InputSerialNum"> Serial Number</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <table id="ahmmosfc338p03TableSerialNumber">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group-button" style="text-align: center">
+                    <button id="ahmmosfc338p03SaveBtn" class="btn large_button btn-success"
+                        onclick="ahmmosfc338p03Submit(this)">
+                        <i class="glyphicon glyphicon-saved fg-white"></i> Save
+                    </button>
+                    <button id="ahmmosfc338p03BackBtn" class="btn large_button btn-primary"
+                        onclick="ahmmosfc338p03toPage02(this)">
+                        <i class="glyphicon glyphicon-arrow-left fg-white"></i> Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let ahmmosfc338Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc338/';
+    let offsetUnitLoad = 0;
+    let txnObject = {};
+    let selectedSloc;
+    let canSave = false;
+    let initialCloseByUser;
+    let dataModified = false;
+    let closeByUserModified = false;
+    const enterEvent = new KeyboardEvent('keydown', {
+        code: 'Enter',
+        key: 'Enter',
+        charCode: 13,
+        keyCode: 13,
+        view: window,
+        bubbles: true
+    });
+
+    function ahmmosfc338TxnObjectSerialNumExists(pSerialNum) {
+        if (txnObject == {}) {
+            return null
+        }
+        let res = false;
+        for (let poPartsIndex = 0; poPartsIndex < txnObject.poParts.length; poPartsIndex++) {
+            const poPart = txnObject.poParts[poPartsIndex];
+            for (let serialNumIndex = 0; serialNumIndex < poPart.lSerialNumbers.length; serialNumIndex++) {
+                if (poPart.lSerialNumbers[serialNumIndex].serial_number == pSerialNum) {
+                    return true;
+                }
+            }
+        }
+        return res;
+    }
+
+    function ahmmosfc338TxnObjectGetPartNumPrefix(poNo, partNum) {
+        if (txnObject == {}) {
+            return null
+        }
+        let poPart = txnObject.poParts.find((part) => part.pono === poNo && part.partNum === partNum);
+        if (poPart) {
+            return poPart.serialNumPrefix;
+        } else {
+            return null; // Return null if no matching part is found
+        }
+    }
+
+    function ahmmosfc338TxnObjectGetPoPartSerialNum(poNo, partNum) {
+        if (txnObject == {}) {
+            return null
+        }
+        let poPart = txnObject.poParts.find((part) => part.pono === poNo && part.partNum === partNum);
+        if (poPart) {
+            return poPart.lSerialNumbers;
+        } else {
+            return null; // Return null if no matching part is found
+        }
+    }
+
+    function ahmmosfc338TxnObjectSetPoPartSerialNum(poNo, partNum, lSerial) {
+        if (txnObject == {}) {
+            return null
+        }
+        const poPart = txnObject.poParts.find((part) => part.pono === poNo && part.partNum === partNum);
+        if (poPart) {
+            poPart.lSerialNumbers = lSerial;
+            poPart.inputQty = lSerial.length;
+            return true; // Return true to indicate success
+        } else {
+            return false; // Return false to indicate that no matching part was found
+        }
+    }
+
+    function ahmmosfc338p01Submit(obj, e) {
+        valid = false;
+        if (e.keyCode === 13) {
+            ahmmosfc338p01Login(obj, e)
+        }
+    }
+
+    function ahmmosfc338p01Login(obj, e) {
+        let in_obj = $("#ahmmosfc338p01Nrp")
+        _fw_validation_clear(in_obj)
+        if ($('#ahmmosfc338p01Nrp').val() == "") {
+            $('#ahmmosfc338p01Nrp').closest('.form-group').addClass('has-error has-feedback')
+            _fw_setMessage(in_obj, 0, " NRP Operator Tidak boleh kosong");
+            return valid;
+        }
+        $('#ahmmosfc338p01Sloc').val("");
+        let pNrp = $('#ahmmosfc338p01Nrp').val()
+        var param = {
+            search: {
+                nrpOpr: pNrp
+            }
+        };
+
+        _fw_post(ahmmosfc338Url + "get-sloc", param, function (data) {
+            if (data.status != '1') {
+                $('#ahmmosfc338p01Nrp').closest('.form-group').addClass('has-error has-feedback')
+                if (data.message.error_code == "NRP_NOT_FOUND") {
+                    _fw_setMessage(in_obj, 0, `NRP ${pNrp} belum terdaftar.`);
+                } else {
+                    _fw_setMessage(in_obj, 0, data.message);
+                }
+                return valid;
+            }
+            let nrpSlocMap = data.message.nrpSlocMap
+            selectedSloc = nrpSlocMap.vitemname
+            $('#ahmmosfc338p01Nrp').val(nrpSlocMap.vitemcode);
+            $('#ahmmosfc338p01Sloc').val(nrpSlocMap.vitemname);
+            valid = true
+            let newDate = new Date();
+            let dateNow = simpleDateFormat(newDate);
+            $('#ahmmosfc338p02TransDate').val(dateNow);
+            $('#ahmmosfc338p02TransType').val('IN transaction');
+            $('#ahmmosfc338p02SlocID').val($('#ahmmosfc338p01Sloc').val());
+            _fw_subpage(in_obj, 'ahmmosfc338p02', null);
+            $('#ahmmosfc338p02InputASNNo').focus();
+        });
+    }
+
+    function ahmmosfc338InitTxnObject(data) {
+        if (data.poParts == null) {
+            return null
+        }
+        // poParts masih kosong
+        for (let index = 0; index < data.poParts.length; index++) {
+            let tempList = [];
+            const elements = data.poParts[index];
+            elements.lSerialNumbers.forEach(serialNum => {
+                tempList.push({
+                    serial_number: serialNum,
+                    editable: false
+                })
+            })
+            data.poParts[index].lSerialNumbers = tempList;
+        }
+        txnObject = data;
+        let newDate = new Date();
+        let dateNow = simpleDateFormat(newDate);
+        if (dateNow == txnObject.txnDate && (txnObject.status == "PARTIAL" || txnObject.status == null)) {
+            canSave = true;
+            initialCloseByUser = false;
+        }
+        if (txnObject.status == "CLOSE User") {
+            initialCloseByUser = true;
+        }
+        $('#ahmmosfc338p02table').bootstrapTable("refresh");
+    }
+
+    function ahmmosfc338ValidateASNNo(pAsnNo) {
+        return new Promise((resolve, reject) => {
+            var param = {
+                search: {
+                    ASNNo: pAsnNo,
+                }
+            };
+            _fw_post(ahmmosfc338Url + "check-ASN-no", param, function (data) {
+                return_data = {
+                    isValid: true,
+                    data: data
+                }
+                if (data.status === '0') {
+                    return_data.isValid = false;
+                }
+                resolve(return_data);
+            });
+        });
+    }
+
+    function ahmmosfc338p02PopulatePage(dataHeader) {
+        let newDate = new Date();
+        let dateNow = simpleDateFormat(newDate);
+
+
+        let txnStatus = dataHeader.status;
+        let txnDate = dataHeader.txnDate;
+
+        $('#ahmmosfc338p02InputASNNo').val(dataHeader.asnNo)
+        $('#ahmmosfc338p02TransID').val(dataHeader.txnID);
+        $('#ahmmosfc338p02TransDate').val(txnDate);
+        $('#ahmmosfc338p02Status').val(txnStatus);
+        ahmmosfc338InitTxnObject(dataHeader);
+        if (dataHeader.slocID != null) {
+            $('#ahmmosfc338p02SlocID').val(dataHeader.slocID);
+        }
+
+        if (txnStatus === "CLOSE User") {
+            $('#ahmmosfc338p02CloseTxbyUser').prop("checked", true);
+        } else {
+            $('#ahmmosfc338p02CloseTxbyUser').prop("checked", false);
+        }
+
+        if (txnStatus === "PARTIAL" && txnDate === dateNow) {
+            $('#ahmmosfc338p02CloseTxbyUser').prop("disabled", false);
+        } else {
+            $('#ahmmosfc338p02CloseTxbyUser').prop("disabled", true);
+        }
+
+        if (txnStatus == "PARTIAL" || txnStatus == "CLOSE User") {
+            $("#ahmmosfc338p02CloseTxbyUserDiv").css("display", "");
+        } else {
+            $("#ahmmosfc338p02CloseTxbyUserDiv").css("display", "none");
+        }
+        $('#ahmmosfc338p02InputASNNo').prop("disabled", true);
+    }
+
+    async function ahmmosfc338p02btnASNInput(obj, event) {
+        let pAsnNo = $('#ahmmosfc338p02InputASNNo').val()
+
+        if (event.keyCode !== 13) {
+            return;
+        }
+
+        $("#ahmmosfc338p02InputASNNo").prop("disabled", true);
+        _fw_validation_clear(obj);
+        if (pAsnNo === "") {
+            $('#ahmmosfc338p02InputASNNo').closest('.form-group').addClass('has-error has-feedback');
+            _fw_setMessage(obj, 0, "ASN No. tidak Boleh kosong");
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        let asnNoValidation = await ahmmosfc338ValidateASNNo(pAsnNo);
+        let data = asnNoValidation.data;
+        if (!asnNoValidation.isValid) {
+            $("#ahmmosfc338p02InputASNNo").prop("disabled", false);
+            $("#ahmmosfc338p02InputASNNo").val("");
+            let error_msg = "Gagal";
+            error_code = data.message.error_code
+            if (error_code == "ASN_NOT_FOUND") {
+                error_msg = `ASN dengan nomor ${pAsnNo} tidak ditemukan`;
+            } else if (error_code == "NO_EV_IN_ASN") {
+                error_msg = `ASN dengan nomor ${pAsnNo} tidak mengadung part EV`;
+            } else {
+                console.log(data)
+            }
+
+            window.scrollTo(0, 0);
+            _fw_setMessage(obj, 0, error_msg);
+            $('#ahmmosfc338p02InputASNNo').closest('.form-group').addClass('has-error has-feedback');
+            $('#ahmmosfc338p02InputASNNo').focus();
+            return;
+        }
+        ahmmosfc338p02PopulatePage(data.data[0]);
+    }
+
+
+    function ahmmosfc338p02CalculateInputQty(pono, partNum, index) {
+        let val = 0;
+        let lSerialNumbers = ahmmosfc338TxnObjectGetPoPartSerialNum(pono, partNum)
+        if (lSerialNumbers != null) {
+            val = lSerialNumbers.length
+        }
+        return val;
+    }
+
+    function ahmmosfc338p02InputQty(value, row, index) {
+        let nInputQty = ahmmosfc338p02CalculateInputQty(row.pono, row.partNum);
+        return `<span id="qty-${row.pono}" data-qty="${nInputQty}">${nInputQty}</span>`;
+    }
+
+    function ahmmosfc338p02ActionTable(value, row, index) {
+        let newDate = new Date();
+        let dateNow = simpleDateFormat(newDate);
+        let txnIsToday = dateNow == txnObject.txnDate
+        let vButtonText = "";
+        let nInputQty = ahmmosfc338p02CalculateInputQty(row.pono, row.partNum);
+        if (canSave) {
+            vButtonText = "Scan"
+        } else {
+            vButtonText = "Detail"
+        }
+        const rowJSON = JSON.stringify(row);
+        return `<button class='btn btn-primary btn-sm' style='border-radius: 3px' onclick='ahmmosfc338p02Top03(${rowJSON}, this)'>${vButtonText}</button>`;
+    }
+
+    function ahmmosfc338p02TableParam(params) {
+        params.search =
+        {
+            ASNNo: $('#ahmmosfc338p02InputASNNo').val(),
+        };
+        if (params.sort === undefined) {
+            offsetUnitLoad = params.offset;
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        } else {
+            offsetUnitLoad = params.offset;
+        }
+        return params;
+    }
+
+    function ahmmosfc338ResponseHandler(res, obj) {
+        if (res.status === '0') {
+            return [];
+        }
+        let fullScan = true;
+        let f = false
+        let data = res.data
+        data.forEach(row => {
+            vPono = row.pono;
+            vPartNum = row.partNum;
+            nOriginalInputQty = row.inputQty;
+            let nModifiedInputQty = ahmmosfc338p02CalculateInputQty(row.pono, row.partNum);
+            if (nOriginalInputQty != nModifiedInputQty) {
+                f = true;
+            }
+            if (nModifiedInputQty < row.totalQty) {
+                fullScan = false;
+            }
+        });
+        if (f) {
+            dataModified = true
+        } else {
+            dataModified = false
+        }
+        if (canSave && (dataModified || closeByUserModified)) {
+            $("#ahmmosfc338p02SaveBtn").css("display", "");
+            $("#ahmmosfc338p02SaveBtn").prop("disabled", "");
+        } else {
+            $("#ahmmosfc338p02SaveBtn").css("display", "none");
+            $("#ahmmosfc338p02SaveBtn").prop("disabled", "true");
+        }
+        if (fullScan) {
+            $('#ahmmosfc338p02CloseTxbyUser').prop("checked", false);
+            $("#ahmmosfc338p02CloseTxbyUserDiv").css("display", "none");
+        } else {
+            $("#ahmmosfc338p02CloseTxbyUserDiv").css("display", "");
+        }
+
+        return data;
+    }
+
+    function ahmmosfc338p02CloseTxbyUserOnClick(obj, event) {
+        let currCloseByUser = $('#ahmmosfc338p02CloseTxbyUser').prop("checked");
+        closeByUserModified = (initialCloseByUser != currCloseByUser)
+        if (closeByUserModified || dataModified) {
+            $("#ahmmosfc338p02SaveBtn").css("display", "");
+            $("#ahmmosfc338p02SaveBtn").prop("disabled", "");
+        } else {
+            $("#ahmmosfc338p02SaveBtn").css("display", "none");
+            $("#ahmmosfc338p02SaveBtn").prop("disabled", "true");
+        }
+
+    }
+
+    function ahmmosfc338p02Top03(row, elem) {
+        // calculate input qty
+        let lSerialNumbers = ahmmosfc338TxnObjectGetPoPartSerialNum(row.pono, row.partNum)
+        let nInputQty = lSerialNumbers.length
+        // fill data
+        $('#ahmmosfc338p03TransDate').val($('#ahmmosfc338p02TransDate').val());
+        $('#ahmmosfc338p03TransType').val($('#ahmmosfc338p02TransType').val());
+        $('#ahmmosfc338p03TransID').val($('#ahmmosfc338p02TransID').val());
+        $('#ahmmosfc338p03SlocID').val($('#ahmmosfc338p02SlocID').val());
+        $('#ahmmosfc338p03InputASNNo').val($('#ahmmosfc338p02InputASNNo').val());
+        $('#ahmmosfc338p03InputPONo').val(row.pono);
+        $('#ahmmosfc338p03InputSupplierId').val(row.supId);
+        $('#ahmmosfc338p03InputSupplierDesc').val(row.supDesc);
+        $('#ahmmosfc338p03InputPartNum').val(row.partNum);
+        $('#ahmmosfc338p03InputPartDesc').val(row.partDesc);
+        $('#ahmmosfc338p03InputPartType').val(row.partType);
+        $('#ahmmosfc338p03InputTotalQty').val(row.totalQty);
+        $('#ahmmosfc338p03InputInputQty').val(nInputQty);
+        // set scan input
+        if (canSave && nInputQty < row.totalQty) {
+            $("#ahmmosfc338p03InputSerialNum").prop("disabled", false);
+            ahmmosfc338GeneratedBtnPage03("scan");
+        } else {
+            $("#ahmmosfc338p03InputSerialNum").prop("disabled", true);
+            ahmmosfc338GeneratedBtnPage03("detail");
+        }
+        // generate table
+        ahmmosfc338GenerateTablep03(row.pono, row.partNum);
+        // go to page
+        _fw_subpage(elem, 'ahmmosfc338p03');
+        $("ahmmosfc338p03InputSerialNum").val("")
+        $("ahmmosfc338p03InputSerialNum").focus()
+    }
+
+    function ahmmosfc338GeneratedBtnPage03(type) {
+        if (type == "scan") {
+            $("#ahmmosfc338p03SaveBtn").show();
+            $("#ahmmosfc338p03BackBtn").hide();
+        } else {
+            $("#ahmmosfc338p03SaveBtn").hide();
+            $("#ahmmosfc338p03BackBtn").show();
+        }
+
+    }
+
+    function ahmmosfc338p02rowNumFormatter(value, row, index) {
+        return index + 1 + offsetUnitLoad;
+    }
+
+
+    async function ahmmosfc338p03btnInputSerialNum(obj, event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            _fw_validation_clear(obj);
+
+            var pTotalQty = parseInt($('#ahmmosfc338p03InputTotalQty').val());
+            var pSerialNumber = $('#ahmmosfc338p03InputSerialNum').val();
+            var pPono = $('#ahmmosfc338p03InputPONo').val();
+            var pPartNum = $('#ahmmosfc338p03InputPartNum').val();
+
+            // check serial number is not empty
+            if (pSerialNumber == "") {
+                $('#ahmmosfc338p03InputSerialNum').closest('.form-group').addClass('has-error has-feedback');
+                _fw_setMessage(obj, 0, 'Serial Number tidak boleh kosong.');
+                window.scrollTo(0, 0);
+                return;
+            }
+            // check serial number not in transaction
+            if (ahmmosfc338TxnObjectSerialNumExists(pSerialNumber)) {
+                $('#ahmmosfc338p03InputSerialNum').closest('.form-group').addClass('has-error has-feedback');
+                _fw_setMessage(obj, 0, `Serial Number ${$('#ahmmosfc338p03InputSerialNum').val()} sudah discan di transaksi ini.`);
+                $('#ahmmosfc338p03InputSerialNum').val("")
+                window.scrollTo(0, 0);
+                return;
+            }
+            // check serial number prefix valid
+            let serialNumPrefix = ahmmosfc338TxnObjectGetPartNumPrefix(pPono, pPartNum);
+            if (!pSerialNumber.startsWith(serialNumPrefix)) {
+                $('#ahmmosfc338p03InputSerialNum').closest('.form-group').addClass('has-error has-feedback');
+                _fw_setMessage(obj, 0, `Serial Number ${$('#ahmmosfc338p03InputSerialNum').val()} tidak sesuai prefix ${serialNumPrefix}.`);
+                $('#ahmmosfc338p03InputSerialNum').val("")
+                window.scrollTo(0, 0);
+                return;
+            }
+            // check serial number not in txn
+            let serialNumValidation = await ahmmosfc338ValidateSerialNum(pPartNum, pSerialNumber);
+            if (!serialNumValidation.isValid) {
+                data = serialNumValidation.data
+                let error_msg = "Gagal"
+                error_code = data.message.error_code
+                if (error_code == null) {
+                    console.log(data)
+                }
+                if (error_code == "SERIALNUM_ALREADY_TRANSACTED") {
+                    error_msg = `Serial Number ${pSerialNumber} sudah ditransaksikan`
+                }
+                window.scrollTo(0, 0);
+                _fw_setMessage(obj, 0, error_msg);
+                $('#ahmmosfc338p03InputSerialNum').closest('.form-group').addClass('has-error has-feedback');
+                $('#ahmmosfc338p03InputSerialNum').val("")
+                return;
+            }
+            // add to txnobject, refresh table
+            tempSerialNumbers = ahmmosfc338TxnObjectGetPoPartSerialNum(pPono, pPartNum);
+            tempSerialNumbers.push({
+                serial_number: pSerialNumber,
+                editable: true,
+            });
+            ahmmosfc338TxnObjectSetPoPartSerialNum(pPono, pPartNum, tempSerialNumbers);
+            // check total sn input qty
+            if (tempSerialNumbers.length < pTotalQty) {
+                $("#ahmmosfc338p03InputSerialNum").prop("disabled", false);
+            } else {
+                $("#ahmmosfc338p03InputSerialNum").prop("disabled", true);
+            }
+            ahmmosfc338GenerateTablep03(pPono, pPartNum);
+            $("#ahmmosfc338p03InputSerialNum").val("")
+        }
+    }
+
+    function ahmmosfc338ValidateSerialNum(partNum, serialNum) {
+        return new Promise((resolve, reject) => {
+            var param = {
+                search: {
+                    partNum: partNum,
+                    serialNum: serialNum
+                }
+            };
+            _fw_post(ahmmosfc338Url + "check-val-serialNum", param, function (data) {
+                return_data = {
+                    isValid: true,
+                    data: data
+                }
+                if (data.status === '0') {
+                    return_data.isValid = false;
+                }
+                resolve(return_data);
+            });
+        });
+    }
+
+    function ahmmosfc338btnSave(obj) {
+        _fw_validation_clear(obj);
+        let txnCloseByUser = $('#ahmmosfc338p02CloseTxbyUser').prop("checked")
+        let pSlocId = txnObject.slocID
+        if (pSlocId == null) {
+            pSlocId = selectedSloc;
+        }
+        let dataTableData = [];
+        for (let poPartIndex = 0; poPartIndex < txnObject.poParts.length; poPartIndex++) {
+            const poPart = txnObject.poParts[poPartIndex];
+            let lSerialNumbers = poPart.lSerialNumbers;
+            let tempList = [];
+            for (let serialNumIndex = 0; serialNumIndex < lSerialNumbers.length; serialNumIndex++) {
+                const serialNum = lSerialNumbers[serialNumIndex];
+                if (serialNum.editable) {
+                    tempList.push(serialNum.serial_number)
+                }
+                poPart.lSerialNumbers = tempList;
+            }
+            dataTableRow = {
+                Pono: poPart.pono,
+                partNum: poPart.partNum,
+                TotalQty: poPart.totalQty,
+                InputQty: poPart.inputQty,
+                SerialNum: tempList
+            }
+            dataTableData.push(dataTableRow)
+        }
+
+        var param = {
+            transactionDate: txnObject.txnDate,
+            SlocID: pSlocId,
+            ASNNo: txnObject.asnNo,
+            closeTransaction: txnCloseByUser,
+            dataTable: dataTableData
+        };
+
+        _fw_post(ahmmosfc338Url + "save-txn", { search: param }, function (data) {
+            if (data.status === '1') {
+                ahmmosfc338p02Reset();
+                ahmmosfc338p02PopulatePage(data.message.hdrData);
+                _fw_setMessage(obj, 1, 'Berhasil melakukan save');
+                window.scrollTo(0, 0);
+
+            } else {
+                window.scrollTo(0, 0);
+                _fw_setMessage(obj, 0, 'Gagal melakukan save');
+            }
+        });
+    }
+
+    //UTILS
+    function simpleDateFormat(date) {
+        const months = [
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = months[date.getMonth()];
+        const year = date.getFullYear();
+        return `${day}-${month}-${year}`;
+    }
+
+    function ahmmosfc338GenerateTablep03(pono, partnum) {
+        let lSerialNumbers = ahmmosfc338TxnObjectGetPoPartSerialNum(pono, partnum)
+        $('#ahmmosfc338p03InputInputQty').val(lSerialNumbers.length)
+        var table = document.getElementById("ahmmosfc338p03TableSerialNumber");
+        // Mendapatkan referensi ke elemen <tbody>
+        var tbody = table.getElementsByTagName("tbody")[0];
+        tbody.innerHTML = "";
+        // Membuat baris-baris tabel dari dataArray
+        lSerialNumbers.forEach(function (value, i) {
+            var row = ahmmosfc338GenerateTablep03Row(pono, partnum, value);
+            tbody.appendChild(row);
+        });
+    }
+
+    function ahmmosfc338GenerateTablep03Row(pono, partnum, param) {
+        param.pono = pono;
+        param.partnum = partnum;
+        let serial_num = param.serial_number;
+        let editable = param.editable;
+        var row = document.createElement("tr");
+
+        var cell = document.createElement("td");
+        cell.textContent = serial_num;
+        row.appendChild(cell);
+
+        var cell2 = document.createElement("td");
+        if (editable) {
+            var btn = document.createElement("button");
+            btn.textContent = "delete";
+            btn.id = "btnDelete-i";
+            btn.onclick = function (event) {
+                event.preventDefault();
+                ahmmosfc338BtnDeletep03(param);
+            };
+            cell2.appendChild(btn);
+        }
+        row.appendChild(cell2);
+
+        return row;
+    }
+
+    function ahmmosfc338BtnDeletep03(paramArr) {
+        let pono = paramArr.pono;
+        let partnum = paramArr.partnum;
+        let serial_number = paramArr.serial_number;
+        let editable = paramArr.editable;
+
+        let lSerialNumbers = ahmmosfc338TxnObjectGetPoPartSerialNum(pono, partnum)
+        let tempLSerialNumbers = lSerialNumbers.filter(item => item.serial_number !== serial_number)
+        ahmmosfc338TxnObjectSetPoPartSerialNum(pono, partnum, tempLSerialNumbers);
+        ahmmosfc338GenerateTablep03(pono, partnum)
+        var pTotalQty = parseInt($('#ahmmosfc338p03InputTotalQty').val());
+        if (tempLSerialNumbers.length < pTotalQty) {
+            $("#ahmmosfc338p03InputSerialNum").prop("disabled", false);
+        } else {
+            $("#ahmmosfc338p03InputSerialNum").prop("disabled", true);
+        }
+    }
+
+    function ahmmosfc338p03toPage02(obj) {
+        $("#ahmmosfc338p02table").bootstrapTable("refresh");
+        _fw_subpage(obj, 'ahmmosfc338p02');
+    }
+
+    function ahmmosfc338p02toPage01(obj) {
+        ahmmosfc338p02Reset();
+        _fw_subpage(obj, 'ahmmosfc338p01');
+    }
+
+    function ahmmosfc338p03Submit(obj) {
+        $("#ahmmosfc338p02table").bootstrapTable("refresh");
+        $("#ahmmosfc338p03InputSerialNum").val("")
+        _fw_subpage(obj, 'ahmmosfc338p02');
+    }
+
+    function ahmmosfc338p02Reset(params) {
+        _fw_validation_clear($("#ahmmosfc338p02InputASNNo"));
+        txnObject = {};
+        offsetUnitLoad = 0;
+        canSave = false;
+        initialCloseByUser;
+        $('#ahmmosfc338p02InputASNNo').val("");
+        $('#ahmmosfc338p02TransID').val("");
+        $('#ahmmosfc338p02Status').val("");
+        $('#ahmmosfc338p02SlocID').val(selectedSloc);
+        $("#ahmmosfc338p02table").bootstrapTable("removeAll");
+        $('#ahmmosfc338p02InputASNNo').focus();
+        $("#ahmmosfc338p02SaveBtn").css("display", "none");
+        $('#ahmmosfc338p02InputASNNo').prop("disabled", false);
+        $("#ahmmosfc338p02CloseTxbyUserDiv").css("display", "none");
+        $('#ahmmosfc338p02CloseTxbyUser').prop("checked", false);
+        $('#ahmmosfc338p02CloseTxbyUser').prop("disabled", false);
+
+    }
+
+    function ahmmosfc338p02ResetBtn(obj) {
+        ahmmosfc338p02Reset();
+    }
+
+    function ahmmosfc338p01Reset(obj) {
+        _fw_validation_clear($("#ahmmosfc338p01Nrp"))
+        $('#ahmmosfc338p01Nrp').val("");
+        $('#ahmmosfc338p01Sloc').val("");
+        ahmmosfc338p02Reset();
+    }
+</script>

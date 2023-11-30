@@ -1,0 +1,550 @@
+<style>
+    #AHMMOSFC307 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc307p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc307p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc307p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC307" class="div-app" data-version="1.0">
+    <div class="global_message"></div>
+
+    <div style="display: none;">
+        <form id="ahmmosfc307_download_form" method="post" action="#">
+            <input type="hidden" name="category" value="" />
+            <input type="hidden" name="transaction" value="" />
+            <input type="hidden" name="dateFrom" value="" />
+            <input type="hidden" name="dateTo" value="" />
+            <input type="hidden" name="shiftid" value="" />
+            <input type="hidden" name="plantid" value="" />
+            <input type="hidden" name="lineid" value="" />
+            <input type="hidden" name="mctypeid" value="" />
+        </form>
+    </div>
+
+    <div id="ahmmosfc309p01" class="subpage subpage-default" data-path="Monitoring Stock Unit Motor">
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font row">
+                        <label for="ahmmosfc309p01IdArea_s" class="col-sm-6 control-label">
+                            Area Code <span style="color:red">*</span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc309/get-list-area"
+                                 data-lookup-pre-func="ahmmosfc309p01IdAreaLookup" 
+                                 data-columns='[{"id":"vidarea","name":"Area Code","visible":"true"},
+                                 {"id":"vareadesc","name":"Description","visible":"true"}]'
+                                 data-callback='{"ahmmosfc309p01IdArea_s":"vidarea","ahmmosfc309p01Desc_s":"vareadesc"}'>
+                                <input id="ahmmosfc309p01IdArea_s" class="form-control input-lookup">
+                                <span class="input-group-btn required" >
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc309p01Desc_s" class="col-sm-6 control-label">
+                            Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc309p01Desc_s" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc309p01Status_s" class="col-sm-6 control-label">
+                            Status 
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc309p01Status_s" class="form-control">
+                                <option value="">ALL</option>
+                                <option value="Aktif">Active</option>
+                                <option value="Tidak Aktif">Not Active</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc309p01Search(this)">
+                            <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc309p01ResetBtn(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--TABLE HEADERR-->
+
+
+        <div id="table-container">
+            <div id="ahmmosfc309p01-table" class="col-md-9">
+                <div class="row form-panel">
+                    <div class="panel-body">
+                        <div class="form-group-table-button">
+                            <button class="btn large-button bg-blue" onclick="ahmmosfc309.p01Edit(this)" data-role="update">
+                                <i class="glyphicon glyphicon-pencil fg-white"></i> Edit</button>
+                            <button class="btn large-button bg-blue" onclick="ahmmosfc309.p01Add(this)" data-role="create">
+                                <i class="glyphicon glyphicon-plus fg-white"></i> Add</button>
+                        </div>
+                        
+                        <table id="ahmmosfc309p01SearchTable" 
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc309/search-data-header"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params-type="limit"
+                               data-query-params="ahmmosfc309p01TableParam"
+                               data-response-handler="_fw_loadData"
+                               data-side-pagination="server"
+                               data-pagination="true"
+                               >
+                            <thead>
+                                <tr>
+                                    <th data-checkbox="true" data-valign="middle" rowspan="2"></th>
+                                    <th data-formatter="AHMMOMSC309p01TableNumbering" data-align="center" data-valign="middle" rowspan="2">No</th> 
+                                    <th data-sortable="true" data-field="Sort_vidarea"               data-align="center"> Area Code </th>
+                                    <th data-sortable="false" data-field="Sort_vareadesc"                data-align="center"> Description </th>
+                                    <th data-sortable="false" data-field="Sort_dbegineff"              data-align="center"> Start </th>                                
+                                    <th data-sortable="false" data-field="Sort_dendeff"        data-align="center"> End </th>
+                                </tr>
+                                <tr>
+
+                                    <th data-field="vidarea"  data-visible="true" >
+                                        <input id="ahmmosfc309p01vidarea" type="text" class="form-control" onkeypress="ahmmosfc309p01_Filter(event)">
+                                    </th>
+                                    <th data-field="vareadesc"  data-visible="true" >
+                                        <input id="ahmmosfc309p01vareadesc" type="text" class="form-control" onkeypress="ahmmosfc309p01_Filter(event)">
+                                    </th>
+                                    <th data-field="dbegineff"  data-visible="true" data-align="center">
+                                        <input id="ahmmosfc309p01dbegineff" type="text" class="form-control" onkeypress="ahmmosfc309p01_Filter(event)">
+                                    </th>
+                                    <th data-field="dendeff"  data-visible="true" data-align="center">
+                                        <input id="ahmmosfc309p01dendeff" type="text" class="form-control" onkeypress="ahmmosfc309p01_Filter(event)">
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Subpage 2 Add--> 
+    <div id="ahmmosfc309p02" class="subpage" data-path="Master Area > Add">
+        <div class="col-md-4">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><span class="glyphicon glyphicon-plus"></span> Add Master Area</h6>
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p02vidarea" class="col-sm-3 control-label">
+                            Area Code <span style="color:red">*</span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-9">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc309/get-list-vidarea"
+                                 data-lookup-pre-func="ahmmosfc309p02IdAreaLookup" 
+                                 data-columns='[{"id":"vidarea","name":"Area Code","visible":"true"}]'
+                                 data-callback='{"ahmmosfc309p02vidarea":"vidarea"}'>
+                                <input id="ahmmosfc309p02vidarea" class="form-control input-lookup">
+                                <span class="input-group-btn required" >
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p02vareadesc" class="col-sm-3 control-label">Description</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc309p02vareadesc" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p02dbegineff" class="col-sm-3 control-label">
+                            Begin Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc309p02BeginEffectivePanel">
+                                <input id="ahmmosfc309p02dbegineff" type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>  
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p02dendeff" class="col-sm-3 control-label">
+                            End Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc309p02EndEffectivePanel">
+                                <input id="ahmmosfc309p02dendeff" type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div class="panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc309.p02Back(this)">
+                        <i class="glyphicon glyphicon-menu-left fg-white"></i> Back</button>
+                    <button class="btn large-button bg-blue" id="ahmmosfc310p02Submit" onclick="ahmmosfc309.p02Submit(this)" data-role="create">
+                        <i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc309.p02Add(this)" data-role="create">
+                    <i class="glyphicon glyphicon-plus fg-white"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Subpage 3 Update--> 
+    <div id="ahmmosfc309p03" class="subpage" data-path="Master Area - Edit">
+        <div class="col-md-4">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><span class="glyphicon glyphicon-edit"></span> Master Area - Edit</h6>
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p03vidarea" class="col-sm-3 control-label">
+                            Area Code <span style="color:red">*</span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-9">
+                            <input id="ahmmosfc309p03vidarea" class="form-control" data-field="vidarea" readonly>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p03vareadesc" class="col-sm-3 control-label">Description</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc309p03vareadesc" class="form-control" data-field="vareadesc">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p03dbegineff" class="col-sm-3 control-label">
+                            Begin Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc309p02BeginEffectivePanel">
+                                <input id="ahmmosfc309p03dbegineff" type="text" class="form-control" data-field="dbegineff"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>  
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc309p03dendeff" class="col-sm-3 control-label">
+                            End Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc309p03EndEffectivePanel">
+                                <input id="ahmmosfc309p03dendeff" type="text" class="form-control" data-field="dendeff" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </div>
+                <div class="panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc309.p03Back(this)">
+                        <i class="glyphicon glyphicon-menu-left fg-white"></i> Back</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc309.p03Submit(this)" data-role="update">
+                        <i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!--END HEADER-->
+
+<script type="text/javascript">
+     var offsetUnitLoad = 0;
+    var ahmmosfc309ParamsTable = [];
+    var ahmmosfc309Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc309/';
+
+    $(document).ready(function () {
+        
+    });
+
+    function AHMMOMSC309p01TableNumbering(obj, row, index) {
+        return offsetTable + index + 1;
+    }
+    
+    function ahmmosfc309p01_Filter(event) {
+        console.log(event.keyCode);
+        //_fw_validation_clear($('#ahmgawms018p01_search_table'));
+        if (event.keyCode === 13) {
+            console.log("masuk sini");
+            $('#ahmmosfc309p01SearchTable').bootstrapTable('refresh');
+
+        }
+    }
+    
+    function ahmmosfc309p01TableParam(params) {
+        params.search =
+                {
+                    filter_vidarea: $('#ahmmosfc309p01vidarea').val(),
+                    filter_vareadesc: $('#ahmmosfc309p01vareadesc').val(),
+                    filter_dbegineff: $('#ahmmosfc309p01dbegineff').val(),
+                    filter_dendeff: $('#ahmmosfc309p01dendeff').val(),
+                    
+                    search_vidarea: $("#ahmmosfc309p01IdArea_s").val(),
+                    search_status: $("#ahmmosfc309p01Status_s").val()
+                };
+
+        ahmmosfc309ParamsTable = params;
+        if (params.sort === undefined) {
+            offsetTable = params.offset;
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        } else {
+            offsetTable = params.offset;
+        }
+        return params;
+    }
+    
+    function ahmmosfc309p01ResetBtn(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc309p01"));
+
+        $('#ahmmosfc309p01SearchTable').bootstrapTable('removeAll');
+
+    }
+    
+    function ahmmosfc309p01IdAreaLookup(params) {
+        params.search = {
+            "vidarea": $("#ahmmosfc309p01IdArea").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    
+    //    BUTTON SEARCH
+    function ahmmosfc309p01Search(obj) {
+        _fw_validation_clear(obj);
+
+        //_fw_validation_add(obj, 'ahmmosfc307p01LineStockStatus', 'required');
+        if (_fw_validation_validate(obj)) {
+            $('#ahmmosfc309p01SearchTable').bootstrapTable('refresh');
+        }
+    }
+    
+    // add data
+    function ahmmosfc309p02IdAreaLookup(params) {
+        params.search = {
+            "vidarea": $("#ahmmosfc309p02IdArea").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    Date.prototype.toShortFormat = function() {
+
+        const monthNames = ["Jan", "Feb", "Mar", "Apr",
+                            "May", "Jun", "Jul", "Aug",
+                            "Sep", "Oct", "Nov", "Dec"];
+
+        const day = this.getDate();
+
+        const monthIndex = this.getMonth();
+        const monthName = monthNames[monthIndex];
+
+        const year = this.getFullYear();
+
+        return `${day}-${monthName}-${year}`;  
+    }
+    
+    var ahmmosfc309 = {
+        
+        goTop: function () {
+            $('html, body').animate({scrollTop: 0}, 750);
+            return this;
+        },
+        p01Add: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($("#ahmmosfc309p02"));
+            $('#ahmmosfc309p02vidarea').prop('disabled', false);
+            $('#ahmmosfc309p02vareadesc').prop('disabled', false);
+            $('#ahmmosfc309p02dendeff').prop('disabled', false);
+            //ahmmosfc309$.isReset = true;
+            let today = new Date();
+             $('#ahmmosfc309p02dbegineff').val(today.toShortFormat());
+             $('#ahmmosfc309p02dendeff').val('31-Dec-2100');
+            _fw_subpage(obj, 'ahmmosfc309p02');
+        },
+        
+        p01Edit: function (obj) {
+            var rows = $('#ahmmosfc309p01SearchTable').bootstrapTable('getSelections');
+            if (rows.length === 1) {
+                _fw_subpage(obj, 'ahmmosfc309p03', rows[0]);
+            } else if (rows.length > 1) {
+                _fw_setMessage(obj, 0, 'Please select one data.');
+            } else {
+                _fw_setMessage(obj, 0, 'There is no data selected. Please select one data.');
+            }
+        },
+        p01RefreshTable: function () {
+            $('#ahmmosfc309p01SearchTable').bootstrapTable('refresh');
+            return this;
+        },
+        p02Back: function (obj) {
+            _fw_subpage(obj, 'ahmmosfc309p01');
+        },
+        p03Back: function (obj) {
+            _fw_subpage(obj, 'ahmmosfc309p01');
+        },
+        p02Add: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($("#ahmmosfc309p02"));
+            $('#ahmmosfc309p02vidarea').prop('disabled', false);
+            $('#ahmmosfc309p02vareadesc').prop('disabled', false);
+            $('#ahmmosfc309p02dbegineff').prop('disabled', false);
+            $('#ahmmosfc309p02dendeff').prop('disabled', false);
+            $('#ahmmosfc309p02Submit').prop('disabled', false);
+            ahmmosfc309$.isReset = true;
+        },
+        p02Submit: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc309p02vidarea', 'required');
+            _fw_validation_add(obj, 'ahmmosfc309p02vareadesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc309p02dbegineff', 'required');
+            _fw_validation_add(obj, 'ahmmosfc309p02dendeff', 'required');
+            if (_fw_validation_validate(obj)) {
+                var param = {
+                    ahmmosfc309p02vidarea: $('#ahmmosfc309p02vidarea').val(),
+                    ahmmosfc309p02vareadesc: $('#ahmmosfc309p02vareadesc').val(),
+                    ahmmosfc309p02dbegineff: $('#ahmmosfc309p02dbegineff').val(),
+                    ahmmosfc309p02dendeff: $('#ahmmosfc309p02dendeff').val()
+                };
+                
+                _fw_post(ahmmosfc309Url + 'save-mstarea', param, function (data) {
+                    if (data.status === '1') {
+                        _fw_subpage(obj, 'ahmmosfc309p02');
+                        $('#ahmmosfc309p02vidarea').prop('disabled', true);
+                        $('#ahmmosfc309p02vareadesc').prop('disabled', true);
+                        $('#ahmmosfc309p02dbegineff').prop('disabled', true);
+                        $('#ahmmosfc309p02dendeff').prop('disabled', true);
+                        ahmmosfc309.p01RefreshTable();
+                    }
+                    _fw_setMessage(obj, data.status, data.message.result);
+                    ahmmosfc309.goTop();
+                });
+            } else {
+                ahmmosfc309.goTop();
+            }
+        },
+        fw_validation_validate: function (obj) {
+            var msg = '<ul class="errorList">';
+            for (var i = 0; i < _vvalObjs.length; i++) {
+                switch (_vvalObjs[i].val.toLowerCase()) {
+                    case 'required':
+                        if ((_vvalObjs[i].msg === '') && (_vvalObjs[i].obj.val() === null || _vvalObjs[i].obj.val().replace(/\s+/, '') === ''))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' is required.';
+                        break;
+                    case 'number':
+                        if (!((_vvalObjs[i].msg === '') && isNaN(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' must be numeric.';
+                        break;
+                    case 'date':
+                        if (!((_vvalObjs[i].msg === '') && _fw_isValidDate(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' is not valid date. Date format: dd-mmm-yyyy.';
+                        break;
+                    case 'email':
+                        if (!((_vvalObjs[i].msg === '') && _fw_isValidEmail(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' is not valid email.';
+                        break;
+                }
+            }
+            var dmsg = '';
+            for (var i = 0; i < _vvalObjs.length; i++) {
+                if (_vvalObjs[i].msg !== '') {
+                    dmsg += '<li>' + _vvalObjs[i].msg + '</li>';
+                    _vvalObjs[i].obj.closest('.form-group').addClass('has-error has-feedback');
+                }
+            }
+            if (dmsg !== '') {
+                msg += dmsg + '</ul>';
+                _fw_setMessage(obj, 0, msg);
+                return false;
+            }
+            return true;
+        },
+        p03Submit: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc309p03vidarea', 'required');
+            _fw_validation_add(obj, 'ahmmosfc309p03vareadesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc309p03dbegineff', 'required');
+            _fw_validation_add(obj, 'ahmmosfc309p03dendeff', 'required');
+            if (_fw_validation_validate(obj)) {
+                var param = {
+                    ahmmosfc309p03vidarea: $('#ahmmosfc309p03vidarea').val(),
+                    ahmmosfc309p03vareadesc: $('#ahmmosfc309p03vareadesc').val(),
+                    ahmmosfc309p03dbegineff: $('#ahmmosfc309p03dbegineff').val(),
+                    ahmmosfc309p03dendeff: $('#ahmmosfc309p03dendeff').val()
+                };
+                _fw_post(ahmmosfc309Url + 'update-mstarea', param, function (data) {
+                    if (data.status === '1') {
+                        _fw_subpage(obj, 'ahmmosfc309p03');
+                        /*$('#ahmmosfc309p03vidarea').prop('disabled', true);
+                        $('#ahmmosfc309p03vareadesc').prop('disabled', true);
+                        $('#ahmmosfc309p03dbegineff').prop('disabled', true);
+                        $('#ahmmosfc309p03dendeff').prop('disabled', true);*/
+                        ahmmosfc309.p01RefreshTable();
+                    }
+                    _fw_setMessage(obj, data.status, data.message.result);
+                    ahmmosfc309.goTop();
+                });
+            } else {
+                ahmmosfc309.goTop();
+            }
+        },
+    }
+</script>

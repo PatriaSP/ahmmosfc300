@@ -1,0 +1,1204 @@
+<style>
+    .sfc339Center {
+        display: flex;
+        justify-content: center
+    }
+
+    .sfc339ErrorLbl {
+        color: #e92030;
+    }
+
+    .sfc339CenterMargin {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center
+    }
+
+    @media(max-width : 767px) {
+        .sfc339Center {
+            display: block;
+        }
+
+        .sfc339CenterMargin {
+            display: block;
+            margin-top: 20px;
+        }
+
+    }
+</style>
+
+<div id="AHMMOSFC339" class="div-app" data-version="1.0">
+    <div class="global_message"> </div>
+    <!--    [PAGE 1]  -->
+    <div id="ahmmosfc339p01" class="subpage subpage-default" data-path="Scan Out REM">
+        <div class="col-md-4">
+            <div style="background: white" class="row form-panel form-horizontal ">
+                <div class="panel-heading">
+                    <h6>OUT Transaction S/N part Accessories (REM)</h6>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label class="col-sm-5 control-label" for="ahmmosfc339p01NrpOpr">NRP Operator</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc339p01NrpOpr"
+                                onkeyup="ahmmosfc339ValidateNrp(this, event)" autofocus />
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label class="col-sm-5 control-label" for="ahmmosfc339p01SlocId">Sloc ID</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc339p01SlocId" disabled />
+                        </div>
+                    </div>
+                    <div class="form-group large-font center"
+                        style="display: flex;justify-content: center; margin-top: 15px">
+                        <div style="margin-right: 5px">
+                            <input type="radio" name="ahmmosfc339TransRadio" id="ahmmosfc339p01TransRadioCNP" />
+                        </div>
+                        <label id="ahmmosfc339p01TransRadioCNPLbl" for="ahmmosfc339p01TransRadioCNP">CNP
+                            Transaction</label>
+                    </div>
+                    <div class="form-group large-font" style="display: flex;justify-content: center;">
+                        <div style="margin-right: 5">
+                            <input type="radio" name="ahmmosfc339TransRadio" id="ahmmosfc339p01TransRadioOUT" />
+                        </div>
+                        <label id="ahmmosfc339p01TransRadioOutLbl" for="ahmmosfc339p01TransRadioOUT">Shipping
+                            Transaction</label>
+                    </div>
+                    <div class="form-group large-font" style="display: flex;justify-content: center;">
+                        <button id="ahmmosfc339p01BtnSearch" class="btn large-button bg-blue" style="margin-right: 10px"
+                            onclick="ahmmosfc339p01Login(this)" disabled>
+                            <i class="glyphicon glyphicon-search fg-white"></i>
+                            Submit</button>
+                        <button class="btn large-button bg-red" onclick="ahmmosfc339p01Reset(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i>
+                            Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    [PAGE 2]  -->
+    <div id="ahmmosfc339p02" class="subpage" data-path="Scan Out REM/Transaction CNP">
+        <div style="display: flex;justify-content: center">
+            <div style="background: white;width: 75%" class="row form-panel ">
+                <div class="panel-heading">
+                    <h6>CNP Transaction S/N part Accessories</h6>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Transaction Date</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02TrandDate" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Transaction Type</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02TransType" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Transaction ID</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02TransId" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group large-font sfc339CenterMargin">
+                        <label class="col-sm-3 control-label">Sloc ID</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02SlocId" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Packing Sheet No.<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02SheetNo" type="text" class="form-control"
+                                onkeydown="ahmmosfc339CheckSheetNo(this, event)" maxlength="20" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group large-font sfc339CenterMargin">
+                        <label class="col-sm-3 control-label">Total Qty Battery</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02QtyBtry" type="number" class="form-control" disabled
+                                style="text-align: right;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Total Qty Charger</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02QtyChrgr" type="number" class="form-control" disabled
+                                style="text-align: right;" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group large-font sfc339CenterMargin">
+                        <label class="col-sm-3 control-label">Box no.</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02BoxNo" type="text" class="form-control" disabled maxlength="20"
+                                onkeydown="ahmmosfc339eventEnter(this, event, 'ahmmosfc339p02CartonNo')" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Carton No.<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02CartonNo" type="text" class="form-control" disabled maxlength="20"
+                                onkeydown="ahmmosfc339eventEnter(this, event, 'ahmmosfc339p02PartNumber')" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Part Number<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02PartNumber" type="text" class="form-control" disabled
+                                maxlength="18" onkeydown="ahmmosfc339eventEnter(this, event, 'ahmmosfc339p02ScanSN')" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Scan S/N<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p02ScanSN" onkeydown="ahmmosfc339AddToTableCnp(this, event)"
+                                type="text" class="form-control" disabled maxlength="100" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  " id="ahmmosfc339p02TableCNPDIV" style="margin-top:50px; margin-inline:5px">
+                    <table id="ahmmosfc339p02TableCNP" data-url="" data-pagination="true">
+                        <thead>
+                            <tr>
+                                <th data-sortable="false" data-visible="true"
+                                    data-formatter="ahmmosfc339AutoNumberingCNPTable" data-align="right"
+                                    data-field="autoNumbering">
+                                    No
+                                </th>
+                                <th data-sortable="false" data-visible="false" data-align="center"
+                                    data-field="packSheetNo">
+                                    Packing Sheet No
+                                </th>
+                                <th data-sortable="false" data-visible="true" data-align="center" data-field="boxNo">
+                                    Box No
+                                </th>
+                                <th data-sortable="false" data-visible="true" data-align="center" data-field="cartonNo">
+                                    Carton No
+                                </th>
+                                <th data-sortable="false" data-visible="true" data-align="center" data-field="partNum">
+                                    Part Number
+                                </th>
+                                <th data-sortable="false" data-visible="true" data-align="center" data-field="scanSN">
+                                    S/N
+                                </th>
+                                <th data-sortable="false" data-visible="true" data-align="center"
+                                    data-field="partTypeDesc">
+                                    Type
+                                </th>
+                                <th data-sortable="false" data-visible="true" data-align="center" data-field="action"
+                                    data-formatter="ahmmosfc339p02DeleteRowCNPTable">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="form-group large-font" style="margin-top: 20px;display: flex;justify-content: center;">
+                    <button id="ahmmosfc339p02Back" class="btn large-button btn-primary" style="margin: 10px;"
+                        onclick="ahmmosfc339p02Back(this)">
+                        <i class="glyphicon glyphicon-arrow-left fg-white"></i>
+                        Back</button>
+                    <button id="ahmmosfc339p02Save" class="btn large-button btn-success"
+                        style="margin: 10px;  display: none;" onclick="ahmmosfc339p02Save(this)">
+                        <i class="glyphicon glyphicon-saved fg-white"></i>
+                        Save</button>
+                    <button id="ahmmosfc339p02Reset" class="btn large-button btn-danger" style="margin: 10px"
+                        onclick="ahmmosfc339p02Reset(this)">
+                        <i class="glyphicon glyphicon-refresh fg-white"></i>
+                        Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    [PAGE 3]  -->
+    <div id="ahmmosfc339p03" class="subpage" data-path="Scan Out REM/Transaction OUT">
+        <div style="display: flex;justify-content: center">
+            <div style="background: white;width: 75%" class="row form-panel ">
+                <div class="panel-heading">
+                    <h6>Shipping Transaction S/N part Accessories</h6>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Transaction Date</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03TrandDate" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Transaction Type</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03TransType" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Transaction ID</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03TransId" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Sloc ID</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03SlocId" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Shiping List No.<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03ShippingListNo" type="text" class="form-control"
+                                onkeydown="ahmmosfc339CheckShipList(this, event)" maxlength="15" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Expedisi<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <div class="lookup-wrapper">
+                                <div class="input-group lookup" data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc339/lov-exp"
+                                    data-lookup-pre-func="ahmmosfc339p03LovExpPreFunc" data-columns='[
+                                    {"id":"expCode","name":"Expedisi Code","visible":"true","sortable":"true"},
+                                    {"id":"expName","name":"Expedisi Name","visible":"true","sortable":"true"}]'
+                                    data-callback='{"ahmmosfc339p03Expedisi":"expCode"}'
+                                    data-response-handler="ahmmosfc339LovResponseHandler" style="width: 100%">
+                                    <input id="ahmmosfc339p03Expedisi" type="text" class="form-control input-lookup"
+                                        placeholder="LOV...."
+                                        onkeydown="ahmmosfc339eventEnter(this, event, 'ahmmosfc339p03MainDealer')">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default large-button btn-lookup" type="button"
+                                            id="ahmmosfc339p03ExpedisiBtnLov">LOV</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Main Dealer<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <div class="lookup-wrapper">
+                                <div class="input-group lookup" data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc339/lov-md"
+                                    data-lookup-pre-func="ahmmosfc339p03LovMDPreFunc" data-columns='[
+                                    {"id":"mdCode","name":"MD Code","visible":"true","sortable":"true"},
+                                    {"id":"mdName","name":"MD Name","visible":"true","sortable":"true"}]'
+                                    data-callback='{"ahmmosfc339p03MainDealer":"mdCode"}'
+                                    data-response-handler="ahmmosfc339LovResponseHandler" style="width: 100%">
+                                    <input id="ahmmosfc339p03MainDealer" type="text" class="form-control input-lookup"
+                                        placeholder="LOV...."
+                                        onkeydown="ahmmosfc339eventEnter(this, event, 'ahmmosfc339p03TruckNo')">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default large-button btn-lookup" type="button"
+                                            id="ahmmosfc339p03MainDealerBtnLov">LOV</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Truck No.<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03TruckNo" type="text" class="form-control" disabled
+                                onkeydown="ahmmosfc339eventEnter(this, event, 'ahmmosfc339p03SheetNo')"
+                                maxlength="11" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Total Qty Battery</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03QtyBtry" type="number" class="form-control" disabled
+                                style="text-align: right;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center">
+                        <label class="col-sm-3 control-label">Total Qty Charger</label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03QtyChrgr" type="number" class="form-control" disabled
+                                style="text-align: right;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font sfc339Center" style="margin-top: 2rem;">
+                        <label class="col-sm-3 control-label">Packing Sheet No.<span style="color: red">*</span></label>
+                        <div class="col-sm-4">
+                            <input id="ahmmosfc339p03SheetNo" type="text" class="form-control" disabled
+                                onkeydown="ahmmosfc339p03addDataTable(this, event)" maxlength="20" />
+                        </div>
+                    </div>
+
+                    <div class="row  " id="ahmmosfc339p03TableOutDIV" style="margin-top:50px;">
+                        <table id="ahmmosfc339p03TableOut" data-url="" data-pagination="true">
+                            <thead>
+                                <tr>
+                                    <th data-visible="true" data-sortable="false" data-align="right"
+                                        data-formatter="ahmmosfc339AutoNumberingoutTable">
+                                        No.
+                                    </th>
+                                    <th data-visible="true" data-sortable="false" data-align="center"
+                                        data-field="packSheetNo">
+                                        Packing Sheet No.
+                                    </th>
+                                    <th data-visible="true" data-sortable="false" data-align="center"
+                                        data-field="cartonNo">
+                                        Carton No.
+                                    </th>
+                                    <th data-visible="true" data-sortable="false" data-align="center"
+                                        data-field="partTypeDesc">
+                                        Type
+                                    </th>
+                                    <th data-sortable="false" data-visible="true" data-align="center"
+                                        data-formatter="ahmmosfc339p03DeleteRowOutTable">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="form-group large-font" style="margin-top: 20px;display: flex;justify-content: center;">
+                        <button class="btn large-button btn-primary" style="margin: 10px"
+                            onclick="ahmmosfc339p03Back(this)">
+                            <i class="glyphicon glyphicon-arrow-left fg-white"></i>
+                            Back</button>
+                        <button class="btn large-button btn-success" id="ahmmosfc339p03Save" style="margin: 10px"
+                            onclick="ahmmosfc339p03Save(this)">
+                            <i class="glyphicon glyphicon-saved fg-white"></i>
+                            Save</button>
+                        <button class="btn large-button btn-danger" style="margin: 10px"
+                            onclick="ahmmosfc339p03Reset(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i>
+                            Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const ahmmosfc339Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc339/';
+    let ahmmosfc339GlobalVariable = {};
+
+    $(document).ready(function () {
+        $('#ahmmosfc339p01NrpOpr').focus();
+    });
+
+    async function ahmmosfc339p01Login(obj) {
+        _fw_validation_clear(obj);
+        let IdSubpage = "";
+        if (!$('#ahmmosfc339p01TransRadioCNP').is(":checked") && !$('#ahmmosfc339p01TransRadioOUT').is(":checked")) {
+            $('#ahmmosfc339p01TransRadioCNPLbl').addClass('sfc339ErrorLbl')
+            $('#ahmmosfc339p01TransRadioOutLbl').addClass('sfc339ErrorLbl')
+            _fw_setMessage(obj, 0, "Silakan pilih jenis transaksi. ");
+        } else if ($('#ahmmosfc339p01TransRadioCNP').is(":checked")) {
+            IdSubpage = "ahmmosfc339p02";
+        } else if ($('#ahmmosfc339p01TransRadioOUT').is(":checked")) {
+            IdSubpage = "ahmmosfc339p03";
+            $('#ahmmosfc339p03ShippingListNo').focus()
+        }
+
+        if (IdSubpage !== "") {
+            $('#ahmmosfc339p01TransRadioCNPLbl').removeClass('sfc339ErrorLbl')
+            $('#ahmmosfc339p01TransRadioOutLbl').removeClass('sfc339ErrorLbl')
+            if (IdSubpage === "ahmmosfc339p02") {
+                ahmmosfc339GlobalVariable.sloc = $('#ahmmosfc339p01SlocId').val();
+                ahmmosfc339GlobalVariable.transType = "CNP Transaction";
+                await ahmmosfc339LoadPageData(IdSubpage);
+            } else if (IdSubpage === "ahmmosfc339p03") {
+                ahmmosfc339GlobalVariable.sloc = $('#ahmmosfc339p01SlocId').val();
+                ahmmosfc339GlobalVariable.transType = "OUT Transaction";
+                await ahmmosfc339LoadPageData(IdSubpage);
+            }
+            _fw_subpage(obj, IdSubpage);
+            if (IdSubpage === "ahmmosfc339p02") {
+                $('#ahmmosfc339p02SheetNo').focus()
+            } else if (IdSubpage === "ahmmosfc339p03") {
+                $('#ahmmosfc339p03ShippingListNo').focus()
+            }
+        }
+    }
+
+    function ahmmosfc339ValidateNrp(obj, event) {
+        if (event.keyCode === 13 || event.keyCode === 9) {
+            _fw_validation_clear(obj)
+            if ($('#ahmmosfc339p01NrpOpr').val() == "") {
+                $('#ahmmosfc339p01NrpOpr').closest('.form-group').addClass('has-error has-feedback')
+                _fw_setMessage(obj, 0, " NRP Operator Tidak boleh kosong");
+                return;
+            }
+            let paramLogin = {};
+            paramLogin.nrpOpr = $('#ahmmosfc339p01NrpOpr').val();
+            _fw_post(ahmmosfc339Url + 'login-out-rem', paramLogin, function (data) {
+                if (data.status === '1') {
+                    if (data.data.length > 0) {
+                        $('#ahmmosfc339p01SlocId').val(data.data[0]);
+                        $('#ahmmosfc339p01BtnSearch').prop("disabled", false)
+                        $("#ahmmosfc339p01TransRadioCNP").attr('checked', true)
+                        $('#ahmmosfc339p01BtnSearch').focus()
+                    } else {
+                        $('#ahmmosfc339p01NrpOpr').closest('.form-group').addClass('has-error has-feedback')
+                        _fw_setMessage(obj, 0, data.message.message);
+                    }
+                }
+            });
+        }
+    }
+
+    function ahmmosfc339p01Reset(obj) {
+        _fw_validation_clear(obj);
+        $('#ahmmosfc339p01TransRadioCNPLbl').removeClass('sfc339ErrorLbl')
+        $('#ahmmosfc339p01TransRadioOutLbl').removeClass('sfc339ErrorLbl')
+        $('#ahmmosfc339p01NrpOpr').val("")
+        $('#ahmmosfc339p01SlocId').val("")
+        $('#ahmmosfc339p01TransRadioCNP').prop("checked", false);
+        $('#ahmmosfc339p01TransRadioOUT').prop("checked", false);
+        $('#ahmmosfc339p01BtnSearch').prop("disabled", true)
+    }
+
+    async function ahmmosfc339LoadPageData(page) {
+        if (page === "ahmmosfc339p02") {
+            _fw_reset_subpage($('#ahmmosfc339p02'));
+            _fw_getSysdate($('#ahmmosfc339p02TrandDate'));
+            $('#ahmmosfc339p02TableCNP').bootstrapTable('removeAll');
+            $('#ahmmosfc339p02SlocId').val(ahmmosfc339GlobalVariable.sloc);
+            $('#ahmmosfc339p02TransType').val(ahmmosfc339GlobalVariable.transType);
+            $('#ahmmosfc339p02QtyBtry').val("0");
+            $('#ahmmosfc339p02QtyChrgr').val("0");
+            $('#ahmmosfc339p02SheetNo').prop("disabled", false);
+            $('#ahmmosfc339p02BoxNo').prop("disabled", true);
+            $('#ahmmosfc339p02CartonNo').prop("disabled", true);
+            $('#ahmmosfc339p02PartNumber').prop("disabled", true);
+            $('#ahmmosfc339p02ScanSN').prop("disabled", true);
+            $('#ahmmosfc339p02Save').prop("disabled", true);
+            ahmmosfc339GlobalVariable = {};
+        } else if (page === "ahmmosfc339p03") {
+            _fw_reset_subpage($('#ahmmosfc339p03'));
+            _fw_getSysdate($('#ahmmosfc339p03TrandDate'));
+            $('#ahmmosfc339p03TableOut').bootstrapTable('removeAll');
+            $('#ahmmosfc339p03SlocId').val(ahmmosfc339GlobalVariable.sloc);
+            $('#ahmmosfc339p03TransType').val(ahmmosfc339GlobalVariable.transType);
+            $('#ahmmosfc339p03QtyBtry').val("0");
+            $('#ahmmosfc339p03QtyChrgr').val("0");
+            $('#ahmmosfc339p03ShippingListNo').prop("disabled", false);
+            $('#ahmmosfc339p03Expedisi').prop("disabled", true);
+            $('#ahmmosfc339p03ExpedisiBtnLov').prop("disabled", true);
+            $('#ahmmosfc339p03MainDealer').prop("disabled", true);
+            $('#ahmmosfc339p03MainDealerBtnLov').prop("disabled", true);
+            $('#ahmmosfc339p03TruckNo').prop("disabled", true);
+            $('#ahmmosfc339p03SheetNo').prop("disabled", true);
+            $('#ahmmosfc339p03Save').prop("disabled", true);
+            ahmmosfc339GlobalVariable = {};
+        }
+    }
+
+    function ahmmosfc339CheckSheetNo(obj, event) {
+        if (event.keyCode === 13) {
+            _fw_validation_clear(obj);
+
+            if ($('#ahmmosfc339p02SheetNo').val() == "") {
+                $('#ahmmosfc339p02SheetNo').closest('.form-group').addClass('has-error has-feedback')
+                _fw_setMessage(obj, 0, " Packing Sheet No. Tidak boleh kosong");
+                $('html, body').animate({ scrollTop: 0 }, 750);
+                return;
+            }
+
+            let paramCnp = {};
+            let packSheetNo = $('#ahmmosfc339p02SheetNo').val()
+            paramCnp.packSheetNo = packSheetNo;
+            _fw_post(ahmmosfc339Url + 'cek-sheet-no', paramCnp, function (data) {
+                let status = data.status;
+                if (status == '0') {
+                    let errMsg;
+                    let msg = data.message;
+                    switch (msg.error_code) {
+                        case "MULTIPLE_PACK_SHEET_FOUND":
+                            errMsg = `Ditemukan lebih dari 1 transaksi CNP dengan Packing Sheet No: ${packSheetNo}`;
+                            break;
+                        default:
+                            errMsg = "error";
+                            break;
+                    }
+                    $('#ahmmosfc339p02SheetNo').closest('.form-group').addClass('has-error has-feedback')
+                    _fw_setMessage(obj, 0, errMsg);
+                    $('#ahmmosfc339p02SheetNo').val("")
+                    return;
+                }
+                data = data.data;
+                if (data.length == 0) {
+                    // create
+                    $('#ahmmosfc339p02BoxNo').prop("disabled", false);
+                    $('#ahmmosfc339p02CartonNo').prop("disabled", false);
+                    $('#ahmmosfc339p02PartNumber').prop("disabled", false);
+                    $('#ahmmosfc339p02ScanSN').prop("disabled", false);
+                    $('#ahmmosfc339p02SheetNo').prop("disabled", true);
+                    $('#ahmmosfc339p02CartonNo').focus();
+                    return;
+                } else {
+                    data = data[0];
+                    // detail
+                    $('#ahmmosfc339p02TrandDate').prop("disabled", true);
+                    $('#ahmmosfc339p02TrandDate').val(data.txnDate);
+
+                    $('#ahmmosfc339p02TransId').prop("disabled", true);
+                    $('#ahmmosfc339p02TransId').val(data.txnID);
+
+                    $('#ahmmosfc339p02SlocId').prop("disabled", true);
+                    $('#ahmmosfc339p02SlocId').val(data.txnSloc);
+
+                    $('#ahmmosfc339p02SheetNo').prop("disabled", true);
+                    $('#ahmmosfc339p02SheetNo').val(data.packSheetNo, false);
+
+                    $('#ahmmosfc339p02QtyBtry').val("0");
+                    $('#ahmmosfc339p02QtyChrgr').val("0");
+
+                    $('#ahmmosfc339p02BoxNo').prop("disabled", true);
+                    $('#ahmmosfc339p02CartonNo').prop("disabled", true);
+                    $('#ahmmosfc339p02PartNumber').prop("disabled", true);
+                    $('#ahmmosfc339p02ScanSN').prop("disabled", true);
+
+                    // hide button save
+                    $('#ahmmosfc339p02Save').prop("disabled", true);
+                    $('#ahmmosfc339p02Save').hide();
+
+                    // populate table
+                    data.accessories.forEach(item => {
+                        item.editable = false;
+                        $("#ahmmosfc339p02TableCNP").bootstrapTable("append", item)
+                        if (item.partTypeDesc === "BATTERY") {
+                            $('#ahmmosfc339p02QtyBtry').val(parseInt($('#ahmmosfc339p02QtyBtry').val()) + 1);
+                        } else if (item.partTypeDesc === "CHARGER") {
+                            $('#ahmmosfc339p02QtyChrgr').val(parseInt($('#ahmmosfc339p02QtyChrgr').val()) + 1);
+                        }
+                    })
+                }
+            });
+        }
+    }
+
+    function ahmmosfc339AutoNumberingCNPTable(value, row, index) {
+        return index + 1;
+    }
+
+    function ahmmosfc339p02DeleteRowCNPTable(value, row, index) {
+        if (row.editable) {
+            return `<button class="btn btn-danger" onclick="ahmmosfc339p02DeleteRowCnp('${row.scanSN}')">Delete</button>`;
+        }
+    }
+
+    function ahmmosfc339validatePartNumber(obj, event) {
+        _fw_validation_clear(obj);
+        if ($("#ahmmosfc339p02PartNumber").val() === "") {
+            $('#ahmmosfc339p02PartNumber').focus();
+            $('#ahmmosfc339p02PartNumber').closest('.form-group').addClass('has-error has-feedback')
+            _fw_setMessage(obj, 0, " Part Number Tidak boleh kosong");
+            return;
+        } else if ($("#ahmmosfc339p02PartNumber").val().length < 5) {
+            $('#ahmmosfc339p02PartNumber').closest('.form-group').addClass('has-error has-feedback')
+            _fw_setMessage(obj, 0, " Prefix Part Number Tidak Valid");
+            $('#ahmmosfc339p02PartNumber').focus();
+            $('html, body').animate({ scrollTop: 0 }, 750);
+            return;
+        }
+        let paramPartnum = {
+            partNum: $("#ahmmosfc339p02PartNumber").val()
+        };
+    }
+
+    function ahmmosfc339OnkeydownPartNum(obj) {
+        if (event.keyCode === 13) {
+            ahmmosfc339validatePartNumber(obj)
+        }
+    }
+
+    function ahmmosfc339AddToTableCnp(obj, event) {
+        if (event.keyCode === 13) {
+            // reset err
+            _fw_validation_clear($("#ahmmosfc339p02CartonNo"));
+            _fw_validation_clear($("#ahmmosfc339p02PartNumber"));
+            _fw_validation_clear($("#ahmmosfc339p02ScanSN"));
+
+            let packSheetNo = $("#ahmmosfc339p02SheetNo").val()
+            let boxNo = $("#ahmmosfc339p02BoxNo").val()
+            let cartonNo = $("#ahmmosfc339p02CartonNo").val()
+            let partNum = $("#ahmmosfc339p02PartNumber").val()
+            let scanSN = $("#ahmmosfc339p02ScanSN").val()
+
+            let errList = [];
+
+            if (cartonNo === "") {
+                errList.push({ field: "ahmmosfc339p02CartonNo", msg: "Carton No Tidak boleh kosong" })
+            }
+
+            if (partNum === "") {
+                errList.push({ field: "ahmmosfc339p02PartNumber", msg: "Part Number Tidak boleh kosong" })
+            }
+
+            if (scanSN === "") {
+                errList.push({ field: "ahmmosfc339p02ScanSN", msg: "Scan S/N Tidak boleh kosong" })
+            }
+
+            var tableData = $("#ahmmosfc339p02TableCNP").bootstrapTable('getData');
+            for (var i = 0; i < tableData.length; i++) {
+                if (tableData[i].scanSN === scanSN) {
+                    errList.push({ field: "ahmmosfc339p02ScanSN", msg: `Serial Number ${scanSN} sudah discan` })
+                    break;
+                }
+            }
+            if (errList.length > 0) {
+                let errId = errList[0].field;
+                let errMsg = ""
+                errList.forEach(element => {
+                    $(`#${element.field}`).closest(".form-group").addClass('has-error has-feedback');
+                    if (errMsg == "") {
+                        errMsg = element.msg
+                    } else {
+                        errMsg = `${errMsg}<br>${element.msg}`
+                    }
+                });
+                _fw_setMessage($(`#${errId}`), 0, errMsg);
+                $('html, body').animate({ scrollTop: 0 }, 750);
+                return;
+            }
+
+
+            let cnpData = {
+                packSheetNo: packSheetNo,
+                boxNo: boxNo,
+                cartonNo: cartonNo,
+                partNum: partNum,
+                scanSN: scanSN
+            };
+
+            _fw_post(ahmmosfc339Url + 'validate-serial-number', cnpData, function (data) {
+                _fw_validation_clear(obj);
+                if (data.status === '0') {
+                    if (data.message.scanSN) {
+                        _fw_setMessage(obj, 0, data.message.scanSN)
+                        $(`#ahmmosfc339p02ScanSN`).closest(".form-group").addClass('has-error has-feedback');
+                    } else if (data.message.partNum) {
+                        _fw_setMessage(obj, 0, data.message.partNum)
+                        $(`#ahmmosfc339p02PartNumber`).closest(".form-group").addClass('has-error has-feedback');
+                    } else {
+                        console.log(data)
+                    }
+                    $('html, body').animate({ scrollTop: 0 }, 750);
+                    return;
+                }
+                cnpData.partTypeDesc = data.data[0].partTypeDesc;
+                cnpData.editable = true;
+                $("#ahmmosfc339p02TableCNP").bootstrapTable("append", cnpData);
+                if (cnpData.partTypeDesc === "BATTERY") {
+                    $('#ahmmosfc339p02QtyBtry').val(parseInt($('#ahmmosfc339p02QtyBtry').val()) + 1);
+                } else if (cnpData.partTypeDesc === "CHARGER") {
+                    $('#ahmmosfc339p02QtyChrgr').val(parseInt($('#ahmmosfc339p02QtyChrgr').val()) + 1);
+                }
+                $('#ahmmosfc339p02Save').show();
+                $('#ahmmosfc339p02Save').prop("disabled", false);
+                $('#ahmmosfc339p02ScanSN').val("");
+                $('#ahmmosfc339p02PartNumber').val("");
+                $('#ahmmosfc339p02CartonNo').val("");
+                $('#ahmmosfc339p02CartonNo').focus();
+
+            });
+        }
+
+    }
+
+    function ahmmosfc339eventEnter(obj, event, id) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $('#' + id).focus();
+        }
+    }
+
+    function ahmmosfc339p02DeleteRowCnp(scanSn) {
+        // decrease count
+        let tableData = $('#ahmmosfc339p02TableCNP').bootstrapTable('getData')
+        for (let index = 0; index < tableData.length; index++) {
+            const element = tableData[index];
+            if (element.scanSN == scanSn) {
+                switch (element.partTypeDesc) {
+                    case "BATTERY":
+                        $('#ahmmosfc339p02QtyBtry').val(parseInt($('#ahmmosfc339p02QtyBtry').val()) - 1);
+                        break;
+                    case "CHARGER":
+                        $('#ahmmosfc339p02QtyChrgr').val(parseInt($('#ahmmosfc339p02QtyChrgr').val()) - 1);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        // remove from table
+        $('#ahmmosfc339p02TableCNP').bootstrapTable('remove', {
+            field: 'scanSN',
+            values: [scanSn]
+        });
+
+        if ($('#ahmmosfc339p02TableCNP').bootstrapTable('getData').length == 0) {
+            $('#ahmmosfc339p02Save').hide();
+            $('#ahmmosfc339p02Save').prop("disabled", true);
+        }
+    }
+
+    function ahmmosfc339p02Reset(obj) {
+        _fw_validation_clear(obj);
+        $('#ahmmosfc339p02TableCNP').bootstrapTable('removeAll');
+
+        _fw_getSysdate($('#ahmmosfc339p02TrandDate'));
+        $('#ahmmosfc339p02TransId').val("");
+        $('#ahmmosfc339p02Save').show();
+        $('#ahmmosfc339p02ScanSN').val("");
+        $('#ahmmosfc339p02ScanSN').prop("disabled", true);
+        $('#ahmmosfc339p02PartNumber').val("");
+        $('#ahmmosfc339p02PartNumber').prop("disabled", true);
+        $('#ahmmosfc339p02CartonNo').val("");
+        $('#ahmmosfc339p02CartonNo').prop("disabled", true);
+        $('#ahmmosfc339p02BoxNo').val("");
+        $('#ahmmosfc339p02BoxNo').prop("disabled", true);
+        $('#ahmmosfc339p02SheetNo').val("");
+        $('#ahmmosfc339p02SheetNo').prop("disabled", false);
+        $('#ahmmosfc339p02QtyBtry').val("0");
+        $('#ahmmosfc339p02QtyChrgr').val("0");
+        $('#ahmmosfc339p02Save').hide();
+        $('#ahmmosfc339p02Save').prop("disabled", true);
+        $('html, body').animate({ scrollTop: 0 }, 750);
+
+    }
+
+    function ahmmosfc339p02Back(obj) {
+        _fw_subpage(obj, "ahmmosfc339p01");
+        ahmmosfc339p02Reset(obj);
+        _fw_reset_subpage($('#ahmmosfc339p02'))
+    }
+
+    function ahmmosfc339p02Save(obj) {
+        $('#ahmmosfc339p02Save').prop("disabled", true);
+        $('#ahmmosfc339p02Back').prop("disabled", true);
+        $('#ahmmosfc339p02Reset').prop("disabled", true);
+        $('#ahmmosfc339p02ScanSN').prop("disabled", true);
+        $('#ahmmosfc339p02PartNumber').prop("disabled", true);
+        $('#ahmmosfc339p02CartonNo').prop("disabled", true);
+        $('#ahmmosfc339p02BoxNo').prop("disabled", true);
+        $('#ahmmosfc339p02SheetNo').prop("disabled", true);
+        $('.ahmmosfc339p02DeleteRow').hide();
+
+        var tableData = $("#ahmmosfc339p02TableCNP").bootstrapTable('getData');
+        var paramSaveCnp = {};
+        paramSaveCnp.txnDate = $('#ahmmosfc339p02TrandDate').val();
+        paramSaveCnp.slocId = $('#ahmmosfc339p02SlocId').val();
+        paramSaveCnp.packSheetNo = $('#ahmmosfc339p02SheetNo').val();
+
+        var paramCnpTable = [];
+        for (var i = 0; i < tableData.length; i++) {
+            var tableObject = {};
+            tableObject.boxNo = tableData[i].boxNo;
+            tableObject.cartonNo = tableData[i].cartonNo;
+            tableObject.partNum = tableData[i].partNum;
+            tableObject.scanSN = tableData[i].scanSN;
+            paramCnpTable.push(tableObject);
+        }
+        paramSaveCnp.accessories = paramCnpTable;
+
+        _fw_post(ahmmosfc339Url + 'save-cnp', paramSaveCnp, function (data) {
+            if (data.status === '1') {
+                $('#ahmmosfc339p02TransId').val(data.data[0]);
+                $('#ahmmosfc339p02Save').prop("disabled", false);
+                $('#ahmmosfc339p02Back').prop("disabled", false);
+                $('#ahmmosfc339p02Reset').prop("disabled", false);
+                $('#ahmmosfc339p02Save').hide();
+                _fw_setMessage(obj, '1', 'Data berhasil disimpan');
+
+                let rows = $('#ahmmosfc339p02TableCNP').bootstrapTable('getData')
+                for (let index = 0; index < rows.length; index++) {
+                    let row = rows[index];
+                    row.editable = false
+                    $('#ahmmosfc339p02TableCNP').bootstrapTable('updateRow', {
+                        index: index,
+                        row: row
+                    })
+                }
+                $('html, body').animate({ scrollTop: 0 }, 750);
+            } else {
+                $('#ahmmosfc339p02Save').prop("disabled", false);
+                $('#ahmmosfc339p02Back').prop("disabled", false);
+                $('#ahmmosfc339p02Reset').prop("disabled", false);
+                _fw_setMessage(obj, '0', 'Data gagal disimpan');
+                $('html, body').animate({ scrollTop: 0 }, 750);
+            }
+        })
+
+    }
+
+    function ahmmosfc339CheckShipList(obj, event) {
+        if (event.keyCode === 13) {
+            _fw_validation_clear(obj);
+
+            if ($('#ahmmosfc339p03ShippingListNo').val() == "") {
+                $('#ahmmosfc339p03ShippingListNo').closest('.form-group').addClass('has-error has-feedback')
+                _fw_setMessage(obj, 0, " Shiping List Tidak boleh kosong");
+                return;
+            }
+            let shippingListNo = $('#ahmmosfc339p03ShippingListNo').val()
+            let param = { shippingListNo: shippingListNo };
+            _fw_post(ahmmosfc339Url + 'check-list-no', param, function (data) {
+                if (data.status === '1' && data.data.length == 0) {
+                    $('#ahmmosfc339p03ShippingListNo').prop("disabled", true);
+                    $('#ahmmosfc339p03Expedisi').prop("disabled", false);
+                    $('#ahmmosfc339p03ExpedisiBtnLov').prop("disabled", false);
+                    $('#ahmmosfc339p03MainDealer').prop("disabled", false);
+                    $('#ahmmosfc339p03MainDealerBtnLov').prop("disabled", false);
+                    $('#ahmmosfc339p03TruckNo').prop("disabled", false);
+                    $('#ahmmosfc339p03SheetNo').prop("disabled", false);
+                    $('#ahmmosfc339p03Expedisi').focus();
+                    $('#ahmmosfc339p03Save').prop("disabled", true);
+                    $('#ahmmosfc339p03Save').show();
+                } else {
+                    data = data.data[0]
+                    $('#ahmmosfc339p03TrandDate').prop("disabled", true);
+                    $('#ahmmosfc339p03TrandDate').val(data.txnDate);
+
+                    $('#ahmmosfc339p03TransId').prop("disabled", true);
+                    $('#ahmmosfc339p03TransId').val(data.txnId);
+
+                    $('#ahmmosfc339p03SlocId').prop("disabled", true);
+                    $('#ahmmosfc339p03SlocId').val(data.slocId);
+
+                    $('#ahmmosfc339p03ShippingListNo').prop("disabled", true);
+                    $('#ahmmosfc339p03ShippingListNo').val(data.shippingListNo);
+
+                    $('#ahmmosfc339p03Expedisi').prop("disabled", true);
+                    $('#ahmmosfc339p03Expedisi').val(data.expedisi);
+                    $('#ahmmosfc339p03ExpedisiBtnLov').prop("disabled", true);
+
+                    $('#ahmmosfc339p03MainDealer').prop("disabled", true);
+                    $('#ahmmosfc339p03MainDealer').val(data.mainDealer);
+                    $('#ahmmosfc339p03MainDealerBtnLov').prop("disabled", true);
+
+                    $('#ahmmosfc339p03TruckNo').prop("disabled", true);
+                    $('#ahmmosfc339p03TruckNo').val(data.truckNo);
+
+                    $('#ahmmosfc339p03SheetNo').prop("disabled", true);
+                    $('#ahmmosfc339p03SheetNo').val("");
+
+                    $('#ahmmosfc339p03Save').prop("disabled", true);
+                    $('#ahmmosfc339p03Save').hide();
+
+                    _fw_post(ahmmosfc339Url + 'get-data-out', param, function (data) {
+                        if (data.status === '1') {
+                            if (data.message.msgErr === undefined) {
+                                data.data.forEach(item => {
+                                    let outData = {
+                                        packSheetNo: item.packSheetNo,
+                                        cartonNo: item.cartonNo,
+                                        partTypeDesc: item.partTypeDesc,
+                                        editable: false,
+                                    };
+                                    $("#ahmmosfc339p03TableOut").bootstrapTable("append", outData);
+                                    if (item.partTypeDesc === "BATTERY") {
+                                        $('#ahmmosfc339p03QtyBtry').val(parseInt($('#ahmmosfc339p03QtyBtry').val()) + 1);
+                                    } else if (item.partTypeDesc === "CHARGER") {
+                                        $('#ahmmosfc339p03QtyChrgr').val(parseInt($('#ahmmosfc339p03QtyChrgr').val()) + 1);
+                                    }
+                                });
+                            } else {
+                                _fw_setMessage(obj, 0, data.message.msgErr);
+                                $(`#ahmmosfc339p03SheetNo`).closest(".form-group").addClass('has-error has-feedback');
+                                $('html, body').animate({ scrollTop: 0 }, 750);
+                            }
+                        }
+                    })
+
+                }
+            });
+
+        }
+    }
+
+    function ahmmosfc339p03Reset(obj) {
+        _fw_validation_clear(obj);
+        _fw_getSysdate($('#ahmmosfc339p03TrandDate'));
+        $('#ahmmosfc339p03TransId').val("");
+        $('#ahmmosfc339p03SlocId').val(ahmmosfc339GlobalVariable.sloc);
+        $("#ahmmosfc339p03ShippingListNo").focus();
+        $('#ahmmosfc339p03ShippingListNo').val("");
+        $('#ahmmosfc339p03ShippingListNo').prop("disabled", false);
+        $('#ahmmosfc339p03Expedisi').val("");
+        $('#ahmmosfc339p03Expedisi').prop("disabled", true);
+        $('#ahmmosfc339p03ExpedisiBtnLov').prop("disabled", true);
+        $('#ahmmosfc339p03MainDealer').val("");
+        $('#ahmmosfc339p03MainDealer').prop("disabled", true);
+        $('#ahmmosfc339p03MainDealerBtnLov').prop("disabled", true);
+        $('#ahmmosfc339p03TruckNo').val("");
+        $('#ahmmosfc339p03TruckNo').prop("disabled", true);
+        $('#ahmmosfc339p03SheetNo').val("");
+        $('#ahmmosfc339p03SheetNo').prop("disabled", true);
+        $('#ahmmosfc339p03QtyBtry').val("0");
+        $('#ahmmosfc339p03QtyChrgr').val("0");
+        $("#ahmmosfc339p03TableOut").bootstrapTable("removeAll");
+        $('html, body').animate({ scrollTop: 0 }, 750);
+    }
+
+    function ahmmosfc339p03Back(obj) {
+        _fw_validation_clear(obj);
+        _fw_subpage(obj, "ahmmosfc339p01");
+        ahmmosfc339p03Reset(obj);
+        _fw_reset_subpage($('#ahmmosfc339p03'))
+    }
+
+    function ahmmosfc339p03Save(obj) {
+        _fw_validation_clear(obj);
+
+        if ($('#ahmmosfc339p03Expedisi').val() == "") {
+            $('#ahmmosfc339p03Expedisi').closest('.form-group').addClass('has-error has-feedback')
+            _fw_setMessage(obj, 0, " Expedisi Tidak boleh kosong");
+            return;
+        }
+
+        if ($('#ahmmosfc339p03MainDealer').val() == "") {
+            $('#ahmmosfc339p03MainDealer').closest('.form-group').addClass('has-error has-feedback')
+            _fw_setMessage(obj, 0, " Main Delaer Tidak boleh kosong");
+            return;
+        }
+
+        if ($('#ahmmosfc339p03TruckNo').val() == "") {
+            $('#ahmmosfc339p03TruckNo').closest('.form-group').addClass('has-error has-feedback')
+            _fw_setMessage(obj, 0, " Truck No Tidak boleh kosong");
+            return;
+        }
+        
+        var tableData = $("#ahmmosfc339p03TableOut").bootstrapTable('getData');
+        var paramSaveOut = {};
+        paramSaveOut.shippingListNo = $('#ahmmosfc339p03ShippingListNo').val();
+        paramSaveOut.slocId = $('#ahmmosfc339p03SlocId').val();
+        paramSaveOut.expedisi = $('#ahmmosfc339p03Expedisi').val();
+        paramSaveOut.mainDealer = $('#ahmmosfc339p03MainDealer').val();
+        paramSaveOut.truckNo = $('#ahmmosfc339p03TruckNo').val();
+        paramSaveOut.packSheetNoList = ahmmosfc339p03OutTablePackSheet();
+
+        _fw_post(ahmmosfc339Url + 'save-out', paramSaveOut, function (data) {
+            if (data.status === '1') {
+                $('#ahmmosfc339p03TransId').val(data.data[0]);
+                $('#ahmmosfc339p03Save').prop("disabled", false);
+                $('#ahmmosfc339p03Back').prop("disabled", false);
+                $('#ahmmosfc339p03Reset').prop("disabled", false);
+                $('#ahmmosfc339p03ShippingListNo').prop("disabled", true);
+                $('#ahmmosfc339p03SheetNo').prop("disabled", true);
+                $('#ahmmosfc339p03Save').hide();
+                // disable delete
+                let rows = $('#ahmmosfc339p03TableOut').bootstrapTable('getData')
+                for (let index = 0; index < rows.length; index++) {
+                    let row = rows[index];
+                    row.editable = false
+                    $('#ahmmosfc339p03TableOut').bootstrapTable('updateRow', {
+                        index: index,
+                        row: row
+                    })
+                }
+                _fw_setMessage(obj, '1', 'Data berhasil disimpan');
+                $('html, body').animate({ scrollTop: 0 }, 750);
+            } else {
+                $('#ahmmosfc339p03Save').prop("disabled", false);
+                $('#ahmmosfc339p03Back').prop("disabled", false);
+                $('#ahmmosfc339p03Reset').prop("disabled", false);
+                _fw_setMessage(obj, '0', 'Data gagal disimpan');
+                $('html, body').animate({ scrollTop: 0 }, 750);
+            }
+        })
+
+    }
+
+    function ahmmosfc339p03DeleteRowOut(packSheetNo) {
+        // decrease count
+        let parts = $('#ahmmosfc339p03TableOut').bootstrapTable('getData', {
+            field: 'packSheetNo',
+            values: [packSheetNo]
+        })
+        parts.forEach(element => {
+            if (element.packSheetNo == packSheetNo) {
+                let partTypeDesc = element.partTypeDesc
+                if (partTypeDesc === "BATTERY") {
+                    $('#ahmmosfc339p03QtyBtry').val(parseInt($('#ahmmosfc339p03QtyBtry').val()) - 1);
+                } else if (partTypeDesc === "CHARGER") {
+                    $('#ahmmosfc339p03QtyChrgr').val(parseInt($('#ahmmosfc339p03QtyChrgr').val()) - 1);
+                }
+            }
+        });
+        // remove from table
+        $('#ahmmosfc339p03TableOut').bootstrapTable('remove', {
+            field: 'packSheetNo',
+            values: [packSheetNo]
+        });
+        if (ahmmosfc339p03OutTablePackSheet().length == 0) {
+            $('#ahmmosfc339p03Save').prop("disabled", true);
+        }
+    }
+
+    function ahmmosfc339p03DeleteRowOutTable(value, row, index) {
+        if (row.editable) {
+            return `<button class="btn btn-danger" onclick="ahmmosfc339p03DeleteRowOut('${row.packSheetNo}')">Delete</button>`;
+        }
+    }
+
+    function ahmmosfc339AutoNumberingoutTable(value, row, index) {
+        return index + 1;
+    }
+
+    function ahmmosfc339p03OutTablePackSheet() {
+        let listPackSheet = [];
+        $('#ahmmosfc339p03TableOut').bootstrapTable('getData').forEach(element => {
+            packSheetNo = element.packSheetNo;
+            if (!listPackSheet.includes(packSheetNo)) {
+                listPackSheet.push(packSheetNo);
+            }
+        });
+        return listPackSheet;
+    }
+
+    function ahmmosfc339p03addDataTable(obj, event) {
+        if (event.keyCode === 13) {
+            _fw_validation_clear(obj);
+
+            let scannedPackSheet = $("#ahmmosfc339p03SheetNo").val();
+            if (scannedPackSheet == "") {
+                $("#ahmmosfc339p03SheetNo")
+                    .closest(".form-group")
+                    .addClass("has-error has-feedback");
+                _fw_setMessage(obj, 0, `Packing Sheet No. Tidak boleh kosong`);
+                $('html, body').animate({ scrollTop: 0 }, 750);
+                return;
+            }
+            let listPackSheet = ahmmosfc339p03OutTablePackSheet();
+            if (listPackSheet.includes(scannedPackSheet)) {
+                $("#ahmmosfc339p03SheetNo")
+                    .closest(".form-group")
+                    .addClass("has-error has-feedback");
+                _fw_setMessage(obj, 0, `Packing Sheet ${scannedPackSheet} sudah discan`);
+                $('html, body').animate({ scrollTop: 0 }, 750);
+                return;
+            }
+
+            $("#ahmmosfc339p03SheetNo").val("");
+
+            let paramPackSht = {
+                packSheetNo: scannedPackSheet,
+            };
+
+            _fw_post(ahmmosfc339Url + 'get-data-out', paramPackSht, function (data) {
+                if (data.status === '0') {
+                    data = data.message;
+                    let errMsg = "Error"
+                    switch (data.error_code) {
+                        case "PACKING_SHEET_NOT_FOUND":
+                            errMsg = `Packing sheet ${data.data.packSheetNo} tidak ditemukan`
+                            break;
+                        case "PACKING_SHEET_USED":
+                            errMsg = `Packing sheet ${data.data.packSheetNo} sudah digunakan di transaksi ${data.data.txnOutId}`
+                            break;
+                        default:
+                            break;
+                    }
+                    _fw_setMessage(obj, 0, errMsg);
+                    $(`#ahmmosfc339p03SheetNo`).closest(".form-group").addClass('has-error has-feedback');
+                    $('html, body').animate({ scrollTop: 0 }, 750);
+                    return;
+                }
+                data.data.forEach(item => {
+                    let outData = {
+                        packSheetNo: item.packSheetNo,
+                        cartonNo: item.cartonNo,
+                        partTypeDesc: item.partTypeDesc,
+                        editable: true
+                    };
+                    $("#ahmmosfc339p03TableOut").bootstrapTable("append", outData);
+                    if (item.partTypeDesc === "BATTERY") {
+                        $('#ahmmosfc339p03QtyBtry').val(parseInt($('#ahmmosfc339p03QtyBtry').val()) + 1);
+                    } else if (item.partTypeDesc === "CHARGER") {
+                        $('#ahmmosfc339p03QtyChrgr').val(parseInt($('#ahmmosfc339p03QtyChrgr').val()) + 1);
+                    }
+                });
+                $('#ahmmosfc339p03Save').prop("disabled", false);
+                $("#ahmmosfc339p03Expedisi").prop("disabled", true);
+                $("#ahmmosfc339p03ExpedisiBtnLov").prop("disabled", true);
+                $("#ahmmosfc339p03MainDealer").prop("disabled", true);
+                $("#ahmmosfc339p03MainDealerBtnLov").prop("disabled", true);
+                $("#ahmmosfc339p03TruckNo").prop("disabled", true);
+            })
+        }
+    }
+
+    function ahmmosfc339LovResponseHandler(response) {
+        if (response.status != '0') {
+            return {
+                rows: response.data,
+                total: response.total
+            };
+        } else {
+            return {
+                rows: [],
+                total: 0
+            };
+        }
+    }
+
+    function ahmmosfc339p03LovExpPreFunc(params) {
+        params.search = {
+            "exp": $("#ahmmosfc339p03Expedisi").val(),
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }
+        }
+        return params;
+    }
+
+    function ahmmosfc339p03LovMDPreFunc(params) {
+        params.search = {
+            "md": $("#ahmmosfc339p03MainDealer").val(),
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }
+        }
+        return params;
+    }
+</script>

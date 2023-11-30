@@ -1,0 +1,553 @@
+<div id="AHMMOSFC302" class="div-app" data-version="1.0">
+    <link rel="stylesheet" href="/imo05/ahmmosfc300-ahs/resources/css/AHMMOSFC302.css">
+    <div class="global_message">
+    </div>
+
+    <div id="ahmmosfc302p01" class="subpage subpage-default" data-path="Scan Delivery Part">
+        <div class="panel">            
+            <div class="panel-body">
+                <div  class="row form-filter-panel" id="ahmmosfc302p01formarea">
+                    <div class="form-horizontal">
+                        <div class="row filter-groups">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group" id="ahmmosfc302groupwctfr">
+                                    <label for="ahmmosfc302p01_wctfrom" class="col-xs-12 col-sm-3 control-label">WCT From<span style="color: red;">*</span></label>
+                                    <div class="lookup-wrapper col-xs-12 col-md-3">
+                                        <div id="ahmmosfc302_lovwctfr" class="lookup flex flex-stretch" data-lookup-pre-func="ahmmosfc302_mwctfromlookup"
+                                             data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-mwct-from" data-query-params-type="limit" data-columns='[
+                                             {"id":"vwctid","name":"WCT ID","visible":"true","sortable": "true"},
+                                             {"id":"vwctdesc","name":"WCT Description","visible":"true","sortable": "true"},
+                                             {"id":"mplantVplantid","name":"Plant ID","visible":"true","sortable": "true"}
+                                             ]' data-callback='{
+                                             "ahmmosfc302p01_wctfrom":"vwctid",
+                                             "ahmmosfc302p01_plantfrid":"mplantVplantid",
+                                             "ahmmosfc302p01_wctfridhidden":"vwctid",
+                                             "ahmmosfc302p01_wctfrdesc":"vwctdesc"
+                                             }'
+
+                                             >
+                                            <input id="ahmmosfc302p01_wctfridhidden" hidden/>
+                                            <input id="ahmmosfc302p01_plantfrid" hidden />
+                                            <input id="ahmmosfc302p01_wctfrom" class="form-control input-lookup" placeholder="WCT From.." data-field="desc" />
+                                            <button class="btn btn-default btn-lookup"><i class="glyphicon glyphicon-search"></i></button>                                             
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <input id="ahmmosfc302p01_wctfrdesc" class="form-control ahmmosfc302_readonlyField"  readonly>                                         
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc302p01_wctto" class="col-xs-12 col-sm-3 control-label">WCT To<span style="color: red;">*</span></label>
+                                    <div class="lookup-wrapper col-xs-12 col-md-3">
+                                        <div id="ahmmosfc302_lovwctto" class="lookup flex flex-stretch"
+                                             data-lookup-pre-func="ahmmosfc302_mwcttolookup"
+                                             data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-mwct-to"
+                                             data-columns='[
+                                             {"id":"vwctid","name":"WCT ID","visible":"true","sortable": "true"},
+                                             {"id":"vwctdesc","name":"WCT Description","visible":"true","sortable": "true"},
+                                             {"id":"mplantVplantid","name":"Plant ID","visible":"true","sortable": "true"}
+                                             ]' data-query-params-type="limit" 
+                                             data-callback='{
+                                             "ahmmosfc302p01_wctto":"vwctid",
+                                             "ahmmosfc302p01_planttoid":"mplantVplantid",
+                                             "ahmmosfc302p01_wcttodesc":"vwctdesc"}'
+                                             >
+                                            <input id="ahmmosfc302p01_planttoid" hidden/>
+                                            <input id="ahmmosfc302p01_wctto" class="form-control input-lookup" placeholder="WCT To.." data-field="desc" />
+                                            <button class="btn btn-default  btn-lookup"><i class="glyphicon glyphicon-search"></i></button>                                             
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <input id="ahmmosfc302p01_wcttodesc" class="form-control ahmmosfc302_readonlyField"  readonly>                                         
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc302p01_idopr" class="col-xs-12 col-sm-3 control-label">Operator ID<span style="color: red;">*</span></label>
+                                    <div class="lookup-wrapper col-xs-12 col-md-3">
+                                        <div class=" lookup" id="ahmmosfc302_idoprlov" data-lookup-pre-func="ahmmosfc302_oprlookup" 
+                                             data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-list-opr"
+                                             data-query-params-type="limit"
+                                             data-columns='[
+                                             {"id":"rsetvid", "name":"vid","visible":"false","sortable": "true"},
+                                             {"id":"vitemcode", "name":"code","visible":"false","sortable": "true"},
+                                             {"id":"vnama", "name":"nama","visible":"false","sortable": "true"}
+                                             ]'
+                                             data-callback='{                                             
+                                             "ahmmosfc302p01_vnameopr":"vnama"
+                                             }'
+                                             >                                            
+                                            <input id="ahmmosfc302p01_idopr" class="form-control input-lookup" maxlength="7" placeholder="Type Operator ID" onkeyup="ahmmosfc302_triggerSearchbyEnter(event)" type="password"  />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc302p01_vnameopr" class="col-xs-12 col-sm-3 control-label">Operator Name</label>
+                                    <div class="lookup-wrapper col-xs-12 col-md-6">
+                                        <input id="ahmmosfc302p01_vnameopr" class="form-control ahmmosfc302_readonlyField"  readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-12 col-sm-3 control-label">Transaction By</label>
+                                    <div class="col-xs-12 col-sm-9">
+                                        <div class="switch-field">
+                                            <input type="radio" id="ahmmosfc302_switchdeliverybypart" name="ahmmosfc302switchlayout" value="part" checked/>
+                                            <label for="ahmmosfc302_switchdeliverybypart">Scan by Part Number</label>
+                                            <input type="radio" id="ahmmosfc302_switchdeliverybykereta" name="ahmmosfc302switchlayout" value="kereta" />
+                                            <label for="ahmmosfc302_switchdeliverybykereta">Scan by ID Kereta</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-filter-buttons p-0-im flex flex-line-stretch">
+                            <div class="col-xs-6">
+                                <div class="flex flex-top no-wrap">
+                                    <div class="w-100 text-left">
+                                        <button class="btn btn-warning" id="ahmmosfc302p01_resettop_btn" onclick="ahmmosfc302_ResetField('ahmmosfc302p01formarea', 'click');ahmmosfc302_ResetField('ahmmosfc302_scanbypartnumform'); $('#ahmmosfc302_tblpartnum').bootstrapTable('removeAll');$('#ahmmosfc302_tblidkrt').bootstrapTable('removeAll'); ahmmosfc302_lockUnlockparentfilter('unlock')">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-refresh fg-white mr-10"></i>Reset
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="flex flex-top flex-right no-wrap">
+                                    <div class="w-100 text-left">
+                                        <button class="btn btn-collapse" id="ahmmosfc302_collapsetrigger" onclick="$('#ahmmosfc302p01formarea').toggleClass('collapsible')">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="glyphicon glyphicon-chevron-up mr-10"></i>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ahmmosfc302_tblpartnumber">
+                    <div id="ahmmosfc302_deliverybypartnumberlabel"><h5>SCAN DELIVERY PART by Part Number</h5></div>
+                    <div class="row" id="ahmmosfc302_scanbypartnumform">
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
+                            <label for="ahmmosfc302p01_listmodel" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">Model</label>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div id="ahmmosfc302_lovmodel" class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc302_modellookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-list-model"
+                                     data-query-params-type="limit"
+                                     data-columns='[
+                                     {"id":"model","name":"Model","visible":"true","sortable": "false"}
+                                     ]'
+                                     data-callback='{
+                                     "ahmmosfc302p01_listmodel":"model"
+                                     }'
+                                     >
+                                    <input id="ahmmosfc302p01_listmodel" class="form-control input-lookup" placeholder="" data-field="desc" />
+                                    <button class="btn btn-default  btn-lookup"><i class="glyphicon glyphicon-search"></i></button>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
+                            <label for="ahmmosfc302p01_listtype" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">Type</label>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div id="ahmmosfc302_lovtype" class="lookup flex flex-stretch" data-lookup-pre-func="ahmmosfc302_typelookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-list-type"
+                                     data-query-params-type="limit"
+                                     data-columns='[
+                                     {"id":"mctype","name":"Type","visible":"true","sortable": "false"}
+                                     ]'
+                                     data-callback='{
+                                     "ahmmosfc302p01_listtype":"mctype"
+                                     }'
+                                     >
+                                    <input id="ahmmosfc302p01_listtype" class="form-control input-lookup" placeholder="" data-field="desc" />
+                                    <button class="btn btn-default  btn-lookup"><i class="glyphicon glyphicon-search"></i></button>
+                                </div> 
+                            </div>                                                 
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
+                            <label for="ahmmosfc302p01_listcolor" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">Color</label>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div id="ahmmosfc302_lovcolor" class="lookup flex flex-stretch" data-lookup-pre-func="ahmmosfc302_colorlookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-list-color"
+                                     data-query-params-color="limit"
+                                     data-columns='[
+                                     {"id":"color","name":"Color","visible":"true","sortable": "false"}
+                                     ]'
+                                     data-callback='{
+                                     "ahmmosfc302p01_listcolor":"color"
+                                     }'
+                                     >
+                                    <input id="ahmmosfc302p01_listcolor" class="form-control input-lookup" placeholder="" data-field="desc" />
+                                    <button class="btn btn-default  btn-lookup"><i class="glyphicon glyphicon-search"></i></button>
+                                </div> 
+                            </div>                                               
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12" style="margin-top:10px">
+                            <label for="ahmmosfc302p01_keyword" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">Keyword</label>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <input id="ahmmosfc302p01_keyword" class="form-control input-lookup" placeholder="" data-field="desc" />
+                            </div>                                               
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8" style="margin-top: 20px;">
+                                <button class="btn btn-primary" id="ahmmosfc302_btnsearchp01"  onclick="ahmmosfc302_searchpart(this);"><i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                                <button class="btn btn-success" onclick="ahmmosfc302_uploadpart(this);"><i class="glyphicon glyphicon-upload fg-white"></i> Upload</button>
+                                <button class="btn btn-warning" id="ahmmosfc302p01_reset_btn" onclick="ahmmosfc302_ResetField('ahmmosfc302_scanbypartnumform'); $('#ahmmosfc302_tblpartnum').bootstrapTable('removeAll')">
+                                    <div class="flex flex-middle no-wrap">
+                                        <i class="fa fa-refresh fg-white mr-10"></i>Reset
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="ahmmosfc302_tablepartnumarea">
+                        <table id="ahmmosfc302_tblpartnum" class="table"
+                               data-url=""
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params-type="limit"
+                               data-pagination="true"
+                               >
+                            <thead>
+                                <tr>
+                                    <th data-align="center"
+                                        data-valind="center" data-field="vpartnum" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Part Number</th>
+                                    <th data-align="center"
+                                        data-valind="center" data-field="vpartdesc" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Part Description</th>
+                                    <th data-align="center"
+                                        data-valign="middle" data-field="qty"
+                                        data-formatter="ahmmosfc302_qtyformatter" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Qty</th>
+                                </tr>
+
+                            </thead>
+
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <button id="ahmmosfc302_btnsubmitpartnum" class="btn btn-primary " style="margin-top: 10px;" onclick="ahmmosfc302_submitpartnum(this);"><i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="ahmmosfc302_tblidkereta" hidden>
+                    <div id="ahmmosfc302_deliverybyidkeretalabel"><h5>SCAN DELIVERY PART by ID Kereta</h5></div>
+                    <div id="ahmmosfc302_scanbyidkeretaform">
+                        <div class="row">
+                            <label for="ahmmosfc302p01_idkereta" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5>ID Kereta <span style="color: red;">*</span></h5></label>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <div class="lookup flex flex-stretch" data-lookup-pre-func="ahmmosfc302_idkeretalookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc302/get-data-idkereta"
+                                     data-query-params-type="limit"
+                                     data-columns='[
+                                     {"id":"krtid","name":"Kereta ID","visible":"true","sortable": "false"},
+                                     {"id":"vpartnum","name":"Part Number","visible":"true","sortable": "false"},
+                                     {"id":"vpartdesc","name":"Part Description","visible":"true","sortable": "false"},
+                                     {"id":"nqty","name":"Qty","visible":"false","sortable": "true"},
+                                     {"id":"Epp","name":"EPP Date","visible":"true","sortable": "true"}
+                                     ]'
+                                     data-callback='{
+                                     "ahmmosfc302p01_idkereta":"krtid",
+                                     "ahmmosfc302p01_idvpartnum":"vpartnum",
+                                     "ahmmosfc302p01_idvpartnumhidden":"vpartnum",
+                                     "ahmmosfc302p01_idvpartdesc":"vpartdesc",
+                                     "ahmmosfc302p01_idvpartdeschidden":"vpartdesc",
+                                     "ahmmosfc302p01_idnqty":"nqty",
+                                     "ahmmosfc302p01_idnqtyhidden":"nqty",
+                                     "ahmmosfc302p01_eppdate":"Epp"
+                                     }'
+
+                                     >
+                                    <input id="ahmmosfc302p01_idkereta" maxlength="30" class="form-control input-lookup" placeholder="Type ID Kereta.."/>
+                                    <button class="btn btn-default btn-lookup"><i class="glyphicon glyphicon-search"></i></button>                                             
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="ahmmosfc302p01_idvpartnum" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5>Part Number <span style="color: red;">*</span></h5></label>         
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <input id="ahmmosfc302p01_idvpartnumhidden" hidden />
+                                <input id="ahmmosfc302p01_idvpartnum" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="ahmmosfc302p01_idvpartdesc" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5> Part Description <span style="color: red;">*</span></h5></label>     
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <input id="ahmmosfc302p01_idvpartdeschidden" hidden />
+                                <input id="ahmmosfc302p01_idvpartdesc" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="ahmmosfc302p01_idnqty" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5>Qty <span style="color: red;">*</span></h5> </label>     
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <input id="ahmmosfc302p01_idnqtyhidden" hidden />
+                                <input id="ahmmosfc302p01_idnqty" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="ahmmosfc302p01_eppdate" class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5>Epp Date<span style="color: red;">*</span></h5> </label>     
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <input id="ahmmosfc302p01_eppdatehidden" hidden />
+                                <input id="ahmmosfc302p01_eppdate" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                <button id="ahmmosfc302p01_addbtnidkereta" class="btn btn-success " onclick="ahmmosfc302_addidkereta(this);"><i class="glyphicon glyphicon-plus fg-white"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ahmmosfc302_tableidkeretaarea">
+                        <table id="ahmmosfc302_tblidkrt" class="table" 
+                               data-url=""
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params-type="limit"
+                               data-pagination="true">
+                            <thead>
+                                <tr>
+                                    <th data-align="center"  data-field="vkrtid" data-valign="middle" data-formatter="ahmmosfc302_idkeretaformatter" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">ID Kereta</th>
+                                    <th data-align="center"
+                                        data-valind="center" data-field="vpartnum" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Part Number</th>
+                                    <th data-align="left"
+                                        data-valind="center" data-field="vpartdesc" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Part Description</th>
+                                    <th data-align="center"
+                                        data-valind="center" data-field="nqty" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Qty</th>   
+                                    <th data-align="center"
+                                        data-valind="center" data-field="Epp" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Epp Date</th>   
+                                </tr>
+                            </thead>                                            
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <button id="ahmmosfc302_btnsubmitidkereta" class="btn btn-primary " style="margin-top: 10px;" onclick="ahmmosfc302_submitidkereta(this);"><i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    Modal Confirmation Submit    -->
+        <div id="ahmmosfc302_modalconfsubmit" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal" onclick="$('#ahmmosfc302p01_resettop_btn').trigger('click');$('#ahmmosfc302_modalconfsubmit').modal('hide');">&times;</button>
+                        <span id="ahmmosfc302_titlemodal" class="large-font"><i class="glyphicon glyphicon-question-sign fg-blue"></i>
+                            Submit Confirmation</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="flex flex-column flex-middle ">
+                            <div class="flex flex-column flex-middle confirmationbody">
+                                <div class="col-xs-12 col-sm-6" id="ahmmosfc302_modallabel">
+                                    <span>Part has been succesfully delivered</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <table class="ahmmosfc302_letterinformation_modal">
+                                        <tr>
+                                            <td>No Delivery Code</td>
+                                            <td>:</td>
+                                            <td colspan="2"><span id="ahmmosfc302_printdelcode_modal"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>From</td>
+                                            <td>:</td>
+                                            <td><span id="ahmmosfc302_printfrom_modal"></span></td>
+                                            <td><span id="ahmmosfc302_printplantfrom_modal"></span></td> 
+                                        </tr>
+                                        <tr>
+                                            <td>To</td>
+                                            <td>:</td>
+                                            <td><span id="ahmmosfc302_printto_modal"></span></td>
+                                            <td><span id="ahmmosfc302_printplantto_modal"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row confirmationbody">
+                                <div class="col-xs-6 form-group-button">
+                                    <div class="flex flex-center no-wrap">
+                                        <div class="w-100 text-left" id="ahmmosfc302_modalbtns">
+                                            <button class="btn btn-success" id="ahmmosfc302p01_search_btn" onclick="$('#ahmmosfc302p01_reset_btn').trigger('click');$('#ahmmosfc302_modalconfsubmit').modal('hide');">
+                                                <div class="flex flex-middle no-wrap">
+                                                    Ok
+                                                </div>
+                                            </button>
+                                            <button class="btn btn-primary" id="ahmmosfc302p01_letter_print_btn" onclick="ahmmosfc302_PrintSuratJalan()">
+                                                <div class="flex flex-middle no-wrap">
+                                                    <i class="fa fa-print fg-white mr-10"></i>Print Surat Jalan
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>            
+            </div>        
+        </div>
+    </div>
+
+    <div id="ahmmosfc302p02" class="subpage" data-path="Scan Delivery Part/Upload Delivery Part">
+        <div class="container-fluid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="form-panel">
+                    <div class="panel-heading">
+                        <h6><i class="glyphicon glyphicon-upload fg-green"></i>Upload Delivery Part</h6>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group large-font">
+                                <label for="ahmmosfc302p02_uploadfile" class="col-sm-2 control-label">
+                                    File Upload<span style="color:red">* </span>
+                                </label>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="file" id="ahmmosfc302p02_uploadfile" 
+                                               class="form-control" accept=".xlsx,.xls">
+                                    </div>                                        
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i> <span>Maximum file
+                                    upload size: 4MB. Format: xls, xlsx</span>
+                                <br>
+                                <a href="javascript:void(0)" onclick="ahmmosfc302p02_downloadtemplate(this)" >Download Template</a>
+                            </div>
+                            <div class="form-group large-font form-entry-button">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="form-group">
+                                    <button 
+                                        class="btn btn-success"
+                                        onclick="ahmmosfc302p02_uploadsubmit(this)"><i
+                                            class="glyphicon glyphicon-upload fg-white"></i> Upload</button>
+                                    <button class="btn  btn-danger" onclick="ahmmosfc302_back(this);"><i class="fa fa-times"></i> Cancel</button>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>                
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="panel">
+                    <div class="panel-body">
+                        <table id="ahmmosfc302p02_tblerrupload" class="table" data-url="">
+                            <thead>
+                                <tr>
+                                    <th data-formatter="ahmmosfc302_printnumberformatter" data-width="10" data-align="center" >No</th>
+                                    <th data-field="vLine" data-align="center" data-width="15">Row</th>
+                                    <th data-field="vMessage">Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                        </table>
+
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--    print area-->
+    <div id="ahmmosfc302p02_printablearea">
+        <div class="panel" id="ahmmosfc302_letter_page_0">
+            <div class="panel-body" id="ahmmosfc302_letterpage">
+                <div>
+                    <div class="row" id="ahmmosfc302_letterheader"> 
+                        <div class="col-xs-offset-3 col-xs-6" id="ahmmosfc302_lettercop">
+                            <div>SURAT JALAN PENGIRIMAN PART</div>
+                            <div id="ahmmosfc302_barcodezone"><svg id="ahmmosfc302_barcode"></svg></div>
+                        </div>
+                        <div class="col-xs-3" id="ahmmosfc302qrcodearea"><span id="ahmmosfc302_qrcode_page_0"></span></div>
+                    </div>
+                    <div class="row" id="ahmmosfc302_letter_body">
+                        <div class="col-xs-offset-2 col-xs-8">
+                            <table class="ahmmosfc302_letterinformation">
+                                <tr>
+                                    <td>No Delivery Code</td>
+                                    <td>:</td>
+                                    <td colspan="2"><span id="ahmmosfc302_printdelcode"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>From</td>
+                                    <td>:</td>
+                                    <td><span id="ahmmosfc302_printfrom"></span></td>
+                                    <td><span id="ahmmosfc302_printplantfrom"></span></td> 
+                                </tr>
+                                <tr>
+                                    <td>To</td>
+                                    <td>:</td>
+                                    <td><span id="ahmmosfc302_printto"></span></td>
+                                    <td><span id="ahmmosfc302_printplantto"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row" id="ahmmosfc302_letter_content">
+                        <div class="col-xs-offset-1 col-xs-10">
+                            <div id="ahmmosfc302_sortbypartnum" class="ahmmosfc302_hiddenTable">
+                                <table id="ahmmosfc302_tablepartnum_page_0" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th data-align="center" data-formatter="ahmmosfc302_printnumberformatter">No</th>
+                                            <th data-align="center" data-field="vpartnum">Part Number</th>
+                                            <th data-align="center" data-field="vpartdesc">Part Description</th>
+                                            <th data-align="center" data-field="qty">Qty</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div id="ahmmosfc302_sortbyidkreta" class="ahmmosfc302_hiddenTable">
+                                <table id="ahmmosfc302_tableidkreta_page_0" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th data-align="center" data-formatter="ahmmosfc302_printnumberformatter">No</th>
+                                            <th data-align="center" data-field="vkrtid">ID Kereta</th>
+                                            <th data-align="center" data-field="vpartnum">Part Number</th>
+                                            <th data-align="center" data-field="vpartdesc">Part Description</th>
+                                            <th data-align="center" data-field="nqty">Qty</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>                     
+                    </div>
+                </div>
+
+                <div class="row" id="ahmmosfc302_signtablearea">
+                    <div class="col-xs-3">
+                        <div>Pengirim</div>
+                        <div style="height:70px"></div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>Pembawa</div>
+                        <div style="height:70px"></div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>Keamanan</div>
+                        <div style="height:70px"></div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>Penerima</div>
+                        <div style="height:70px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC302_Generator_Barcode.min.js"></script>
+<script src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC302_Generator_QR.min.js"></script>
+<script src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC302.js"></script>

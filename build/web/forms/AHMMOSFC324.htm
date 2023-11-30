@@ -1,0 +1,576 @@
+<style>
+    #AHMMOSFC324 #ahmmosfc324p01SearchTable thead th .th-inner {
+        text-align: center !important;
+    }
+    
+    #AHMMOSFC324 #ahmmosfc324p02TableError thead th .th-inner {
+        text-align: center !important;
+    }
+    
+    #AHMMOSFC324 #info-file .btn{
+        height: 17px;
+        padding: 2px;
+    }
+</style>
+  
+<div id="AHMMOSFC324" class="div-app" data-version="1.0">
+    <div class="global_message"></div>
+    
+    <!--Subpage 1 Main-->
+    <div id="ahmmosfc324p01" class="subpage subpage-default" data-path="Maintain Kode Propinsi Motor">
+        <!--Filter-->
+        <div class="col-md-3">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search"></i> <span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p01Propinsi" class="col-sm-6 control-label">
+                            Propinsi
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc324p01Propinsi">
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p01Kode" class="col-sm-6 control-label">
+                            Kode Propinsi
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc324p01Kode">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p01Status" class="col-sm-6 control-label">
+                            Status
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc324p01Status" class="form-control">
+                                <option value="Semua">Semua</option>
+                                <option value="Aktif">Aktif</option>
+                                <option value="Tidakaktif">Tidak Aktif</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p01Search(this)">
+                        <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p01Reset(this)">
+                        <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+        
+        <!--Table-->
+        <div class="form-panel col-md-9">
+            <div class="panel-body">
+                <!--Buttons-->
+                <div class="form-group-table-button">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p01Edit(this)" data-role="update">
+                        <i class="glyphicon glyphicon-edit fg-white"></i> Edit</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p01Add(this)" data-role="create">
+                        <i class="glyphicon glyphicon-plus fg-white"></i> Add</button>    
+                </div>
+                
+                <!--Table Data-->
+                <div>
+                    <table id="ahmmosfc324p01SearchTable" 
+                           data-method="post"
+                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc324/get-datamaster"
+                           data-content-type="application/json" 
+                           data-data-type="json"
+                           data-query-params="ahmmosfc324.p01Presearch"
+                           data-query-params-type="limit"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-response-handler="_fw_loadData">
+                        <thead>
+                            <tr>
+                                <th data-checkbox="true" data-valign="middle" rowspan="2"></th>
+                                <th data-formatter="ahmmosfc324.p01FormatSequence" data-valign="middle" rowspan="2">No.</th>
+                                <th data-sortable="true" data-field="VPROPINSI" data-align="center"> Propinsi </th>
+                                <th data-sortable="true" data-field="VKODE" data-align="center"> Kode Propinsi </th>
+                                <th data-sortable="true" data-field="DBEGINEFF" data-align="center"> Awal Berlaku </th>                                
+                                <th data-sortable="true" data-field="DENDEFF" data-align="center"> Akhir Berlaku </th>
+                            </tr>
+                            <tr>
+                                <th data-field="vpropinsi"  data-visible="true" >
+                                    <input id="ahmmosfc324p01FilterPropinsi" type="text" class="form-control" onkeypress="ahmmosfc324.p01FilterOnKey(event)">
+                                </th>
+                                <th data-field="vkode"  data-visible="true" >
+                                    <input id="ahmmosfc324p01FilterKode" type="text" class="form-control" onkeypress="ahmmosfc324.p01FilterOnKey(event)">
+                                </th>
+                                <th data-field="beginEffDate" class="text-center" data-sortable="false" data-visible="true" >
+                                    <div class="input-group date">
+                                        <input type="text" id="ahmmosfc324p01FilterBeginEffDate"
+                                            name="ahmmosfc324p01FilterBeginEffDate" class="form-control"
+                                            onkeyup="ahmmosfc324.p01FilterOnKey(event)" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-field="endEffDate" class="text-center" data-sortable="false" data-visible="true">
+                                    <div class="input-group date">
+                                        <input type="text" id="ahmmosfc324p01FilterEndEffDate"
+                                            name="ahmmosfc324p01FilterEndEffDate" class="form-control"
+                                            onkeyup="ahmmosfc324.p01FilterOnKey(event)" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Subpage 2 Add-->
+    <div id="ahmmosfc324p02" class="subpage" data-path="Maintain Kode Propinsi Motor/Add">
+        <div class="col-md-4">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><span class="glyphicon glyphicon-plus"></span> Add Maintain Kode Propinsi Motor</h6>
+                </div>
+                <div class="panel-body">
+                    <!--Process ID-->
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p02Propinsi" class="col-sm-3 control-label">
+                            Propinsi <span style="color: red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ahmmosfc324p02Propinsi" id="ahmmosfc324p02Propinsi" >
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p02Kode" class="col-sm-3 control-label">
+                            Kode Propinsi <span style="color: red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ahmmosfc324p02Kode" id="ahmmosfc324p02Kode">
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p02BeginEffDate" class="col-sm-3 control-label">Awal Berlaku <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc324p02BeginEffDateDiv">
+                                <input type="text" id="ahmmosfc324p02BeginEffDate"
+                                       class="form-control" autocomplete="off" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p02EndEffDate" class="col-sm-3 control-label">Akhir Berlaku <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc324p02EndEffDateDiv">
+                                <input type="text" id="ahmmosfc324p02EndEffDate"
+                                       class="form-control" autocomplete="off" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p02Back(this)">
+                        <i class="glyphicon glyphicon-menu-left fg-white"></i> Back</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p02Submit(this)" data-role="create">
+                        <i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p02Cancel(this)" data-role="create">
+                        <i class="glyphicon glyphicon-remove fg-white"></i> Cancel</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p02AddNew(this)" data-role="create">
+                        <i class="glyphicon glyphicon-plus fg-white"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Subpage 3 Edit-->
+    <div id="ahmmosfc324p03" class="subpage" data-path="Maintain Kode Propinsi Motor/Edit">
+        <div class="col-md-4">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><span class="glyphicon glyphicon-edit"></span> Edit Kode Propinsi</h6>
+                </div>
+                <div class="panel-body">
+                    <!--Process ID-->
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p03Propinsi" class="col-sm-3 control-label">
+                            Propinsi <span style="color: red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="ahmmosfc324p03Propinsi" data-field="vpropinsi" name="ahmmosfc324p03Propinsi" readonly="readonly">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p03Kode" class="col-sm-3 control-label">
+                            Kode Propinsi <span style="color: red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ahmmosfc324p03Kode" data-field="vkode" id="ahmmosfc324p03Kode">
+                        </div>
+                    </div>
+                    
+                    
+                    <!--Begin Effective-->
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p03BeginEffDate" class="col-sm-3 control-label">Awal Berlaku <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group date">
+                                <input type="text" id="ahmmosfc324p03BeginEffDate"
+                                    name="ahmmosfc324p03BeginEffDate" data-field="beginEffDate" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--End Effective-->
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc324p03EndEffDate" class="col-sm-3 control-label">Akhir Berlaku <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group date">
+                                <input type="text" id="ahmmosfc324p03EndEffDate"
+                                    name="ahmmosfc324p03EndEffDate" data-field="endEffDate" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p03Back(this)">
+                        <i class="glyphicon glyphicon-menu-left fg-white"></i> Cancel</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc324.p03Submit(this)" data-role="update">
+                        <i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">   
+    const ahmmosfc324Div = $("#AHMMOSFC324");
+    
+    var ahmmosfc324$ = {
+        url: '/imo05/ahmmosfc300-ahs/rest/mo/sfc324/',
+        p01TableOffset: 0,
+        isReset: false
+    };
+    var ahmmosfc324 = {
+        // Common
+        goTop: function () {
+            $('html, body').animate({scrollTop: 0}, 750);
+            return this;
+        },
+        getAccess: function () {
+            var r = JSON.parse(localStorage.getItem('CR_AHMMOSFC324'));
+            return r.find(function (a) {
+                return a.appid === 'AHMMOSFC324';
+            }).access;
+        },
+        get isEditable() {
+            return this.getAccess()[0];
+        },
+        _fw_validation_validate: function (obj) {
+            var msg = '<ul class="errorList">';
+            for (var i = 0; i < _vvalObjs.length; i++) {
+                switch (_vvalObjs[i].val.toLowerCase()) {
+                    case 'required':
+                        if ((_vvalObjs[i].msg === '') && (_vvalObjs[i].obj.val() === null || _vvalObjs[i].obj.val().replace(/\s+/, '') === ''))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' wajib diisi.';
+                        break;
+                    case 'number':
+                        if (!((_vvalObjs[i].msg === '') && isNaN(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' harus berisi angka..';
+                        break;
+                    case 'date':
+                        if (!((_vvalObjs[i].msg === '') && _fw_isValidDate(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' bukan tanggal yang valid. Format tanggal: dd-MM-yyyy.';
+                        break;
+                    case 'email':
+                        if (!((_vvalObjs[i].msg === '') && _fw_isValidEmail(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' bukan email yang valid.';
+                        break;
+                    case 'maxlength30':
+                        if (_vvalObjs[i].obj.val() && _vvalObjs[i].obj.val().length > 30) {
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' harus memiliki maksimal 30 karakter.';
+                        }
+                        break;
+                    case 'maxlength1':
+                        if (_vvalObjs[i].obj.val() && _vvalObjs[i].obj.val().length > 1) {
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' harus memiliki minimal 1 karakter.';
+                        }
+                        break;
+                }
+            }
+            
+            var dmsg = '';
+            for (var i = 0; i < _vvalObjs.length; i++) {
+                if (_vvalObjs[i].msg !== '') {
+                    dmsg += '<li>' + _vvalObjs[i].msg + '</li>';
+                    _vvalObjs[i].obj.closest('.form-group').addClass('has-error has-feedback');
+                }
+            }
+            
+            if (dmsg !== '') {
+                msg += dmsg + '</ul>';
+                _fw_setMessage(obj, 0, msg);
+                return false;
+            }
+            
+            return true;
+        },
+        
+        // p01
+        p01FilterOnKey: function (evt) {
+            if (evt.keyCode === 13) {
+                ahmmosfc324$.isReset = false;
+                this.p01RefreshTable();
+            }
+        },
+        p01RefreshTable: function () {
+            $('#ahmmosfc324p01SearchTable').bootstrapTable('refresh');
+            return this;
+        },
+        p01FormatSequence: function (val, row, idx) {
+            row.idx = idx;
+            return idx + 1 + ahmmosfc324$.p01TableOffset;
+        },
+        p01Presearch: function (params) {
+            ahmmosfc324$.p01TableOffset = params.offset;
+            params.search = {
+                propinsi: $('#ahmmosfc324p01Propinsi').val(),
+                kode: $('#ahmmosfc324p01Kode').val(),
+                status: $('#ahmmosfc324p01Status').val(),
+                
+                filterPropinsi: $('#ahmmosfc324p01FilterPropinsi').val(),
+                filterKode: $('#ahmmosfc324p01FilterKode').val(),
+                filterBeginEffDate: $('#ahmmosfc324p01FilterBeginEffDate').val(),
+                filterEndEffDate: $('#ahmmosfc324p01FilterEndEffDate').val(),
+                isReset : ahmmosfc324$.isReset
+            };
+            
+            if (params.sort === undefined) {
+                return {
+                    limit: params.limit,
+                    offset: params.offset,
+                    search: params.search
+                };
+            }
+            return params;
+        },
+        p01Search: function (obj) {
+            _fw_validation_clear(obj);
+            ahmmosfc324$.isReset = false;
+            ahmmosfc324.p01RefreshTable();
+        },
+        p01Reset: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($("#ahmmosfc324p01"));
+            ahmmosfc324$.isReset = true;
+            ahmmosfc324.p01RefreshTable();
+        },
+        p01Add: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($('#ahmmosfc324p02'));
+            _fw_subpage(obj, 'ahmmosfc324p02');
+            
+            ahmmosfc324.p02PageLoad();
+        },
+        p01Edit: function (obj) {
+            var rows = $('#ahmmosfc324p01SearchTable').bootstrapTable('getSelections');
+            if (rows.length === 1) {
+                _fw_subpage(obj, 'ahmmosfc324p03', rows[0]);
+                var beginEffDateValue = rows[0].beginEffDate;
+                var endEffDateValue = rows[0].endEffDate;
+
+                $('#ahmmosfc324p03BeginEffDate', ahmmosfc324Div).datetimepicker({
+                    format: 'DD-MMM-YYYY',
+                    locale: 'en',
+                    date: new Date(beginEffDateValue)
+                });
+                
+                $('#ahmmosfc324p03EndEffDate', ahmmosfc324Div).datetimepicker({
+                    format: 'DD-MMM-YYYY',
+                    locale: 'en',
+                    date: new Date(endEffDateValue)
+                });
+                
+                $('#ahmmosfc324p03BeginEffDate', ahmmosfc324Div).data('DateTimePicker').date(new Date(beginEffDateValue));
+                $('#ahmmosfc324p03EndEffDate', ahmmosfc324Div).data('DateTimePicker').date(new Date(endEffDateValue));
+                
+                var o = new Object();
+                o.vpropinsi =  $('#ahmmosfc324p03Propinsi').val();
+                console.log(o);
+                _fw_post(ahmmosfc324$.url + '/get-found-data', o, function (data) {
+                    console.log(data);
+                    if (data === 0) {
+                        $('#ahmmosfc324p03Kode').prop('readonly', true);
+                    }
+                });
+            } else if (rows.length > 1) {
+                _fw_setMessage(obj, 0, 'Harap pilih 1 data untuk diedit.');
+            } else {
+                _fw_setMessage(obj, 0, 'Tidak ada data yang dipilih untuk diedit.');
+            }
+        },
+        // p02
+        p02PageLoad: function() {
+            $('#ahmmosfc324p02BeginEffDate', ahmmosfc324Div).datetimepicker({
+                format: 'DD-MMM-YYYY',
+                locale: 'en',
+                date: new Date()
+            });
+            $('#ahmmosfc324p02EndEffDate', ahmmosfc324Div).datetimepicker({
+                format: 'DD-MMM-YYYY',
+                locale: 'en',
+                date: new Date('31-Dec-2100')
+            });
+            
+            $('#ahmmosfc324p02BeginEffDate', ahmmosfc324Div).data('DateTimePicker').date(new Date());
+            $('#ahmmosfc324p02EndEffDate', ahmmosfc324Div).data('DateTimePicker').date(new Date('31-Dec-2100'));
+            
+        },
+        p02Back: function (obj) {
+            _fw_subpage(obj, 'ahmmosfc324p01');
+        },
+        p02Submit: function (obj) {
+            var beginEffDate = new Date($('#ahmmosfc324p02BeginEffDate').val()).getTime();
+            var endEffDate = new Date($('#ahmmosfc324p02EndEffDate').val()).getTime();
+            
+            
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc324p02Propinsi', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02Kode', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02BeginEffDate', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02EndEffDate', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02Propinsi', 'maxlength30');
+            _fw_validation_add(obj, 'ahmmosfc324p02Kode', 'maxlength1');
+            
+            if (ahmmosfc324._fw_validation_validate(obj)) {
+                
+                if (beginEffDate >= endEffDate) {
+                    _fw_setMessage(obj, 0, "Range tanggal tidak valid. Awal berlaku harus lebih awal dari akhir berlaku.");
+                    ahmmosfc324.goTop();
+                    return;
+                }
+                
+                var o = new Object();
+                o.vpropinsi =  $('#ahmmosfc324p02Propinsi').val();
+                o.vkode = $('#ahmmosfc324p02Kode').val();
+                o.beginEffDate = $('#ahmmosfc324p02BeginEffDate').val();
+                o.endEffDate = $('#ahmmosfc324p02EndEffDate').val();
+                
+                _fw_post(ahmmosfc324$.url + 'insert-propinsi', o, function (data) {
+                    if (data.status === '1') {
+                        ahmmosfc324.p01RefreshTable();
+                    }
+                    _fw_setMessage(obj, data.status, data.message);
+                    ahmmosfc324.goTop();    
+                });
+            } else {
+                ahmmosfc324.goTop();
+            }
+        },
+        p02Cancel: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($("#ahmmosfc324p02"));
+            ahmmosfc324.p02PageLoad();
+        },
+        p02AddNew: function (obj) {
+            var beginEffDate = new Date($('#ahmmosfc324p02BeginEffDate').val()).getTime();
+            var endEffDate = new Date($('#ahmmosfc324p02EndEffDate').val()).getTime();
+            
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc324p02Propinsi', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02Kode', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02BeginEffDate', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p02EndEffDate', 'required');
+            if (ahmmosfc324._fw_validation_validate(obj)) {
+                if (beginEffDate >= endEffDate) {
+                    _fw_setMessage(obj, 0, "Range tanggal tidak valid. Awal berlaku harus lebih awal dari akhir berlaku.");
+                    ahmmosfc324.goTop();
+                    return;
+                }
+                
+                var param = {
+                    vpropinsi: $('#ahmmosfc324p02Propinsi').val(),
+                    vkode: $('#ahmmosfc324p02Kode').val(),
+                    beginEffDate: $('#ahmmosfc324p02BeginEffDate').val(),
+                    endEffDate: $('#ahmmosfc324p02EndEffDate').val()
+                };
+                _fw_post(ahmmosfc324$.url + '/insert-propinsi', param, function (data) {
+                    if (data.status === '1') {
+                        _fw_reset_subpage($("#ahmmosfc324p02"));
+                        ahmmosfc324.p02PageLoad();
+                        ahmmosfc324.p01RefreshTable();
+                    }
+                    _fw_setMessage(obj, data.status, data.message);
+                    ahmmosfc324.goTop();    
+                });
+            } else {
+                ahmmosfc324.goTop();
+            }
+        },
+
+        // p03
+        p03Back: function (obj) {
+            _fw_subpage(obj, 'ahmmosfc324p01');
+        },
+        p03Submit: function (obj) {
+            var beginEffDate = new Date($('#ahmmosfc324p03BeginEffDate').val()).getTime();
+            var endEffDate = new Date($('#ahmmosfc324p03EndEffDate').val()).getTime();
+            
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc324p03Kode', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p03BeginEffDate', 'required');
+            _fw_validation_add(obj, 'ahmmosfc324p03EndEffDate', 'required');
+            if (ahmmosfc324._fw_validation_validate(obj)) {
+                if (beginEffDate >= endEffDate) {
+                    _fw_setMessage(obj, 0, "Range tanggal tidak valid. Awal berlaku harus lebih awal dari akhir berlaku.");
+                    ahmmosfc324.goTop();
+                    return;
+                }
+                
+                var param = {
+                    vpropinsi: $('#ahmmosfc324p03Propinsi').val(),
+                    vkode: $('#ahmmosfc324p03Kode').val(),
+                    beginEffDate: $('#ahmmosfc324p03BeginEffDate').val(),
+                    endEffDate: $('#ahmmosfc324p03EndEffDate').val()
+                };
+                
+                _fw_post(ahmmosfc324$.url + '/update-propinsi', param, function (data) {
+                    if (data.status === '1') {
+                        _fw_subpage(obj, 'ahmmosfc324p01');
+                        ahmmosfc324.p01RefreshTable();
+                    }
+                    
+                    _fw_setMessage(obj, data.status, data.message);
+                    ahmmosfc324.goTop();
+                });
+            } else {
+                ahmmosfc324.goTop();
+            }
+        },
+
+        x: ''
+    };
+</script>

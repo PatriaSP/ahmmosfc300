@@ -1,0 +1,219 @@
+<style>
+    #AHMMOSFC322 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc322p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc322p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc322p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC322" class="div-app" data-version="1.0">
+    <div class="global_message">
+</div>
+    
+    
+    <div id="ahmmosfc322p01" class="subpage subpage-default" data-path="Monitoring Engine Tanpa List">
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc322p01Plant" class="col-sm-6 control-label">
+                            Plant Id 
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc322p01Plant" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc322p01McType" class="col-sm-6 control-label">
+                            M/C Type Id
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc322/get-lov-mctype"
+                                 data-lookup-pre-func="ahmmosfc322p01MctypeLookup" 
+                                 data-columns='[{"id":"tbvmctypeid","name":"M/C Type Id","visible":"true"},
+                                 {"id":"tbvmdesc","name":"M/C Type Desc","visible":"true"}]'
+                                 data-callback='{"ahmmosfc322p01McType":"tbvmctypeid", "ahmmosfc322p01McTypeDesc":"tbvmdesc"}'>
+                                <input id="ahmmosfc322p01McType" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc322p01McTypeDesc" class="col-sm-6 control-label">
+                            M/C Type Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc322p01McTypeDesc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc322p01Search(this)">
+                            <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc322p01ResetBtn(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--TABLE HEADERR-->
+        <div id="ahmmosfc322p01-table" class="subpage subpage-default col-md-7">
+            <div class="row form-panel">
+                <div class="panel-body">
+                    <table id="ahmmosfc322p01SearchTable" 
+                           data-method="post"
+                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc322/show-data-monitoring"
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-query-params-type="limit"
+                           data-query-params="ahmmosfc322p01TableParam"
+                           data-response-handler="_fw_loadData"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-unique-id="id">
+                        <thead>
+                            <tr>
+                                <th data-sortable="false" data-align="center" data-visible="true" data-formatter="ahmmosfc322p01rowNumFormatter"> No. </th> 
+                                <th data-sortable="true" data-field="tbvplant" data-align="center"> Plant Id </th>
+                                <th data-sortable="true" data-field="tbvtipe" data-align="center"> M/C Type ID </th>
+                                <th data-sortable="true" data-field="tbvengno" data-align="center"> Engine No </th>
+                                <th data-sortable="true" data-field="tbdtgl" data-align="center"> Shipping In Date </th>                                
+                                <th data-sortable="true" data-field="tbnnrp" data-align="center"> Operator NRP </th>
+                                <th data-sortable="true" data-field="tbvnama" data-align="center"> Operator Name </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END HEADER-->
+
+<script type="text/javascript">
+    var ahmmosfc322_offsetUnitLoad = 0;
+    var ahmmosfc322Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc322/';
+    
+    $(document).ready(function () {   
+        ahmmotrc0322p01GetPlant();
+    });
+    
+    function init301DropdownList(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+		if (value.length > 0) {
+                        $page.append('<option value=""></option>');
+			value.forEach(function (item, index) {
+                            $page.append('<option value=' + item.code + '>' + item.name + '</option>');
+                });
+			
+	}
+    }
+    
+    function ahmmotrc0322p01GetPlant() {
+	_fw_post(ahmmosfc322Url+'get-lov-plant', null, function (data) {
+            if (data.status === '1') {
+                init322DropdownListPlant('ahmmosfc322p01','ahmmosfc322p01Plant', data.data);
+            }
+        });
+    }
+    
+    function init322DropdownListPlant(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+		if (value.length > 0) {
+                        $page.append('<option value=""></option>');
+			value.forEach(function (item, index) {
+                            $page.append('<option value=' + item.tbvplantid + '>' + item.tbvplantdesc + '</option>');
+                });
+			
+	}
+    }
+    
+    function ahmmosfc322p01rowNumFormatter(value, row, index) {
+        return index + 1 + ahmmosfc322_offsetUnitLoad;
+    }
+    
+    function ahmmosfc322p01LineLookup(params) {
+        params.search = {
+            "plantid": $("#ahmmosfc322p01Plant").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc322p01MctypeLookup(params) {
+        params.search = {
+            "plantid": $("#ahmmosfc322p01Plant").val()
+        };
+        
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+
+//    VALIDASI SEARCH
+
+//    BUTTON SEARCH
+    function ahmmosfc322p01Search(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc322p01-table"));
+        
+        $('#ahmmosfc322p01SearchTable').bootstrapTable('refresh');
+    }
+
+    function ahmmosfc322p01ResetBtn(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc322p01"));
+        
+        $('#ahmmosfc322p01SearchTable').bootstrapTable('removeAll');
+
+    }
+    
+    function ahmmosfc322p01TableParam(params) {
+        params.search =
+                {
+                    plantid: $('#ahmmosfc322p01Plant').val(),
+                    mctypeid: $('#ahmmosfc322p01McType').val()
+                };
+        if (params.sort === undefined) { 
+            ahmmosfc322_offsetUnitLoad = params.offset;
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }; 
+        } else { 
+            ahmmosfc322_offsetUnitLoad = params.offset;
+        }
+        return params;
+    }
+  
+</script>

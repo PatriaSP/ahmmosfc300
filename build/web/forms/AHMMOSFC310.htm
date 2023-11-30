@@ -1,0 +1,797 @@
+<style>
+    #AHMMOSFC310 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc310p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc310p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc310p01SearchTable > tbody > tr > td:nth-child(12){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC310" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+    <!--Subpage 1 Main-->
+    <div id ="ahmmosfc310p01" class="subpage subpage-default" data-path ="Maintain Masalah - Area - Detail Area">
+        <!--Filter-->
+        <div class="col-md-3">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search"></i> <span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <!--Parameter-->
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01Problem" class="control-label col-sm-3 right-label">
+                            <span class="pull-left">Masalah</span>
+                        </label>
+
+                        <div class="lookup-wrapper col-sm-9" >
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-lov-problems"
+                                 data-lookup-pre-func="ahmmosfc310p01ProblemLookup"
+                                 data-columns='[{"id":"idProblem","name":"Problem ID","visible":"true","sortable":"true"},
+                                 {"id":"descProblem","name":"Problem Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc310p01Problem":"idProblem", "ahmmosfc310p01ProblemDesc":"descProblem"}'>
+                                <input id="ahmmosfc310p01Problem" class="form-control input-lookup"  placeholder="Masalah">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01ProblemDesc" class="control-label col-sm-3 right-label" >
+                            <span class="pull-left"> Deskripsi Masalah  </span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-9" >
+                            <input type="text" readonly="" id="ahmmosfc310p01ProblemDesc" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01Area" class="control-label col-sm-3 right-label">
+                            <span class="pull-left">Area</span>
+                        </label>
+
+                        <div class="lookup-wrapper col-sm-9" >
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-lov-areas"
+                                 data-lookup-pre-func="ahmmosfc310p01AreaLookup"
+                                 data-columns='[{"id":"idArea","name":"Area ID","visible":"true","sortable":"true"},
+                                 {"id":"descArea","name":"Area Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc310p01Area":"idArea", "ahmmosfc310p01AreaDesc":"descArea"}'>
+                                <input id="ahmmosfc310p01Area" class="form-control input-lookup"  placeholder="Area">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01AreaDesc" class="control-label col-sm-3 right-label" >
+                            <span class="pull-left"> Deskripsi Area  </span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-9" >
+                            <input type="text" readonly="" id="ahmmosfc310p01AreaDesc" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01DetailArea" class=" control-label col-sm-3 right-label">
+                            <span class="pull-left">Detail Area</span>
+                        </label>
+
+                        <div class="lookup-wrapper col-sm-9" >
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-lov-subareas"
+                                 data-lookup-pre-func="ahmmosfc310p01DetailAreaLookup"
+                                 data-columns='[{"id":"idSubArea","name":"Detail Area ID","visible":"true","sortable":"true"},
+                                 {"id":"descSubArea","name":"Detail Area Desc.","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc310p01DetailArea":"idSubArea", "ahmmosfc310p01DetailAreaDesc":"descSubArea"}'>
+                                <input id="ahmmosfc310p01DetailArea" class="form-control input-lookup"  placeholder="Detail Area">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01DetailAreaDesc" class="control-label col-sm-3 right-label" >
+                            <span class="pull-left"> Deskripsi Detail Area   </span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-9" >
+                            <input type="text" readonly="" id="ahmmosfc310p01DetailAreaDesc" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p01Status" class="col-sm-3 control-label">Status</label>
+                        <div class="col-sm-9">
+                            <select id="ahmmosfc310p01Status" class="form-control">
+                                <option value="">ALL</option>
+                                <option value="Aktif">Active</option>
+                                <option value="Tidak Aktif">Not Active</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc310p01Search(this)">
+                        <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc310p01resetBtnOnClick()">
+                        <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                </div>
+            </div>
+        </div> 
+        <!--Table-->
+        <div class="form-panel col-md-9">
+            <div class="panel-body">
+                <!--Buttons-->
+                <div class="form-group-table-button">
+<!--                    <button class="btn large-button bg-blue" onclick="ahmmosfc310.p01Delete(this)" data-role="delete">
+                        <i class="glyphicon glyphicon-trash fg-white"></i> Delete</button>-->
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc310.p01Edit(this)" data-role="update">
+                        <i class="glyphicon glyphicon-edit fg-white"></i> Edit</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc310.p01Add(this)" data-role="create">
+                        <i class="glyphicon glyphicon-plus fg-white"></i> Add</button>
+                </div>
+                <!--Table Data-->
+                <table id="ahmmosfc310p01SearchTable" 
+                    data-method="post"
+                    data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-data-problems"
+                    data-content-type="application/json"
+                    data-data-type="json"
+                    data-query-params-type="limit"
+                    data-query-params="ahmmosfc310p01TableParam"
+                    data-response-handler="_fw_loadData"
+                    data-side-pagination="server"
+                    data-pagination="true"
+                    >
+                 <thead>
+                     <tr>
+                         <th data-checkbox="true" data-valign="middle" rowspan="2"></th>
+                         <th data-formatter="ahmmosfc310p01rowNumFormatter" data-align="center" data-valign="middle" rowspan="2">No</th> 
+                         <th data-sortable="true" data-field="Sort_problemId"               data-align="center"> Problem ID </th>
+                         <th data-sortable="true" data-field="Sort_problemDesc"                data-align="center"> Problem Desc. </th>
+                         <th data-sortable="true" data-field="Sort_areaId"              data-align="center"> Area ID </th>                                
+                         <th data-sortable="true" data-field="Sort_areaDesc"        data-align="center"> Area Desc </th>
+                         <th data-sortable="true" data-field="Sort_subAreaId"          data-align="center"> SubArea ID </th>
+                         <th data-sortable="true" data-field="Sort_subAreaDesc" data-align="center"> SubArea Desc </th>
+                         <th data-sortable="true" data-field="Sort_beginEff" data-align="center"> Begin Effectives </th>
+                         <th data-sortable="true" data-field="Sort_endEff" data-align="center"> End Effectives </th>
+                     </tr>
+                     <tr>
+                        <th data-field="problemId"  data-visible="true" >
+                            <input id="ahmmosfc310p01problemId" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="problemDesc"  data-visible="true" >
+                            <input id="ahmmosfc310p01problemDesc" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="areaId"  data-visible="true" >
+                            <input id="ahmmosfc310p01areaId" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="areaDesc"  data-visible="true" >
+                            <input id="ahmmosfc310p01areaDesc" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="detailAreaId"  data-visible="true" >
+                            <input id="ahmmosfc310p01subAreaId" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="detailAreaDesc"  data-visible="true" >
+                            <input id="ahmmosfc310p01subAreaDesc" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="beginEffective"  data-visible="true" >
+                            <input id="ahmmosfc310p01beginEff" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+                        <th data-field="endEffective"  data-visible="true" >
+                            <input id="ahmmosfc310p01endnEff" type="text" class="form-control" onkeypress="ahmmosfc310p01_Filter(event)">
+                        </th>
+
+                    </tr>
+                 </thead>
+             </table>
+            </div>
+        </div>
+    </div>
+    <!--Subpage 2 Add--> 
+    <div id="ahmmosfc310p02" class="subpage" data-path="Maintain Masalah - Area - Detail Area/Add">
+        <div class="col-md-4">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><span class="glyphicon glyphicon-plus"></span> Add Masalah - Area - Detail Area</h6>
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02Problem" class="col-sm-3 control-label">Problem ID <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-lov-problems"
+                                 data-lookup-pre-func="ahmmosfc310p02ProblemLookup"
+                                 data-columns='[{"id":"idProblem","name":"Problem ID","visible":"true","sortable":"true"},
+                                 {"id":"descProblem","name":"Problem Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc310p02Problem":"idProblem", "ahmmosfc310p02ProblemDesc":"descProblem"}'>
+                                <input id="ahmmosfc310p02Problem" data-field="desc" class="form-control input-lookup" placeholder="Problem...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02ProblemDesc" class="col-sm-3 control-label">Problem Desc</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p02ProblemDesc" class="form-control" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02Area" class="col-sm-3 control-label">Area ID <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-lov-areas"
+                                 data-lookup-pre-func="ahmmosfc310p02AreaLookup"
+                                 data-columns='[{"id":"idArea","name":"Area ID","visible":"true","sortable":"true"},
+                                 {"id":"descArea","name":"Area Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc310p02Area":"idArea", "ahmmosfc310p02AreaDesc":"descArea"}'>
+                                <input id="ahmmosfc310p02Area" data-field="desc" class="form-control input-lookup" placeholder="Area...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02AreaDesc" class="col-sm-3 control-label">Area Desc</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p02AreaDesc" class="form-control" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02SubArea" class="col-sm-3 control-label">Sub Area ID <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc310/get-lov-subareas"
+                                 data-lookup-pre-func="ahmmosfc310p02DetailAreaLookup"
+                                 data-columns='[{"id":"idSubArea","name":"Detail Area ID","visible":"true","sortable":"true"},
+                                 {"id":"descSubArea","name":"Detail Area Desc.","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc310p02SubArea":"idSubArea", "ahmmosfc310p02SubAreaDesc":"descSubArea"}'>
+                                <input id="ahmmosfc310p02SubArea" data-field="desc" class="form-control input-lookup" placeholder="Sub Area...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02SubAreaDesc" class="col-sm-3 control-label">Sub Area Desc</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p02SubAreaDesc" class="form-control" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02BeginEffective" class="col-sm-3 control-label">
+                            Begin Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc310p02BeginEffectivePanel">
+                                <input id="ahmmosfc310p02BeginEffective" type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>  
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p02EndEffective" class="col-sm-3 control-label">
+                            End Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc310p02EndEffectivePanel">
+                                <input id="ahmmosfc310p02EndEffective" type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc310.p02Back(this)">
+                            <i class="glyphicon glyphicon-menu-left fg-white"></i> Back</button>
+                        <button class="btn large-button bg-blue" id="ahmmosfc310p02Submit" onclick="ahmmosfc310.p02Submit(this)" data-role="create">
+                            <i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc310.p02Add(this)" data-role="create">
+                        <i class="glyphicon glyphicon-plus fg-white"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ahmmosfc310p03" class="subpage" data-path="Maintain Masalah - Area - Detail Area/Edit">
+        <div class="col-md-4">
+            <div class="form-panel">
+                <div class="panel-heading">
+                    <h6><span class="glyphicon glyphicon-edit"></span> Edit Maintain Masalah - Area - Detail Area</h6>
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03Problem" class="col-sm-3 control-label">Problem ID</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03Problem" class="form-control" data-field="problemId" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03ProblemDesc" class="col-sm-3 control-label">Problem Desc</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03ProblemDesc" class="form-control" data-field="problemDesc" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03Area" class="col-sm-3 control-label">Area ID</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03Area" class="form-control" data-field="areaId" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03AreaDesc" class="col-sm-3 control-label">Area Desc</label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03AreaDesc" class="form-control" data-field="areaDesc" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03SubArea" class="col-sm-3 control-label">Sub Area ID  <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03SubArea" class="form-control" data-field="detailAreaId" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03SubAreaDesc" class="col-sm-3 control-label">Sub Area Desc  <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03SubAreaDesc" class="form-control" data-field="detailAreaDesc" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03BeginEffective" class="col-sm-3 control-label">Begin Effective <span style="color: red">*</span></label>
+                        <div class="col-sm-9">
+                            <input id="ahmmosfc310p03BeginEffective" class="form-control" data-field="beginEffective" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group large-font col-sm-12">
+                        <label for="ahmmosfc310p03EndEffective" class="col-sm-3 control-label">
+                            End Effective <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" id="ahmmosfc310p03EndEffectivePanel">
+                                <input id="ahmmosfc310p03EndEffective" type="text" class="form-control" data-field="endEffective"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc310.p03Back(this)">
+                        <i class="glyphicon glyphicon-menu-left fg-white"></i> Back</button>
+                    <button class="btn large-button bg-blue" onclick="ahmmosfc310.p03Submit(this)" data-role="update">
+                        <i class="glyphicon glyphicon-floppy-disk fg-white"></i> Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--END HEADER-->
+
+<!--dumm-->
+
+<script type="text/javascript">
+    var ahmmosfc310$ = {
+        url: '/imo05/ahmmosfc300-ahs/rest/mo/sfc310',
+        p01TableOffset: 0,
+        isReset: false
+    };
+    function ahmmosfc310p01ProblemLookup(params) {
+        params.search = {
+            "problem": $('#ahmmosfc310p01Problem').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "problem",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "problem") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "problem",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc310p01AreaLookup(params) {
+        params.search = {
+            "area": $('#ahmmosfc310p01Area').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "area",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "area") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "area",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    function ahmmosfc310p01DetailAreaLookup(params) {
+        params.search = {
+            "subArea": $('#ahmmosfc310p01DetailArea').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "subArea",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "subArea") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "subArea",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    function ahmmosfc310p02ProblemLookup(params) {
+        params.search = {
+            "problem": $('#ahmmosfc310p02Problem').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "problem",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "problem") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "problem",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc310p02AreaLookup(params) {
+        params.search = {
+            "area": $('#ahmmosfc310p02Area').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "area",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "area") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "area",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    function ahmmosfc310p02DetailAreaLookup(params) {
+        params.search = {
+            "subArea": $('#ahmmosfc310p02SubArea').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "subArea",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "subArea") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "subArea",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc310p01resetBtnOnClick() {
+        $("#ahmmosfc310p01Problem").val("");
+        $("#ahmmosfc310p01Area").val("");
+        $("#ahmmosfc310p01DetailArea").val("");
+        $("#ahmmosfc310p01ProblemDesc").val("");
+        $("#ahmmosfc310p01AreaDesc").val("");
+        $("#ahmmosfc310p01DetailAreaDesc").val("");
+        $('#ahmmosfc310p01SearchTable').bootstrapTable('refresh');
+    }
+    var offsetUnitLoad = 0;
+    var ahmmosfc310ParamsTable = [];
+    var ahmmosfc310Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc310/';
+    
+    function ahmmosfc310p01rowNumFormatter(obj, row, index) {
+        return ahmmosfc310ParamsTable.offset + index + 1;
+    }
+
+    function AHMMOMSC310p01TableNumbering(obj, row, index) {
+        return offsetTable + index + 1;
+    }
+
+    function ahmmosfc310p01_Filter(event) {
+        if (event.keyCode === 13) {
+            $('#ahmmosfc310p01SearchTable').bootstrapTable('refresh');
+
+        }
+    }
+    function ahmmosfc310p01Search(obj) {
+        $('#ahmmosfc310p01SearchTable').bootstrapTable('refresh');
+    }
+
+    function ahmmosfc310p01rowNumFormatter(value, row, index) {
+        return index + 1 + offsetUnitLoad;
+    }
+
+//    VALIDASI SEARCH
+    
+    function ahmmosfc310p01TableParam(params) {
+        params.search =
+                {
+                    problem: $('#ahmmosfc310p01Problem').val(), 
+                    area: $('#ahmmosfc310p01Area').val(), 
+                    subArea: $('#ahmmosfc310p01DetailArea').val(),
+                    statusSearch: $('#ahmmosfc310p01Status').val(),
+                    filter_problemId: $('#ahmmosfc310p01problemId').val(), 
+                    filter_areaId: $('#ahmmosfc310p01areaId').val(), 
+                    filter_subAreaId: $('#ahmmosfc310p01subAreaId').val(),
+                    filter_problemDesc: $('#ahmmosfc310p01problemDesc').val(), 
+                    filter_areaDesc: $('#ahmmosfc310p01areaDesc').val(), 
+                    filter_subAreaDesc: $('#ahmmosfc310p01subAreaDesc').val(),
+                    filter_beginEff: $('#ahmmosfc310p01beginEff').val(), 
+                    filter_endEff: $('#ahmmosfc310p01endnEff').val()
+
+                };
+        ahmmosfc310ParamsTable = params;
+        if (params.sort === undefined) {
+            offsetTable = params.offset;
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        } else {
+            offsetTable = params.offset;
+        }
+        return params;
+    }
+    var ahmmosfc310 = {
+        
+        goTop: function () {
+            $('html, body').animate({scrollTop: 0}, 750);
+            return this;
+        },
+        p01Add: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($("#ahmmosfc310p02"));
+            $('#ahmmosfc310p02Problem').prop('disabled', false);
+            $('#ahmmosfc310p02ProblemDesc').prop('disabled', false);
+            $('#ahmmosfc310p02Area').prop('disabled', false);
+            $('#ahmmosfc310p02AreaDesc').prop('disabled', false);
+            $('#ahmmosfc310p02SubArea').prop('disabled', false);
+            $('#ahmmosfc310p02SubAreaDesc').prop('disabled', false);
+            $('#ahmmosfc310p02BeginEffective').prop('disabled', false);
+            $('#ahmmosfc310p02EndEffective').prop('disabled', false);
+            $('#ahmmosfc310p02Submit').prop('disabled', false);
+            ahmmosfc310$.isReset = true;
+            _fw_subpage(obj, 'ahmmosfc310p02');
+        },
+        
+        p01Edit: function (obj) {
+            var rows = $('#ahmmosfc310p01SearchTable').bootstrapTable('getSelections');
+            if (rows.length === 1) {
+                _fw_subpage(obj, 'ahmmosfc310p03', rows[0]);
+            } else if (rows.length > 1) {
+                _fw_setMessage(obj, 0, 'Please select one data.');
+            } else {
+                _fw_setMessage(obj, 0, 'There is no data selected. Please select one data.');
+            }
+        },
+        p01RefreshTable: function () {
+            $('#ahmmosfc310p01SearchTable').bootstrapTable('refresh');
+            return this;
+        },
+        p02Back: function (obj) {
+            _fw_subpage(obj, 'ahmmosfc310p01');
+        },
+        p03Back: function (obj) {
+            _fw_subpage(obj, 'ahmmosfc310p01');
+        },
+        p02Add: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_reset_subpage($("#ahmmosfc310p02"));
+            $('#ahmmosfc310p02Problem').prop('disabled', false);
+            $('#ahmmosfc310p02ProblemDesc').prop('disabled', false);
+            $('#ahmmosfc310p02Area').prop('disabled', false);
+            $('#ahmmosfc310p02AreaDesc').prop('disabled', false);
+            $('#ahmmosfc310p02SubArea').prop('disabled', false);
+            $('#ahmmosfc310p02SubAreaDesc').prop('disabled', false);
+            $('#ahmmosfc310p02BeginEffective').prop('disabled', false);
+            $('#ahmmosfc310p02EndEffective').prop('disabled', false);
+            $('#ahmmosfc310p02Submit').prop('disabled', false);
+            ahmmosfc310$.isReset = true;
+        },
+        p02Submit: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc310p02Problem', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02ProblemDesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02Area', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02AreaDesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02SubArea', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02SubAreaDesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02BeginEffective', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p02EndEffective', 'required');
+            if (ahmmosfc310.fw_validation_validate(obj)) {
+                var param = {
+                    problemId: $('#ahmmosfc310p02Problem').val(),
+                    areaId: $('#ahmmosfc310p02Area').val(),
+                    detailAreaId: $('#ahmmosfc310p02SubArea').val(),
+                    beginEffective: $('#ahmmosfc310p02BeginEffective').val(),
+                    endEffective: $('#ahmmosfc310p02EndEffective').val()
+                };
+                _fw_post(ahmmosfc310$.url + '/insert-masalah-area-detail', param, function (data) {
+                    alert(data.status);
+                    if (data.status === '1') {
+                        _fw_subpage(obj, 'ahmmosfc310p02');
+                        $('#ahmmosfc310p02Problem').prop('disabled', true);
+                        $('#ahmmosfc310p02ProblemDesc').prop('disabled', true);
+                        $('#ahmmosfc310p02Area').prop('disabled', true);
+                        $('#ahmmosfc310p02AreaDesc').prop('disabled', true);
+                        $('#ahmmosfc310p02SubArea').prop('disabled', true);
+                        $('#ahmmosfc310p02SubAreaDesc').prop('disabled', true);
+                        $('#ahmmosfc310p02BeginEffective').prop('disabled', true);
+                        $('#ahmmosfc310p02EndEffective').prop('disabled', true);
+                        $('#ahmmosfc310p02Submit').prop('disabled', true);
+                        ahmmosfc310.p01RefreshTable();
+                    }
+                    _fw_setMessage(obj, data.status, data.message["Message"]);
+                    ahmmosfc310.goTop();
+                });
+                
+            } else {
+                ahmmosfc310.goTop();
+            }
+        },
+        fw_validation_validate: function (obj) {
+            var msg = '<ul class="errorList">';
+            for (var i = 0; i < _vvalObjs.length; i++) {
+                switch (_vvalObjs[i].val.toLowerCase()) {
+                    case 'required':
+                        if ((_vvalObjs[i].msg === '') && (_vvalObjs[i].obj.val() === null || _vvalObjs[i].obj.val().replace(/\s+/, '') === ''))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' is required.';
+                        break;
+                    case 'number':
+                        if (!((_vvalObjs[i].msg === '') && isNaN(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' must be numeric.';
+                        break;
+                    case 'date':
+                        if (!((_vvalObjs[i].msg === '') && _fw_isValidDate(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' is not valid date. Date format: dd-mmm-yyyy.';
+                        break;
+                    case 'email':
+                        if (!((_vvalObjs[i].msg === '') && _fw_isValidEmail(_vvalObjs[i].obj.val())))
+                            _vvalObjs[i].msg = 'Field ' + _vvalObjs[i].name + ' is not valid email.';
+                        break;
+                }
+            }
+            var dmsg = '';
+            for (var i = 0; i < _vvalObjs.length; i++) {
+                if (_vvalObjs[i].msg !== '') {
+                    dmsg += '<li>' + _vvalObjs[i].msg + '</li>';
+                    _vvalObjs[i].obj.closest('.form-group').addClass('has-error has-feedback');
+                }
+            }
+            if (dmsg !== '') {
+                msg += dmsg + '</ul>';
+                _fw_setMessage(obj, 0, msg);
+                return false;
+            }
+            return true;
+        },
+        p03Submit: function (obj) {
+            _fw_validation_clear(obj);
+            _fw_validation_add(obj, 'ahmmosfc310p03Problem', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03ProblemDesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03Area', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03AreaDesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03SubArea', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03SubAreaDesc', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03BeginEffective', 'required');
+            _fw_validation_add(obj, 'ahmmosfc310p03EndEffective', 'required');
+            if (ahmmosfc310.fw_validation_validate(obj)) {
+                var param = {
+                    problemId: $('#ahmmosfc310p03Problem').val(),
+                    areaId: $('#ahmmosfc310p03Area').val(),
+                    detailAreaId: $('#ahmmosfc310p03SubArea').val(),
+                    beginEffective: $('#ahmmosfc310p03BeginEffective').val(),
+                    endEffective: $('#ahmmosfc310p03EndEffective').val()
+                };
+                _fw_post(ahmmosfc310$.url + '/update-masalah-area-detail', param, function (data) {
+                    if (data.status === '1') {
+                        _fw_subpage(obj, 'ahmmosfc310p01');
+                        ahmmosfc310.p01RefreshTable();
+                    }
+                    _fw_setMessage(obj, data.status, data.message["Message"]);
+                    ahmmosfc310.goTop();
+                });
+            } else {
+                ahmmosfc310.goTop();
+            }
+        }
+    }
+</script>

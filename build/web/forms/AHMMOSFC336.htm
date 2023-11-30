@@ -1,0 +1,2552 @@
+<style>
+    #sfc336p03_tableData_serialNumber {
+        width: 100%;
+        border-collapse: collapse;
+        border : 1px solid grey;
+    }
+    #sfc336p03_tableData_serialNumber thead, #sfc336p03_tableData_serialNumber tbody {
+        display: block;
+    }
+    #sfc336p03_tableData_serialNumber thead {
+        position: sticky;
+        top: 0;
+        background-color: #f0f0f0;
+    }
+    #sfc336p03_tableData_serialNumber tbody {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    #sfc336p03_tableData_serialNumber tr {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+    }
+    #sfc336p03_tableData_serialNumber th, #sfc336p03_tableData_serialNumber td {
+        flex: 1;
+        padding: 5px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .freeze-column {
+        display: block;
+        position: absolute;
+    }
+    
+</style>
+
+
+<div id="AHMMOSFC336" class="div-app" data-version="1.0">
+    <div class="global_message"></div>
+
+    <div id="ahmmosfc336_p01" class="subpage subpage-default" data-path="Scan IN OEM">
+        <div style="max-width: 580px">
+            <div class="row form-panel form-horizontal">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-log-in fg-green"></i><span> Login</span></h6>
+                </div>
+
+                <div style="padding: 12px 20px">
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p01_nrpOperator" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            NRP Operator <span style="color: red;">&nbsp;*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p01_nrpOperator"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   onkeypress="sfc336_keyNrp(event, this)"
+                                   autofocus
+                                   />
+                        </div>
+
+                    </div>
+                    <div class="form-group large-font"  style="min-height: 30px">
+                        <label for="sfc336p01_slocId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Sloc ID
+                        </label>
+                        <div class="col-sm-8" style="display: flex;align-items: center;">
+                            <input id="sfc336p01_slocId"
+                                   class="form-control input-lookup" disabled />
+                            <input id="sfc336p01_plantId"
+                                   class="form-control input-lookup hidden" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group-button " style="width: 100%; display: flex; justify-content: start; margin-top: 24px; margin-bottom: 0px    ">
+                        <button id="sfc336_p01_btnLogin" class="btn large_button bg-blue" style="margin-right: 8px"
+                                onclick="sfc336p01_login(this)" disabled>
+                            <i class="glyphicon glyphicon-log-in fg-white" style="margin-right: 2px"></i> Submit
+                        </button>
+                        <button id="ahmmomst352_p01_btnReset" class="btn large_button bg-red"
+                                onclick="sfc336p01_reset(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ahmmosfc336_p02" class="subpage" data-path="Scan IN OEM / Scan IN OEM Transaction S &#8260; N part Accessories">
+        <div style="max-width: 580px">
+            <div class="row form-panel form-horizontal">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-log-in fg-green"></i><span>Scan IN Transaction S/N part Accessories</span></h6>
+                </div>
+                <div style="padding: 12px 20px">
+                    <div class="form-group large-font" style="min-height: 30px;">
+                        <label for="sfc336p02_trxDate" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center; min-height: 30px;">
+                            Transaction Date
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_trxDate"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px;">
+                        <label for="sfc336p02_trxType" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center; min-height: 30px;">
+                            Transaction Type
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_trxType"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   value="In Transaction"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p02_trxId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Transaction ID
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_trxId"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font hidden" id="sfc336p02_form_trxStatus" style="min-height: 30px">
+                        <label for="sfc336p02_trxStatus" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Status
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_trxStatus"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p02_slocId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Sloc ID
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_slocId"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p02_inputType" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Input Type
+                        </label>
+                        <div class="col-sm-8" style="min-height: 30px; display: flex">
+                            <div style="display: flex; align-items: center; margin-right: 8px">
+                                <input type="radio" id="GRReceipt" name="sfc336p02_inputType" value="sfc336p02_type1" style="margin: 0px">
+                                <label for="GRReceipt" style="margin-left: 4px; margin-bottom: 0px">GR Receipt</label>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-right: 8px">
+                                <input type="radio" id="DeliveryNote" name="sfc336p02_inputType" value="sfc336p02_type2" checked style="margin: 0px">
+                                <label for="DeliveryNote" style="margin-left: 4px; margin-bottom: 0px">Delivery Note</label>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-right: 8px">
+                                <input type="radio" id="PO" name="sfc336p02_inputType" value="sfc336p02_type3" style="margin: 0px">
+                                <label for="PO" style="margin-left: 4px; margin-bottom: 0px">PO</label>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <input type="radio" id="Memo" name="sfc336p02_inputType" value="sfc336p02_type4" style="margin: 0px">
+                                <label for="Memo" style="margin-left: 4px; margin-bottom: 0px">Memo</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font hidden" id="sfc336p02_form_input" style="min-height: 30px">
+                        <label for="sfc336p02_input" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Input <span style="color: red;">&nbsp;*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_input"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   maxlength ="45"
+                                   onkeypress="sfc336_keyInput(event, this)"
+                                   />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font hidden" id="sfc336p02_form_poNo" style="min-height: 30px">
+                        <label for="sfc336p02_poNo" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            PO No. <span style="color: red;">&nbsp;*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_poNo"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   maxlength ="10"
+                                   disabled
+                                   required
+                                   onkeyup="sfc336p02_keyPO(event, this)"
+                                   />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font" id="sfc336p02_form_delivNoteNo" style="min-height: 30px">
+                        <label for="sfc336p02_delivNoteNo" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Delivery Note No. <span style="color: red;">&nbsp;*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_delivNoteNo"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   maxlength ="16"
+                                   disabled
+                                   onkeyup="sfc336p02_keyDN(event, this)"
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p02_form_suppId" style="min-height: 30px">
+                        <label for="sfc336p02_suppId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Supplier ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-8">
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc336/get-supp"
+                                 data-lookup-pre-func="sfc336p02_suppId_preFunc"
+                                 data-lookup-next-func="sfc336p02_suppId_nextFunc" data-columns='[
+                                 {"id":"suppId","name":"Supplier ID","visible":"true","sortable":"false"},
+                                 {"id":"poNumber","name":"PO No","visible":"true","sortable":"false"},
+                                 {"id":"suppDesc","name":"Supplier Desc","visible":"true","sortable":"false"},
+                                 {"id":"suppPlant","name":"Supplier Plant","visible":"true","sortable":"false"},
+                                 {"id":"trxStatus","name":"Status Transaksi","visible":"false","sortable":"false"},
+                                 {"id":"recSloc","name":"Receive Sloc","visible":"false","sortable":"false"},
+                                 {"id":"trxId","name":"ID Transaksi","visible":"false","sortable":"false"},
+                                 {"id":"trxDate","name":"Tanggal Transaksi","visible":"false","sortable":"false"},
+                                 {"id":"plantId","name":"Plant ID","visible":"false","sortable":"false"}
+                                 ]'
+                                 data-callback='{
+                                 "sfc336p02_suppId":"suppId",
+                                 "sfc336p02_poNo":"poNumber",
+                                 "sfc336p02_suppDesc":"suppDesc",
+                                 "sfc336p02_suppPlant":"suppPlant",
+                                 "sfc336p02_trxStatus":"trxStatus",
+                                 "sfc336p02_slocMove":"recSloc",
+                                 "sfc336p02_trxId":"trxId",
+                                 "sfc336p02_trxDate":"trxDate",
+                                 "sfc336p02_plantId":"plantId"
+                                 }' 
+                                 data-response-handler="responseHandler"
+                                 style="width: 100%"
+                                 >
+                                <input id="sfc336p02_suppId" type="text" class="form-control input-lookup"
+                                       placeholder="LOV...." disabled>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button" id="sfc336p02_btnLov_suppId" disabled>LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p02_form_suppDesc" style="min-height: 30px">
+                        <label for="sfc336p02_suppDesc" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Supplier Desc
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_suppDesc"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                            <input id="sfc336p02_plantId"
+                                   class="form-control input-lookup hidden" 
+                                   type="text"
+                                   
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p02_form_suppPlant" style="min-height: 30px">
+                        <label for="sfc336p02_suppPlant" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Plant Supplier
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_suppPlant"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                            
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p02_form_matDocGR" style="min-height: 30px">
+                        <label for="sfc336p02_matDocGR" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            MatDoc GR
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_matDocGR"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font hidden" id="sfc336p02_form_memo" style="min-height: 30px">
+                        <label for="sfc336p02_memo" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Memo No. <span style="color: red;">&nbsp;*</span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p02_memo"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   maxlength="30"
+                                   onkeypress="sfc336_keyMemo(event, this)"
+                                   />
+                        </div>
+                    </div>
+
+                    <div id="sfc336p02_btnAdd" style="display: flex; justify-content: end;min-height: 30px" class="form-group large-font hidden">
+                        <button class="btn large_button bg-green" onclick="sfc336p02_addPart(this); return false">
+                            <i class="glyphicon glyphicon-plus fg-white"  style="margin-right: 2px"></i>Add
+                        </button>
+                    </div>
+
+                    <div class="table-responsive" id="sfc336p02_tableData_header">
+                        <div class="bootstrap-table">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px;">
+                                <table id="sfc336p02_tableData"
+                                    data-method="post"
+                                    data-content-type="application/json" 
+                                    data-data-type="json"
+                                    data-query-params-type="limit"
+                                    data-side-pagination="client"
+                                    data-pagination="true" 
+                                    >
+                                    <thead>
+                                        <tr>
+                                            <th data-sortable="false" data-visible="true" data-halign="center" data-align="right" data-formatter="sfc336RowNumFormatterTable">
+                                                <div class="th-inner ">No</div>
+                                                <div class="fht-cell"></div>
+                                                
+                                            </th>
+                                            <th data-sortable="false" data-field="partNumber" data-halign="center" data-align="left">
+                                                <div class="th-inner ">Part ID</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-sortable="false" data-field="partDesc" data-halign="center" data-align="left">
+                                                <div class="th-inner ">Part Desc</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-sortable="false" data-field="totalQty" data-halign="center" data-align="right">
+                                                <div class="th-inner ">Total<br>Qty</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-sortable="false" data-field="inputQty" data-halign="center" data-align="right" data-formatter="sfc336RowInputQtyFormatterTable">
+                                                <div class="th-inner ">Input<br>Qty</div>
+                                                <div class="fht-cell"></div>
+                                            </th>                                
+                                            <th data-sortable="false" data-events="action" data-halign="center" data-formatter="sfc336RowActionFormatterTable">
+                                                <div class="th-inner ">Action</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody><tr class="no-records-found"><td colspan="6">No matching records found</td></tr></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive hidden" id="sfc336p02_tableData_memo_header">
+                        <div class="bootstrap-table">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px;">
+                                <table id="sfc336p02_tableData_memo"
+                                    data-method="post"
+                                    data-content-type="application/json" 
+                                    data-data-type="json"
+                                    data-query-params-type="limit"
+                                    data-side-pagination="client"
+                                    data-pagination="true" 
+                                    >
+                                 <thead>
+                                     <tr>
+                                         <th data-sortable="false" data-visible="true" data-halign="center" data-align="right" data-formatter="sfc336RowNumFormatterTable">
+                                             <div class="th-inner ">No</div>
+                                             <div class="fht-cell"></div>
+                                         </th>
+                                         <th data-field="partNumber" data-halign="center">
+                                             <div class="th-inner ">Part ID</div>
+                                             <div class="fht-cell"></div>
+                                         </th>
+                                         <th data-field="partDesc" data-halign="center">
+                                             <div class="th-inner ">Part Desc</div>
+                                             <div class="fht-cell"></div>
+                                         </th>
+                                         <th data-field="totalQty" data-halign="center" data-align="right">
+                                             <div class="th-inner ">Total<br>Qty</div>
+                                             <div class="fht-cell"></div>
+                                         </th>
+                                         <th data-sortable="false" data-field="inputQty" data-halign="center" data-align="right" data-formatter="sfc336RowInputQtyFormatterTable">
+                                             <div class="th-inner ">Input<br>Qty</div>
+                                             <div class="fht-cell"></div>
+                                         </th>                                
+                                         <th data-sortable="false" data-events="action" data-align="center" data-formatter="sfc336RowActionFormatterTable">
+                                             <div class="th-inner ">Action</div>
+                                             <div class="fht-cell"></div>
+                                         </th>              
+                                     </tr>
+                                 </thead>
+                                 <tbody><tr class="no-records-found"><td colspan="6">No matching records found</td></tr></tbody>
+                             </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row" style="margin-top: 12px;display: flex;align-items: center;">
+                        <div class="col-sm-6">
+                            <div style="display: flex; align-items: center; margin-right: 8px; width: 152px">
+                                <input type="checkbox" id="sfc336p02_moveTrx" name="sfc336p02_moveTrx" value="sfc336p02_moveTrx" style="margin: 0px">
+                                <label for="sfc336p02_moveTrx" style="margin-left: 4px; margin-bottom: 0px">with MOVE transaction Sloc ID Destination</label>
+                            </div>
+                        </div>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup"
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc336/lov-sloc"
+                                 data-lookup-pre-func="sfc336p02_slocMove_preFunc"
+                                 data-lookup-next-func="sfc336p02_slocMove_nextFunc" data-columns='[
+                                 {"id":"slocId","name":"Sloc ID","visible":"true","sortable":"false"}
+                                 ]'
+                                 data-callback='{
+                                 "sfc336p02_slocMove":"slocId"
+                                 }' 
+                                 data-response-handler="responseHandler"
+                                 style="width: 100%"
+                                 >
+                                <input id="sfc336p02_slocMove" type="text" class="form-control input-lookup"
+                                       placeholder="LOV...." disabled>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button" id="sfc336p02_btnLov_slocMove" disabled>LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-button " style="width: 100%; display: flex; justify-content: start; margin-top: 24px; margin-bottom: 0px    ">
+                        <button id="sfc336p02_btnBack" class="btn large_button bg-blue" style="margin-right: 8px"
+                                onclick="sfc336p02_back(this)">
+                            <i class="glyphicon glyphicon-chevron-left fg-white"  style="margin-right: 2px"></i> Back
+                        </button>
+                        <button id="sfc336p02_btnSubmit" class="btn large_button bg-green" style="margin-right: 8px"
+                                onclick="sfc336p02_submit(this)">
+                            <i class="glyphicon glyphicon-saved fg-white" style="margin-right: 2px"></i> Submit
+                        </button>
+
+                        <button id="sfc336p02_btnReset" class="btn large_button bg-red" style="margin-right: 8px"
+                                onclick="sfc336p02_reset(this)" >
+                            <i class="glyphicon glyphicon-refresh fg-white" style="margin-right: 2px"></i> Reset
+                        </button>
+                        <button id="sfc336p02_btnPrint" class="btn large_button bg-grey" 
+                                onclick="sfc336p02_print(this)">
+                            <i class="glyphicon glyphicon-print fg-white" style="margin-right: 2px"></i> Print
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sfc336Modal_addPart" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="max-width: 100%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Add Data Part</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-panel" style="padding: 16px">
+                        <div class="panel-body" style="padding: 0">
+                            <div class="form-group large-font" id="sfc336p02modal_addPart_form_partNum" style="min-height: 30px">
+                                <label for="sfc336p02modal_partNum" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                                    Part Number <span style="color: red;">&nbsp;*</span>
+                                </label>
+                                <div class="lookup-wrapper col-sm-8">
+                                    <div class="input-group lookup"
+                                         data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc336/lov-part"
+                                         data-lookup-pre-func="sfc336p02modal_lovPart_preFunc"
+                                         data-lookup-next-func="sfc336p02modal_lovPart_nextFunc" data-columns='[
+                                         {"id":"partNum","name":"Part Number","visible":"true","sortable":"false"},
+                                         {"id":"partDesc","name":"Part Desc","visible":"true","sortable":"false"}
+                                         ]'
+                                         data-callback='{
+                                         "sfc336p02modal_partNum":"partNum",
+                                         "sfc336p02modal_partDesc":"partDesc"
+                                         }' 
+                                         data-response-handler="responseHandler"
+                                         style="width: 100%"
+                                         >
+                                        <input id="sfc336p02modal_partNum" type="text" maxlength ="18" class="form-control input-lookup"
+                                               placeholder="LOV...." >
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default large-button btn-lookup" type="button" id="sfc336p02_btnLov_slocMove" >LOV</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group large-font" id="sfc336p02modal_addPart_form_partDesc" style="min-height: 30px">
+                            <label for="sfc336Modal_addPart_partDesc" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                                Part Desc
+                            </label>
+                            <div class="col-sm-8">
+                                <input id="sfc336p02modal_partDesc"
+                                       class="form-control input-lookup" 
+                                       type="text"
+                                       disabled
+                                       />
+                            </div>
+                        </div>
+                        <div class="form-group large-font" id="sfc336modal_addPart_form_totalQty" style="min-height: 30px">
+                            <label for="sfc336p02modal_totalQty" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                                Total Qty
+                            </label>
+                            <div class="col-sm-8">
+                                <input id="sfc336p02modal_totalQty"
+                                       class="form-control input-lookup text-right" 
+                                       type="number"
+                                       value=""
+                                       />
+                            </div>
+                        </div>
+                        <div class="text-center" style="display: flex; justify-content: end">
+                            <button class="btn large-button bg-red" data-dismiss="modal" style="margin-right: 12px">
+                                <i class="glyphicon glyphicon-remove fg-white"></i> Cancel</button>
+                            <button class="btn large-button bg-blue" id="sfc336ModalOkBtn"
+                                    onclick="sfc336ModalConfirmasiPart(this)" data-dismiss="modal">
+                                <i class="glyphicon glyphicon-ok fg-white"></i> Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sfc336Modal_confirmasi" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="max-width: 100%">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Add Data</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-panel" style="padding: 16px">
+                        <div class="panel-body" style="padding: 0">
+                            <div class="text-center" style="display: flex; justify-content: center">
+                                <button class="btn large-button bg-red" data-dismiss="modal" style="margin-right: 12px">
+                                    <i class="glyphicon glyphicon-remove fg-white"></i> Cancel</button>
+                                <button class="btn large-button bg-blue" id="sfc336ModalOkBtn"
+                                        onclick="sfc336ModalConfirmasi(this)" data-dismiss="modal">
+                                    <i class="glyphicon glyphicon-ok fg-white"></i> Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ahmmosfc336_p03" class="subpage" data-path="Scan IN OEM / Scan IN OEM Transaction S &#8260; N part Accessories / Detail Scan">
+        <div style="max-width: 580px">
+            <div class="row form-panel form-horizontal">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-log-in fg-green"></i><span>Scan IN Detail Transaction S/N part Accessories</span></h6>
+                </div>
+                <div style="padding: 12px 20px">
+                    <div class="form-group large-font" style="min-height: 30px;">
+                        <label for="sfc336p03_trxDate" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Transaction Date
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_trxDate"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p03_trxType" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Transaction Type
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_trxType"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   value="In Transaction"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p03_trxId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Transaction ID
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_trxId"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font hidden" style="min-height: 30px">
+                        <label for="sfc336p03_trxStatus" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Status
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_trxStatus"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" style="min-height: 30px">
+                        <label for="sfc336p03_slocId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Sloc ID
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_slocId"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>                  
+
+
+
+                    <div class="form-group large-font" id="sfc336p03_form_poNo" style="min-height: 30px">
+                        <label for="sfc336p03_poNo" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            PO No.
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_poNo"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font" id="sfc336p03_form_delivNoteNo" style="min-height: 30px">
+                        <label for="sfc336p03_delivNoteNo" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Delivery Note No.
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_delivNoteNo"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p03_form_suppId" style="min-height: 30px">
+                        <label for="sfc336p03_suppId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Supplier ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-8">
+                            <input id="sfc336p03_suppId" type="text" class="form-control input-lookup"
+                                   disabled>
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p03_form_suppDesc" style="min-height: 30px">
+                        <label for="sfc336p03_suppDesc" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Supplier Desc
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_suppDesc"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font" id="sfc336p03_form_suppPlant" style="min-height: 30px">
+                        <label for="sfc336p03_suppPlant" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Plant Supplier
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_suppPlant"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group large-font hidden" id="sfc336p03_form_matDocGR" style="min-height: 30px">
+                        <label for="sfc336p03_matDocGR" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            MatDoc GR
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_matDocGR"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font hidden" id="sfc336p03_form_memo" style="min-height: 30px">
+                        <label for="sfc336p03_memo" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Memo No.
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_memo"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font" id="sfc336p03_form_partId" style="min-height: 30px">
+                        <label for="sfc336p03_partId" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Part ID
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_partId"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>     
+
+                    <div class="form-group large-font" id="sfc336p03_form_partDesc" style="min-height: 30px">
+                        <label for="sfc336p03_partDesc" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Part Desc
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_partDesc"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>    
+
+                    <div class="form-group large-font" id="sfc336p03_form_totQty" style="min-height: 30px">
+                        <label for="sfc336p03_totalQty" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Total Qty
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_totalQty"
+                                   class="form-control input-lookup text-right" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>     
+
+                    <div class="form-group large-font" id="sfc336p03_form_totInput" style="min-height: 30px">
+                        <label for="sfc336p03_inputQty" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Input Qty
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_inputQty"
+                                   class="form-control input-lookup text-right" 
+                                   type="text"
+                                   disabled
+                                   />
+                        </div>
+                    </div>    
+
+                    <div class="form-group large-font" id="sfc336p03_form_input" style="min-height: 30px">
+                        <label for="sfc336p03_input" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Input
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="sfc336p03_input"
+                                   class="form-control input-lookup" 
+                                   type="text"
+                                   maxlength ="100"
+                                   onkeypress="sfc336p03_keyInputSrn(event, this)"
+                                   />
+                        </div>
+                    </div>    
+
+                    <div class="form-group large-font" id="sfc336p03_form_serialNumber" style="min-height: 30px">
+                        <label for="sfc336p03_serialNumber" class="col-sm-4 control-label" style="padding-top: 0px !important; display: flex; align-items: center;min-height: 30px;">
+                            Serial Number
+                        </label>
+                        <div class="col-sm-8">
+                            <div class="table-responsive">
+                                <table id="sfc336p03_tableData_serialNumber"                                       
+                                       >
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>    
+
+                    <div class="form-group-button " style="width: 100%; display: flex; justify-content: start; margin-top: 24px; margin-bottom: 0px    ">
+                        <button id="sfc336p03_btnSubmit" class="btn large_button bg-blue" style="margin-right: 8px"
+                                onclick="sfc336p03_submit(this)">
+                            <i class="glyphicon glyphicon-saved fg-white" style="margin-right: 2px"></i> Save & Back
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="resources/js/epos-2.9.0.js"></script>
+<script type="text/javascript" src="resources/js/epos-print-editor-en.js"></script>
+
+<script type="text/javascript">
+    var rootUrl = "/imo05/ahmmosfc300-ahs/rest/mo/sfc336/";
+    var slocLogin = "";
+    var valInputType = "";
+    var valueDate = "";
+    var txnID = "";
+    
+    var dataAddpart = {};
+    var dataObject = {};
+    var supplier = {};
+    
+    var monthNamesDigit = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var dataPrint = {};    
+    var ahmmosfc336_epos_device = new epson.ePOSDevice();
+    var printer_ip  = "";
+    var printer_port  = "";
+    var ahmmosfc336_printer = null;
+    var flagDN = 0;
+
+
+    $(document).ready(function () {
+        valInputType = $("input[name='sfc336p02_inputType']:checked").val();
+        sfc336p02_changeInputType();
+        generateDate();
+        $('.ahm .collapsed').css("padding-right", 0);
+        $('#sfc336p02_moveTrx').change(function () {
+            var isChecked = $(this).is(":checked");
+            if (isChecked) {
+                $('#sfc336p02_slocMove').prop("disabled", false);
+                $('#sfc336p02_btnLov_slocMove').prop("disabled", false);
+            } else {
+                $('#sfc336p02_slocMove').prop("disabled", true);
+                $('#sfc336p02_slocMove').val("");
+                $('#sfc336p02_btnLov_slocMove').prop("disabled", true);
+            }
+        });
+        $('#sfc336p02modal_totalQty').on('input', function () {
+            var inputValue = $(this).val();
+
+            var numericValue = inputValue.replace(/\D/g, '');
+
+            $(this).val(numericValue);
+        });
+    });
+
+    function generateDate() {
+        var currentDate = new Date();
+        var day = currentDate.getDate().toString().padStart(2, "0");
+        var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var month = monthNames[currentDate.getMonth()];
+        var year = currentDate.getFullYear().toString().slice(-2);
+        var formattedDate = `${day}-${month}-${year}`;
+        valueDate = formattedDate;
+    }
+
+    function sfc336_keyNrp(evt, obj) {
+        _fw_validation_clear(obj);
+        if (evt.keyCode === 13) {
+            var dto = {
+                search: {
+                    nrp: $('#sfc336p01_nrpOperator').val()
+                }
+            };
+            _fw_post(rootUrl + "get-sloc", dto, (res) => {
+                if (res.status === "1") {
+                    $('#sfc336p01_slocId').val(res.data[0].sloc);
+                    $('#sfc336p01_plantId').val(res.data[0].plant);
+                    slocLogin = res.data[0].sloc;
+                    sfc336p01_login(obj);
+                    $('#sfc336_p01_btnLogin').prop("disabled", false);
+                } else if(res.status === "99"){
+                    _fw_setMessage(obj, 0, `${res.message}. supportId: ${res.supportId}`);
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 500);
+                }
+                else {
+                    $('#sfc336p01_nrpOperator').val('');
+                    _fw_setMessage(obj, 0, res.message.m);
+                    $('#sfc336p01_nrpOperator').focus();
+                }
+            });
+        }
+    }
+    function sfc336p01_reset(obj){
+        _fw_validation_clear(obj);
+        $('#sfc336p01_nrpOperator').val('');
+        $('#sfc336p01_slocId').val('');
+        $('#sfc336_p01_btnLogin').prop("disabled", true);
+        $('#sfc336p01_nrpOperator').focus();
+    }
+    function sfc336p01_login(obj) {
+        _fw_validation_clear(obj);
+        _fw_validation_add(obj, 'sfc336p01_nrpOperator', 'required');
+        if (_fw_validation_validate(obj)) {
+            var dto = {
+                search: {
+                    nrp: $('#sfc336p01_nrpOperator').val()
+                }
+            };
+            _fw_post(rootUrl + "get-sloc", dto, (res) => {
+                if (res.status === "1") {
+                    $('#sfc336p01_slocId').val(res.data[0].sloc);
+                    slocLogin = res.data[0].sloc;
+                    if ($('#sfc336p01_slocId').val() !== "") {
+                        setTimeout(function () {
+                            _fw_subpage(obj, 'ahmmosfc336_p02');
+                            _fw_reset_subpage($('#ahmmosfc336_p02'));
+                            $('#sfc336p02_slocId').val(slocLogin);
+                            $('#sfc336p02_trxDate').val(valueDate);
+                            $('#sfc336p02_trxType').val("In Transaction");
+                            $("input[name='sfc336p02_inputType'][value='sfc336p02_type2']").prop("checked", true);
+                            
+                            $('#sfc336p02_form_trxStatus').addClass("hidden");
+                            $('#sfc336p02_trxStatus').val("");
+                            $('#sfc336p02_trxId').val("");
+                            $('#sfc336p02_form_input').addClass("hidden");
+                            $('#sfc336p02_form_delivNoteNo').removeClass("hidden");
+                            $('#sfc336p02_form_delivNoteNo span').removeClass("hidden");
+                            $('#sfc336p02_form_poNo').removeClass("hidden");
+                            $('#sfc336p02_form_poNo span').addClass("hidden");
+
+                            $('#sfc336p02_form_suppDesc').removeClass("hidden");
+                            $('#sfc336p02_form_suppId').removeClass("hidden");
+                            $('#sfc336p02_form_suppPlant').removeClass("hidden");
+                            $('#sfc336p02_form_matDocGR').addClass("hidden");
+                            $('#sfc336p02_form_delivNoteNo').removeClass("hidden");
+                            $('#sfc336p02_form_memo').addClass("hidden");
+                            $('#sfc336p02_btnLov_suppId').removeClass("hidden");
+                            $('#sfc336p02_delivNoteNo').prop('disabled', false);
+                            $('#sfc336p02_poNo').prop('disabled', true);
+                            $('#sfc336p02_btnAdd').addClass("hidden");
+                            $('#sfc336p02_form_delivNoteNo').insertBefore('#sfc336p02_form_poNo');
+                            $('#sfc336p02_form_poNo').insertAfter('#sfc336p02_form_suppId');
+                            $('#sfc336p02_suppId').attr("placeholder", "LOV...");
+                            $('#sfc336p02_input').val("");
+                            $('#sfc336p02_poNo').val("");
+                            $('#sfc336p02_delivNoteNo').val("");
+                            $('#sfc336p02_suppDesc').val("");
+                            $('#sfc336p02_suppId').val("");
+                            $('#sfc336p02_suppPlant').val("");
+                            $('#sfc336p02_matDocGR').val("");
+                            $('#sfc336p02_memo').val("");
+                            $('#sfc336p02_delivNoteNo').focus();
+
+                            $('#sfc336p02_tableData_memo_header').addClass("hidden");
+                            $('#sfc336p02_tableData_header').removeClass("hidden");
+                            $('#sfc336p02_btnAdd').addClass("hidden");
+                            
+                            $('#sfc336p02_btnSubmit').addClass("hidden");
+                            $('#sfc336p02_btnPrint').addClass("hidden");
+                            $('#sfc336p02_moveTrx').prop("disabled",false);
+                            $("#sfc336p02_tableData").bootstrapTable("removeAll");
+                        }, 750);
+                    }
+                } else {
+                    _fw_setMessage(obj, 0, res.message.m);
+                    $('#sfc336p01_nrpOperator').focus();
+                }
+            });
+        }
+    }
+
+    function sfc336RowNumFormatterTable(value, row, index) {
+        return index + 1;
+    }
+
+    function sfc336p02_back(obj) {
+        $("input[name='sfc336p02_inputType'][value='sfc336p02_type2']").prop("checked", true);
+        valInputType = $("input[name='sfc336p02_inputType']:checked").val();
+        $('#sfc336p02_form_delivNoteNo').insertAfter('#sfc336p02_form_poNo');
+        $('#sfc336p02_form_poNo').insertBefore('#sfc336p02_form_suppId');
+        _fw_subpage(obj, 'ahmmosfc336_p01');
+        _fw_reset_subpage($('#ahmmosfc336_p01'));
+        $('#sfc336p01_nrpOperator').val("")
+        $('#sfc336p01_slocId').val("");
+        $('#sfc336_p01_btnLogin').prop("disabled", true);
+        
+    }
+
+    function sfc336p02_reset(obj) {
+        _fw_validation_clear(obj);
+        
+        _fw_reset_subpage($('#ahmmosfc336_p02')); 
+        
+        $('#sfc336p02_trxDate').val(valueDate);
+        $('#sfc336p02_trxType').val("In Transaction");
+        $('#sfc336p02_slocId').val($('#sfc336p01_slocId').val());
+        if (valInputType === "sfc336p02_type2") {
+            $('#sfc336p02_form_trxStatus').addClass("hidden");
+            $('#sfc336p02_trxStatus').val("");
+            $('#sfc336p02_trxId').val("");
+            $('#sfc336p02_input').val("");
+            $('#sfc336p02_poNo').val("");
+            $('#sfc336p02_suppId').prop("disabled", true);
+            $('#sfc336p02_delivNoteNo').val("");
+            $('#sfc336p02_delivNoteNo').prop("disabled",false);
+            $('#sfc336p02_delivNoteNo').focus();
+            $('#sfc336p02_suppDesc').val("");
+            $('#sfc336p02_suppId').val("");
+            $('#sfc336p02_suppPlant').val("");
+            $('#sfc336p02_matDocGR').val("");
+            $('#sfc336p02_memo').val("");
+            $('#sfc336p02_tableData_memo_header').addClass("hidden");
+            $('#sfc336p02_tableData_header').removeClass("hidden");
+        } else if (valInputType === "sfc336p02_type3") {
+            $('#sfc336p02_poNo').prop("disabled",false);
+            $('#sfc336p02_poNo').focus();
+            $('#sfc336p02_form_trxStatus').addClass("hidden");
+            $('#sfc336p02_trxStatus').val("");
+            $('#sfc336p02_trxId').val("");
+            $('#sfc336p02_input').val("");
+            $('#sfc336p02_poNo').val("");
+            $('#sfc336p02_delivNoteNo').val("");
+            $('#sfc336p02_suppDesc').val("");
+            $('#sfc336p02_suppId').val("");
+            $('#sfc336p02_suppPlant').val("");
+            $('#sfc336p02_matDocGR').val("");
+            $('#sfc336p02_memo').val("");
+            $('#sfc336p02_tableData_memo_header').addClass("hidden");
+            $('#sfc336p02_tableData_header').removeClass("hidden");
+        } else if (valInputType === "sfc336p02_type4") {
+            $('#sfc336p02_memo').prop("disabled",false);
+            $('#sfc336p02_memo').focus();
+            $('#sfc336p02_trxStatus').val("");
+            $('#sfc336p02_trxId').val("");
+            $('#sfc336p02_input').val("");
+            $('#sfc336p02_poNo').val("");
+            $('#sfc336p02_delivNoteNo').val("");
+            $('#sfc336p02_suppDesc').val("");
+            $('#sfc336p02_suppId').val("");
+            $('#sfc336p02_suppPlant').val("");
+            $('#sfc336p02_matDocGR').val("");
+            $('#sfc336p02_memo').val("");
+            $('#sfc336p02_btnAdd').addClass("hidden");
+            $('#sfc336p02_tableData_memo_header').removeClass("hidden");
+            $('#sfc336p02_tableData_header').addClass("hidden");
+        } else {
+            $('#sfc336p02_form_trxStatus').addClass("hidden");
+            $('#sfc336p02_trxStatus').val("");
+            $('#sfc336p02_input').prop("disabled",false);
+            $('#sfc336p02_input').focus();
+            $('#sfc336p02_trxId').val("");
+            $('#sfc336p02_input').val("");
+            $('#sfc336p02_poNo').val("");
+            $('#sfc336p02_delivNoteNo').val("");
+            $('#sfc336p02_suppDesc').val("");
+            $('#sfc336p02_suppId').val("");
+            $('#sfc336p02_suppPlant').val("");
+            $('#sfc336p02_matDocGR').val("");
+            $('#sfc336p02_memo').val("");
+            $('#sfc336p02_tableData_memo_header').addClass("hidden");
+            $('#sfc336p02_tableData_header').removeClass("hidden");
+        }
+        dataObject = {};
+        $('#sfc336p02_form_trxStatus').addClass("hidden");
+        $('#sfc336p02_btnPrint').addClass("hidden");
+        $('#sfc336p02_btnSubmit').addClass("hidden");
+        $('#sfc336p02_moveTrx').prop("disabled",false);
+        $("#sfc336p02_tableData").bootstrapTable("removeAll");
+        var hasNoRecords = $("#sfc336p02_tableData_memo tbody").find(".no-records-found").length > 0;
+        if (!hasNoRecords) {
+            $("#sfc336p02_tableData_memo tbody").empty();
+        }
+
+        var hasDataMemoPart = $("#sfc336p02_tableData_memo tbody").find("tr").length > 0;
+        if (!hasDataMemoPart) {
+            $("#sfc336p02_tableData_memo tbody").append('<tr class="no-records-found"><td colspan="6">No matching records found</td></tr>');
+        }
+    }
+
+    function sfc336p02_changeInputType() {
+        $("input[name='sfc336p02_inputType']").change(function () {
+            _fw_validation_clear($("input[name='sfc336p02_inputType']:checked"));
+            dataObject = {};
+            valInputType = $("input[name='sfc336p02_inputType']:checked").val();
+            $('#sfc336p02_trxDate').val(valueDate);
+            $('#sfc336p02_trxType').val("In Transaction");
+            $('#sfc336p02_slocId').val($('#sfc336p01_slocId').val());
+            if (valInputType === "sfc336p02_type2") {
+                
+                $('#sfc336p02_form_trxStatus').addClass("hidden");
+                $('#sfc336p02_trxStatus').val("");
+                $('#sfc336p02_trxId').val("");
+                $('#sfc336p02_form_input').addClass("hidden");
+                $('#sfc336p02_form_delivNoteNo').removeClass("hidden");
+                $('#sfc336p02_form_delivNoteNo span').removeClass("hidden");
+                $('#sfc336p02_form_poNo').removeClass("hidden");
+                $('#sfc336p02_form_poNo span').addClass("hidden");
+                
+                $('#sfc336p02_form_suppDesc').removeClass("hidden");
+                $('#sfc336p02_form_suppId').removeClass("hidden");
+                $('#sfc336p02_form_suppPlant').removeClass("hidden");
+                $('#sfc336p02_form_matDocGR').addClass("hidden");
+                $('#sfc336p02_form_delivNoteNo').removeClass("hidden");
+                $('#sfc336p02_form_memo').addClass("hidden");
+                $('#sfc336p02_btnLov_suppId').removeClass("hidden");
+                $('#sfc336p02_delivNoteNo').prop('disabled', false);
+                
+                $('#sfc336p02_poNo').prop('disabled', true);
+                $('#sfc336p02_btnAdd').addClass("hidden");
+                $('#sfc336p02_form_delivNoteNo').insertBefore('#sfc336p02_form_poNo')
+                $('#sfc336p02_form_poNo').insertAfter('#sfc336p02_form_suppId');
+                $('#sfc336p02_suppId').attr("placeholder", "LOV...");
+                $('#sfc336p02_input').val("");
+                $('#sfc336p02_poNo').val("");
+                $('#sfc336p02_delivNoteNo').val("");
+                $('#sfc336p02_suppDesc').val("");
+                $('#sfc336p02_suppId').val("");
+                $('#sfc336p02_suppPlant').val("");
+                $('#sfc336p02_matDocGR').val("");
+                $('#sfc336p02_memo').val("");
+                $('#sfc336p02_delivNoteNo').focus();
+                
+                $('#sfc336p02_tableData_memo_header').addClass("hidden");
+                $('#sfc336p02_tableData_header').removeClass("hidden");
+            } else if (valInputType === "sfc336p02_type3") {
+                $('#sfc336p02_form_trxStatus').addClass("hidden");
+                $('#sfc336p02_trxStatus').val("");
+                $('#sfc336p02_trxId').val("");
+                $('#sfc336p02_form_input').addClass("hidden");
+                $('#sfc336p02_form_poNo').removeClass("hidden");
+                $('#sfc336p02_form_poNo span').removeClass("hidden");
+                $('#sfc336p02_form_delivNoteNo').addClass("hidden");
+                $('#sfc336p02_form_delivNoteNo span').addClass("hidden");
+                $('#sfc336p02_form_suppDesc').removeClass("hidden");
+                $('#sfc336p02_form_suppId').removeClass("hidden");
+                $('#sfc336p02_form_suppPlant').addClass("hidden");
+                $('#sfc336p02_form_matDocGR').addClass("hidden");
+                $('#sfc336p02_form_memo').addClass("hidden");
+                $('#sfc336p02_btnAdd').addClass("hidden");
+                $('#sfc336p02_form_poNo').insertBefore('#sfc336p02_form_delivNoteNo')
+                $('#sfc336p02_form_suppId').insertAfter('#sfc336p02_form_poNo');
+                $('#sfc336p02_btnLov_suppId').prop("disabled", true);
+                $('#sfc336p02_btnLov_suppId').addClass("hidden");
+                $("#sfc336p02_suppId").prop("disabled", true);
+                $('#sfc336p02_suppId').css({"width": "100%", "display": "flex"})
+                $('#sfc336p02_suppId').attr("placeholder", "");
+                $('#sfc336p02_input').val("");
+                $('#sfc336p02_poNo').val("");
+                $('#sfc336p02_poNo').prop("disabled",false);
+                $('#sfc336p02_poNo').focus();
+                $('#sfc336p02_delivNoteNo').val("");
+                $('#sfc336p02_suppDesc').val("");
+                $('#sfc336p02_suppId').val("");
+                $('#sfc336p02_suppPlant').val("");
+                $('#sfc336p02_matDocGR').val("");
+                $('#sfc336p02_memo').val("");
+                $('#sfc336p02_tableData_memo_header').addClass("hidden");
+                $('#sfc336p02_tableData_header').removeClass("hidden");
+            } else if (valInputType === "sfc336p02_type4") {
+                $('#sfc336p02_form_trxStatus').addClass("hidden");
+                $('#sfc336p02_trxStatus').val("");
+                $('#sfc336p02_trxId').val("");
+                $('#sfc336p02_form_input').addClass("hidden");
+                $('#sfc336p02_form_poNo').addClass("hidden");
+                $('#sfc336p02_form_delivNoteNo').addClass("hidden");
+                $('#sfc336p02_form_suppDesc').addClass("hidden");
+                $('#sfc336p02_form_suppId').addClass("hidden");
+                $('#sfc336p02_form_suppPlant').addClass("hidden");
+                $('#sfc336p02_form_matDocGR').addClass("hidden");
+                $('#sfc336p02_form_memo').removeClass("hidden");
+                $('#sfc336p02_btnAdd').removeClass("hidden");
+                $('#sfc336p02_form_poNo').insertBefore('#sfc336p02_form_delivNoteNo')
+                $('#sfc336p02_form_suppId').insertAfter('#sfc336p02_form_delivNoteNo');
+                $('#sfc336p02_input').val("");
+                $('#sfc336p02_poNo').val("");
+                $('#sfc336p02_delivNoteNo').val("");
+                $('#sfc336p02_suppDesc').val("");
+                $('#sfc336p02_suppId').val("");
+                $('#sfc336p02_suppPlant').val("");
+                $('#sfc336p02_matDocGR').val("");
+                $('#sfc336p02_memo').val("");
+                $('#sfc336p02_memo').prop("disabled",false);
+                $('#sfc336p02_memo').focus();
+                $('#sfc336p02_tableData_memo_header').removeClass("hidden");
+                $('#sfc336p02_tableData_header').addClass("hidden");
+            } else {
+                $('#sfc336p02_form_trxStatus').addClass("hidden");
+                $('#sfc336p02_trxStatus').val("");
+                $('#sfc336p02_trxId').val("");
+                $('#sfc336p02_form_input').removeClass("hidden");
+                $('#sfc336p02_input').prop("disabled",false);
+                $('#sfc336p02_input').focus();
+                $('#sfc336p02_form_poNo').removeClass("hidden");
+                $('#sfc336p02_form_poNo span').addClass("hidden");
+                $('#sfc336p02_form_delivNoteNo').removeClass("hidden");
+                $('#sfc336p02_form_delivNoteNo span').addClass("hidden");
+                $('#sfc336p02_form_suppDesc').removeClass("hidden");
+                $('#sfc336p02_form_suppId').removeClass("hidden");
+                $('#sfc336p02_form_suppPlant').removeClass("hidden");
+                $('#sfc336p02_form_matDocGR').removeClass("hidden");
+                $('#sfc336p02_form_memo').addClass("hidden");
+                $('#sfc336p02_poNo').prop('disabled', true);
+                $('#sfc336p02_delivNoteNo').prop('disabled', true);
+                $('#sfc336p02_btnAdd').addClass("hidden");
+                $('#sfc336p02_form_poNo').insertBefore('#sfc336p02_form_delivNoteNo')
+                $('#sfc336p02_form_suppId').insertAfter('#sfc336p02_form_delivNoteNo');
+                $('#sfc336p02_btnLov_suppId').prop("disabled", true);
+                $('#sfc336p02_btnLov_suppId').addClass("hidden");
+                $("#sfc336p02_suppId").prop("disabled", true);
+                $('#sfc336p02_suppId').css({"width": "100%", "display": "flex"})
+                $('#sfc336p02_suppId').attr("placeholder", "");
+                
+                $('#sfc336p02_input').val("");
+                $('#sfc336p02_poNo').val("");
+                $('#sfc336p02_delivNoteNo').val("");
+                $('#sfc336p02_suppDesc').val("");
+                $('#sfc336p02_suppId').val("");
+                $('#sfc336p02_suppPlant').val("");
+                $('#sfc336p02_matDocGR').val("");
+                $('#sfc336p02_memo').val("");
+                $('#sfc336p02_tableData_memo_header').addClass("hidden");
+                $('#sfc336p02_tableData_header').removeClass("hidden");
+            }
+            $('#sfc336p02_moveTrx').prop('disabled', false);
+            $('#sfc336p02_moveTrx').prop('checked', false);
+            $('#sfc336p02_slocMove').val('');
+            $('#sfc336p02_btnAdd').addClass('hidden');
+            $('#sfc336p02_btnPrint').addClass("hidden");
+            $("#sfc336p02_btnSubmit").addClass("hidden");
+            $("#sfc336p02_tableData").bootstrapTable("removeAll");
+            var hasNoRecords = $("#sfc336p02_tableData_memo tbody").find(".no-records-found").length > 0;
+            if (!hasNoRecords) {
+                $("#sfc336p02_tableData_memo tbody").empty();
+            }
+
+            var hasDataMemoPart = $("#sfc336p02_tableData_memo tbody").find("tr").length > 0;
+            if (!hasDataMemoPart) {
+                $("#sfc336p02_tableData_memo tbody").append('<tr class="no-records-found"><td colspan="6">No matching records found</td></tr>');
+            }
+        });
+    }
+
+    function sfc336_keyInput(evt, obj) {
+        if (evt.keyCode === 13) {
+            try{
+                _fw_validation_clear(obj);
+                if (_fw_validation_validate(obj)) {
+                    dataObject = {};
+                    var valInputGR = $('#sfc336p02_input').val();
+                    var valMatdoc = valInputGR.split("|")[2];
+                    var valDn = valInputGR.split("|")[0];
+                    var valDateDn = valInputGR.split("|")[1];
+                    var valDatePosting = valInputGR.split("|")[3];
+                    
+                    var day = valDateDn.slice(0, 2);
+                    var month = valDateDn.slice(2, 4);
+                    var year = valDateDn.slice(4, 8);
+                    valDateDn = day + '-' + month + '-' + year;
+
+                    day = valDatePosting.slice(0, 2);
+                    month = valDatePosting.slice(2, 4);
+                    year = valDatePosting.slice(4, 8);
+                    valDatePosting = day + '-' + month + '-' + year;
+
+                    var dto = {
+                        search: {
+                            matdoc: valMatdoc,
+                            dn: valDn,
+                            dateDn: valDateDn,
+                            datePosting: valDatePosting
+                        }
+                    };
+                    _fw_post(rootUrl + "get-dataGR", dto, (res) => {
+                        if (res.status === "1") {
+                            var txnId = res.data === null ? "" : res.data[0][0];
+                            sfc336p02_getSuppGR(obj, valMatdoc, valDn, valDateDn, valDatePosting, txnId);
+                        } else {
+                            _fw_setMessage(obj, 0, "GR Receipt not found, GR: " + $('#sfc336p02_input').val());
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 750);
+                        }
+                    });
+                }
+            }catch(error){
+                _fw_setMessage(obj, 0, "GR Receipt not found, GR: " + $('#sfc336p02_input').val());
+                $('#sfc336p02_input').val('');
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 750);
+            }
+        }
+    }
+
+    function sfc336p02_getSuppGR(obj, matdoc, dn, dateDn, datePosting, trxId) {
+        var dto = {
+            search: {
+                matdoc: matdoc,
+                deliveryNote: dn,
+                dateDn: dateDn,
+                datePosting: datePosting,
+                typeInput: valInputType,
+                txnId: trxId
+            }
+        };
+        _fw_post(rootUrl + "get-supp", dto, (res) => {
+            if (res.status === "1") {
+                $('#sfc336p02_input').prop("disabled",true);
+                var trxStatus = res.data[0].trxStatus;
+                if (trxStatus === "" || trxStatus === null || typeof trxStatus === 'undefined') {
+                    $('#sfc336p02_form_trxStatus').addClass("hidden");
+                    $('#sfc336p02_slocMove').val("");
+                    $('#sfc336p02_trxStatus').val("");
+                    $('#sfc336p02_moveTrx').prop("disabled", false);
+                } else {
+                    $('#sfc336p02_form_trxStatus').removeClass("hidden");
+                    $('#sfc336p02_trxStatus').val(trxStatus);
+                    $('#sfc336p02_trxStatus').removeClass("hidden");
+                    $('#sfc336p02_moveTrx').prop("disabled", true);
+                    $('#sfc336p02_slocMove').val(res.data[0].recSloc);
+                    $('#sfc336p02_btnLov_slocMove').prop("disabled", true);
+                    if(res.data[0].recSloc !== ""){
+                        $('#sfc336p02_btnPrint').removeClass("hidden");
+                    } else{
+                        $('#sfc336p02_btnPrint').addClass("hidden");
+                    }
+                }
+                if (res.data){
+                    $('#sfc336p02_trxId').val(trxId);
+                    if(typeof res.data[0].trxDate !== 'undefined'){
+                        $('#sfc336p02_trxDate').val(res.data[0].trxDate);
+                    }else{
+                        $('#sfc336p02_trxDate').val(valueDate);
+                    }
+                    $('#sfc336p02_poNo').val(res.data[0].poNumber);
+                    $('#sfc336p02_delivNoteNo').val(dn);
+                    $('#sfc336p02_suppId').val(res.data[0].suppId);
+                    $('#sfc336p02_suppDesc').val(res.data[0].suppDesc);
+                    $('#sfc336p02_suppPlant').val(res.data[0].suppPlant);
+                    $('#sfc336p02_plantId').val(res.data[0].plantId);
+                    $('#sfc336p02_matDocGR').val(matdoc);
+                    $("#sfc336p02_tableData").bootstrapTable('refresh');
+                    sfc336tableLoadHeader();
+                }
+            } else {
+                _fw_setMessage(obj, 0, "GR Receipt not found, GR: " + $('#sfc336p02_input').val());
+                $('#sfc336p02_input').val('');
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 750);
+            }
+        });
+
+    }
+
+    function sfc336p02_addPart(obj) {
+        $('#sfc336Modal_addPart').modal('show');
+        $('#sfc336p02modal_partNum').val("");
+        $('#sfc336p02modal_partDesc').val("");
+        $('#sfc336p02modal_totalQty').val('');
+    }
+
+    function sfc336ModalConfirmasiPart(obj) {
+        dataAddpart = {
+            "partNum": $('#sfc336p02modal_partNum').val(),
+            "partDesc": $('#sfc336p02modal_partDesc').val(),
+            "totalQty": $('#sfc336p02modal_totalQty').val(),
+            "inputQty": "0"
+        };
+        if($('#sfc336p02modal_partDesc').val() === ""){
+            _fw_setMessage(obj, 0, 'Please use the LOV for part number');
+            $('html, body').animate({
+                scrollTop: 0
+            }, 750);
+        }else{
+            if($('#sfc336p02modal_totalQty').val() > 0){
+                sfc336ModalConfirmasi(obj);
+            }else{
+                _fw_setMessage(obj, 0, 'Total Qty = 0');
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 750);
+            }
+        }
+
+        
+    }
+
+    function sfc336ModalConfirmasi(obj) {
+        $("#sfc336p02_tableData_memo tbody tr.no-records-found").remove();
+        var partNum = dataAddpart.partNum;
+        var totalQty = dataAddpart.totalQty;
+        var newTotalQty = 0;
+        
+        var existingRow = $("#sfc336p02_tableData_memo tbody tr").filter(function () {
+            return $(this).find("td:eq(1)").text() === partNum;
+        });
+
+        if (existingRow.length > 0) {
+            var existingTotalQty = parseInt(existingRow.find("td:eq(3)").text(), 10);
+
+            newTotalQty = existingTotalQty + parseInt(totalQty, 10);
+
+            existingRow.find("td:eq(3)").text(newTotalQty);
+            existingRow.find("td:eq(5)").html(`<div class="row">      
+                    <div class="col" style="display: flex; justify-content: center">
+                        <button 
+                            title="Scan" 
+                            class="btn btn-primary small-button " 
+                            style="margin-right: 2px; min-height: 30px"
+                            autofocus
+                            onclick="sfc336p02_scanPart(this, '${$('#sfc336p02modal_partNum').val()}', '${$('#sfc336p02modal_partDesc').val()}', '${newTotalQty}');">Scan
+                        </button>
+                        <button title="Delete"
+                                style="min-height: 30px"
+                                class="btn btn-danger small-button"
+                                onclick="Sfc336BtnDeleteParts(this, '${$('#sfc336p02modal_partNum').val()}', '${$('#sfc336p02modal_partDesc').val()}', '${totalQty}');">Delete
+                        </button>
+                    </div>
+                </div>`);
+        } else {
+
+            var newRow = $("<tr>");
+            newRow.append("<td>" + (rowCount() + 1) + "</td>");
+            newRow.append("<td>" + partNum + "</td>");
+            newRow.append("<td>" + dataAddpart.partDesc + "</td>");
+            newRow.append("<td>" + parseInt(totalQty,10) + "</td>");
+            newRow.append("<td>" + dataAddpart.inputQty + "</td>");
+            newRow.append(`<td> 
+                    <div class="row">      
+                        <div class="col" style="display: flex; justify-content: center">
+                            <button 
+                                title="Scan" 
+                                class="btn btn-primary small-button " 
+                                style="margin-right: 2px; min-height: 30px"
+                                autofocus
+                                onclick="sfc336p02_scanPart(this, '${$('#sfc336p02modal_partNum').val()}', '${$('#sfc336p02modal_partDesc').val()}', '${totalQty}');">Scan
+                            </button>
+                            <button 
+                                    title="Delete"
+                                    style="min-height: 30px"
+                                    class="btn btn-danger small-button"
+                                    onclick="Sfc336BtnDeleteParts(this, '${$('#sfc336p02modal_partNum').val()}', '${$('#sfc336p02modal_partDesc').val()}', '${totalQty}')">Delete
+                            </button>
+                        </div>
+                    </div> </td>`);
+            $("#sfc336p02_tableData_memo tbody").append(newRow);
+            $("#sfc336p02_tableData_memo tbody button").focus();
+            
+            $('#sfc336p02modal_partNum').val("");
+            $('#sfc336p02modal_partDesc').val("");
+            $('#sfc336p02modal_totalQty').val();
+            
+            function rowCount() {
+                return $("#sfc336p02_tableData_memo tbody tr").length;
+            }   
+        }
+    }
+    function Sfc336BtnDeleteParts(param, partNum, partDesc, totalQty) {
+        event.preventDefault();
+        
+        var paramArr = partNum;
+        let rowid = $(this).closest('tr').data('index');
+        $(param).closest("tr").remove();
+        var hasDataMemoPart = $("#sfc336p02_tableData_memo tbody").find("tr").length > 0;
+        delete dataObject[paramArr];
+        
+        
+        
+        if (!hasDataMemoPart) {
+            $('#sfc336p02_tableData_memo').bootstrapTable('removeAll');
+            $("#sfc336p02_tableData_memo").bootstrapTable('refresh');
+        }else{
+            dataAddpart.splice(rowid-1, 1);
+            $('#sfc336p02_tableData_memo').bootstrapTable('load', dataAddpart);
+            $("#sfc336p02_tableData_memo").bootstrapTable('refresh');
+        }
+        
+        
+        return false;
+        
+        
+    }
+
+
+    function sfc336p02_keyDN(evt, obj) {
+        if (evt.keyCode === 13) {
+            _fw_validation_clear(obj);
+            flagDN = 0;
+            $('#sfc336p02_suppDesc').val("");
+            $('#sfc336p02_suppId').val("");
+            $('#sfc336p02_suppPlant').val("");
+            $('#sfc336p02_poNo').val("");
+            dataObject = {};
+            $('#sfc336p02_moveTrx').prop("disabled", false);
+            $("#sfc336p02_tableData").bootstrapTable("removeAll");
+            if (_fw_validation_validate(obj)) {
+                var dto = {
+                    search: {
+                        deliveryNote: $('#sfc336p02_delivNoteNo').val()
+                    }
+                };
+                _fw_post(rootUrl + "get-dataDN", dto, (res) => {
+                    if (res.status === "1") {
+                        $('#sfc336p02_trxDate').val(valueDate);
+                        sfc336p02_getSuppDN($('#sfc336p02_delivNoteNo').val(),"" ,obj);
+                        $("#sfc336p02_suppId").focus();
+                    } else {
+                        _fw_setMessage(obj, 0, res.message.m + `, Delvery Note: ${'#sfc336p02_delivNoteNo'}.val()` ); 
+                        $('#sfc336p02_btnLov_suppId').prop("disabled", true);
+                        $("#sfc336p02_suppId").prop("disabled", true);
+                        $('#sfc336p02_delivNoteNo').focus();
+                        $('#sfc336p02_delivNoteNo').val('');
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 750);
+                    }
+                })
+            }
+        }
+    }
+    function sfc336p02_getSuppDN(dn, trxId,obj) {
+        var dto = {
+            search: {
+                deliveryNote: dn,
+                supplierId: "",
+                typeInput: valInputType,
+                trxId: trxId
+            }
+        };
+        _fw_post(rootUrl + "get-supp", dto, (res) => {
+            if (res.status === "1") {
+                $('#sfc336p02_form_trxStatus').addClass("hidden");
+                if (res.data.length === 1){
+                    
+                    if(res.data[0].trxId !== null){
+                        $('#sfc336p02_form_trxStatus').removeClass("hidden");
+                        $('#sfc336p02_trxStatus').removeClass("hidden");
+                        $('#sfc336p02_moveTrx').prop("disabled", true);
+                    }else {
+                        $('#sfc336p02_form_trxStatus').addClass("hidden");
+                        $('#sfc336p02_trxStatus').addClass("hidden");
+                        $('#sfc336p02_slocMove').val("");
+                        $('#sfc336p02_trxStatus').val("");
+                        $('#sfc336p02_moveTrx').prop("disabled", false);
+                    }
+                    txnID = res.data[0].trxId;
+                    $('#sfc336p02_trxId').val(res.data[0].trxId);
+                    if(res.data[0].trxDate !== null){
+                        $('#sfc336p02_trxDate').val(res.data[0].trxDate);
+                    }else{
+                        $('#sfc336p02_trxDate').val(valueDate);
+                    }
+                    $('#sfc336p02_trxStatus').val(res.data[0].trxStatus);
+                    $('#sfc336p02_poNo').val(res.data[0].poNumber);
+                    $('#sfc336p02_delivNoteNo').val(dn);
+                    $('#sfc336p02_suppId').val(res.data[0].suppId);
+                    $('#sfc336p02_suppDesc').val(res.data[0].suppDesc);
+                    $('#sfc336p02_suppPlant').val(res.data[0].suppPlant);
+                    $('#sfc336p02_slocMove').val(res.data[0].slocMove);
+                    $('#sfc336p02_slocMove').val(res.data[0].recSloc);
+                    $('#sfc336p02_plantId').val(res.data[0].plantId);
+                    $('#sfc336p02_delivNoteNo').prop('disabled',true);
+                    
+                    if (res.data[0].recSloc === null || res.data[0].recSloc === ""){
+                        $('#sfc336p02_btnPrint').addClass("hidden");
+                    } else{
+                        $('#sfc336p02_btnPrint').removeClass("hidden");
+                    }
+                    $("#sfc336p02_tableData").bootstrapTable('refresh');
+                    
+                } else {
+                    if(res.data.status !== ""){
+                        $('#sfc336p02_form_trxStatus').removeClass("hidden");
+                        $('#sfc336p02_trxStatus').removeClass("hidden");
+                    }
+                    $('#sfc336p02_btnPrint').addClass("hidden");
+                    $("#sfc336p02_suppId").prop("disabled", false);
+                    $('#sfc336p02_btnLov_suppId').prop("disabled", false);
+//                    
+                }
+            } else {
+                _fw_setMessage(obj, 0, res.message.m);
+                $('#sfc336p02_delivNoteNo').val('');
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 750);
+            }
+        });
+    }    
+
+    function sfc336p02_suppId_preFunc(params) {
+        params.search = {
+            "deliveryNote": $("#sfc336p02_delivNoteNo").val(),
+            "supplierId": $("#sfc336p02_suppId").val(),
+            "po": $("#sfc336p02_poNo").val(),
+            "typeInput": valInputType,
+            "trxId": $("#sfc336p02_trxId").val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }
+        }
+        return params;
+    }
+    
+    function sfc336p02_suppId_nextFunc() {
+        var trxStatus = $("#sfc336p02_trxStatus").val();
+        var slocMove = $("#sfc336p02_slocMove").val();
+        $('#sfc336p02_btnLov_suppId').prop("disabled", true);
+        $('#sfc336p02_suppId').prop("disabled", true);
+        $('#sfc336p02_delivNoteNo').prop("disabled",true);
+        if (trxStatus !== ""){
+            $('#sfc336p02_form_trxStatus').removeClass("hidden");
+            $('#sfc336p02_moveTrx').prop("disabled",true);
+            $('#sfc336p02_slocMove').prop("disabled",true);
+            $('#sfc336p02_btnLov_slocMove').prop("disabled",true);
+            
+            if(trxStatus === "COMPLETE"){
+                if(slocMove === "" || slocMove === null){
+                    $('#sfc336p02_btnPrint').addClass("hidden");
+                } else {
+                    $('#sfc336p02_btnPrint').removeClass("hidden");
+                }
+                
+            } else{
+                $('#sfc336p03_input').prop("disabled",false);
+            }
+        }else{
+            $('#sfc336p02_form_trxStatus').addClass("hidden");
+            $('#sfc336p02_trxStatus').val("");
+            $('#sfc336p02_trxStatus').addClass("hidden");
+            $('#sfc336p02_moveTrx').prop("disabled",false);
+            $('#sfc336p02_btnLov_slocMove').prop("disabled",true);
+            $('#sfc336p03_input').prop("disabled",false);
+            $('#sfc336p02_btnPrint').addClass("hidden");
+        }
+        if(flagDN === 0){
+            sfc336tableLoadHeader();
+            flagDN = 1;
+        }
+        
+        $("#sfc336p02_slocMove").focus();
+        $("#sfc336p03_tableData_serialNumber tbody").empty();
+        $("#sfc336p02_tableData").bootstrapTable('refresh');
+    }
+
+    function sfc336p02_slocMove_preFunc(params) {
+        params.search = {
+            "slocId": $("#sfc336p02_slocMove").val(),
+            "sloc": $("#sfc336p02_slocId").val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }
+        }
+
+        return params;
+    }
+
+    function sfc336p02modal_lovPart_preFunc(params) {
+        params.search = {
+            "partNumber": $("#sfc336p02modal_partNum").val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }
+        }
+
+        return params;
+    }
+
+
+    function sfc336p02_table_part(params) {
+        params.search = {
+            "deliveryNote": $("#sfc336p02_delivNoteNo").val(),
+            "supplierId": $("#sfc336p02_suppId").val(),
+            "po": $('#sfc336p02_poNo').val(),
+            "typeInput": valInputType,
+            "trxId": $('#sfc336p02_trxId').val(),
+            "matdoc": $('#sfc336p02_matDocGR').val()
+        }
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        } else {
+            offsetUnitLoad = params.offset;
+        }
+        return params;
+    }
+
+    function sfc336RowActionFormatterTable(value, row, index) {
+        return [
+            `<div class="row">      
+                    <div class="col">
+                        <button 
+                            title="Scan" 
+                            class="btn btn-primary small-button" 
+                            style="min-height: 10px"
+                            onclick="sfc336p02_scanPart(this, '${row.partNumber}', '${row.partDesc}', '${row.totalQty}');">Scan
+                        </button>
+                    </div>
+                </div>
+            <script>$('#sfc336p02_tableData button[title="Scan"]').focus(); 
+            </sc` + `ript>`
+        ].join('');
+    }
+
+    function sfc336p02_scanPart(obj, partNum, partDesc, totQty) {
+        _fw_subpage(obj, 'ahmmosfc336_p03');
+        if (valInputType === "sfc336p02_type2") {
+            $('#sfc336p03_form_poNo').removeClass("hidden");
+            $('#sfc336p03_form_delivNoteNo').removeClass("hidden");
+            $('#sfc336p03_form_suppId').removeClass("hidden");
+            $('#sfc336p03_form_suppDesc').removeClass("hidden");
+            $('#sfc336p03_form_suppPlant').removeClass("hidden");
+            $('#sfc336p03_form_matDocGR').addClass("hidden");
+            $('#sfc336p03_form_memo').addClass("hidden");
+            $('#sfc336p03_form_delivNoteNo').insertBefore('#sfc336p03_form_poNo')
+            $('#sfc336p03_form_poNo').insertAfter('#sfc336p03_form_suppId');
+            
+        } else if (valInputType === "sfc336p02_type3") {
+            $('#sfc336p03_form_poNo').removeClass("hidden");
+            $('#sfc336p03_form_delivNoteNo').addClass("hidden");
+            $('#sfc336p03_form_suppId').removeClass("hidden");
+            $('#sfc336p03_form_suppDesc').removeClass("hidden");
+            $('#sfc336p03_form_suppPlant').addClass("hidden");
+            $('#sfc336p03_form_matDocGR').addClass("hidden");
+            $('#sfc336p03_form_memo').addClass("hidden");
+            $('#sfc336p03_form_poNo').insertAfter('#sfc336p03_form_suppId');
+            if($('#sfc336p03_trxId').val() !== ""){
+                $('#sfc336p03_input').prop("disabled", true);
+            }
+        } else if (valInputType === "sfc336p02_type4") {
+            $('#sfc336p03_form_poNo').addClass("hidden");
+            $('#sfc336p03_form_delivNoteNo').addClass("hidden");
+            $('#sfc336p03_form_suppId').addClass("hidden");
+            $('#sfc336p03_form_suppDesc').addClass("hidden");
+            $('#sfc336p03_form_suppPlant').addClass("hidden");
+            $('#sfc336p03_form_matDocGR').addClass("hidden");
+            $('#sfc336p03_form_memo').removeClass("hidden");
+        } else {
+            $('#sfc336p03_form_poNo').removeClass("hidden");
+            $('#sfc336p03_form_delivNoteNo').removeClass("hidden");
+            $('#sfc336p03_form_suppId').removeClass("hidden");
+            $('#sfc336p03_form_suppDesc').removeClass("hidden");
+            $('#sfc336p03_form_suppPlant').removeClass("hidden");
+            $('#sfc336p03_form_matDocGR').removeClass("hidden");
+            $('#sfc336p03_form_memo').addClass("hidden");
+        }
+        $('#sfc336p03_trxId').val($('#sfc336p02_trxId').val());
+        $('#sfc336p03_trxDate').val($('#sfc336p02_trxDate').val());
+        $('#sfc336p03_slocId').val($('#sfc336p02_slocId').val());
+        $('#sfc336p03_poNo').val($('#sfc336p02_poNo').val());
+        $('#sfc336p03_delivNoteNo').val($('#sfc336p02_delivNoteNo').val());
+        $('#sfc336p03_suppId').val($('#sfc336p02_suppId').val());
+        $('#sfc336p03_suppDesc').val($('#sfc336p02_suppDesc').val());
+        $('#sfc336p03_suppPlant').val($('#sfc336p02_suppPlant').val());
+        $('#sfc336p03_memo').val($('#sfc336p02_memo').val());
+        $('#sfc336p03_matDocGR').val($('#sfc336p02_matDocGR').val());
+        $('#sfc336p03_partId').val(partNum);
+        $('#sfc336p03_partDesc').val(partDesc);
+        $('#sfc336p03_totalQty').val(totQty);
+        $('#sfc336p03_input').focus();
+        
+        if($('sfc336p02_trxStatus').val() !== ""){
+            $('sfc336p03_trxStatus').val($('sfc336p02_trxStatus').val());
+            $('sfc336p03_trxStatus').removeClass("hidden");
+        }
+        
+        if (typeof dataObject[partNum] === "undefined") {
+            $('#sfc336p03_inputQty').val(0);
+            dataObject[partNum] = [];
+            $('#sfc336p03_input').prop("disabled", false);
+            $("#sfc336p03_tableData_serialNumber tbody").empty();
+        } else {
+            $('#sfc336p03_inputQty').val(dataObject[partNum].length);
+            if ($("#sfc336p03_inputQty").val() === $("#sfc336p03_totalQty").val()){
+        
+                $('#sfc336p03_input').prop("disabled", true);
+            }
+            var paramArr = partNum;
+            generateTableSrn(paramArr);
+            if ($('#sfc336p02_trxStatus').val() === 'COMPLETE'){
+                $("#sfc336p03_tableData_serialNumber button").addClass("hidden");  
+            } 
+        }
+        if($('#sfc336p03_trxId').val() !== "" && valInputType === "sfc336p02_type3"){
+            $('#sfc336p03_input').prop("disabled", true);
+            $('#sfc336p03_tableData_serialNumber button').addClass("hidden");
+        }
+    }
+
+    function sfc336p02_keyPO(evt, obj) {
+        _fw_validation_clear(obj);
+        $('#sfc336p02_suppId').val("");
+        $('#sfc336p02_suppDesc').val("");
+        $('#sfc336p02_suppPlant').val("");
+        $('#sfc336p02_moveTrx').prop("disabled", false);
+        $("#sfc336p02_tableData").bootstrapTable('removeAll');
+        if (evt.keyCode === 13) {
+            var dto = {
+                search: {
+                    po: $('#sfc336p02_poNo').val(),
+                    typeInput: valInputType
+                }
+            };
+            _fw_post(rootUrl + "get-dataPO", dto, (res) => {
+                if (res.status === "1") {
+                    getSupplier(dto);
+                    $('#sfc336p02_poNo').prop("disabled",true);
+                    $('#sfc336p02_suppId').val(supplier.suppId);
+                    $('#sfc336p02_suppDesc').val(supplier.suppDesc);
+                    $('#sfc336p02_suppPlant').val(supplier.suppPlant);
+                    $('#sfc336p02_plantId').val(supplier.plantId);
+                    dataObject = {};
+                    $("#sfc336p02_tableData").bootstrapTable('refresh');
+                    sfc336tableLoadHeader();
+                } else {
+                    _fw_setMessage(obj, 0, res.message.m);
+                    $('#sfc336p02_poNo').val('');
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 750);
+                }
+            })
+
+        }
+    }
+
+    function getSupplier(params) {
+        _fw_post(rootUrl + "get-supp", params, (res) => {
+            if (res.status === "1") {
+                supplier = res.data[0]
+            } else {
+                _fw_setMessage(obj, 0, res.message.m);
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 750);
+            }
+        })
+    }
+
+    
+    function sfc336RowInputQtyFormatterTable(value, row, index) {
+        let valInputQty ;
+        if(dataObject.hasOwnProperty(row.partNumber)){
+            valInputQty = dataObject[row.partNumber].length;
+        } else {
+            valInputQty = row.inputQty;
+        }
+        
+        var val = 0;
+               
+        if (valInputQty === null) {
+            if (typeof dataObject[row.partNumber] === "undefined") {
+                dataObject[row.partNumber] = [];
+                val = dataObject[row.partNumber].length;
+            }
+        } else {
+            var tempList = [];
+            if(row.serialNumber !== null){
+                for(let i = 0; i < row.serialNumber.length; i++){
+                    tempList.push({
+                        "SerialNumber": row.serialNumber[i],
+                        "editable": false
+                    });
+                }                
+            }
+
+            
+
+            if(!dataObject.hasOwnProperty(row.partNumber)){
+                dataObject[row.partNumber] = tempList;
+                val = valInputQty;
+            }else{
+                val = dataObject[row.partNumber].length;
+            }
+            
+        }
+        
+        return `${val}`;
+
+    }
+    
+    function sfc336p03_keyInputSrn(evt, obj) {
+        _fw_validation_clear(obj);
+        if (evt.keyCode === 13) {
+            var valueInput = $('#sfc336p03_input').val();
+            var part = $('#sfc336p03_partId').val();
+            var valuePart = $('#sfc336p03_partId').val();
+            var dto = {
+                search: {
+                    "srn": valueInput,
+                    "part": part
+                }
+            };
+            
+            _fw_post(rootUrl + "get-srn", dto, (res) => {
+                if (res.status === "1") {
+                    if (valueInput !== "") {
+                        let flag = false;
+                        for(let key in dataObject){
+                            dataObject[key].forEach(function (value, i) {
+                                if(value.SerialNumber === valueInput){
+                                    flag = true;
+                                    return;
+                                } 
+                            });
+                        }
+                        if(flag){
+                            _fw_setMessage(obj, 0, 'Serial number already scanned, Serial Number: ' + valueInput);
+                            $('#sfc336p03_input').val('');
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 750);
+                            return ;
+                        }
+                        if(!flag){
+                            dataObject[valuePart].unshift({"SerialNumber": valueInput, "editable":true});
+                            $("#sfc336p03_tableData_serialNumber tbody").empty();
+                            generateTableSrn(valuePart);
+                            $('#sfc336p02_btnSubmit').removeClass("hidden");
+                            window.scrollTo(0, document.body.scrollHeight);
+                        } else {
+                            _fw_setMessage(obj, 0, 'Serial number already scanned, Serial Number: ' + $('#sfc336p03_input').val());
+                            $('#sfc336p03_input').val("");
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 750);
+                            return;
+                        }
+
+                    } else {
+                        _fw_setMessage(obj, 0, 'Serial number can\'t be empty');
+                        
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 750);
+                    }
+                    
+                    $('#sfc336p03_input').val("");
+                    
+                } else if(res.status === "99") {
+                    _fw_setMessage(obj, 0, `${res.message}. supportId: ${res.supportId}`);
+                    $('#sfc336p03_input').val("");
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 500);
+                }else {
+                    _fw_setMessage(obj, 0, res.message.m);
+                    $('#sfc336p03_input').val("");
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 750);
+                }
+            });
+        }
+    }
+
+    function generateTableSrn(paramArr) {
+        var table = document.getElementById("sfc336p03_tableData_serialNumber");
+        _fw_validation_clear(table);
+        if (typeof dataObject[paramArr] === "undefined" || dataObject[paramArr] === null) {
+            dataObject[paramArr] = []; 
+        }
+        
+        var tbody = table.getElementsByTagName("tbody")[0];
+        var flag = 0;
+        tbody.innerHTML = "";
+        
+        $('#sfc336p03_inputQty').val(dataObject[paramArr].length);
+        if ($("#sfc336p03_inputQty").val() === $("#sfc336p03_totalQty").val()){
+            $('#sfc336p03_input').prop("disabled", true); 
+            $('#sfc336p03_btnSubmit').focus();
+            window.scrollTo(0, document.body.scrollHeight);
+        } else{
+            $('#sfc336p03_input').prop("disabled", false); 
+        }
+        dataObject[paramArr].forEach(function(value, i){
+            var row = document.createElement("tr");
+            var cell = document.createElement("td");
+            cell.textContent = value.SerialNumber;
+            var cell2 = document.createElement("td");
+            var btn = document.createElement("button");
+            row.appendChild(cell);
+            
+            if(value.editable){
+                btn.textContent = "Delete";
+                btn.title = "Delete";
+                btn.className = "btn large_button bg-red";
+                btn.id = `btnDelete-${i}`;
+                btn.onclick = function () {
+                    Sfc336BtnDeleteSrn(paramArr, value);
+                };
+                cell2.appendChild(btn);
+            }
+            
+            
+            row.appendChild(cell2);
+            tbody.appendChild(row);
+        });
+    }
+
+    function Sfc336BtnDeleteSrn(paramArr, val) {
+        event.preventDefault();
+        let dataArr = dataObject[paramArr];
+        dataObject[paramArr] = dataArr.filter(item => item !== val);
+        
+        $('#sfc336p03_inputQty').val(dataObject[paramArr].length);
+        
+        generateTableSrn(paramArr);
+        $('#sfc336p03_input').focus();
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+
+    function sfc336_keyMemo(evt, obj) {
+        if (evt.keyCode === 13) {
+            _fw_validation_clear(obj);
+            var valueMemo = $('#sfc336p02_memo').val();
+            var dto = {
+                search: {
+                    "memo": valueMemo
+                }
+            }
+            if(valueMemo.trim() === ""){
+                _fw_setMessage(obj, 0, 'Memo can\'t be empty');
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+                return
+            }
+            
+            _fw_post(rootUrl + "get-memo", dto, (res) => {
+                if (res.status === "1") {
+                    var currentDate = new Date();
+                    var day = currentDate.getDate();
+                    var month = monthNamesDigit[currentDate.getMonth()];
+                    var year = currentDate.getFullYear();
+                    
+                    var formattedDate = day + " " + month + " " + year;
+                    
+                    dataObject = {};
+                    var trxId = res.data[0].trxId === null ? "" : res.data[0].trxId;
+                    var trxStatus = res.data[0].trxStatus === null ? "" : res.data[0].trxStatus;
+                    var trxDate = res.data[0].trxDate === null ? formattedDate : res.data[0].trxDate;
+                    var recSloc = res.data[0].recSloc === null ? "" : res.data[0].recSloc;
+                    $('#sfc336p02_memo').prop('disabled',true);
+                    if (trxId !== "" && trxStatus !== "") {
+                        $('#sfc336p02_form_trxStatus').removeClass("hidden");
+                        $('#sfc336p02_trxStatus').val(trxStatus);
+                        $('#sfc336p02_trxId').val(trxId);
+                        $('#sfc336p02_trxDate').val(trxDate);
+                        $('#sfc336p02_btnAdd').addClass("hidden");
+                        $('#sfc336p02_moveTrx').prop("disabled",true);
+                        $('#sfc336p02_slocMove').prop("disabled",true);
+                        $('#sfc336p02_btnLov_slocMove').prop("disabled",true);
+                        if(recSloc !== ""){
+                            $('#sfc336p02_slocMove').val(recSloc);
+                            $('#sfc336p02_btnPrint').removeClass("hidden");
+                        } else {
+                            $('#sfc336p02_btnPrint').addClass("hidden");
+                            $('#sfc336p02_slocMove').val("");
+                        }
+                        if (trxStatus === "COMPLETE"){
+                            $('#sfc336p02_btnSubmit').addClass("hidden");
+                            $('#sfc336p03_input').prop("disabled", true); 
+                            $('#sfc336p03_tableData_serialNumber button').addClass("hidden");
+                        } else{
+                            $('#sfc336p03_input').prop("disabled",false);
+                            $('#sfc336p02_btnSubmit').removeClass("hidden");
+                        }
+                        sfc336tableLoadMemo();
+                    } 
+                    else {
+                        $('#sfc336p02_form_trxStatus').addClass("hidden");
+                        $('#sfc336p02_trxStatus').val("");
+                        $('#sfc336p02_trxId').val("");
+                        $('#sfc336p02_slocMove').val("");
+                        $('#sfc336p02_btnAdd').removeClass("hidden");
+                        $('#sfc336p02_moveTrx').prop("disabled",false);
+                        $('#sfc336p02_btnLov_slocMove').prop("disabled",false);
+                        $('#sfc336p03_input').prop("disabled", false); 
+                        $('#sfc336p02_btnSubmit').addClass("hidden");
+                        $('#sfc336p03_tableData_serialNumber button').removeClass("hidden");
+                        $("#sfc336p02_tableData_memo").bootstrapTable('refresh');
+                        
+                    }
+                } else{
+                    _fw_setMessage(obj, 0, `${res.message}. supportId: ${res.supportId}`);
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 500);
+                } 
+            });
+        }
+
+    }
+
+    function sfc336tableLoadHeader(){
+        var dto = {
+            search: {
+                "typeInput": valInputType,
+                "trxId": $('#sfc336p02_trxId').val(),
+                "deliveryNote": $("#sfc336p02_delivNoteNo").val(),
+                "supplierId": $("#sfc336p02_suppId").val(),
+                "po": $('#sfc336p02_poNo').val(),
+                "matdoc": $('#sfc336p02_matDocGR').val()
+                
+            }
+        };
+        
+        _fw_post(rootUrl + "get-part", dto, function (data) {
+            if(data.status === '1'){
+                $('#sfc336p02_tableData').bootstrapTable('destroy');
+                $('#sfc336p02_tableData').bootstrapTable({data: data.data});
+            } else{
+                
+            }
+        });
+    }
+    
+    function sfc336tableLoadMemo(){
+        var dto = {
+            search: {
+                "typeInput": valInputType,
+                "trxId": $('#sfc336p02_trxId').val()
+            }
+        };
+        
+        _fw_post(rootUrl + "get-part", dto, function (data) {
+            if(data.status === '1'){
+                $('#sfc336p02_tableData_memo').bootstrapTable('destroy');
+                $('#sfc336p02_tableData_memo').bootstrapTable({data: data.data});
+            } else{
+                
+            }
+        });
+    }
+    
+    function sfc336p03_submit(obj) {
+        var valPartNum = $('#sfc336p03_partId').val();
+        var valuePart = $('#sfc336p03_partId').val();
+        var valueInputQty = $('#sfc336p03_inputQty').val();
+        _fw_subpage(obj, 'ahmmosfc336_p02');
+        if (valInputType !== "sfc336p02_type4") {
+            var existingRow = $("#sfc336p02_tableData tbody tr").filter(function () {
+                return $(this).find("td:eq(1)").text() === valPartNum;
+            });
+            if (existingRow.length > 0) {
+                existingRow.find("td:eq(4)").text(valueInputQty.toString());
+            }
+        } else {
+            var existingRowMemo = $("#sfc336p02_tableData_memo tbody tr").filter(function () {
+                return $(this).find("td:eq(1)").text() === valPartNum;
+            });
+            if (existingRowMemo.length > 0) {
+                existingRowMemo.find("td:eq(4)").text(valueInputQty.toString());
+            }
+        }
+    }
+    
+    function sfc336p02_submit(obj) {
+        var dataPart = [];
+        
+        if (valInputType === "sfc336p02_type4") {
+            let index = 0;
+            var tableDataMemo = $('#sfc336p02_tableData_memo').bootstrapTable("getData");
+            const keys = Object.keys(tableDataMemo);
+            for(const key of keys){
+                var partNum = tableDataMemo[key].partNumber;
+                var partDesc = tableDataMemo[key].partDesc;
+                var totalQty = tableDataMemo[key].totalQty;
+                var inputQty = dataObject[partNum].length;
+                var serialNum = dataObject[partNum];
+                dataPart.push({
+                    partNum: partNum,
+                    partDesc: partDesc,
+                    totalQty: totalQty,
+                    inputQty: inputQty,
+                    serialNum: []
+                });
+                if(typeof serialNum !== "undefined"){
+                    for(let i = 0; i < serialNum.length; i++){
+                        if(serialNum[i].editable === true){
+                            dataPart[index].serialNum.push(serialNum[i].SerialNumber);
+                        }
+                    }            
+                }
+                index++;
+            }
+        } else {
+            let index = 0;
+            var tableDataMemo = $('#sfc336p02_tableData').bootstrapTable("getData");
+            const keys = Object.keys(tableDataMemo);
+            for(const key of keys){
+                var partNum = tableDataMemo[key].partNumber;
+                var partDesc = tableDataMemo[key].partDesc;
+                var totalQty = tableDataMemo[key].totalQty;
+                var inputQty = dataObject[partNum].length;
+                var serialNum = dataObject[partNum];
+                dataPart.push({
+                    partNum: partNum,
+                    partDesc: partDesc,
+                    totalQty: totalQty,
+                    inputQty: inputQty,
+                    serialNum: []
+                });
+                if(typeof serialNum !== "undefined"){
+                    for(let i = 0; i < serialNum.length; i++){
+                        if(serialNum[i].editable === true){
+                            dataPart[index].serialNum.push(serialNum[i].SerialNumber);
+                        }
+                    }            
+                }
+                index++;
+            }
+        }
+        var dataSubmit = {
+            userNrp: $('#sfc336p01_nrpOperator').val(),
+            trxDate: $('#sfc336p02_trxDate').val(),
+            trxId: $('#sfc336p02_trxId').val(),
+            trxStatus: $('#sfc336p02_trxStatus').val(),
+            slocId: slocLogin,
+            typeInput: valInputType,
+            inputGR: "",
+            poNumber: $('#sfc336p02_poNo').val(),
+            deliveryNote: $('#sfc336p02_delivNoteNo').val(),
+            suppId: $('#sfc336p02_suppId').val(),
+            suppDesc: $('#sfc336p02_suppDesc').val(),
+            suppPlant: $('#sfc336p02_suppPlant').val(),
+            memo: $('#sfc336p02_memo').val(),
+            matdoc: $('#sfc336p02_matDocGR').val(),
+            dataPart: dataPart,
+            slocMove: $('#sfc336p02_slocMove').val(),
+            plantId: $('#sfc336p01_plantId').val()
+        };
+        var inputQtyCheck = 0;
+        for(let i = 0; i < dataSubmit.dataPart.length; i++){
+            inputQtyCheck += i.inputQty;
+        }
+        if(inputQtyCheck === 0){
+            _fw_setMessage(obj, 0, 'Qty Input can\'t be empty');
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 500);
+            return;
+        }
+        if($('#sfc336p02_moveTrx').is(":checked") && $('#sfc336p02_slocMove').val() === ""){
+             _fw_setMessage(obj, 0, 'Sloc Move can\'t be empty');
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 500);
+            return;
+        }
+
+        _fw_post(rootUrl + "submit-data", dataSubmit, (data) => {
+            if(data.status === "1"){
+                $('#sfc336p02_btnAdd').addClass("hidden");
+                $('#sfc336p02_tableData_memo_header button[title="Delete"]').addClass("hidden");
+                $('#sfc336p02_moveTrx').prop("disabled",true);
+                if ((data.data[0].TXNSTS === "COMPLETE") || (valInputType === "sfc336p02_type3")) {
+                    var dataSloc = data.data[0];
+                    $('#sfc336p02_trxId').val(dataSloc.TXNID);
+                    $('#sfc336p02_form_trxStatus').removeClass("hidden");
+                    $('#sfc336p02_trxStatus').removeClass("hidden");
+                    $('#sfc336p02_trxStatus').val(data.data[0].TXNSTS);
+                    $('#sfc336p03_input').prop("disable",true);
+                    $('#sfc336p02_btnSubmit').addClass("hidden");
+                    
+                    _fw_setMessage(obj, 1, 'Transaction successfully submitted');
+                    window.scrollTo(0, 0);
+                    
+                    if (data.data[0].SLOCMOVE !== ""){
+                        $("#sfc336p02_btnPrint").removeClass("hidden");
+                        $('#sfc336p02_slocMove').val(data.data[0].SLOCMOVE);
+                        sfc336p02_print(obj);
+                    } else{
+                        $("#sfc336p02_btnPrint").addClass("hidden");
+                    }
+                    $('#sfc336p02_moveTrx').prop("disabled",true);
+                    $('#sfc336p02_slocMove').prop("disabled",true);
+                    $('#sfc336p02_btnLov_slocMove').prop("disabled",true);
+                    $('#sfc336p03_tableData_serialNumber button[title="Delete"]').addClass("hidden");
+                    $('#sfc336p03_input').prop("disabled",true);
+                    
+                } else if ((data.data[0].TXNSTS === "PARTIAL")) {
+                    $('#sfc336p02_trxId').val(data.data[0].TXNID);
+                    $('#sfc336p02_form_trxStatus').removeClass("hidden");
+                    $('#sfc336p02_trxStatus').removeClass("hidden");
+                    $('#sfc336p02_trxStatus').val(data.data[0].TXNSTS);
+                    $('#sfc336p03_input').prop("disable",false);
+                    $('#sfc336p02_moveTrx').prop("disabled",true);
+                    $('#sfc336p02_slocMove').prop("disabled",true);
+                    $('#sfc336p02_btnLov_slocMove').prop("disabled",true);
+                    window.scrollTo(0, 0);
+                    
+                    _fw_setMessage(obj, 1, 'Transaction successfully submitted');
+                    if (data.data[0].SLOCMOVE !== ""){
+                        $("#sfc336p02_btnPrint").removeClass("hidden");
+                    }
+                    dataObject = {};
+                    sfc336tableLoadMemo();
+                    
+                } else {
+                    _fw_setMessage(obj, 0, 'Fail to submit transaction');
+                    window.scrollTo(0, 0);
+                }
+            }else if(data.status === "99"){
+                _fw_setMessage(obj, 0, `${data.message}. supportId: ${data.supportId}`);
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+            }
+            else {
+                _fw_setMessage(obj, 0, data.message.m);
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 750);
+            }
+
+        });
+    }
+    
+    function sfc336p02_print(obj) {
+        dataPrint = {};
+        var object = {
+            search: {},
+            limit: 10,
+            offset: 0
+        };
+        _fw_post(rootUrl + "get-ip-port", object, function (data) {
+            printer_ip = data.message.ip;
+            printer_port = data.message.port;
+
+            setTimeout(function () {
+                ahmmosfc336_epos_device.connect(printer_ip, printer_port, ahmmosfc336_print_check_01);
+            }, 1000);
+        });
+    }
+    
+    function ahmmosfc336_print_check_01(data) {
+        if (data === 'OK' || data === 'SSL_CONNECT_OK') {
+            setTimeout(function () {
+                var params = new Object();
+                _fw_post(rootUrl + "check-connect-print", params, function (data) {
+                    if (data.status === "1") {
+                        sfc336dataPrint();
+                    }
+                });
+            }, 1000);
+        }
+    }
+    
+    function sfc336dataPrint() {
+        var params = {
+            search: {
+                "txnID": $('#sfc336p02_trxId').val()
+            },
+            limit: 10,
+            offset: 0
+        };
+        _fw_post(rootUrl + "get-print", params, function (data) {
+            dataPrint = {
+                    slocFrom: data.data[0]["slocFrom"],
+                    slocTo: data.data[0]["slocTo"],
+                    transactionId: data.data[0]["txId"],
+                    transactionDate: data.data[0]["dateTxId"],
+                    partTable: [],
+                    docNo: data.data[0]["docNo"],
+                    created: data.data[0]["user"],
+                    printedDate: data.data[0]["datePrint"]
+                };
+            let tempArray = [];
+            let index = 0;
+            
+            for(let i = 0; i < data.data.length; i++){
+                if(tempArray[index] !== data.data[i]["partNumber"]){
+                    tempArray.push(data.data[i]["partNumber"]);
+                    dataPrint.partTable.push({
+                        partId: data.data[i]["partNumber"],
+                        deskripsiPart: data.data[i]["partDesc"],
+                        qty: data.data[i]["qty"],
+                        serialNumber: []
+                    });
+                }
+                if(tempArray[index] !== data.data[i]["partNumber"]){
+                    index++;
+                }
+            }
+            
+            index = 0;
+            for(let i=0; i < data.data.length;i++){
+                if(dataPrint.partTable[index]["partId"] !== data.data[i]["partNumber"]){
+                    index++;
+                }
+                dataPrint.partTable[index]["serialNumber"].push(data.data[i]["serialNumber"]);
+            }                
+            
+            setTimeout(function(){
+			ahmmosfc336_epos_device.connect(printer_ip , printer_port, ahmmosfc336_print_connect_after);
+		}, 1000);
+        });
+    }
+    function ahmmosfc336_print_connect_after(data) {
+	if(data === 'OK' || data === 'SSL_CONNECT_OK') {
+		setTimeout(function(){
+			ahmmosfc336_epos_device.createDevice('local_printer', ahmmosfc336_epos_device.DEVICE_TYPE_PRINTER, {'crypto': false, 'buffer': false}, ahmmosfc336_cb_create_device_printer);
+		}, 1000);
+	}
+    }
+    
+    function ahmmosfc336_cb_create_device_printer(devobj, retcode) {
+	if(retcode === 'OK') {
+		ahmmosfc336_printer = devobj;
+		ahmmosfc336_printer.timeout = 60000;
+		ahmmosfc336_printer.onreceive = function(res){};
+		ahmmosfc336_printer.oncoveropen = function(){};
+		ahmmosfc336_print_now(dataPrint);
+	}
+    }
+    
+    function ahmmosfc336_print_now(data){
+        var currentDate = new Date();
+        var day = currentDate.getDate();
+        var month = monthNamesDigit[currentDate.getMonth()];
+        var year = currentDate.getFullYear();
+        var hours = currentDate.getHours().toString().padStart(2, '0');
+        var minutes = currentDate.getMinutes().toString().padStart(2, '0');
+        var seconds = currentDate.getSeconds().toString().padStart(2, '0');
+        
+        
+        if (day < 10) {
+            day = "0" + day;
+        }
+
+        var formattedDate1 = day + " " + month + " " + year + " " + hours + ":" + minutes + ":" + seconds;
+        
+	ahmmosfc336_printer.addTextAlign(ahmmosfc336_printer.ALIGN_CENTER);
+	ahmmosfc336_printer.addTextFont(ahmmosfc336_printer.FONT_C);
+	ahmmosfc336_printer.brightness = 1.0;
+	ahmmosfc336_printer.halftone = ahmmosfc336_printer.HALFTONE_ERROR_DIFFUSION;
+        ahmmosfc336_printer.addTextSmooth(true);
+	ahmmosfc336_printer.message += '<image width="400" height="134" color="color_1" mode="mono">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AAAAAALa12YAEsy9+AAAAAABXd3bpUkRERERFm2q2AAAAO7e6gfXc2AAAdW1aBbv70AAAAAAB7dqvAAfe9NUAAAAAAHra3be///////7s31oAAABk2k2Am2u0AACrt6wG7U14AAAAAAM2r3QAAqWruwAAAAAATW2rXWSVVVVVVVex7gAAAD9v+wDu3uwAAN7Y9AU2upAAAAAAAtty2gADf37mgAAAAAB3s3Xm3/rararbuW8yAAAAVbFWgFWzWAABc29IB9vv8AAAAAAHrN2sAAGpxV2AAAAAAFle3jtpJ7f7f7bvut4AAAA6362Ae222AAGtkvgErFFQAAAAAAz3q3QAANZ7tsAAAAAAbuWr1bbdbJbJbTJnagAAAGdlewAuttsAAtr/kAdz72gAAAAAC1l22AAAvZbbQAAAAABVvvVu3ba3e3e239zWAAAAPb6mgDNtbQADbypwBd6dsAAAAAAdr62gAABr/W2gAAAAAHtTHttna9nMrVvkt7wAAABWyd2ALdu2AAKy9cAGq/bQAAAAADNydtAAAFZTsvAAAAAATu3ptbrcb3fa7J9pagAAADl/doAarVuAB92vYAV1K2gAAAAALt/LYAAAPe7fKAAAAAB1u19uzbfVWXezdd+2AAAAZ5KrgBd27UAEZ1mgB978sAAAAAB1qX2gAAArNWXYAAAAAFtOstt3arrvml7aaloAAAA9fdyADdmywA+99sAEU4fQAAAAAK92lsAAABbbnnQAAAAAbbXtta3f77V366+17gAAAErXa4AKr1+ACtUtgAfterAAAAAA2a37AAAADa713AAAAABW7ptCEAAAAAAFdN9SAAAAP6q2gAdy5WAdq9cABVutaAAAAAG2202AAAALdVtmAAAAAHs5dsAAAAAAAAbbor4AAABpfd2ABc9e4Bd+eYAGtnvQAAAAAttttgAAAAbbrZsAAAAATdfdoAAAAAAABa7/agAAADbLJoADOumQOtOvAAXtzrgAAAADbbbrAAAAA2129QAAAAB2bWbAAAAAAAAHcxTWAAAAXbb7gALtn3AtrVUAB1tzYAAAAAW2214AAAACttsugAAAAFvau0AAAAAAAATd+7wAAAArbayAA7by2Hbb+gAFra24AAAADttltAAAAAHLZfXAAAAAbLfNoAAAAAAAA6ZW6gAAAHbbV4ABWy9oW3YmAAZ23tA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</image>';
+        ahmmosfc336_printer.addText('JL. LAKSDA YOS SUDARSO, SUNTER 1\nJAKARTA UTARA\n\n');
+        
+        ahmmosfc336_printer.addTextStyle(false, false, true, ahmmosfc336_printer.COLOR_1);
+        ahmmosfc336_printer.addTextFont(ahmmosfc336_printer.FONT_SPECIAL_A);
+	ahmmosfc336_printer.addText('Accessories Serial Number\nInformation\n\n');
+        ahmmosfc336_printer.addTextSize(1,1);
+        ahmmosfc336_printer.addTextStyle(false, false, false, ahmmosfc336_printer.COLOR_1);
+        ahmmosfc336_printer.addTextFont(ahmmosfc336_printer.FONT_C);
+        
+        ahmmosfc336_printer.addTextAlign(ahmmosfc336_printer.ALIGN_LEFT);
+	ahmmosfc336_printer.addTextLineSpace(30);
+	ahmmosfc336_printer.addText('Sloc From  : ' + data.slocFrom + '\n');
+        ahmmosfc336_printer.addText('Sloc To    : ' + data.slocTo + '\n');
+        
+        ahmmosfc336_printer.addText('\nTransaction Date: ' + data.transactionDate + '\n');
+        ahmmosfc336_printer.addText('Transaction ID  : ' + data.transactionId + '\n');
+        if(valInputType === "sfc336p02_type1"){
+            ahmmosfc336_printer.addText('Document No     : ' + $('#sfc336p02_input').val() +'\n\n');
+        }else if(valInputType === "sfc336p02_type2"){
+            ahmmosfc336_printer.addText('Document No     : ' + $('#sfc336p02_delivNoteNo').val() +'\n\n');
+        }else if(valInputType === "sfc336p02_type3"){
+            ahmmosfc336_printer.addText('Document No     : ' + $('#sfc336p02_poNo').val() +'\n\n');
+        }else{
+            ahmmosfc336_printer.addText('Document No     : ' + $('#sfc336p02_memo').val() +'\n\n');
+        }
+        
+        ahmmosfc336_printer.addText('----------------------------------------------------------------\n');
+        
+        ahmmosfc336_printer.addTextStyle(false, false, true, ahmmosfc336_printer.COLOR_1);
+        ahmmosfc336_printer.addText('Part Description / Part ID');
+        ahmmosfc336_printer.addTextPosition(365);
+        ahmmosfc336_printer.addText('QTY');
+        ahmmosfc336_printer.addTextPosition(403);
+        ahmmosfc336_printer.addText('Serial Number List \n');
+        ahmmosfc336_printer.addTextStyle(false, false, false, ahmmosfc336_printer.COLOR_1);
+        for(let i = 0; i < data.partTable.length; i++){
+            ahmmosfc336_printer.addText(data.partTable[i]["deskripsiPart"] +' / ');
+            ahmmosfc336_printer.addTextPosition(365);
+            ahmmosfc336_printer.addText(String(data.partTable[i].qty));
+            
+            for(let j=0; j < data.partTable[i]["serialNumber"].length; j++){
+                if (j === 1){
+                    ahmmosfc336_printer.addText(data.partTable[i]["partId"]);
+                }
+                ahmmosfc336_printer.addTextPosition(403);
+                ahmmosfc336_printer.addText((data.partTable[i].serialNumber[j] +'\n'));
+                if(j+1 === data.partTable[i]["serialNumber"].length && data.partTable[i]["serialNumber"].length > 1){
+                    ahmmosfc336_printer.addText('\n');
+                }
+            }
+            if(data.partTable[i]["serialNumber"].length === 1){
+                ahmmosfc336_printer.addTextAlign(ahmmosfc336_printer.ALIGN_LEFT);
+                ahmmosfc336_printer.addText(data.partTable[i]["partId"]);
+                ahmmosfc336_printer.addText('\n\n');
+            }
+            
+        }
+
+        ahmmosfc336_printer.addTextAlign(ahmmosfc336_printer.ALIGN_LEFT);
+	ahmmosfc336_printer.addText('----------------------------------------------------------------\n');
+        ahmmosfc336_printer.addTextStyle(false, false, false, ahmmosfc336_printer.COLOR_1);
+	ahmmosfc336_printer.addText('Created by    : '+ data.created + ' \n');
+	ahmmosfc336_printer.addTextLineSpace(60);
+	ahmmosfc336_printer.addText('Printed Date  : '+ formattedDate1 +'\n');
+	ahmmosfc336_printer.addTextSmooth(false);
+        
+        ahmmosfc336_printer.addTextAlign(ahmmosfc336_printer.ALIGN_CENTER);
+        ahmmosfc336_printer.addSymbol(data.transactionId, ahmmosfc336_printer.SYMBOL_QRCODE_MICRO, ahmmosfc336_printer.LEVEL_DEFAULT, 8, 4, 0);
+        ahmmosfc336_printer.addTextAlign(ahmmosfc336_printer.ALIGN_LEFT);
+
+	ahmmosfc336_printer.addCut(ahmmosfc336_printer.CUT_FEED);
+	ahmmosfc336_printer.send();
+    }
+</script>

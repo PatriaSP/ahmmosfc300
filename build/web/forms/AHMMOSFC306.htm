@@ -1,0 +1,995 @@
+<style>
+
+</style>
+<div id="AHMMOSFC306" class="div-app" data-version="1.0">
+    <link rel="stylesheet" href="/imo05/ahmmosfc300-ahs/resources/css/AHMMOSFC306.css">
+
+    <div class="row"> 
+        <div class="col-sm-3"><p>Last Requested: <span id="ahmmosfc306_lastupdate" class="toUpperCase"></span> </p></div>
+        <div class="ahmmosfc306_tabs flex flex-top container-fluid">                   
+            <div class="ahmmosfc306_tab subpageTrigger" subpage="ahmmosfc306p03">Error Log</div>
+            <div class="ahmmosfc306_tab subpageTrigger" subpage="ahmmosfc306p01">Overview</div>
+            <div class="ahmmosfc306_tab subpageTrigger" subpage="ahmmosfc306p02">Posting Date</div>
+        </div> 
+    </div>
+    <div class="global_message"></div>
+    <div id="ahmmosfc306p01" class="subpage subpage-default" data-path="Monitoring Persediaan Part/Overview">
+        <div id="ahmmosfc306p01_filterarea" class="row form-filter-panel">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_parts" class="col-sm-4 control-label">Part Number</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p01_partLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-parts"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"partnum","name":"Part Number","visible":"true","sortable":"true"},
+                                     {"id":"partdesc","name":"Part Description","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p01_parts":"partnum","ahmmosfc306p01_partsdesc":"partdesc"}'
+                                     >
+                                    <input id="ahmmosfc306p01_parts" class="form-control input-lookup" placeholder="Parts Number...">
+                                    <input type="hidden" id="ahmmosfc306p02_partsid" data-field="desc">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_partsdesc" class="col-sm-4 control-label">Part Desc</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p01_partsdesc" class="form-control" placeholder="Parts Desc..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_plant" class="col-sm-4 control-label">Plant<span class="text-bold text-danger">*</span></label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p01_plantLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-plant"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"plantid","name":"Plant ID","visible":"true","sortable":"true"},
+                                     {"id":"plantname","name":"Plant Description","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p01_plant":"plantid","ahmmosfc306p01_plantdesc":"plantname"}'
+                                     >
+                                    <input id="ahmmosfc306p01_plant" class="form-control input-lookup" placeholder="Plant ID...">
+                                    <input type="hidden" id="ahmmosfc306p01_plantid" data-field="desc">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_plantdesc" class="col-sm-4 control-label">Plant Desc</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p01_plantdesc" class="form-control" placeholder="Plant Desc..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_storloc" class="col-sm-4 control-label">Storage Location</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p01_storlocLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-storage-from-plant"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"slocid","name":"Storage ID","visible":"true","sortable":"true"},
+                                     {"id":"slocname","name":"Storage Description","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p01_storloc":"slocid","ahmmosfc306p01_storlocdesc":"slocname"}'
+                                     >
+                                    <input id="ahmmosfc306p01_storloc" class="form-control input-lookup" placeholder="Storloc ID...">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_storlocdesc" class="col-sm-4 control-label">Storage Loc Desc</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p01_storlocdesc" class="form-control" placeholder="Storloc Desc..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_material" class="col-sm-4 control-label">Material type <span class="text-bold text-danger">*</span></label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p01_materialLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-material"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"itemcode","name":"Material ID","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p01_material":"itemcode"}'
+                                     >
+                                    <input id="ahmmosfc306p01_material" class="form-control input-lookup" placeholder="Material Type...">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row filter-buttons p-0-im">
+                            <div class="col-xs-6 form-group-button">
+                                <div class="flex flex-top flex-line-stretch no-wrap">
+                                    <div class="w-100 text-left">
+                                        <button class="btn btn-primary" id="ahmmosfc306p01_search_btn" onclick="ahmmosfc306p01_filtertableMainArea(this)">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-search fg-white mr-10"></i>Search
+                                            </div>
+                                        </button>
+                                        <button class="btn btn-warning" id="ahmmosfc306p01_reset_btn" onclick="ahmmosfc306_ResetField('ahmmosfc306p01_filterarea');return false">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-refresh fg-white mr-10"></i>Reset
+                                            </div>
+                                        </button>
+                                         <button class="btn btn-primary" id="ahmmosfc306p01_requestbtn" onclick="ahmmosfc306_SubmitRequestSAP(this)">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="glyphicon glyphicon-floppy-disk fg-white mr-10"></i>Request Data SAP <span class="ml-5"></span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-6" id="ahmmosfc306_statusarea">
+                        <h5>Last Processing of Request to SAP </h5>
+                        <hr>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_status" class="col-sm-4 control-label">Status</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p01_status" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p01_errormsg" class="col-sm-4 control-label">Error Message</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <textarea id="ahmmosfc306p01_errormsg" class="form-control" style="resize:none" readonly></textarea>
+                            </div>
+                        </div>
+                        
+                        <div id="ahmmosfc306_incompletedataerror_overview"><span  style="background-color:red; color:white; font-size:15;"> There is Incomplete Data. You should do RE-RUN CALCULATION from Error Log tabulation to get Complete and Calculated Data. </span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ahmmosfc306p01_tablearea">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="wrapper">
+                        <div class="table_tabs">
+                            <div class="table_tab">
+                                <input type="radio" name="css-tabs" id="ahmmosfc306_tab1" checked class="table_tab-switch">
+                                <label for="ahmmosfc306_tab1" class="table_tab-label">Summary</label>                              
+                                <div class="table_tab-content" id="ahmmosfc306_maintablearea">
+                                    <div class="col-sm-12">
+                                        <div class="flex flex-top no-wrap flex-right">
+                                            <div class="text-right">
+                                                <button class="btn btn-primary" id="ahmmosfc306p01_detailbtn" onclick="ahmmosfc306_SwitchToDetail(this)">
+                                                    <div class="flex flex-middle no-wrap">
+                                                        <i class="glyphicon glyphicon-edit fg-white mr-10"></i>Detail <span class="ml-5"></span>
+                                                    </div>
+                                                </button>                                               
+                                                <button class="btn btn-success" id="ahmmosfc306p01_exportbtn" onclick="ahmmosfc306_ExportOverview(this)">
+                                                    <div class="flex flex-middle no-wrap">
+                                                        <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table id="ahmmosfc306_maintable" class="table"
+                                           data-method="post"
+                                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-main-area"
+                                           data-content-type="application/json"
+                                           data-data-type="json"
+                                           data-query-params="ahmmosfc306p01_table_paramSearch"
+                                           data-response-handler="ahmmosfc306_ResponseHandler"
+                                           data-query-params-type="limit"
+                                           data-side-pagination="server"
+                                           data-pagination="true"
+                                           data-checkbox-header="true"
+                                           >
+                                        <thead>
+                                            <tr>
+                                                <th data-checkbox="true" data-valign="middle" rowspan="2"></th>  
+                                                <th data-sortable="true" data-field="no" data-valign="middle" data-align="right"rowspan="2">No</th>
+                                                <th data-sortable="true" data-field="sort_partnum" data-align="center"
+                                                    data-valind="center">Part Number</th>
+                                                <th data-sortable="true" data-field="sort_partdesc" data-align="center"
+                                                    data-valind="center">Part Desc</th>
+                                                <th data-sortable="true" data-field="sort_plantid" data-align="center"
+                                                    data-valind="center">Plant Id</th>
+                                                <th data-sortable="true" data-field="sort_slocid" data-align="center"
+                                                    data-valind="center">Stor Loc ID</th>
+                                                <th data-sortable="true" data-field="sort_slocname" data-align="center"
+                                                    data-valind="center">Stor Loc Desc</th>
+                                                <th data-sortable="true" data-field="sort_partareatype" data-align="center"
+                                                    data-valind="center" >Area Jenis Part</th>
+                                                <th data-sortable="true" data-field="sort_specstock" data-align="center"
+                                                    data-valind="center">Special Stock</th>
+                                                <th data-sortable="true" data-field="sort_category" data-align="center"
+                                                    data-valind="center">Category</th>
+
+                                                <th data-sortable="true" data-field="sort_mtype" data-align="center"
+                                                    data-valind="center">Material Type</th>
+                                                <th data-sortable="true" data-field="sort_uom" data-align="center"
+                                                    data-valind="center">UoM</th>
+                                                <th data-sortable="true" data-field="sort_unrestqty" data-align="center"
+                                                    data-valind="center">Unrest Qty</th>
+                                                <th data-sortable="true" data-field="sort_qiqty" data-align="center"
+                                                    data-valind="center">QI Qty</th>
+                                                <th data-sortable="true" data-field="sort_blockqty" data-align="center"
+                                                    data-valind="center">Block Qty</th>
+                                                <th data-sortable="true" data-field="sort_restqty" data-align="center"
+                                                    data-valind="center">Rest Qty</th>
+                                                <th data-sortable="true" data-field="sort_intrfqty" data-align="center"
+                                                    data-valind="center">In Trf Qty (Sloc)</th>
+                                                <th data-sortable="true" data-field="sort_grblockqty" data-align="center"
+                                                    data-valind="center">GR Block Stock Qty</th>
+                                            </tr>
+                                            <tr>
+                                                <th data-field="partnum" data-align="center"
+                                                    data-valind="center"> 
+                                                    <input id="ahmmosfc306filter_partnum" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="partdesc" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_partdesc" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+                                                <th data-field="plantid" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_plantid" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+                                                <th data-field="slocid" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_slocid" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+                                                <th data-field="slocname" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_slocname" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+                                                <th data-field="partareatype" data-align="center"
+                                                    data-valind="center" >
+                                                    <input id="ahmmosfc306filter_partareatype" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+                                                <th data-field="specstock" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_specstock" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+                                                <th data-field="category" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_category" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')">
+                                                </th>
+
+                                                <th data-field="mtype" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter_mtype" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="uom" data-align="center"
+                                                    data-valind="center"> 
+                                                    <input id="ahmmosfc306filter_uom" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="unrestqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"> 
+                                                    <input id="ahmmosfc306filter_unrestqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="qiqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"> 
+                                                    <input id="ahmmosfc306filter_qiqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="blockqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"> 
+                                                    <input id="ahmmosfc306filter_blockqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="restqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"> 
+                                                    <input id="ahmmosfc306filter_restqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="intrfqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"> 
+                                                    <input id="ahmmosfc306filter_intrfqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                                <th data-field="grblockqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"> 
+                                                    <input id="ahmmosfc306filter_grblockqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_maintable')"></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>                                
+                            </div>
+                            <div class="table_tab">
+                                <input type="radio" name="css-tabs" id="ahmmosfc306_tab2" class="table_tab-switch">
+                                <label for="ahmmosfc306_tab2" class="table_tab-label">Summary Per Stor. Loc.</label>
+                                <div class="table_tab-content" id="ahmmosfc306_tablebystorlocarea">
+                                    <div class="col-sm-12">
+                                        <div class="flex flex-top no-wrap flex-right">
+                                            <div class="text-right">
+                                                <button class="btn btn-success" id="ahmmosfc306p01_exportbyslocbtn" onclick="ahmmosfc306_ExportbySloc(this)">
+                                                    <div class="flex flex-middle no-wrap">
+                                                        <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table id="ahmmosfc306_tablebystorloc" class="table"
+                                           data-method="post"
+                                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-main-area-by-sloc"
+                                           data-content-type="application/json"
+                                           data-data-type="json"
+                                           data-query-params="ahmmosfc306p01_table_paramSearchbySloc"
+                                           data-response-handler="ahmmosfc306_ResponseHandler"
+                                           data-query-params-type="limit"
+                                           data-side-pagination="server"
+                                           data-pagination="true"
+                                           data-checkbox-header="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-sortable="true" data-field="no" data-valign="middle" data-align="right" rowspan="2">No</th>
+                                                <th data-sortable="true" data-field="sort2_partnum" data-align="center"
+                                                    data-valind="center">Part Number</th>
+                                                <th data-sortable="true" data-field="sort2_partdesc" data-align="center"
+                                                    data-valind="center">Part Desc</th>
+                                                <th data-sortable="true" data-field="sort2_plantid" data-align="center"
+                                                    data-valind="center">Plant Id</th>
+                                                <th data-sortable="true" data-field="sort2_slocid" data-align="center"
+                                                    data-valind="center">Stor Loc</th>
+                                                <th data-sortable="true" data-field="sort2_slocname" data-align="center"
+                                                    data-valind="center">Stor Loc Desc</th>
+                                                <th data-sortable="true" data-field="sort2_specstock" data-align="center"
+                                                    data-valind="center">Special Stock</th>
+                                                <th data-sortable="true" data-field="sort2_totalqty" data-align="center"
+                                                    data-valind="center">Total Qty</th>
+                                            </tr>
+                                            <tr>
+                                                <th data-field="partnum" data-align="center"
+                                                    data-valind="center"> 
+                                                    <input id="ahmmosfc306filter2_partnum" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')"></th>
+                                                <th data-field="partdesc" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter2_partdesc" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')">
+                                                </th>
+                                                <th data-field="plantid" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter2_plantid" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')">
+                                                </th>
+                                                <th data-field="slocid" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter2_slocid" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')">
+                                                </th>
+                                                <th data-field="slocname" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter2_slocname" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')">
+                                                </th>
+                                                <th data-field="specstock" data-align="center" 
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter2_specstock" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')">
+                                                </th>
+                                                <th data-field="totalqty" data-align="right"
+                                                    data-valind="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty">  
+                                                    <input id="ahmmosfc306filter2_totalqty" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebystorloc')"></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>                                   
+                            </div>
+                            <div class="table_tab">
+                                <input type="radio" name="css-tabs" id="ahmmosfc306_tab3" class="table_tab-switch">
+                                <label for="ahmmosfc306_tab3" class="table_tab-label">Stock Transfer/Intransit Per Plant</label>
+                                <div  class="table_tab-content"  id="ahmmosfc306_tablebyplantidarea">
+                                    <div class="col-sm-12">
+                                        <div class="flex flex-top no-wrap flex-right">
+                                            <div class="text-right">
+                                                <button class="btn btn-success" id="ahmmosfc306p01_exportbyplantbtn" onclick="ahmmosfc306_ExportbyPlant(this)">
+                                                    <div class="flex flex-middle no-wrap icon">
+                                                        <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table id="ahmmosfc306_tablebyplantid" class="table"
+                                           data-method="post"
+                                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-main-area-by-plant"
+                                           data-content-type="application/json"
+                                           data-data-type="json"
+                                           data-query-params="ahmmosfc306p01_table_paramSearchbyPlant"
+                                           data-response-handler="ahmmosfc306_ResponseHandler"
+                                           data-query-params-type="limit"
+                                           data-side-pagination="server"
+                                           data-pagination="true"
+                                           data-checkbox-header="true"
+                                           >
+                                        <thead>
+                                            <tr>
+
+                                                <th data-sortable="true" data-field="no" data-valign="middle" data-align="right" rowspan="2">No</th>
+                                                <th data-sortable="true" data-field="sort3_partnum" data-align="center"
+                                                    data-valind="center">Part Number</th>
+                                                <th data-sortable="true" data-field="sort3_partdesc" data-align="center"
+                                                    data-valind="center">Part Desc</th>
+                                                <th data-sortable="true" data-field="sort3_plantid" data-align="center"
+                                                    data-valind="center">Plant Id</th>
+                                                <th data-sortable="true" data-field="sort3_intrfqtysloc" data-align="center"
+                                                    data-valind="center">In Trf Qty (Sloc)</th>
+                                                <th data-sortable="true" data-field="sort3_intrfqty" data-align="center"
+                                                    data-valind="center">In Trf Qty (Sloc)</th>
+                                            </tr>
+                                            <tr>
+                                                <th data-field="partnum" data-align="center"
+                                                    data-valind="center"> 
+                                                    <input id="ahmmosfc306filter3_partnum" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebyplantid')"></th>
+                                                <th data-field="partdesc" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter3_partdesc" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebyplantid')">
+                                                </th>
+                                                <th data-field="plantid" data-align="center"
+                                                    data-valind="center">
+                                                    <input id="ahmmosfc306filter3_plantid" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebyplantid')">
+                                                </th>
+                                                <th data-field="intrfqtysloc" data-align="center" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                                    data-valind="center"> 
+                                                    <input id="ahmmosfc306filter3_intrfqtysloc" type="text" class="form-control"
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebyplantid')"></th>
+                                                <th data-field="intrfqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                                    data-valind="center"> 
+                                                    <input id="ahmmosfc306filter3_intrfqty" type="text" class="form-control" 
+                                                           onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tablebyplantid')"></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ahmmosfc306p02" class="subpage" data-path="Monitoring Persediaan Part/Posting Date">
+        <div id="ahmmosfc306p02_filterarea" class="row form-filter-panel">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_datefrom" class="col-xs-4 control-label">Date From <span class="text-bold text-danger">*</span></label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="flex flex-stretch">
+                                    <input type="text" id="ahmmosfc306p02_datefrom" class="form-control" placeholder="">
+                                    <label for="ahmmosfc306p02_datefrom" class="btn btn-default flex flex-middle flex-center"><i class="fa fa-calendar"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_dateto" class="col-xs-4 control-label">Date To <span class="text-bold text-danger">*</span></label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="flex flex-stretch">
+                                    <input type="text" id="ahmmosfc306p02_dateto" class="form-control" placeholder="">
+                                    <label for="ahmmosfc306p02_dateto" class="btn btn-default flex flex-middle flex-center"><i class="fa fa-calendar"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_parts" class="col-sm-4 control-label">Part Number</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p02_partLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-parts"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"partnum","name":"Part Number","visible":"true","sortable":"true"},
+                                     {"id":"partdesc","name":"Part Description","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p02_parts":"partnum","ahmmosfc306p02_partsdesc":"partdesc"}'
+                                     >
+                                    <input id="ahmmosfc306p02_parts" class="form-control input-lookup" placeholder="Parts Number...">
+                                    <input type="hidden" id="ahmmosfc306p02_partsid" data-field="desc">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_partsdesc" class="col-sm-4 control-label">Part Desc</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p02_partsdesc" class="form-control" placeholder="Parts Desc..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_plant" class="col-sm-4 control-label">Plant<span class="text-bold text-danger">*</span></label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p02_plantLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-plant"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"plantid","name":"Plant ID","visible":"true","sortable":"true"},
+                                     {"id":"plantname","name":"Plant Description","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p02_plant":"plantid","ahmmosfc306p02_plantdesc":"plantname"}'
+                                     >
+                                    <input id="ahmmosfc306p02_plant" class="form-control input-lookup" placeholder="Plant ID...">
+                                    <input type="hidden" id="ahmmosfc306p02_plantid" data-field="desc">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_plantdesc" class="col-sm-4 control-label">Plant Desc</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p02_plantdesc" class="form-control" placeholder="Plant Desc..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_storloc" class="col-sm-4 control-label">Storage Location</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p02_storlocLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-storage-from-plant"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"slocid","name":"Storage ID","visible":"true","sortable":"true"},
+                                     {"id":"slocname","name":"Storage Description","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p02_storloc":"slocid","ahmmosfc306p02_storlocdesc":"slocname"}'
+                                     >
+                                    <input id="ahmmosfc306p02_storloc" class="form-control input-lookup" placeholder="Parts number...">
+                                    <input type="hidden" id="ahmmosfc306p02_storlocid" data-field="desc">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_storlocdesc" class="col-sm-4 control-label">Storage Loc Desc</label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <input id="ahmmosfc306p02_storlocdesc" class="form-control" placeholder="Storage Location Desc..." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ahmmosfc306p02_material" class="col-sm-4 control-label">Material type <span class="text-bold text-danger">*</span></label>
+                            <div class="lookup-wrapper col-xs-8">
+                                <div class="lookup flex flex-stretch" 
+                                     data-lookup-pre-func="ahmmosfc306p02_materialLookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-lov-material"
+                                     data-query-params-type="limit" 
+                                     data-columns='[
+                                     {"id":"itemcode","name":"Material ID","visible":"true","sortable":"true"}
+                                     ]' 
+                                     data-callback='{"ahmmosfc306p02_material":"itemcode"}'
+                                     >
+                                    <input id="ahmmosfc306p02_material" class="form-control input-lookup" placeholder="Material Type...">
+                                    <input type="hidden" id="ahmmosfc306p02_materiald" data-field="desc">
+                                    <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row filter-buttons p-0-im">
+                            <div class="col-xs-6 form-group-button">
+                                <div class="flex flex-top no-wrap">
+                                    <div class="w-100 text-left">
+                                        <button class="btn btn-primary" id="ahmmosfc306p02_search_btn" onclick="ahmmosfc306p02_filtertablePostedDate(this)">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-search fg-white mr-10"></i>Search
+                                            </div>
+                                        </button>
+                                        <button class="btn btn-warning" id="ahmmosfc306p02_reset_btn" onclick="ahmmosfc306_ResetField('ahmmosfc306p02_filterarea');return false">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-refresh fg-white mr-10"></i>Reset
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-5">
+                        <div id="ahmmosfc306_incompletedataerror_overview_posting"><span  style="background-color:red; color:white; font-size:15;"> There is Incomplete Data. You should do RE-RUN CALCULATION from Error Log tabulation to get Complete and Calculated Data. </span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ahmmosfc306p02_tablearea">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row" id="ahmmosfc306_postdatetablearea">
+                        <div class="col-sm-12">
+                            <div class="flex flex-top no-wrap flex-right">
+                                <div class="text-right">
+                                    <button class="btn btn-primary" id="ahmmosfc306p01_detailbtn" onclick="ahmmosfc306_SwitchToDetailPosting(this)">
+                                        <div class="flex flex-middle no-wrap">
+                                            <i class="glyphicon glyphicon-edit fg-white mr-10"></i>Detail <span class="ml-5"></span>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn-success" id="ahmmosfc306p01_exportbtn" onclick="ahmmosfc306_ExportPostingDate(this)">
+                                        <div class="flex flex-middle no-wrap">
+                                            <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="ahmmosfc306_postdatetable" class="table"
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-posted-date"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params="ahmmosfc306p02_table_paramSearch"
+                               data-response-handler="ahmmosfc306_ResponseHandler"
+                               data-query-params-type="limit"
+                               data-side-pagination="server"
+                               data-pagination="true"
+                               data-checkbox-header="true">
+                            <thead>
+                                <tr>
+                                    <th data-checkbox="true" data-valign="middle" rowspan="2"></th>  
+                                    <th data-sortable="true" data-field="no" data-valign="middle" data-align="right" rowspan="2">No</th>
+                                    <th data-sortable="true" data-field="sort4_partnum" data-align="center"
+                                        data-valind="center">Part Number</th>
+                                    <th data-sortable="true" data-field="sort4_partdesc" data-align="center"
+                                        data-valind="center">Part Desc</th>
+                                    <th data-sortable="true" data-field="sort4_plantid" data-align="center"
+                                        data-valind="center">Plant Id</th>
+                                    <th data-sortable="true" data-field="sort4_specstock" data-align="center"
+                                        data-valind="center">Special Stock</th>
+                                    <th data-sortable="true" data-field="sort4_mtype" data-align="center"
+                                        data-valind="center">Material Type</th>
+                                    <th data-sortable="true" data-field="sort4_uom" data-align="center"
+                                        data-valind="center">UoM</th>
+                                    <th data-sortable="true" data-field="sort4_openqty" data-align="center"
+                                        data-valind="center">Opening Qty</th>
+                                    <th data-sortable="true" data-field="sort4_recqty" data-align="center"
+                                        data-valind="center">Total Receipts Qty</th>
+                                    <th data-sortable="true" data-field="sort4_issqty" data-align="center"
+                                        data-valind="center">Total Issues Qty</th>
+                                    <th data-sortable="true" data-field="sort4_close" data-align="center"
+                                        data-valind="center">Closing Qty</th>
+                                </tr>
+                                <tr>
+                                    <th data-field="partnum" data-align="center"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter4_partnum" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="partdesc" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter4_partdesc" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="plantid" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter4_plantid" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="specstock" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter4_specstock" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="mtype" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter4_mtype" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="uom" data-align="center"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter4_uom" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="openqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter4_openqty" type="text" class="form-control" 
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="recqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter4_recqty" type="text" class="form-control" 
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="issqty" data-align="right"  data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter4_issqty" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                    <th data-field="closeqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter4_closeqty" type="text" class="form-control" 
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_postdatetable')"></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ahmmosfc306p03" class="subpage" data-path="Monitoring Persediaan Part/Error Log">
+        <div class="panel">
+            <div class="panel-body">
+                <div id="ahmmosfc306p03_tablearea" class="row">
+                    <div class="col-sm-12">
+                        <div class="flex flex-top no-wrap flex-right">
+                            <div class="text-right">
+                                <button class="btn btn-primary" id="ahmmosfc306p03_refreshbtn" onclick="ahmmosfc306_RefreshErroTabs()">
+                                    <div class="flex flex-middle no-wrap">
+                                        <i class="glyphicon glyphicon-refresh fg-white mr-10"></i>Refresh<span class="ml-5"></span>
+                                    </div>
+                                </button>
+                                <button class="btn btn-primary" id="ahmmosfc306p03_rerunbtn" onclick="ahmmosfc306_RunCalculation(this)">
+                                    <div class="flex flex-middle no-wrap">
+                                        <i class="fg-white mr-10"></i>Re-run Calculation <span class="ml-5"></span>
+                                    </div>
+                                </button>
+                                <button class="btn btn-success" id="ahmmosfc306p03_exportbtn" onclick="ahmmosfc306_ExportError(this)">
+                                    <div class="flex flex-middle no-wrap">
+                                        <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <table id="ahmmosfc306p03_tablelogerr" class="table"
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-error-log"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params="ahmmosfc306p03_table_paramSearch"
+                               data-response-handler="ahmmosfc306_ErrHandler"
+                               data-query-params-type="limit"
+                               data-side-pagination="server"
+                               data-pagination="true">
+                            <thead>
+                                <tr>
+                                    <th data-field="no" data-align="center">No</th>
+                                    <th data-field="dposting" data-align="center"
+                                        data-valind="center">Posting Date</th>
+                                    <th data-field="partnum" data-align="center"
+                                        data-valind="center">Part No</th>
+                                    <th data-field="partdesc" data-align="center"
+                                        data-valind="center">Part Desc</th>
+                                    <th data-field="movtype" data-align="center"
+                                        data-valind="center">Mov Type</th>
+                                    <th data-field="plantid" data-align="center"
+                                        data-valind="center">Plant</th>
+                                    <th data-field="slocid" data-align="center"
+                                        data-valind="center">Sloc</th>
+                                    <th data-field="dbcr" data-align="center"
+                                        data-valind="center">DbCr</th>
+                                    <th data-field="nqty" data-align="center"
+                                        data-valind="center">Qty</th>
+                                    <th data-field="error" data-align="center"
+                                        data-valind="center">Error</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-sm-3">                        
+                        <table id="ahmmosfc306p03_tablejoinErr" class="table"
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-join-error-log"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params="ahmmosfc306p03_table_paramSearch"
+                               data-response-handler="ahmmosfc306_ResponseHandler"
+                               data-query-params-type="limit"
+                               data-side-pagination="server"
+                               data-pagination="true">
+                            <thead>
+                                <tr>
+                                    <th data-sortable="true" data-field="no" data-valign="middle" data-visible="false">No</th>
+                                    <th data-field="errortext" data-align="center"
+                                        data-valind="center">Error</th>                                
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ahmmosfc306p04" class="subpage" data-path="Monitoring Persediaan Part/Overview/Detail">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row g-0">
+                    <div class="col-sm-3" id="ahmmosfc306_informationarea">
+                        <table id="ahmmosfc306_infomationtable" class="table">
+                            <tr><td><label for="ahmmosfc_overview_partnum">Part Number</label></td><td>:</td><td><input id="ahmmosfc_overview_partnum" class="form-control" readonly></td></tr>
+                            <tr><td> <label for="ahmmosfc_overview_partdesc">Part Desc.</label></td><td>:</td><td><input id="ahmmosfc_overview_partdesc" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_planid">Plant ID</label></td><td>:</td><td><input id="ahmmosfc_overview_plantid" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_slocid">Stor. Loc</label></td><td>:</td><td><input id="ahmmosfc_overview_slocid" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_slocname">Stor. Loc. Desc</label></td><td>:</td><td><input id="ahmmosfc_overview_slocname" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_partareatype">Area Jenis Part</label></td><td>:</td><td><input id="ahmmosfc_overview_partareatype" class="form-control"readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_specstock">Special Stock</label></td><td>:</td><td><input id="ahmmosfc_overview_specstock" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_category">Category</label></td><td>:</td><td><input id="ahmmosfc_overview_category" class="form-control" readonly></td></tr>                            
+                            <tr><td><label for="ahmmosfc_overview_mtype">Material Type</label></td><td>:</td><td><input id="ahmmosfc_overview_mtype" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_uom">UoM</label></td><td>:</td><td><input id="ahmmosfc_overview_uom" class="form-control" readonly></td></tr>
+                        </table>
+                    </div>
+                    <div class="col-sm-9" id="ahmmosfc306_tabledetailarea">
+                        <div class="col-sm-12">
+                            <div class="flex flex-top no-wrap flex-right">
+                                <div class="text-right">
+                                    <button class="btn btn-success" id="ahmmosfc306p01_exportoverviewdetail" onclick="ahmmosfc306_ExportDetail(this)">
+                                        <div class="flex flex-middle no-wrap icon">
+                                            <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="ahmmosfc306_tbloverviewdetail" class="table"
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-overview-detail"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params="ahmmosfc306p04_table_paramSearch"
+                               data-response-handler="ahmmosfc306_ResponseHandler"
+                               data-query-params-type="limit"
+                               data-side-pagination="server"
+                               data-pagination="true"
+                               >
+                            <thead>
+                                <tr>
+                                    <th data-sortable="true" data-field="no" data-valign="middle" rowspan="2">No</th>
+                                    <th data-sortable="true" data-field="sort5_subslocid" data-align="center"
+                                        data-valind="center">Sub Sloc</th>
+                                    <th data-sortable="true" data-field="sort5_subslocname" data-align="center"
+                                        data-valind="center">Sub Sloc Desc</th>
+                                    <th data-sortable="true" data-field="sort5_lotsupid" data-align="center"
+                                        data-valind="center">Lot Supplier Id</th>
+                                    <th data-sortable="true" data-field="sort5_batchno" data-align="center"
+                                        data-valind="center">Batch No.</th>
+                                    <th data-sortable="true" data-field="sort5_unrestqty" data-align="center"
+                                        data-valind="center">Unrest Qty</th>
+                                    <th data-sortable="true" data-field="sort5_qiqty" data-align="center"
+                                        data-valind="center">Ql Qty</th>
+                                    <th data-sortable="true" data-field="sort5_blockqty" data-align="center"
+                                        data-valind="center">Block Qty</th>
+                                    <th data-sortable="true" data-field="sort5_restqty" data-align="center"
+                                        data-valind="center">Rest Qty</th>
+                                </tr>
+                                <tr>
+                                    <th data-field="subsloc" data-align="center"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter5_subslocid" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="subslocname" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter5_subslocname" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="batchno" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter5_batchno" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="lotsupid" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter5_lotsupid" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="unrestqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter5_unrestqty"  type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="qiqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter5_qiqty"  type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="blockqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter5_blockqty"  type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                    <th data-field="restqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter5_restqty" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbloverviewdetail')"></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="ahmmosfc306p05" class="subpage" data-path="Monitoring Persediaan Part/Posting Date/Detail">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-3" id="ahmmosfc306_informationareapostdate"> 
+
+                        <table id="ahmmosfc306_infomationtablepostdate" class="table">
+                            <tr><td><label for="ahmmosfc_overview_partnum">Part Number</label></td><td>:</td><td><input id="ahmmosfc_posting_partnum" class="form-control" readonly></td></tr>
+                            <tr><td> <label for="ahmmosfc_overview_partdesc">Part Desc.</label></td><td>:</td><td><input id="ahmmosfc_posting_partdesc" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_planid">Plant ID</label></td><td>:</td><td><input id="ahmmosfc_posting_plantid" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_slocid">Special Stock</label></td><td>:</td><td><input id="ahmmosfc_posting_specstock" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_slocname">Material Type</label></td><td>:</td><td><input id="ahmmosfc_posting_mtype" class="form-control" readonly></td></tr>
+                            <tr><td><label for="ahmmosfc_overview_specstock">UoM</label></td><td>:</td><td><input id="ahmmosfc_posting_uom" class="form-control" readonly></td></tr>
+
+                        </table>
+                    </div>
+                    <div class="col-sm-9"> 
+                        <div class="col-sm-12">
+                            <div class="flex flex-top no-wrap flex-right">
+                                <div class="text-right">
+                                    <button class="btn btn-success" id="ahmmosfc306p01_exportoverviewdetail" onclick="ahmmosfc306_ExportPostingDetail(this)">
+                                        <div class="flex flex-middle no-wrap icon">
+                                            <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export To Excel
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="ahmmosfc306_tbldetailpostingdate" class="table"
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc306/get-posting-detail"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params="ahmmosfc306p05_table_paramSearch"
+                               data-response-handler="ahmmosfc306_ResponseHandler"
+                               data-query-params-type="limit"
+                               data-side-pagination="server"
+                               data-pagination="true">
+                            <thead>
+                                <tr>
+                                    <th data-sortable="true" data-field="no" data-valign="middle" data-align="right" rowspan="2">No</th>
+                                    <th data-sortable="true" data-field="sort6_date" data-align="center"
+                                        data-valind="center">Date</th>
+                                    <th data-sortable="true" data-field="sort6_slocid" data-align="center"
+                                        data-valind="center">Stor. Loc </th>
+                                    <th data-sortable="true" data-field="sort6_slocname" data-align="center"
+                                        data-valind="center">Stor. Loc. Desc.</th>
+                                    <th data-sortable="true" data-field="sort6_movtype" data-align="center"
+                                        data-valind="center">Movement Type</th>
+                                    <th data-sortable="true" data-field="sort6_mdocs" data-align="center"
+                                        data-valind="center">Material Document</th>
+                                    <th data-sortable="true" data-field="sort6_totalqty" data-align="center"
+                                        data-valind="center">Total Qty</th>
+                                </tr>
+                                <tr>
+                                    <th data-field="date" data-align="center"
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter6_date" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbldetailpostingdate')"></th>
+                                    <th data-field="slocid" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter6_slocid" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbldetailpostingdate')"></th>
+                                    <th data-field="slocname" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter6_slocname" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbldetailpostingdate')"></th>
+                                    <th data-field="movtype" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter6_movtype" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbldetailpostingdate')"></th>
+                                    <th data-field="mdocs" data-align="center"
+                                        data-valind="center">
+                                        <input id="ahmmosfc306filter6_mdocs" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbldetailpostingdate')"></th>
+                                    <th data-field="totalqty" data-align="right" data-cell-style="ahmmosfc306_cellStyleFormatter" data-formatter="ahmmosfc306_formatterQty" 
+                                        data-valind="center"> 
+                                        <input id="ahmmosfc306filter6_totalqty" type="text" class="form-control"
+                                               onkeyup="ahmmosfc306_tabEnter(event, 'ahmmosfc306_tbldetailpostingdate')"></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC306.js"></script>
+</div>

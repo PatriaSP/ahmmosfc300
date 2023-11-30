@@ -1,0 +1,557 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 21, 2023, 8:34:59 AM
+    Author     : user
+*/
+
+/*Id Based Style*/
+#AHMMOSFC302 .flex{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -moz-flex;display: -webkit-flex;display: flex;}
+#AHMMOSFC302 .flex-right{justify-content: flex-end;}
+#AHMMOSFC302 .flex-left{justify-content: flex-start;}
+#AHMMOSFC302 .flex-center{justify-content: center;}
+#AHMMOSFC302 .flex-middle{align-items: center;}
+#AHMMOSFC302 .flex-top{align-items: flex-start;}
+#AHMMOSFC302 .flex-bottom{align-items: flex-end;}
+#AHMMOSFC302 .flex-stretch{align-items: stretch;}
+#AHMMOSFC302 .flex-line-stretch{justify-content: space-between;}
+#AHMMOSFC302 .flex-line-around{justify-content: space-around;}
+#AHMMOSFC302 .flex-g1{flex-grow: 1;}
+#AHMMOSFC302 .flex-g2{flex-grow: 2;}
+#AHMMOSFC302 .flex-g3{flex-grow: 3;}
+#AHMMOSFC302 .flex-g4{flex-grow: 4;}
+#AHMMOSFC302 .flex-g5{flex-grow: 5;}
+#AHMMOSFC302 .flex-g6{flex-grow: 6;}
+#AHMMOSFC302 .flex-g7{flex-grow: 7;}
+#AHMMOSFC302 .flex-g8{flex-grow: 8;}
+#AHMMOSFC302 .flex-g9{flex-grow: 9;}
+#AHMMOSFC302 .flex-g10{flex-grow: 10;}
+#AHMMOSFC302 .flex-g11{flex-grow: 11;}
+#AHMMOSFC302 .flex-g12{flex-grow: 12;}
+#AHMMOSFC302 .flex-wrap{-webkit-flex-wrap: wrap;flex-wrap: wrap;}
+#AHMMOSFC302 .flext-wrap-reverse{-webkit-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;}
+#AHMMOSFC302 .flex-reverse{flex-direction: row-reverse;}
+#AHMMOSFC302 .flex-c-reverse{flex-direction: column-reverse;}
+#AHMMOSFC302 .flex-column{flex-direction: column !important; }
+#AHMMOSFC302 .btn.btn-default{background: #808080;color: #fff;}
+
+#AHMMOSFC302 .row-filter-buttons{
+    border:none !important;
+    padding: 0 5px !important;
+    position: relative;
+    top: 5px;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+#AHMMOSFC302 input::-webkit-outer-spin-button,
+#AHMMOSFC302 input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#AHMMOSFC302  input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#AHMMOSFC302 .filter-groups{
+    border-bottom: 1px solid #ccc;
+}
+
+#AHMMOSFC302 .hidden{
+    display: none;
+}
+#AHMMOSFC302 .btn:not(#ahmmosfc302_collapsetrigger) > div > i {
+    margin-left: 2px;
+    margin-right: 7px;
+}
+
+#AHMMOSFC302 .collapsible .filter-groups{
+    display:none;
+}
+
+#AHMMOSFC302 .collapsible .row-filter-buttons{
+    top:0 !important;
+}
+
+#AHMMOSFC302 .collapsible .glyphicon-chevron-up{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#AHMMOSFC302 .collapsible .btn:not(#ahmmosfc302_collapsetrigger){
+    display:none;
+}
+
+#AHMMOSFC302 .btn-collapse{
+    background: transparent;
+    color:#808080;
+}
+
+#AHMMOSFC302 hr{
+    margin-top:10px !important;
+    margin-bottom:10px !important;
+    border-top: 2px solid #eee;
+}
+
+#AHMMOSFC302 .switch-field {
+    display: flex;
+    overflow: hidden;
+}
+
+#AHMMOSFC302 .switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+#AHMMOSFC302 .switch-field label {
+    background-color: white;
+    color: rgb(51,122,183);
+    font-size: 11px;
+    line-height: 1;
+    text-align: center;
+    padding: 8px 16px;
+    margin-right: -1px;
+    border: 1px solid rgb(51,122,183);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+
+#AHMMOSFC302 .switch-field label:hover {
+    cursor: pointer;
+}
+
+#AHMMOSFC302 .switch-field input:checked + label {
+    background-color: rgb(51,122,183);
+    color:white;
+    box-shadow: none;
+}
+
+#AHMMOSFC302 .switch-field label:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+#AHMMOSFC302 .switch-field label:last-of-type {
+    border-radius: 0 4px 4px 0;
+}
+
+#AHMMOSFC302 .ahmmosfc302_readonlyField{
+    background-color: transparent !important;
+    border:none !important;
+}
+
+#ahmmosfc302_tblpartnum >thead > tr > th:first-child, #ahmmosfc302_tblpartnum > tbody > tr >td:first-child{
+    max-width: 15% !important;
+    width: 10% !important; 
+}
+#ahmmosfc302_tblpartnum >thead > tr > th:last-child,#ahmmosfc302_tblpartnum > tbody > tr >td:last-child{
+    max-width: 15% !important;
+    width: 10% !important;
+}
+
+#ahmmosfc302_tblpartnum >tbody > tr > td:nth-child(2){
+    text-align: left !important;
+}
+
+.confirmationbody{
+    width:70%;
+}
+
+.confirmationbody > div{
+    width:100%;
+}
+
+
+.pagebreak {
+    clear: both;
+    page-break-after: always;
+}
+
+.ahmmosfc302_btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.ahmmosfc302_networkonline {
+    color: green;
+}
+.ahmmosfc302_networkoffline {
+    color: #ff0000;
+}
+.ahmmosfc302_btnwhite {
+    color: #337ab7 !important;
+    background-color: #ffffff;
+    border-color: rgb(51,122,183) !important; 
+
+}
+.ahmmosfc302_btnblue {
+    color: #ffffff !important;
+    background-color: #337ab7;
+    border-color: rgb(51,122,183) !important; 
+}
+
+#ahmmosfc302_scanbypartnumform{
+    margin-top: 20px;
+}
+
+
+#ahmmosfc302_deliverybyidkeretalabel,#ahmmosfc302_deliverybypartnumberlabel{
+    font-weight: 700;
+}
+
+#ahmmosfc302_lastsyncarea{
+    margin-bottom: 20px !important;
+}
+
+#ahmmosfc302_currenststatusarea{
+    margin-bottom:0 !important;
+}
+
+#ahmmosfc302_lastsyncarea > div > span, #ahmmosfc302_lastsyncarea >div > label{
+    font-weight: 700 !important;
+    max-height: 25px;
+    height:22px !important;
+}
+
+#ahmmosfc302_currenststatusarea> div> span, #ahmmosfc302_currenststatusarea > div > label{
+    font-weight: 700 !important;
+    max-height: 25px;
+    height:22px !important;
+}
+
+.ahmmosfc302_letterinformation > tbody> tr > td{
+    height:30px;
+    vertical-align: middle;
+}
+.ahmmosfc302_letterinformation_modal > tbody> tr > td{
+    height:15px;
+    vertical-align: middle;
+    border: none !important;
+}
+
+.ahmmosfc302_letterinformation > tbody> tr > td:nth-child(1){
+
+    width: 20%
+}
+.ahmmosfc302_letterinformation_modal > tbody> tr > td:nth-child(1){
+
+    width: 10%
+}
+.ahmmosfc302_letterinformation > tbody> tr > td:nth-child(2){
+    width: 10%
+}
+.ahmmosfc302_letterinformation_modal > tbody> tr > td:nth-child(2){
+    width: 10%
+}
+.ahmmosfc302_letterinformation{
+    font-size:15px !important;
+}
+.ahmmosfc302_letterinformation_modal{
+    font-size:10px;
+}
+
+@media (max-width: 576px) {
+    /*Media XSmall*/
+
+    #ahmmosfc302_tblpartnum >thead > tr > th:first-child, #ahmmosfc302_tblpartnum > tbody > tr >td:first-child{
+        max-width: 30% !important;
+        width: 25% !important; 
+    }
+    #ahmmosfc302_tblpartnum >thead > tr > th:last-child,#ahmmosfc302_tblpartnum > tbody > tr >td:last-child{
+        max-width: 30% !important;
+        width: 25% !important;
+    }
+
+    #AHMMOSFC302 .btn{
+        height:32px !important;
+    }
+
+    #ahmmosfc302_tableidkeretaarea,#ahmmosfc302_tablepartnumarea {
+        margin-top: 10px;
+    }
+
+    #ahmmosfc302_currenststatusarea,#ahmmosfc302_lastsyncarea{
+        padding-left:20%;
+
+    }
+    #ahmmosfc302_currenststatusarea > div,#ahmmosfc302_lastsyncarea > div{
+        text-align: left !important;
+        vertical-align: middle;
+    }
+    #ahmmosfc302_currenststatusarea >div > label,#ahmmosfc302_lastsyncarea>div > label{
+        vertical-align: middle;
+        padding-top: 0;
+    }
+    .ahmmosfc302_letterinformation{
+        font-size: 10px;
+    }
+    .ahmmosfc302_letterinformation > tbody> tr > td:nth-child(1){
+
+        width: 30% !important;
+    }
+    .ahmmosfc302_letterinformation > tbody> tr > td:nth-child(2){       
+        width: 10% !important;
+    }
+
+    .ahmmosfc302_letterinformation_modal{
+        font-size: 10px;
+    }
+    .ahmmosfc302_letterinformation_modal > tbody> tr > td:nth-child(1){
+
+        width: 30% !important;
+    }
+    .ahmmosfc302_letterinformation_modal > tbody> tr > td:nth-child(2){       
+        width: 10% !important;
+    }
+    .confirmationbody{
+        width:100%;
+    }
+}
+
+@media (min-width: 576px) {
+    /*Media XSmall*/
+
+    #ahmmosfc302_currenststatusarea > div,#ahmmosfc302_lastsyncarea > div,#ahmmosfc302_currenststatusarea > div > label,#ahmmosfc302_lastsyncarea>div > label{
+        text-align: center !important;
+        vertical-align: middle;
+    }
+    #ahmmosfc302_currenststatusarea > div > label,#ahmmosfc302_lastsyncarea>div > label{
+        padding:0 !important;
+    }
+    #ahmmosfc302_currenststatusarea > div > span,#ahmmosfc302_lastsyncarea>div > span{
+        padding:0 !important;
+    }
+
+    .ahmmosfc302_letterinformation > tbody> tr > td:nth-child(1){
+
+        width: 30% !important;
+    }
+    .ahmmosfc302_letterinformation > tbody> tr > td:nth-child(2){
+        width: 10% !important;
+    }
+    .ahmmosfc302_letterinformation{
+        font-size: 13px;
+    }
+
+    .ahmmosfc302_letterinformation_modal > tbody> tr > td:nth-child(1){
+
+        width: 30% !important;
+    }
+    .ahmmosfc302_letterinformation_modal > tbody> tr > td:nth-child(2){
+        width: 15% !important;
+    }
+    .ahmmosfc302_letterinformation_modal{
+        font-size: 15px;
+        margin-bottom: 20px !important ;
+        width:100%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    /*Media Small*/
+    #ahmmosfc302_tblpartnumber, #ahmmosfc302_tblidkereta{
+        margin-left: 20px; 
+        margin-top: 20px;
+    }
+
+    #ahmmosfc302_tableidkeretaarea,#ahmmosfc302_tablepartnumarea {
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    /*Media Medium*/
+    #ahmmosfc302_scanbyidkeretaform{
+        max-width: 50%;
+        margin-left:35px;
+    }
+
+    #ahmmosfc302_currenststatusarea,#ahmmosfc302_lastsyncarea{
+        padding-left:25%;
+
+    }
+
+    #ahmmosfc302_currenststatusarea > div,#ahmmosfc302_lastsyncarea > div,#ahmmosfc302_currenststatusarea>div > label,#ahmmosfc302_lastsyncarea>div > label{
+        text-align: left !important;
+        font-size: 15px !important;
+        vertical-align: middle;
+    }
+
+    .ahmmosfc302_letterinformation{
+        font-size: 15px;
+    }
+    .ahmmosfc302_letterinformation_modal{
+        font-size: 13px;
+    }
+}
+
+
+input.has-error{
+    border-color: #e92030 !important;
+}
+@media (min-width: 1200px) {
+    /*Media Large*/
+
+}
+
+@media (min-width: 1400px) {
+    /*Media XLarge*/
+
+}
+
+
+#ahmmosfc302_lettercop{
+    display:flex;
+    vertical-align: bottom;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#ahmmosfc302_lettercop > div:first-child{
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#ahmmosfc302_lettercop > div {
+    text-align: center;
+}
+
+#ahmmosfc302_letter_content{
+    padding:15px 0;
+}
+#ahmmosfc302_signtablearea > div {
+    margin:5px;
+    max-width:25%;
+    width: 15%;
+    text-align: center;
+}
+#ahmmosfc302_signtablearea > div >div{    
+    padding:8px;    
+    font-size:15px;
+    border:solid 1px #808080;
+}
+#ahmmosfc302qrcodearea {
+    display:flex;
+    justify-content: center;
+}
+
+#ahmmosfc302_signtablearea{
+    display:flex;
+    justify-content: space-around;
+}
+#ahmmosfc302p02_printablearea{
+    display:none;
+}
+
+
+#ahmmosfc302_modallabel{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#ahmmosfc302_modallabel>span{
+    font-size:20px;
+}
+.ahmmosfc302_hiddenTable{
+    display:none;
+}
+
+@page {
+    size: A5;   /* auto is the initial value */ 
+    /* this affects the margin in the printer settings */ 
+    margin:0;
+    margin-top: 10px !important;
+} 
+
+@media print{ 
+    body {
+        margin: 0 !important; 
+        padding:0;
+    }
+    body .toptoolbar, #tabpanel_AHMMOSFC302 .app-info,#tabpanel_AHMMOSFC302 .page-footer, #AHMMOSFC302 #ahmmosfc302p01, #AHMMOSFC302 .global_message {display:none;} 
+
+    #ahmmosfc302p02_printablearea{
+        display:block;
+    }
+
+    #ahmmosfc302_barcodezone{
+        max-width:30%;
+        width:20%;
+    }
+
+    [id^="ahmmosfc302_letter_page"]:not(#ahmmosfc302_letter_page_0) { 
+        page-break-before: always;
+    }
+
+
+    #ahmmosfc302_letterpage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #ahmmosfc302_letterpage > div{
+        height:fit-content !important;
+    }
+    tr td{
+        page-break-inside: avoid;
+        white-space: nowrap;
+    }
+
+    .printMarginTop{
+        margin-top: 40px !important;
+    }
+
+    #ahmmosfc302_signtablearea > div >div{     
+        font-size:10px;
+    }
+    #ahmmosfc302_lettercop > div:first-child{
+        font-size: 15px;
+    }
+
+
+    #ahmmosfc302p02_printablearea table{
+        font-size: 10px !important;
+    }
+    .ahmmosfc302_letterinformation{
+        font-size: 13px !important;
+    }
+    .ahmmosfc302_letterinformation > tbody> tr > td{
+        height:15px !important;
+    }
+
+    .ahmmosfc302_letterinformation > tbody> tr > td:nth-child(2){
+        width: 2% !important;
+    }
+}

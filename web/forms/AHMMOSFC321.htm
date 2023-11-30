@@ -1,0 +1,200 @@
+<style>
+    #AHMMOSFC321 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc321p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc321p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc321p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC321" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+    <div id ="ahmmosfc321p01" class="subpage subpage-default" data-path ="Cetak Symptom">
+        <div class="tabbable">
+            <div class="col-sm-6 ">
+                <div class="row form-panel form-horizontal">
+                    <div class="panel-body">
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc321p01EngineNo" class=" col-sm-3 control-label"><span ><span style="color: red">*</span>Engine No</span></label>
+
+                            <div class="lookup-wrapper col-sm-5" >
+                                <div class="input-group lookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc321/get-lov-engines"
+                                     data-lookup-pre-func="ahmmosfc321p01EngineNoLookup"
+                                     data-columns='[{"id":"noEngine","name":"Engine No.","visible":"true","sortable":"true"}]'
+                                     data-callback='{"ahmmosfc321p01EngineNo":"noEngine"}'>
+                                    <input id="ahmmosfc321p01EngineNo" class="form-control input-lookup"  placeholder="Engine No">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc321p01Stage" class="col-sm-3 control-label"><span ><span style="color: red">*</span>Stage</span></label>
+                            <div class="lookup-wrapper col-sm-5" >
+                                <div class="input-group lookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc321/get-lov-stages"
+                                     data-lookup-pre-func="ahmmosfc321p01StageLookup"
+                                     data-columns='[{"id":"stage","name":"Stage","visible":"true","sortable":"true"}]'
+                                     data-callback='{"ahmmosfc321p01Stage":"stage"}'>
+                                    <input id="ahmmosfc321p01Stage" class="form-control input-lookup"  placeholder="Stage">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc321p01Sequence" class="col-sm-3 control-label"><span ><span style="color: red">*</span>Sequence</span></label>
+                            <div class="lookup-wrapper col-sm-5" >
+                                <div class="input-group lookup"
+                                     data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc321/get-lov-sequences"
+                                     data-lookup-pre-func="ahmmosfc321p01SequenceLookupParam"
+                                     data-columns='[{"id":"sequence","name":"Sequence","visible":"true","sortable":"true"}]'
+                                     data-callback='{"ahmmosfc321p01Sequence":"sequence"}'>
+                                    <input id="ahmmosfc321p01Sequence" class="form-control input-lookup"  placeholder="Sequence">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-button w-100 text-left">
+                                <button id ="ahmmosfc321p01printBtn" class="btn bg-blue" onclick="ahmmosfc321p01PrintSymptom(this)">
+                                <i class="glyphicon glyphicon-print fg-white"></i> PRINT</button>
+                            <button id ="ahmmosfc321p01resetBtn" class="btn large-button bg-blue" onclick="ahmmosfc321p01resetBtnOnClick()">
+                                <i class="glyphicon glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--END HEADER-->
+<script type="text/javascript" src="/imo05/ahmmosfc300-ahs/forms/common.js"></script>
+<script>
+    var ahmmosfc321$ = {
+        url: '/imo05/ahmmosfc300-ahs/rest/mo/sfc321',
+    };
+    function ahmmosfc321p01EngineNoLookup(params) {
+        params.search = {
+            "noEngine": $('#ahmmosfc321p01EngineNo').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "noEngine",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "noEngine") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "noEngine",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc321p01StageLookup(params) {
+        params.search = {
+            "noEngine": $('#ahmmosfc321p01EngineNo').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "stage",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "stage") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "stage",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+    function ahmmosfc321p01SequenceLookupParam(params) {
+        params.search = {
+            "noEngine": $('#ahmmosfc321p01EngineNo').val(),
+            "stage": $('#ahmmosfc321p01Stage').val()
+        };
+        if (params.sort === undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "sequence",
+                order: "desc",
+                search: params.search
+            };
+        }
+
+        if (params.sort === "sequence") {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                sort: "sequence",
+                order: (params.order === "desc") ? "asc" : "desc",
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+    
+    
+    function ahmmosfc321p01resetBtnOnClick() {
+        $("#ahmmosfc321p01EngineNo").val("");
+        $("#ahmmosfc321p01Stage").val("");
+        $("#ahmmosfc321p01Sequence").val("");
+
+    }
+    function ahmmosfc321p01PrintSymptom(obj) {
+        _fw_validation_clear(obj)
+        _fw_validation_add(obj, 'ahmmosfc321p01EngineNo', 'required');
+        _fw_validation_add(obj, 'ahmmosfc321p01Stage', 'required');
+        _fw_validation_add(obj, 'ahmmosfc321p01Sequence', 'required');
+
+        var valid = _fw_validation_validate(obj);
+        if (valid) {
+            var obj = new Object();
+            obj.noEngine = $("#ahmmosfc321p01EngineNo").val();
+            obj.stage = $("#ahmmosfc321p01Stage").val();
+            obj.sequence = $("#ahmmosfc321p01Sequence").val();
+
+            _fw_post(ahmmosfc321$.url+"/generate-pdf",
+                    obj,
+                    function (data) {
+                        if (data.status === '1') {
+                            window.open(data.message["link"]);
+                        } else if (data.status === '0') {
+                            _fw_setMessage(o, 0, data.message.error);
+                            return;
+                        }
+                    });
+        }
+
+    }
+</script>

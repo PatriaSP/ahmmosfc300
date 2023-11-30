@@ -1,0 +1,544 @@
+<style>
+    #AHMMOSFC307 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc307p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc307p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc307p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC307" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+
+    <div style="display: none;">
+        <form id="ahmmosfc307_download_form" method="post" action="#">
+            <input type="hidden" name="category" value="" />
+            <input type="hidden" name="transaction" value="" />
+            <input type="hidden" name="dateFrom" value="" />
+            <input type="hidden" name="dateTo" value="" />
+            <input type="hidden" name="shiftid" value="" />
+            <input type="hidden" name="plantid" value="" />
+            <input type="hidden" name="lineid" value="" />
+            <input type="hidden" name="mctypeid" value="" />
+        </form>
+    </div>
+
+    <div id="ahmmosfc307p01" class="subpage subpage-default" data-path="Monitoring Stock Unit Motor">
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc307p01Category" class="col-sm-6 control-label">
+                            Plant ID 
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc307p01Category" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group large-font row">
+                        <label for="ahmmosfc307p01LineStockStatus" class="col-sm-6 control-label">
+                            Stock Status ID <span style="color:red">*</span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc307/get-lov-statustock"
+                                 data-lookup-pre-func="ahmmosfc307p01LineLookup" 
+                                 data-columns='[{"id":"vitemcode","name":"Stock Status ID","visible":"true"},
+                                 {"id":"vitemname","name":"Stock Status Desc","visible":"true"}]'
+                                 data-callback='{"ahmmosfc307p01LineStockStatus":"vitemcode", "ahmmosfc307p01LineDesc":"vitemname"}'>
+                                <input id="ahmmosfc307p01LineStockStatus" class="form-control input-lookup">
+                                <span class="input-group-btn required" >
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc307p01LineDesc" class="col-sm-6 control-label">
+                            Stock Status Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc307p01LineDesc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc307p01PackagingStat" class="col-sm-6 control-label">
+                            Packaging Status ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc307/get-lov-packagingstatus"
+                                 data-lookup-pre-func="ahmmosfc307p01StatPackagingLookup" 
+                                 data-columns='[{"id":"vitemcode","name":"Packaging Status Id","visible":"true"},
+                                 {"id":"vitemname","name":"Packaging Status Desc","visible":"true"}]'
+                                 data-callback='{"ahmmosfc307p01PackagingStat":"vitemcode", "ahmmosfc307p01PackagingStatDesc":"vitemname"}'>
+                                <input id="ahmmosfc307p01PackagingStat" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc307p01PackagingStatDesc" class="col-sm-6 control-label">
+                            Packaging Status  Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc307p01PackagingStatDesc" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc307p01MCTYpeStat" class="col-sm-6 control-label">
+                            M/C Type ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc307/get-lov-typemotor"
+                                 data-lookup-pre-func="ahmmosfc307p01MCTypeLookup" 
+                                 data-columns='[{"id":"vmctypeid","name":"M/C Type Id","visible":"true","sortable":"true"},
+                                 {"id":"vmcdesc","name":"M/C Type Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc307p01MCTYpeStat":"vmctypeid", "ahmmosfc307p01MCTYpeStatDesc":"vmcdesc"}'>
+                                <input id="ahmmosfc307p01MCTYpeStat" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc307p01MCTYpeStatDesc" class="col-sm-6 control-label">
+                            M/C Type  Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc307p01MCTYpeStatDesc" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font row">
+                        <label for="ahmmosfc307p01ColorIdStat" class="col-sm-6 control-label">
+                            Color ID
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc307/get-lov-color"
+                                 data-lookup-pre-func="ahmmosfc307p01StatPackagingLookup" 
+                                 data-columns='[{"id":"vcolorid","name":"Color ID","visible":"true","sortable":"true"},
+                                 {"id":"vcolordesc","name":"Color Desc","visible":"true","sortable":"true"}]'
+                                 data-callback='{"ahmmosfc307p01ColorIdStat":"vcolorid", "ahmmosfc307p01ColorIdStatDesc":"vcolordesc"}'>
+                                <input id="ahmmosfc307p01ColorIdStat" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc307p01ColorIdStatDesc" class="col-sm-6 control-label">
+                            Color  Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc307p01ColorIdStatDesc" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc307p01Search(this)">
+                            <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc307p01ResetBtn(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--TABLE HEADERR-->
+
+
+        <div id="table-container">
+            <div id="ahmmosfc307p01-table" class="subpage subpage-default col-md-7">
+                <div class="row form-panel">
+                    <div class="panel-body">
+                        <div class="form-group-button">
+                            <button class="btn large-button bg-blue" onclick="ahmmosfc307p01ExportExcel(this); return false;">
+                                <i class="glyphicon glyphicon-download-alt fg-white"></i> Export To Excel</button> 
+                        </div>
+                        <table id="ahmmosfc307p01SearchTable" 
+                               data-method="post"
+                               data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc307/search-data-header"
+                               data-content-type="application/json"
+                               data-data-type="json"
+                               data-query-params-type="limit"
+                               data-query-params="ahmmosfc307p01TableParam"
+                               data-response-handler="_fw_loadData"
+                               data-side-pagination="server"
+                               data-pagination="true"
+                               >
+                            <thead>
+                                <tr>
+                                    <th data-formatter="AHMMOMSC307p01TableNumbering" data-align="center" data-valign="middle" rowspan="2">No</th> 
+                                    <th data-sortable="true" data-field="Sort_mstorMplantVplantid"               data-align="center"> Plant Id </th>
+                                    <th data-sortable="true" data-field="Sort_mstorVslocid"                data-align="center"> Storage Location Id </th>
+                                    <th data-sortable="true" data-field="Sort_rtypeVmctypeid"              data-align="center"> M/C Type Id </th>                                
+                                    <th data-sortable="true" data-field="Sort_mcolVcolorid"        data-align="center"> Color ID </th>
+                                    <th data-sortable="true" data-field="Sort_dsetVitemcode"          data-align="center"> Motor ID </th>
+                                    <th data-sortable="true" data-field="Sort_dsetVitemcodeDpkCod" data-align="center"> Packaging Status ID </th>
+                                    <th data-sortable="true" data-field="Sort_iqtystc" data-align="center"> Qty Stock </th>
+                                    <th data-sortable="true" data-field="Sort_iqtybook" data-align="center"> Qty Book </th>
+                                </tr>
+                                <tr>
+
+
+                                    <th data-field="mstorMplantVplantid"  data-visible="true" >
+                                        <input id="ahmmosfc307p01plant" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="mstorVslocid"  data-visible="true" >
+                                        <input id="ahmmosfc263p02Vsloc" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="rtypeVmctypeid"  data-visible="true" >
+                                        <input id="ahmmosfc263p02Mctype" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="mcolVcolorid"  data-visible="true" >
+                                        <input id="ahmmosfc263p02Colorid" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="dsetVitemcode"  data-visible="true" >
+                                        <input id="ahmmosfc263p02DsetVitem" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="dsetVitemcodeDcpkId"  data-visible="true" >
+                                        <input id="ahmmosfc307p02DsetVitemdpkcod" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="iqtystc"  data-visible="true" >
+                                        <input id="ahmmosfc263p02Qtystck" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+                                    <th data-field="iqtybook"  data-visible="true" >
+                                        <input id="ahmmosfc263p02QtyBook" type="text" class="form-control" onkeypress="ahmmosfc307p01_Filter(event)">
+                                    </th>
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" > 
+            <div class="row form-panel form-horizontal">
+                <!--SUMMARY-->
+                <div class="panel-heading">
+
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Summary</span></h6>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc307p01SumQTYStock"  class="col-sm-6 control-label">
+                            Sum Qty Stock
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc307p01SumQTYStockVal" readonly>
+                        </div>
+
+                    </div>
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc307p01SumQTYBook" class="col-sm-6 control-label">
+                            Sum Qty Booking
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc307p01SumQTYBookVal" readonly>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END HEADER-->
+
+<script type="text/javascript">
+    var offsetUnitLoad = 0;
+    var ahmmosfc307ParamsTable = [];
+    var ahmmosfc307Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc307/';
+
+    $(document).ready(function () {
+        ahmmomsc307GetPlant();
+        ahmmosfc316getProfile();
+    });
+
+    function ahmmosfc307p01rowNumFormatter(obj, row, index) {
+        return ahmmosfc307ParamsTable.offset + index + 1;
+    }
+
+    function AHMMOMSC307p01TableNumbering(obj, row, index) {
+        return offsetTable + index + 1;
+    }
+
+
+
+    function ahmmosfc316getProfile() {
+        var param = {
+            search: {
+                mstorMplantVplantid: $('ahmmosfc307p01Category').val(), //plant
+                dsetVitemcodeDflstc: $('ahmmosfc307p01LineStockStatus').val(), //stock status id
+                dsetVitemcodeDpkCod: $('#ahmmosfc307p01PackagingStat').val(), //status packaging id
+                rtypeVmctypeid: $('#ahmmosfc307p01MCTYpeStatDesc').val(), //tipe motor
+                mcolVcolorid: $('#ahmmosfc307p01ColorIdStat').val() //color id
+            }
+        };
+
+        _fw_post(ahmmosfc307Url + "get-totalheader", param, function (data) {
+            if (data.status === '1') {
+                var ahmmomsc418UserProfile = data.data[0];
+                $('#ahmmosfc307p01SumQTYStockVal').val(ahmmomsc418UserProfile.totalqtyheaderstock);
+                $('#ahmmosfc307p01SumQTYBookVal').val(ahmmomsc418UserProfile.totalqtyheaderbooking);
+            }
+        });
+    }
+
+
+    function ahmmosfc307p01_Filter(event) {
+        console.log(event.keyCode);
+        _fw_validation_clear($('#ahmgawms018p01_search_table'));
+        if (event.keyCode === 13) {
+            console.log("masuk sini");
+            $('#ahmmosfc307p01SearchTable').bootstrapTable('refresh');
+
+        }
+    }
+
+    function ahmmosfc307p01FilterSearch() {
+        var tr = $('#ahmmosfc307p01Transaction').val();
+        console.log("tr" + tr);
+
+        if (tr === 'F') {
+            $('#ahmmosfc307p01Shift').hide();
+        } else {
+        }
+    }
+
+
+    function ahmmomsc307GetPlant() {
+        _fw_post(ahmmosfc307Url + 'get-lov-Getplant', null, function (data) {
+            if (data.status === '1') {
+                init307DropdownList('ahmmosfc307p01', 'ahmmosfc307p01Category', data.data);
+            }
+        });
+    }
+
+    function init307DropdownList(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+        if (value.length > 0) {
+
+
+            $page.append('<option value="">ALL</option>');
+            value.forEach(function (item, index) {
+
+                $page.append('<option value=' + item.vplantid + '>' + item.vplantdesc + '</option>');
+            });
+
+        }
+    }
+
+
+
+
+    function ahmmotrc030p01GetShift() {
+        _fw_post(ahmmosfc307Url + 'get-lov-shift', null, function (data) {
+            if (data.status === '1') {
+                init307DropdownListShift('ahmmosfc307p01', 'ahmmosfc307p01Shift', data.data);
+            }
+        });
+    }
+
+
+
+    function init307DropdownListShift(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+        if (value.length > 0) {
+            $page.append('<option value=" "></option>');
+            value.forEach(function (item, index) {
+                $page.append('<option value=' + item.shiftid + '>' + item.shiftid + '</option>');
+            });
+
+        }
+    }
+
+    function ahmmotrc030p01GetPlant() {
+        _fw_post(ahmmosfc307Url + 'get-lov-Getplant', null, function (data) {
+            if (data.status === '1') {
+                init307DropdownListPlant('ahmmosfc307p01', 'ahmmosfc307p01Plant', data.data);
+            }
+        });
+    }
+
+    function init307DropdownListPlant(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+        if (value.length > 0) {
+            $page.append('<option value=""></option>');
+            value.forEach(function (item, index) {
+                $page.append('<option value=' + item.vplantid + '>' + item.vplantdesc + '</option>');
+            });
+
+        }
+    }
+
+    function ahmmosfc307p01rowNumFormatter(value, row, index) {
+        return index + 1 + offsetUnitLoad;
+    }
+
+    function ahmmosfc307p01LineLookup(params) {
+        params.search = {
+            "plantid": $("#ahmmosfc307p01Plant").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+    function ahmmosfc307p01StatPackagingLookup(params) {
+        params.search = {
+            "any": ""
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+
+
+    function ahmmosfc307p01MCTypeLookup(params) {
+        params.search = {
+            "any": ""
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+
+//    VALIDASI SEARCH
+
+//    BUTTON SEARCH
+    function ahmmosfc307p01Search(obj) {
+        _fw_validation_clear(obj);
+
+        _fw_validation_add(obj, 'ahmmosfc307p01LineStockStatus', 'required');
+        if (_fw_validation_validate(obj)) {
+            $('#ahmmosfc307p01SearchTable').bootstrapTable('refresh');
+            ahmmosfc316getProfile();
+        }
+
+
+
+    }
+
+    function ahmmosfc307p01ResetBtn(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc307p01"));
+
+        $('#ahmmosfc307p01SearchTable').bootstrapTable('removeAll');
+
+    }
+
+    function ahmmosfc307p01TableParam(params) {
+        params.search =
+                {
+                    mstorMplantVplantid: $('#ahmmosfc307p01Category').val(), //plant
+                    filter_mstorMplantVplantid: $('#ahmmosfc307p01plant').val(), //plant
+
+                    mstorVslocid: $('#ahmmosfc263p02Vsloc').val(), //storloc
+
+
+
+
+                    rtypeVmctypeid: $('#ahmmosfc307p01MCTYpeStat').val(), //tipe motor
+                    filter_rtypeVmctypeid: $('#ahmmosfc263p02Mctype').val(), //tipe motor
+
+                    mcolVcolorid: $('#ahmmosfc307p01ColorIdStat').val(), //color id   
+                    filter_mcolVcolorid: $('#ahmmosfc263p02Colorid').val(), //color id   
+
+
+
+                    dsetVitemcode: $('#ahmmosfc263p02DsetVitem').val(), //motorID 
+
+                    dsetVitemcodeDpkCod: $('#ahmmosfc307p01PackagingStat').val(), //statuc packaging id
+                    filter_dsetVitemcodeDpkCod: $('#ahmmosfc307p02DsetVitemdpkcod').val(), //statuc packaging id
+
+                    iqtystc: $('#ahmmosfc263p02Qtystck').val(),
+
+                    iqtybook: $('#ahmmosfc263p02QtyBook').val(),
+
+                    dsetVitemcodeDflstc: $('#ahmmosfc307p01LineStockStatus').val()// stock status
+                };
+
+        ahmmosfc307ParamsTable = params;
+        if (params.sort === undefined) {
+            offsetTable = params.offset;
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        } else {
+            offsetTable = params.offset;
+        }
+        ahmmosfc316getProfile();
+        return params;
+    }
+
+    function ahmmosfc307p01ExportExcel(obj) {
+        _fw_validation_clear(obj);
+        var indexed_array = {};
+
+
+        indexed_array['mstorMplantVplantid'] = $('#ahmmosfc307p01Category').val(), //plant
+                indexed_array['dsetVitemcodeDflstc'] = $('#ahmmosfc307p01LineStockStatus').val(), //stock status id
+                indexed_array['dsetVitemcodeDpkCod'] = $('#ahmmosfc307p01PackagingStat').val(), //statuc packaging id
+                indexed_array['rtypeVmctypeid'] = $('#ahmmosfc307p01MCTYpeStat').val(), //tipe motor
+                indexed_array['mcolVcolorid'] = $('#ahmmosfc307p01ColorIdStat').val(); //color id    
+
+
+        var url = ahmmosfc307Url + 'export-excel?'
+                + $.param(indexed_array)
+                + '&JXID=' + encodeURIComponent(getJxid());
+
+        _fw_exportToExcel(url);
+    }
+
+
+
+
+</script>

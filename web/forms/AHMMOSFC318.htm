@@ -1,0 +1,374 @@
+<style>
+    #AHMMOSFC318 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc318p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc318p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc318p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC318" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+
+    <div style="display: none;">
+        <form id="ahmmosfc318_download_form" method="post" action="#">
+            <input type="hidden" name="category" value="" />
+            <input type="hidden" name="transaction" value="" />
+            <input type="hidden" name="dateFrom" value="" />
+            <input type="hidden" name="dateTo" value="" />
+            <input type="hidden" name="shiftid" value="" />
+            <input type="hidden" name="plantid" value="" />
+            <input type="hidden" name="lineid" value="" />
+            <input type="hidden" name="mctypeid" value="" />
+        </form>
+    </div>
+
+    <div id="ahmmosfc318p01" class="subpage subpage-default" data-path="Straight Pass Assembly Real Time Monitoring">
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc318p01Plant" class="col-sm-6 control-label">
+                            Plant ID <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc318/get-lov-plant"
+                                 data-lookup-pre-func="ahmmosfc318p01PlantLookup" 
+                                 data-columns='[{"id":"vplantid","name":"Plant Id","visible":"true"},
+                                 {"id":"vplantdesc","name":"Plant Desc","visible":"true"}]'
+                                 data-callback='{"ahmmosfc318p01Plant":"vplantid", "ahmmosfc318p01PlantDesc":"vplantdesc"}'>
+                                <input id="ahmmosfc318p01Plant" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc318p01PlantDesc" class="col-sm-6 control-label">
+                            Plant Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01PlantDesc" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc318p01LineId" class="col-sm-6 control-label">
+                            Line ID <span style="color:red">*</span>
+                        </label>
+                        <div class="lookup-wrapper col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc318/get-lov-line"
+                                 data-lookup-pre-func="ahmmosfc318p01LineLookup" 
+                                 data-columns='[{"id":"vlineid","name":"Line Id","visible":"true"},
+                                 {"id":"vlinedesc","name":"Line Desc","visible":"true"},
+                                 {"id":"mwctVwctid", "name":"Vwct Id", "visible":"true"}]'
+                                 data-callback='{"ahmmosfc318p01LineId":"vlineid", "ahmmosfc318p01LineDesc":"vlinedesc", "ahmmosfc318p01WctId":"mwctVwctid"}'>
+                                <input id="ahmmosfc318p01LineId" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc318p01LineDesc" class="col-sm-6 control-label">
+                            Line  Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01LineDesc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc318p01WctId" class="col-sm-6 control-label">
+                            WCT ID
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01WctId" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc318p01Search(this)">
+                            <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--TABLE HEADERR-->
+
+
+        <div id="table-container">
+            <div id="ahmmosfc318p01-table" class="subpage subpage-default col-md-7">
+                <div class="row form-panel">
+                    <div class="panel-body">
+                        <h3 style="text-align: center">
+
+                            Monitoring Straight Pass Assembly Real Time
+                        </h3>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <table class="table table-responsive" style="text-align: center;">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <h2>PRODUKSI</h2>    
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&MediumSpace;</td>
+                                    <td id="ahmmosfc318p01Produksi">
+                                        <h1>
+                                            1222
+                                        </h1>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h2>ROYAL</h2>    
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&MediumSpace;</td>
+                                    <td id="ahmmosfc318p01Royal">
+                                        <h1>
+                                            87 &percnt;    
+                                        </h1>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h2>FINAL</h2>    
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&MediumSpace;</td>
+                                    <td id="ahmmosfc318p01Final">
+                                        <h1>
+                                            90 &percnt;    
+                                        </h1>    
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" > 
+            <div class="row form-panel form-horizontal">
+                <!--SUMMARY-->
+                <div class="panel-heading">
+
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Summary</span></h6>
+                    <label id="ahmmosfc318p01DateSummary">
+                        <h6>RABU, 15 JULI 2009 08:30:45</h6>
+                    </label>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc318p01SumPlantId"  class="col-sm-6 control-label">
+                            Plant ID
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01SumPlantIdVal" placeholder="1100" readonly>
+                        </div>
+
+                    </div>
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc318p01SumPlantDesc" class="col-sm-6 control-label">
+                            Plant Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01SumPlantDescVal" placeholder="PLANT - SUNTER 1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc318p01SumLineId" class="col-sm-6 control-label">
+                            Line ID
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01SumLineIdVal" placeholder="1AUA" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc318p01SumLineDesc" class="col-sm-6 control-label">
+                            Line Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01SumLineDescVal" placeholder="Assy Unit 1.A Sunter" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group large-font">
+                        <label id="ahmmosfc318p01SumWctId" class="col-sm-6 control-label">
+                            WCT ID
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc318p01SumWctIdVal" placeholder="P1AUA0" readonly>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END HEADER-->
+
+<script type="text/javascript">
+    var offsetUnitLoad = 0;
+    var ahmmosfc318ParamsTable = [];
+    var ahmmosfc318Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc318/';
+
+    //DATE FORMATTER
+    var date = new Date();
+    var days = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"];
+    var months = ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"];
+    var val = days[date.getUTCDay()] + ", " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear() + " " + date.toLocaleTimeString();
+    document.getElementById('ahmmosfc318p01DateSummary').innerHTML = "<h6>" + val + "</h6>";
+
+    function myTimer() {
+        const d = new Date();
+        var val = days[date.getUTCDay()] + ", " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+        document.getElementById("ahmmosfc318p01DateSummary").innerHTML = "<h6>" + val + " " + d.toLocaleTimeString() + "</h6>";
+    }
+
+    $(document).ready(function () {
+        setInterval(myTimer, 1000);
+    });
+
+//  GET_ROYALTI
+    function ahmmosfc318valSFCGetRoyalti() {
+        var param = {
+            search: {
+                plantid: $('#ahmmosfc318p01SumPlantIdVal').val(), //plant
+                mwctVwctid: $('#ahmmosfc318p01SumWctIdVal').val() //Mwct_Vctid
+
+            }
+        };
+        _fw_post(ahmmosfc318Url + "get-valSFCGetRoyalti", param, function (data) {
+            console.log(param);
+            console.log(data.data);
+            const count = 1;
+            if (data.status === '1') {
+                var ahmmosfc318GetRoyalti = data.data;
+                ahmmosfc318GetRoyalti.forEach(function (item, index) {
+                    if(item.iqtyaccPu === 0 && item.rsp === 0 && item.fsp === 0)
+                    {
+                        $('#ahmmosfc318p01Produksi').html("<h1>" + count + "</h1>");
+                        $('#ahmmosfc318p01Royal').html("<h1>" + count + " &percnt;</h1>");
+                        $('#ahmmosfc318p01Final').html("<h1>" + count + " &percnt;</h1>");
+                    }
+                    $('#ahmmosfc318p01Produksi').html("<h1>" + item.iqtyaccPu + "</h1>");
+                    $('#ahmmosfc318p01Royal').html("<h1>" + item.rsp + " &percnt;</h1>");
+                    $('#ahmmosfc318p01Final').html("<h1>" + item.fsp + " &percnt;</h1>");
+                });
+            }
+        });
+        if (param.sort === undefined) {
+            return{
+                limit: param.limit,
+                offset: param.offset,
+                search: param.search
+            };
+        }
+        return param;
+    }
+
+//  BUTTON LOV PLANT
+    function ahmmosfc318p01PlantLookup(params) {
+        params.search = {
+            plantid: $("#ahmmosfc318p01Plant").val(),
+            plantdesc: $("#ahmmosfc318p01Plant").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+//    BUTTON LOV LINE
+    function ahmmosfc318p01LineLookup(params) {
+        params.search = {
+            plantid: $("#ahmmosfc318p01Plant").val(),
+            lineid: $("#ahmmosfc318p01LineId").val(),
+            linedesc: $("#ahmmosfc318p01LineId").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+
+//  Clear Form
+    function ahmmosfc318p01ClearForm() {
+        $('#ahmmosfc318p01Plant').val("");
+        $('#ahmmosfc318p01PlantDesc').val("");
+        $('#ahmmosfc318p01LineId').val("");
+        $('#ahmmosfc318p01LineDesc').val("");
+        $('#ahmmosfc318p01WctId').val("");
+    }
+
+//    BUTTON SEARCH
+    function ahmmosfc318p01Search(obj) {
+        _fw_validation_clear(obj);
+
+        _fw_validation_add(obj, 'ahmmosfc318p01Plant', 'required');
+        _fw_validation_add(obj, 'ahmmosfc318p01LineId', 'required');
+        var plant = $('#ahmmosfc318p01Plant').val();
+        var plantdesc = $('#ahmmosfc318p01PlantDesc').val();
+        var line = $('#ahmmosfc318p01LineId').val();
+        var linedesc = $('#ahmmosfc318p01LineDesc').val();
+        var vwctid = $('#ahmmosfc318p01WctId').val();
+        console.log(plant + " - " + plantdesc + ", " + line + " - " + linedesc + " - " + vwctid);
+        if (_fw_validation_validate(obj)) {
+            $("#ahmmosfc318p01SumPlantIdVal").val(plant);
+            $("#ahmmosfc318p01SumPlantDescVal").val(plantdesc);
+            $("#ahmmosfc318p01SumLineIdVal").val(line);
+            $("#ahmmosfc318p01SumLineDescVal").val(linedesc);
+            $("#ahmmosfc318p01SumWctIdVal").val(vwctid);
+            ahmmosfc318valSFCGetRoyalti();
+            ahmmosfc318p01ClearForm();
+            let timer = 1;
+            setInterval(() => {
+                console.log("Refresh count : " + timer);
+                $('#ahmmosfc318p01SearchTable').bootstrapTable('refresh');
+                ahmmosfc318valSFCGetRoyalti();
+                timer++;
+            }, 30000);
+        } else {
+            $('#ahmmosfc318p01Plant').css('padding-right', '5px');
+            $('#ahmmosfc318p01LineId').css('padding-right', '5px');
+            _fw_setMessage(obj, 0, data.message.m);
+        }
+    }
+
+</script>

@@ -1,0 +1,69 @@
+{
+    "status": "1",
+    "data": [
+        {
+            "bookingIppNo": "AINTING PLASTIC 1.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 2.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 3.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 4.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 5.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 6.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 7.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 8.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 9.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        },
+        {
+            "bookingIppNo": "AINTING PLASTIC 10.A",
+            "partApprovalNo": "1",
+            "partNumber": "53204K81 N00000B0",
+            "partDescription": "COVER,SPEEDOMETER NH-1"
+        }
+    ],
+    "message": {
+        "message": "SUKSES"
+    },
+    "total": 20
+}

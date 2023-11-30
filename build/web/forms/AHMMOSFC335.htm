@@ -1,0 +1,615 @@
+<style>
+    #AHMMOSFC335 table {
+        border-bottom: 1px solid #ddd;
+        border-collapse: collapse !important;
+        border-radius: 1px;
+        margin-bottom: 0 !important;
+    }
+
+    #AHMMOSFC335thead tr {
+        background: #ddd none repeat scroll 0 0;
+    }
+
+    #AHMMOSFC335 .minWidthDate {
+        min-width: 140px;
+    }
+
+    #AHMMOSFC335 .minDefWidth {
+        min-width: 180px;
+    }
+
+    #ahmmosfc335p01_searchtable thead tr:first-child .th-inner {
+        text-align: center;
+    }
+
+    #ahmmosfc335p01 {
+        margin: 0em
+    }
+
+    #ahmmosfc335p02 {
+        margin: 0em
+    }
+
+    #ahmmosfc335p03 {
+        margin: 0em
+    }
+</style>
+
+<div id="AHMMOSFC335" class="div-app" data-version="1.0">
+    <div class="global_message"></div>
+    <div id="ahmmosfc335p01" class="subpage subpage-default" data-path="Maintain Jumlah Tag Frame">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row form-panel form-horizontal">
+                    <div class="panel-heading">
+                        <h6>
+                            <i class="glyphicon glyphicon-search fg-green"></i>
+                            <span>Search Data</span>
+                        </h6>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li onclick="_fw_contentCollapse(this)">
+                                <a class="collapse-link">
+                                    <span class="glyphicon glyphicon-chevron-up"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <div id="ahmmosfc335p01_globalinput">
+                            <div class="form-group large-font">
+                                <label for="ahmmosfc335p01_plantid_search" class="col-sm-6 control-label">Plant ID<span
+                                        style="color:red">*</span>
+                                </label>
+                                <div class="col-sm-6">
+                                    <select id="ahmmosfc335p01_plantid_search" name="ahmmosfc335p01_plantid_search"
+                                            class="form-control" onchange="ahmmosfc335p01ChangePlantId(this);">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <label for="ahmmosfc335p01_plantdesc_search" class="col-sm-6 control-label">Plant
+                                    Desc.<span style="color:red">*</span>
+                                </label>
+                                <div class="col-sm-6">
+                                    <input id="ahmmosfc335p01_plantdesc_search" name="ahmmosfc335p01_plantdesc_search"
+                                           class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <label for="ahmmosfc335p01_flgunit_search" class="col-sm-6 control-label">Flag<span
+                                        style="color:red">*</span>
+                                </label>
+                                <div class="col-sm-6">
+                                    <select id="ahmmosfc335p01_flgunit_search" name="ahmmosfc335p01_flgunit_search"
+                                            class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group-button text-right">
+                                <button data-role="read" class="btn large-button bg-blue"
+                                        onclick="ahmmosfc335p01SearchBtn(this); return false;"><i
+                                        class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                                <button data-role="read" class="btn large-button bg-blue"
+                                        onclick="ahmmosfc335p01Reset(this);"><i
+                                        class="glyphicon glyphicon-refresh fg-white"></i>
+                                    Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row form-panel">
+                    <div class="panel-body">
+                        <div class="form-group-button">
+                            <button class="btn large-button bg-green"
+                                    onclick="ahmmosfc335Subpage(this, 'ahmmosfc335p02'); return false;">
+                                <i class="glyphicon glyphicon-plus fg-white "></i> Add
+                            </button>
+                            <button id="ahmmosfc335p01_btnedit" class="btn large-button bg-blue"
+                                    onclick="ahmmosfc335Edit(this)">
+                                <i class="glyphicon glyphicon-edit fg-white"></i>
+                                Edit
+                            </button>
+                            <button id="ahmmosfc335p01_btndelete" class="btn large-button bg-red"
+                                    onclick="ahmmosfc335Delete(this);">
+                                <i class="glyphicon glyphicon-trash fg-white"></i>
+                                Delete
+                            </button>
+                        </div>
+                        <div id="ahmmosfc335p01_tablecontainer">
+                            <table id="ahmmosfc335p01_searchtable" data-method="post"
+                                   data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc335/get-list-frmsms-search"
+                                   data-content-type="application/json" data-data-type="json"
+                                   data-query-params-type="limit" data-query-params="ahmmosfc335p01Presearch"
+                                   data-response-handler="_fw_loadData" data-side-pagination="server"
+                                   data-pagination="true" data-search="false" class="table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true" rowspan="2" data-valign="middle">
+                                        </th>
+                                        <th data-sortable="true" data-field="sortPlantId" data-align="center">Plant Id
+                                        </th>
+                                        <th data-sortable="true" data-field="sortPlantDesc" data-align="center">Plant
+                                            Desc.</th>
+                                        <th data-sortable="true" data-field="sortFlag" data-align="center">Flag</th>
+                                        <th data-sortable="true" data-field="sortJumlah" data-align="center">Jumlah</th>
+                                        <!-- <th data-sortable="false" data-field="gdpId" data-align="left">Edit</th> -->
+                                    </tr>
+                                    <tr>
+                                        <th data-sortable="false" data-field="vplantid" data-visible="true">
+                                            <input type="text" id="ahmmosfc335p01_plantid" name="ahmmosfc335p01_plantid"
+                                                   class="form-control" onkeypress="ahmmosfc335p01Filter(event)" />
+                                        </th>
+                                        <th data-sortable="false" data-field="plantdesc" data-visible="true">
+                                            <input type="text" id="ahmmosfc335p01_plantdesc"
+                                                   name="ahmmosfc335p01_plantdesc" class="form-control"
+                                                   onkeypress="ahmmosfc335p01Filter(event)" />
+                                        </th>
+                                        <th data-sortable="false" data-field="vflgunit" data-visible="true">
+                                            <input type="text" id="ahmmosfc335p01_flgunit" name="ahmmosfc335p01_flgunit"
+                                                   class="form-control" onkeypress="ahmmosfc335p01Filter(event)" />
+                                        </th>
+
+                                        <th data-sortable="false" data-field="nunit" data-visible="true">
+                                            <input disabled  type="text" id="ahmmosfc335p01_nunit" name="ahmmosfc335p01_nunit"
+                                                   class="form-control" onkeypress="ahmmosfc335p01Filter(event)" />
+                                        </th>
+                                        <!-- <th data-sortable="false" data-field="vgdpid" id="ahmmosfc335p01_gdpid"
+                                            data-align="center" data-formatter="linkFormatter"></th> -->
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ahmmosfc335p02" class="subpage" data-path="Maintain Jumlah Tag Frame/Add Jumlah Tag Engine Frame">
+        <div class="row form-panel">
+            <div class="panel-heading">
+                <h6><i class="glyphicon glyphicon-plus fg-green"></i>Add Jumlah Tag Engine Frame</h6>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-8">
+                    <form class="form-horizontal">
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p02_plantid" class="col-sm-2 control-label">
+                                Plant Id <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <select id="ahmmosfc335p02_plantid" name="ahmmosfc335p02_plantid" class="form-control"
+                                        onchange="ahmmosfc335p02ChangePlantId(this);">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p02_plantdesc" class="col-sm-2 control-label">
+                                Plant Desc. <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input id="ahmmosfc335p02_plantdesc" name="ahmmosfc335p02_plantdesc"
+                                       class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p02_flgunit" class="col-sm-2 control-label">
+                                Flag <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <select id="ahmmosfc335p02_flgunit" name="ahmmosfc335p02_flgunit" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p02_nunit" class="col-sm-2 control-label">
+                                Jumlah <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input type="number" min="1" id="ahmmosfc335p02_nunit" name="ahmmosfc335p02_nunit"
+                                       class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group large-font form-entry-button">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-8">
+                                <button id="ahmmosfc335p02_btnadd"
+                                        class="btn btn-default btn-primary large-button bg-green"
+                                        onclick="ahmmosfc335p02SaveFrmsms(this); return false;"><i
+                                        class="glyphicon glyphicon-floppy-disk fg-white"></i> Save Data</button>
+                                <button id="ahmmosfc335p02_btnback"
+                                        class="btn btn-default btn-primary large-button bg-warning"
+                                        onclick="ahmmosfc335p02Clear(this); return false;"><i
+                                        class="glyphicon glyphicon-backward fg-white"></i> Back </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ahmmosfc335p03" class="subpage" data-path="Maintain Jumlah Tag Frame/Edit Jumlah Tag Engine Frame">
+        <div class="row form-panel">
+            <div class="panel-heading">
+                <h6><i class="glyphicon glyphicon-plus fg-green"></i>Edit Jumlah Tag Engine Frame</h6>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-8">
+                    <form class="form-horizontal">
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p03_plantid" class="col-sm-2 control-label">
+                                Plant ID <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input disabled id="ahmmosfc335p03_plantid" name="ahmmosfc335p03_plantid"
+                                       class="form-control" onchange="">
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p03_plantdesc" class="col-sm-2 control-label">
+                                Plant Desc. <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input disabled id="ahmmosfc335p03_plantdesc" name="ahmmosfc335p03_plantdesc"
+                                       class="form-control" onchange="">
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p03_flgunit" class="col-sm-2 control-label">
+                                Flag <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input disabled id="ahmmosfc335p03_flgunit" name="ahmmosfc335p03_flgunit"
+                                       class="form-control" onchange="">
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <label for="ahmmosfc335p03_nunit" class="col-sm-2 control-label">
+                                Jumlah <span style="color:red">* </span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input type="number" min="1" id="ahmmosfc335p03_nunit" name="ahmmosfc335p03_nunit"
+                                       class="form-control" onchange="">
+                            </div>
+                        </div>
+                        <div class="form-group large-font form-entry-button">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-8">
+                                <button id="ahmmosfc335p03_btnedit"
+                                        class="btn btn-default btn-primary large-button bg-green"
+                                        onclick="ahmmosfc335p03EditFrmsms(this); return false;"><i
+                                        class="glyphicon glyphicon-floppy-disk fg-white"></i> Edit Data</button>
+                                <button id="ahmmosfc335p03_btnback"
+                                        class="btn btn-default btn-primary large-button bg-warning"
+                                        onclick="ahmmosfc335p02Clear(this); return false;"><i
+                                        class="glyphicon glyphicon-backward fg-white"></i> Back </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var ahmmosfc335_url_root = '/imo05/ahmmosfc300-ahs/rest/mo/sfc335';
+
+    $(document).ready(function () {
+        _fw_post(ahmmosfc335_url_root + '/get-list-mstplants', {}, function (data) {
+            $('#ahmmosfc335p02_plantid').html('');
+            $('#ahmmosfc335p02_plantid').append('<option value=""> Select Plant </option>');
+            $.each(data.data, function (i, v) {
+                var plantId = v.strId;
+                var plantdesc = v.strDesc1;
+                $('#ahmmosfc335p02_plantid').append('<option value="' + plantId + '">' + plantId + '</option>');
+            });
+        });
+        $('#ahmmosfc335p02_flgunit').append('<option value=""> Select Flag </option>');
+        $('#ahmmosfc335p02_flgunit').append('<option value="DOMESTIC"> DOMESTIC </option>');
+        $('#ahmmosfc335p02_flgunit').append('<option value="EXPORT"> EXPORT </option>');
+
+        _fw_post(ahmmosfc335_url_root + '/get-list-plants', {}, function (data) {
+            $('#ahmmosfc335p01_plantid_search').html('');
+            $('#ahmmosfc335p01_plantid_search').append('<option value="">All</option>');
+            $.each(data.data, function (i, v) {
+                var plantId = v.strId;
+                $('#ahmmosfc335p01_plantid_search').append('<option value="' + plantId + '">' + plantId + '</option>');
+            });
+        });
+        $('#ahmmosfc335p01_flgunit_search').append('<option value=""> All </option>');
+
+        $('#ahmmosfc335p01_searchtable').on('check.bs.table', function (e, row) {
+            addSelectedRow(row);
+        });
+        $('#ahmmosfc335p01_searchtable').on('uncheck.bs.table', function (e, row) {
+            removeSelectedRow(row);
+        });
+    });
+
+    function ahmmosfc335Edit(obj) {
+        isNotNullEdit(obj);
+    }
+
+    function hiddenPage() {
+        document.getElementById('ahmmosfc335p01').style.display = 'none';
+        document.getElementById('ahmmosfc335p02').style.display = 'none';
+        document.getElementById('ahmmosfc335p03').style.display = 'none';
+        return false;
+    }
+    function showPage(shown) {
+        document.getElementById(shown).style.display = 'block';
+        return false;
+    }
+
+    function ahmmosfc335p01Presearch(params) {
+        var valPlantid;
+        if ($('#ahmmosfc335p01_plantid').val() == "") {
+            valPlantid = $('#ahmmosfc335p01_plantid_search').val();
+        } else {
+            valPlantid = $('#ahmmosfc335p01_plantid').val();
+        }
+
+        var valPlantdesc;
+        if ($('#ahmmosfc335p01_plantdesc').val() == "") {
+            valPlantdesc = $('#ahmmosfc335p01_plantdesc_search').val();
+        } else {
+            valPlantdesc = $('#ahmmosfc335p01_plantdesc').val();
+        }
+
+        var valFlag;
+        if ($('#ahmmosfc335p01_flgunit').val() == "") {
+            valFlag = $('#ahmmosfc335p01_flgunit_search').val();
+        } else {
+            valFlag = $('#ahmmosfc335p01_flgunit').val();
+        }
+
+        params.search = {
+            'plantId': valPlantid,
+            'plantDesc': valPlantdesc,
+            'flag': valFlag
+        };
+
+        if (params.sort == undefined) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }
+        }
+
+        return params;
+    }
+
+    function ahmmosfc335Subpage(obj, id) {
+        if (id == 'ahmmosfc335p02') {
+            $('#ahmmosfc335p02_plantid').val("");
+            $('#ahmmosfc335p02_plantdesc').val("");
+            $('#ahmmosfc335p02_flgunit').val("");
+            $('#ahmmosfc335p02_nunit').val(1);
+        } else if (id == 'ahmmosfcp03') {
+
+        }
+
+        _fw_validation_clear(obj);
+        hiddenPage();
+        showPage(id);
+    }
+
+    function ahmmosfc335p01SearchBtn(obj) {
+        _fw_validation_clear(obj);
+        if (_fw_validation_validate(obj)) {
+            $('#ahmmosfc335p01_searchtable').bootstrapTable('refresh');
+        }
+    }
+
+    function ahmmosfc335p01Filter(event) {
+        _fw_validation_clear($('#ahmmosfc335p01_searchtable'));
+        if (event.keyCode === 13) {
+            $('#ahmmosfc335p01_searchtable').bootstrapTable('refresh');
+        }
+    }
+
+    function ahmmosfc335p02Clear(obj) {
+        _fw_validation_clear(obj);
+        $('#ahmmosfc335p01_searchtable').bootstrapTable('refresh');
+        ahmmosfc335Subpage(this, 'ahmmosfc335p01');
+    }
+
+    function ahmmosfc335p01Reset(obj) {
+        _fw_reset_subpage(obj);
+
+        ahmmosfc335p01ChangePlantId(this);
+        $('#ahmmosfc335p01_searchtable').bootstrapTable('refresh');
+    }
+
+    function cboReset(idCbo) {
+        $('#' + idCbo).html('');
+        $('#' + idCbo).append('<option value="">All</option>');
+    }
+
+    function ahmmosfc335p01ChangePlantId() {
+        var key = $('#ahmmosfc335p01_plantid_search').val();
+        if (key.length > 0) {
+            _fw_post(ahmmosfc335_url_root + '/get-plantdesc/' + key, {}, function (data) {
+                $('#ahmmosfc335p01_plantdesc_search').val(data.data[0]['strDesc1']);
+            });
+            cboFlagSearch(key);
+        } else {
+            cboReset("ahmmosfc335p01_flgunit_search");
+        }
+    }
+
+    function cboFlagSearch(key) {
+        $('#ahmmosfc335p01_flgunit_search').html('');
+        _fw_post(ahmmosfc335_url_root + '/get-list-flags/' + key, {}, function (data) {
+            $.each(data.data, function (i, v) {
+                var flag = v.strDesc1;
+                $('#ahmmosfc335p01_flgunit_search').append('<option value="' + flag + '">' + flag + '</option>');
+            });
+        });
+    }
+
+    function ahmmosfc335p02SaveFrmsms(obj) {
+        _fw_validation_clear(obj);
+        _fw_validation_add(obj, 'ahmmosfc335p02_plantid', 'required');
+        _fw_validation_add(obj, 'ahmmosfc335p02_flgunit', 'required');
+        _fw_validation_add(obj, 'ahmmosfc335p02_plantdesc', 'required');
+        _fw_validation_add(obj, 'ahmmosfc335p02_nunit', 'required');
+
+        if (_fw_validation_validate(obj)) {
+            var data = {
+                'fieldsVo': {
+                    'plantId': $('#ahmmosfc335p02_plantid').val(),
+                    'flag': $('#ahmmosfc335p02_flgunit').val(),
+                    'jumlah': $('#ahmmosfc335p02_nunit').val()
+                }
+            };
+
+            _fw_post(ahmmosfc335_url_root + '/save-frmsms',
+                    data,
+                    function (data) {
+                        if (data.status == '0') {
+                            for (var key in data.data) {
+                                _fw_setMessage(obj, 0, data.data[key]);
+                            }
+                        } else {
+                            _fw_setMessage(obj, 1, 'Data Berhasil Disimpan');
+                            clearAfterSave();
+                        }
+                    });
+        }
+    }
+
+    function clearAfterSave() {
+        document.getElementById('ahmmosfc335p02_flgunit').value = "";
+        document.getElementById('ahmmosfc335p02_nunit').value = 1;
+    }
+
+    function ahmmosfc335p02ChangePlantId() {
+        var plantid = $('#ahmmosfc335p02_plantid').val();
+        _fw_post(ahmmosfc335_url_root + '/get-plantdesc/' + plantid, {}, function (data) {
+            $('#ahmmosfc335p02_plantdesc').val(data.data[0]['strDesc1']);
+        });
+    }
+
+    var selectedRows = {};
+    function addSelectedRow(row) {
+        selectedRows[row.no] = row;
+    }
+    function removeSelectedRow(row) {
+        delete selectedRows[row.no];
+    }
+
+    function isNotNullEdit(obj) {
+        var data = [];
+        for (const key in selectedRows) {
+            if (selectedRows.hasOwnProperty(key)) {
+                var newObj = {
+                    fieldsVo: {
+                        plantId: selectedRows[key].vplantid,
+                        flag: selectedRows[key].vflgunit,
+                        nunit: selectedRows[key].nunit
+                    }
+                };
+                data.push(newObj);
+            }
+        }
+
+        if (data.length < 1) {
+            _fw_setMessage(obj, 0, 'Silakan pilih data terlebih dahulu.');
+        } else if (data.length === 1) {
+            for (const key in selectedRows) {
+                if (selectedRows.hasOwnProperty(key)) {
+                    $('#ahmmosfc335p03_plantid').val(selectedRows[key].vplantid);
+                    $('#ahmmosfc335p03_plantdesc').val(selectedRows[key].plantdesc);
+                    $('#ahmmosfc335p03_flgunit').val(selectedRows[key].vflgunit);
+                    $('#ahmmosfc335p03_nunit').val(selectedRows[key].nunit);
+                }
+            }
+
+            ahmmosfc335Subpage(obj, 'ahmmosfc335p03');
+        } else {
+            _fw_setMessage(obj, 0, 'Mohon pilih tepat satu data.');
+        }
+    }
+
+    function ahmmosfc335p03EditFrmsms(obj) {
+        var data = {
+            'fieldsVo': {
+                'plantId': $('#ahmmosfc335p03_plantid').val(),
+                'flag': $('#ahmmosfc335p03_flgunit').val(),
+                'jumlah': $('#ahmmosfc335p03_nunit').val()
+            }
+        };
+
+        _fw_post(ahmmosfc335_url_root + '/edit-frmsms',
+                data,
+                function (data) {
+                    if (data.status == '0') {
+                        for (var key in data.message) {
+                            _fw_setMessage(obj, 0, data.message[key]);
+                        }
+                    } else {
+                        _fw_setMessage(obj, 1, 'Data Berhasil Diubah');
+                        selectedRows = {};
+                        ahmmosfc335p02Clear();
+                    }
+                }
+        );
+    }
+
+    function ahmmosfc335Delete(obj) {
+        var data = [];
+        for (const key in selectedRows) {
+            if (selectedRows.hasOwnProperty(key)) {
+                var newObj = {
+                    fieldsVo: {
+                        plantId: selectedRows[key].vplantid,
+                        flag: selectedRows[key].vflgunit,
+                        nunit: selectedRows[key].nunit
+                    }
+                };
+                data.push(newObj);
+            }
+        }
+
+        if (data.length < 1) {
+            _fw_setMessage(obj, 0, 'Silakan pilih data terlebih dahulu.');
+        } else if (data.length === 1) {
+            _fw_post(ahmmosfc335_url_root + "/delete-by-id/" + data[0].fieldsVo.plantId + '-' + data[0].fieldsVo.flag,
+                    {},
+                    function (data) {
+                        if (data.status === '0') {
+                            for (var key in data.message) {
+                                _fw_setMessage(obj, 0, data.message[key]);
+                            }
+                        } else {
+                            _fw_setMessage(obj, 1, 'Data Berhasil Dihapus');
+                            selectedRows = {};
+                            $('#ahmmosfc335p01_searchtable').bootstrapTable('refresh');
+                        }
+                    }
+            );
+        } else {
+            _fw_post(ahmmosfc335_url_root + "/delete-frmsms",
+                    data,
+                    function (data) {
+                        if (data.status === '0') {
+                            for (var key in data.message) {
+                                _fw_setMessage(obj, 0, data.message[key]);
+                            }
+                        } else {
+                            _fw_setMessage(obj, 1, 'Data Berhasil Dihapus');
+                            selectedRows = {};
+                            $('#ahmmosfc335p01_searchtable').bootstrapTable('refresh');
+                        }
+                    }
+            );
+        }
+    }
+
+</script>

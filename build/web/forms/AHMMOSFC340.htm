@@ -1,0 +1,935 @@
+<style>
+    #ahmmosfc340p02InputSerialNumber {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid grey;
+    }
+
+    #ahmmosfc340p02InputSerialNumber thead,
+    #ahmmosfc340p02InputSerialNumber tbody {
+        display: block;
+    }
+
+    #ahmmosfc340p02InputSerialNumber thead {
+        position: sticky;
+        top: 0;
+        background-color: #f0f0f0;
+    }
+
+    #ahmmosfc340p02InputSerialNumber tbody {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    #ahmmosfc340p02InputSerialNumber tr {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+    }
+
+    #ahmmosfc340p02InputSerialNumber th #ahmmosfc340p02InputSerialNumber td {
+        flex: 1;
+        padding: 5px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+<div id="AHMMOSFC340" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+
+    <!--PAGE 1-->
+    <div id="ahmmosfc340p01" class="subpage subpage-default" data-path="Scan In REM">
+        <div style="margin: auto; float: none" class="col-lg-5">
+            <div class="row form-panel form-horizontal">
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-log-in fg-green"></i><span>Move Transaction S/N part
+                            Accessories(AHM)</span></h6>
+                </div>
+                <div class="panel-body" style="padding-left : 50px">
+                    <div class="col-md-12">
+                        <div class="form-group large-font">
+                            <div class="col-sm-3">
+                                <label for="ahmmosfc340p01Nrplbl" class="control-label">Nrp Operator <span
+                                        style="color: red">*</span></label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="ahmmosfc340p01Nrp" class="form-control" id="ahmmosfc340p01Nrp"
+                                    onkeypress="ahmmosfc340p01Nrplogin(this, event)">
+                            </div>
+                        </div>
+                        <div class="form-group large-font">
+                            <div class="col-sm-3">
+                                <label for="ahmmosfc340p01Sloclbl" class="control-label"> Sloc ID</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="ahmmosfc340p01Sloc" id="ahmmosfc340p01Sloc" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <!--BUTTON-->
+                        <div class="form-group-button" style="text-align: center">
+                            <button id="ahmmosfc340p01Submit" class="btn large_button btn-primary"
+                                onclick="ahmmosfc340p01Submit(this)" onkeyup="ahmmosfc340p01Submit(this)" disabled>
+                                <i class="glyphicon glyphicon-log-in fg-white"></i> Submit
+                            </button>
+                            <button id="ahmmosfc340p01Reset" class="btn large_button btn-danger"
+                                onclick="ahmmosfc340p01Reset(this)">
+                                <i class="glyphicon glyphicon-refresh fg-white"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Page 2-->
+
+    <div id="ahmmosfc340p02" class="subpage col-md-7" style="margin: auto; float: none"
+        data-path="Scan In REM/Transaction Header">
+        <div class="row form-panel">
+            <div class="panel-heading">
+                <h6 style="padding-left: 20px"><span>Moving Transaction S/N part Accessories</span></h6>
+            </div>
+            <div class="panel-body ">
+                <div class="row" style="width: 80%;margin: auto;">
+                    <form class="form-horizontal">
+                        <div class="col-md-12" style="">
+                            <div class="form-group large-font ">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02TransDate" class="control-label">Transaction Date</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02TransDate" name="ahmmosfc340p02TransDate"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02SlocIDlbl" class="control-label">Sloc ID</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02SlocID" name="ahmmosfc340p02SlocID" class="form-control"
+                                        disabled />
+                                </div>
+                            </div>
+                            <!--                            <div class="form-group large-font">
+                                                            <div class="col-sm-5">
+                                                                <label for="ahmmosfc340p02TransType" class="control-label"> Transaction Type</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input id="ahmmosfc340p02TransType" name="ahmmosfc340p02TransType" class="form-control" disabled>
+                                                            </div>
+                                                        </div>-->
+
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02TransID" class="control-label">Transaction ID</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02TransID" name="ahmmosfc340p02TransID" class="form-control"
+                                         /> 
+                                </div> 
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02InputTypelbl" class="control-label">Mode</label>
+                                </div>
+                                <div class="col-sm-7" style="height: 30px; display: flex">
+                                    <div style="display: flex; align-items: center; margin-right: 8px">
+                                        <input type="radio" id="ahmmosfc340p02ModeIn" name="ahmmosfc340p02inputType"
+                                            value="modeIn" checked style="margin: 0px !important"
+                                            onclick="setRadioInputType()">
+                                        <label for="In" style="margin-left: 4px; margin-bottom: 0px">In</label>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-right: 8px">
+                                        <input type="radio" id="ahmmosfc340p02ModeOut" name="ahmmosfc340p02inputType"
+                                            value="modeOut" style="margin: 0px !important"
+                                            onclick="setRadioInputType()">
+                                        <label for="Out" style="margin-left: 4px ;  margin-bottom: 0px">Out</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02TransIdReference" class="control-label">Trans Id
+                                        Reference</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <!--<label for="ahmmosfc340p02TransIdReference" class="control-label">Trans Id Reference</label>-->
+                                    <input id="ahmmosfc340p02TransIdReference" name="ahmmosfc340p02TransIdReference"
+                                        class="form-control" required
+                                        onkeypress="ahmmosfc340p02TransIdRef(this, event)" />
+                                    <span id="wajibDiisiMessage" style="color: red;">* Wajib diisi</span>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02SlocIdDestination" class="control-label">Sloc Id
+                                        Destination<span class="text-danger">*</span></label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="input-group lookup"
+                                        data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc340/lov-sloc"
+                                        data-lookup-pre-func="ahmmosfc340p02PreSearchSlocIdDestination"
+                                        data-columns='[ 
+                                         {"id":"itemVslodId","name":"Id","visible":"true","sortable":"true"},
+                                         {"id":"itemVplantId","name":"Sloc Destination","visible":"true","sortable":"true"}]'
+                                        data-callback='{"ahmmosfc340p02SlocDestination":"itemVslodId"}'
+                                        data-lookup-change-func="">
+                                        <input id="ahmmosfc340p02SlocDestination" class="form-control input-lookup"
+                                            placeholder="Sloc Destination">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default large-button btn-lookup" type="button"
+                                                id="ahmmosfc340p02BtnSlocDestination">LOV</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02DocumentNo" class="control-label">Document No.</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02DocumentNo" name="ahmmosfc340p02DocumentNo"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                            <!--                                                        <div class="form-group large-font">
+                                                                                        <div class="col-sm-5">
+                                                                                            <label for="ahmmosfc340p02PartId" class="control-label">Part Id<span class="text-danger">*</span></label>
+                                                                                        </div>
+                                                                                        <div class="col-md-7">
+                                                                                            <div class="input-group lookup" 
+                                                                                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc340/lov-part"
+                                                                                                 data-lookup-pre-func="ahmmosfc340p02PreSearchPart" 
+                                                                                                 data-columns='[  
+                                                                                                 {"id":"itemVpartnum","name":"Part Id","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemVpartDesc","name":"Part Id","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemTyp","name":"Typ","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemCode","name":"Code","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemVitemName","name":"Part Desc","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemCeacc","name":"Source","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemVsloc","name":"Deskripsi","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemNtotal","name":"Deskripsi","visible":"true","sortable":"true"},
+                                                                                                 {"id":"itemVpartDesc","name":"Deskripsi","visible":"true","sortable":"true"}]'
+                                                                                                 data-callback='{"ahmmosfc340p02PartId":"itemVpartnum","ahmmosfc340p02PartDesc":"itemVitemName"}'
+                                                                                                 data-lookup-change-func="">
+                                                                                                <input id="ahmmosfc340p02PartId" class="form-control input-lookup" placeholder="Part Id" >
+                                                                                                <span class="input-group-btn">
+                                                                                                    <button class="btn btn-default large-button btn-lookup" type="button" id="ahmmosfc340p02BtnSlocDestination">LOV</button>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <input id="ahmmosfc340p02PartId" name="ahmmosfc340p02PartId" class="form-control"  />
+                                                                                        </div>
+                                                                                    </div> -->
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02PartDesc" class="control-label">Part Desc</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02PartDesc" name="ahmmosfc340p02PartDesc"
+                                        class="form-control" disabled="" />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02Qty" class="control-label">Qty</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02Qty" name="ahmmosfc340p02Qty" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02Input" class="control-label">Input</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input id="ahmmosfc340p02Input" name="ahmmosfc340p02Input"
+                                        onkeypress="ahmmosfc340p02InputEnter(this, event)" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group large-font">
+                                <div class="col-sm-5">
+                                    <label for="ahmmosfc340p02InputSerialNumber"> Serial Number <span
+                                            class="text-danger">*</span></label>
+                                </div>
+                                <div class="col-md-7">
+                                    <table id="ahmmosfc340p02InputSerialNumber">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group large-font">
+                    <div class="form-group-button" style="text-align: center">
+                        <button class="btn large-button bg-red" id="ahmmosfc340p02Back"
+                            onclick="ahmmosfc340p02BackClick(this); return false;">
+                            <i class="glyphicon glyphicon-chevron-left fg-white"></i> Back</button>
+                        <button class="btn large-button bg-green" id="ahmmosfc340p02Submit"
+                            onclick="ahmmosfc340p02SubmitClick(this);return false;">
+                            <i class="glyphicon glyphicon-saved fg-white"></i> Submit</button>
+                        <button class="btn large-button bg-blue" id="ahmmosfc340p02Print"
+                            onclick="ahmmosfc340p02PrintClick(this); return false;" >
+                            <i class="glyphicon glyphicon glyphicon-print fg-white"></i> Print</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="resources/js/jquery.mask.js"></script>
+    <script type="text/javascript" src="resources/js/epos-2.9.0.js"></script>
+    <script type="text/javascript" src="resources/js/epos-print-editor-en.js"></script>
+    <script src="resources/js/AHMMOSFC302_Generator_QR.min.js"></script>
+
+    <script>
+        var ahmmosfc340Root = '/imo05/ahmmosfc300-ahs/rest/mo/sfc340/';
+        var inputType = "";
+        var nrp = "";
+        var slocId = "";
+        let txnObject = {};
+        let dataArray = [];
+        var dataPrint = {};
+        let ahmmosfc340TblDelive = [];
+        var ahmmosfc340_epos_device = new epson.ePOSDevice();
+        var printer_ip = "";
+        var printer_port = "";
+        var ahmmosfc340_printer = null;
+        var currentDate = new Date();
+        var ahmmosfc302_genseqdelcode = true;
+
+        $(document).ready(function () {
+            var nrp = document.getElementById('ahmmosfc340p01Nrp');
+            nrp.focus();
+            var txnInref = document.getElementById('ahmmosfc340p02TransIdReference');
+            txnInref.focus();
+            generateDate();
+            setRadioInputType();
+            var modeInRadio = document.getElementById('ahmmosfc340p02ModeIn');
+            var modeOutRadio = document.getElementById('ahmmosfc340p02ModeOut');
+
+            var dataCallback = $('#ahmmosfc340p02PartId').data('callback');
+            if (dataCallback) {
+                // Ambil nilai yang sesuai dengan key 'ahmmosfc340p02PartId' dan 'ahmmosfc340p02PartDesc'
+                var partIdValue = dataCallback.ahmmosfc340p02PartId;
+                var partDescValue = dataCallback.ahmmosfc340p02PartDesc;
+
+                // Isi nilai ke dalam elemen yang sesuai
+                $('#ahmmosfc340p02PartId').val(partIdValue);
+                $('#ahmmosfc340p02PartDesc').val(partDescValue);
+            }
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var modeInRadio = document.getElementById('ahmmosfc340p02ModeIn');
+            var modeOutRadio = document.getElementById('ahmmosfc340p02ModeOut');
+
+            modeInRadio.addEventListener('change', setRadioInputType);
+            modeOutRadio.addEventListener('change', setRadioInputType);
+
+            setRadioInputType();
+        });
+
+        function ahmmosfc340p02SubmitClick(obj) {
+            _fw_validation_clear(obj);
+            var param = {
+                "txnInref": $('#ahmmosfc340p02TransIdReference').val(),
+                "inputDtxn": $('#ahmmosfc340p02TransDate').val(),
+                "inputVsloc": $('#ahmmosfc340p02SlocID').val(),
+                "inputVdocno": $('#ahmmosfc340p02DocumentNo').val(),
+                "inputSlocIdDes": $('#ahmmosfc340p02SlocDestination').val(),
+                "inpuQty": $('#ahmmosfc340p02Qty').val(),
+                "itemVpartnum": $('#ahmmosfc340p02PartId').val(),
+                "transid": $('#ahmmosfc340p02Input').val(),
+                "moveIn": $('#ahmmosfc340p02ModeIn').val(),
+                "moveOut": $('#ahmmosfc340p02ModeOut').val(),
+                "dataTable": $('#ahmmosfc340p02InputSerialNumber').val()
+            };
+
+            _fw_post(ahmmosfc340Root + "submit-moving", { search: param }, function (data) {
+                if (data.status === '1') {
+                    $('#ahmmosfc340p02Submit').prop("disabled", true);
+                    txIdSubmit = data.message.msg;
+
+
+                    $('#ahmmosfc340p02Print').prop("disabled", false);
+                    $('#ahmmosfc340p02Print').removeClass("hidden");
+
+                    window.scrollTo(0, 0);
+                    _fw_setMessage(obj, 1, "Transaksi berhasil disimpan");
+
+                } else {
+                    window.scrollTo(0, 0);
+                    _fw_setMessage(obj, 0, data.message.msg);
+                }
+            });
+        }
+
+
+        function ahmmosfc340p01Nrplogin(obj) {
+            if (event.keyCode === 13) {
+                _fw_validation_clear(obj);
+                _fw_validation_add(obj, 'ahmmosfc340p01Nrp', 'required');
+                if (_fw_validation_validate(obj)) {
+                    var params = {
+                        search: {
+                            "nrp": $('#ahmmosfc340p01Nrp').val()
+                        },
+                        limit: 10,
+                        offset: 0,
+                    };
+                    _fw_post(ahmmosfc340Root + 'cek-nrp', params, function (data) {
+                        if (data.status === '1') {
+                            $('#ahmmosfc340p01Sloc').val(data.message.msg);
+                            $('#ahmmosfc340p01Submit').prop("disabled", false);
+                            nrp = $('#ahmmosfc340p01Nrp').val();
+                            slocId = data.message.msg;
+                        } else {
+                            _fw_setMessage(obj, 0, data.message.msg);
+                        }
+                    });
+                }
+            }
+        }
+
+        function updateInputField(data) {
+            $('#ahmmosfc340p02InputSerialNumber').val(data);
+        }
+
+
+        function addDataToTable(inputsn, txnid) {
+            var table = document.getElementById("ahmmosfc340p02InputSerialNumber");
+            var tbody = table.getElementsByTagName("tbody")[0];
+            var row = document.createElement('tr');
+
+            var serialNumberCell = document.createElement('td');
+            var cellButton = document.createElement('td');
+            serialNumberCell.textContent = inputsn;
+            if (serialNumberCell) {
+                var btn = document.createElement("button");
+                btn.textContent = "X";
+                //                                            btn.id = "btnDelete-i";
+                btn.id = "btnDelete-" + txnid;
+                btn.style.backgroundColor = "transparent";
+                btn.style.border = "none";
+                btn.style.color = "red";
+
+                btn.onclick = function (event) {
+                    event.preventDefault();
+                    deleteDataFromTable(txnid);
+                };
+                cellButton.appendChild(btn);
+            }
+
+            row.appendChild(serialNumberCell);
+            row.appendChild(cellButton);
+            tbody.appendChild(row);
+
+            dataArray.push({
+                inputsn: inputsn,
+                txnid: txnid
+            });
+
+            console.log(dataArray)
+        }
+
+
+        function deleteDataFromTable(idToDelete) {
+            // Temukan indeks elemen dalam array yang ingin dihapus berdasarkan ID
+            var indexToDelete = -1;
+            for (var i = 0; i < dataArray.length; i++) {
+                if (dataArray[i].txnid === idToDelete) {
+                    indexToDelete = i;
+                    break; // Keluar dari loop saat elemen ditemukan
+                }
+            }
+
+            if (indexToDelete !== -1) {
+                dataArray.splice(indexToDelete, 1);
+            }
+        }
+
+
+        function ahmmosfc340p02InputEnter(obj) {
+            if (event.keyCode === 13) {
+                _fw_validation_clear(obj);
+                var modeOutRadio = document.getElementById('ahmmosfc340p02ModeOut');
+                var modeInRadio = document.getElementById('ahmmosfc340p02ModeIn');
+                if (modeOutRadio.checked) {
+                    if (_fw_validation_validate(obj)) {
+
+                        var params = {
+                            search: {
+                                "inputsn": $('#ahmmosfc340p02Input').val(),
+                                "inputVsloc": $('#ahmmosfc340p02SlocID').val()
+                            },
+                            limit: 10,
+                            offset: 0
+                        };
+
+                        _fw_post(ahmmosfc340Root + 'scan-sn-out', params, function (data) {
+                            if (data.status === '0') {
+                                _fw_setMessage(obj, 0, data.message.msg);
+                            } else {
+
+                                var inputsn = data.message.msg[0]['itemMoveOutSerNumber'];
+                                var txnid = data.message.msg[0]['itemMoveOutVtx'];
+
+                                $('#ahmmosfc340p02TransIdReference').val(data.message.msg[0]['itemMoveOutVtx']);
+                                addDataToTable(inputsn, txnid);
+
+
+                            }
+                        });
+                    }
+                } else if (modeInRadio.checked) {
+                    if (_fw_validation_validate(obj)) {
+                        var params = {
+                            search: {
+                                "inputsn": $('#ahmmosfc340p02Input').val(),
+                                "txnInref": $('#ahmmosfc340p02TransIdReference').val(),
+                                "inpuQty": $('#ahmmosfc340p02Qty').val()
+                            },
+                            limit: 10,
+                            offset: 0
+                        };
+                        _fw_post(ahmmosfc340Root + 'scan-sn-in', params, function (data) {
+                            if (data.status === '0') {
+                                _fw_setMessage(obj, 0, data.message.msg);
+                            } else {
+                                //$('#ahmmosfc340p02InputSerialNumber').val(data.message.msg[0]);
+                                var serialNumberData = data.message.msg[0];
+                                $('#ahmmosfc340p02InputSerialNumber').val(serialNumberData);
+
+                            }
+                        });
+                    }
+                }
+            }
+        }
+
+        function ahmmosfc340p02TransIdRef(obj) {
+            if (event.keyCode === 13) {
+                _fw_validation_clear(obj);
+                if (_fw_validation_validate(obj)) {
+                    var params = {
+                        search: {
+                            "txnInref": $('#ahmmosfc340p02TransIdReference').val()
+                        },
+                        limit: 10,
+                        offset: 0
+                    };
+                    _fw_post(ahmmosfc340Root + 'cek-id-referanceOut', params, function (data) {
+                        if (data.status === '1') {
+                            $('#ahmmosfc340p02DocumentNo').val(data.message.msg[0]['itemDocno']);
+                            //                                                        $('#ahmmosfc340p02PartId').val(data.message.msg[0]['itemPartnum']);
+                            //                                                        $('#ahmmosfc340p02PartDesc').val(data.message.msg[0]['itemPartDesc']);
+                            //                                                        $('#ahmmosfc340p02SlocDestination').val(data.message.msg[0]['itemSloc']);
+                            //                                                        $('#ahmmosfc340p02Qty').val(data.message.msg[0]['itemNqtyTotal']);
+                            $('#ahmmosfc340p02DocumentNo').prop('disabled', true);
+                            ////                                                        $('#ahmmosfc340p02PartId').prop('disabled', true);
+                            //                                                        $('#ahmmosfc340p02PartDesc').prop('disabled', true);
+                            //                                                        $('#ahmmosfc340p02SlocDestination').prop('disabled', true);
+                            //                                                        $('#ahmmosfc340p02Qty').prop('disabled', true);
+
+                            _fw_post(ahmmosfc340Root + 'cek-id-referanceIn', params, function (data) {
+
+                                if (data.status === '0') {
+                                    _fw_setMessage(obj, 0, data.message.msg);
+                                }
+
+                            });
+
+                        } else {
+                            _fw_setMessage(obj, 0, data.message.msg);
+                        }
+                    });
+
+                    _fw_post(ahmmosfc340Root + 'lov-part', params, function (data) {
+                        if (data.status === '1') {
+                            $('#ahmmosfc340p02PartId').val(data.message.msg[0]['itemPartnum']);
+                            $('#ahmmosfc340p02PartDesc').val(data.message.msg[0]['itemPartDesc']);
+                            $('#ahmmosfc340p02SlocDestination').val(data.message.msg[0]['itemSloc']);
+                            $('#ahmmosfc340p02Qty').val(data.message.msg[0]['itemNqtyTotal']);
+
+                            $('#ahmmosfc340p02PartDesc').prop('disabled', true);
+                            $('#ahmmosfc340p02SlocDestination').prop('disabled', true);
+                            //$('#ahmmosfc340p02Qty').prop('disabled', true); 
+
+                        }
+                    });
+                }
+
+                var chekField = $('#ahmmosfc340p02TransIdReference').val();
+                if (chekField === "") {
+                    _fw_setMessage(obj, 0, "Trans ID Referance harus dimasukkan");
+                }
+
+            }
+        }
+
+        function setValuep02() {
+            $('#ahmmosfc340p02TransType').val('OUT Transaction');
+            $('#ahmmosfc340p02SlocID').val(slocId);
+            $('#ahmmosfc340p02ProcessTable').bootstrapTable('removeAll');
+            $("#ahmmosfc340p02VoucherList tbody").empty();
+        }
+
+        function ahmmosfc340p01Submit(obj) {
+            if (event.keyCode === 13) {
+                _fw_reset_subpage($('#ahmmosfc340p02'))
+                generateDate();
+                _fw_subpage(obj, 'ahmmosfc340p02');
+                setValuep02();
+            } else {
+                _fw_reset_subpage($('#ahmmosfc340p02'))
+                generateDate();
+                _fw_subpage(obj, 'ahmmosfc340p02');
+                setValuep02();
+            }
+        }
+
+        function ahmmosfc340p01Reset() {
+            _fw_reset_subpage($('#ahmmosfc340p01'));
+            var nrp = document.getElementById('ahmmosfc340p01Nrp');
+            nrp.focus();
+        }
+
+        function generateDate() {
+            var currentDate = new Date();
+            var day = currentDate.getDate().toString().padStart(2, "0");
+            var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var month = monthNames[currentDate.getMonth()];
+            var year = currentDate.getFullYear().toString().slice(-2);
+
+            var formattedDate = `${day}-${month}-${year}`;
+            $('#ahmmosfc340p02TransDate').val(formattedDate);
+        }
+
+        function ahmmosfc340p02PreSearchSlocIdDestination(params) {
+            params.search = { any: $("#ahmmosfc340p02SlocDestination").val() };
+            return params;
+        }
+
+        function ahmmosfc340p02PreSearchPart(params) {
+            var modeInRadio = document.getElementById('ahmmosfc340p02ModeIn');
+            var modeOutRadio = document.getElementById('ahmmosfc340p02ModeOut');
+
+            if (modeInRadio.checked) {
+                params.search = {
+                    "txnInref": $('#ahmmosfc340p02TransIdReference').val(),
+                    "moveIn": $('#ahmmosfc340p02ModeIn').val(),
+                    any: $('#ahmmosfc340p02PartId').val()
+
+                };
+
+            } else if (modeOutRadio.checked) {
+                params.search = {
+                    "moveOut": $('#ahmmosfc340p02ModeOut').val(),
+                    any: $('#ahmmosfc340p02PartId').val()
+
+                };
+            }
+
+            return params;
+        }
+
+
+
+        function setRadioInputType() {
+            var modeInRadio = document.getElementById('ahmmosfc340p02ModeIn');
+            var modeOutRadio = document.getElementById('ahmmosfc340p02ModeOut');
+            var transIdReferenceInput = document.getElementById('ahmmosfc340p02TransIdReference');
+            var wajibDiisiMessage = document.getElementById('wajibDiisiMessage');
+            var slocIdDestination = document.getElementById('ahmmosfc340p02SlocDestination');
+            var dokumenNo = document.getElementById('ahmmosfc340p02DocumentNo');
+            var partId = document.getElementById('ahmmosfc340p02PartId');
+
+            if (modeInRadio.checked) {
+                //document.getElementById('ahmmosfc340p02ModeIn').checked = true;
+                transIdReferenceInput.removeAttribute('disabled');
+                transIdReferenceInput.setAttribute('required', 'required');
+                wajibDiisiMessage.style.display = 'inline';
+                $('#ahmmosfc340p02TransIdReference').val("");
+                $('#ahmmosfc340p02DocumentNo').val("");
+                $('#ahmmosfc340p02PartId').val("");
+                $('#ahmmosfc340p02PartDesc').val("");
+                $('#ahmmosfc340p02Qty').val("");
+                $('#ahmmosfc340p02Input').val("");
+
+                if (!document.getElementById('ahmmosfc340p02PartId')) {
+
+                    var formGroup = document.createElement('div');
+                    formGroup.className = 'form-group large-font';
+                    formGroup.innerHTML = ` <div class="col-sm-5">
+                                                                        <label for="ahmmosfc340p02PartId" class="control-label">Part Id<span class="text-danger">*</span></label>
+                                                                    </div> 
+                                                                    <div class="col-md-7"> 
+                                                                        <div class="input-group lookup" 
+                                                                            data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc340/lov-part" 
+                                                                            data-lookup-pre-func="ahmmosfc340p02PreSearchPart" 
+                                                                            data-columns='[   
+                                                                            {"id":"itemVpartnum",   "name":"part id","visible":"true","sortable":"true"},
+                                                                            {"id":"itemVpartDesc",  "name":"Part desc","visible":"true","sortable":"true"}]'    
+                                                                            data-callback='{"ahmmosfc340p02PartId":"itemVpartnum","ahmmosfc340p02PartDesc":"itemVpartDesc","ahmmosfc340p02SlocDestination":"itemVsloc",ahmmosfc340p02Qty":"itemNtotal"}' 
+                                                                            data-lookup-change-func="">
+                                                                            <input id="ahmmosfc340p02PartId" class="form-control input-lookup" placeholder="Part Id" >
+                                                                            <span class="input-group-btn">
+                                                                                <button class="btn btn-default large-button btn-lookup" type="button" id="ahmmosfc340p02BtnSlocDestination"></button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                `;
+
+                    var formGroupAdaIsi = document.createElement('div');
+                    formGroupAdaIsi.className = 'form-group large-font';
+                    formGroupAdaIsi.innerHTML = ` <div class="col-sm-5">
+                                                                        <label for="ahmmosfc340p02PartId" class="control-label">Part Id<span class="text-danger">*</span></label>
+                                                                    </div> 
+                                                                    <div class="col-md-7"> 
+                                                                        <div class="input-group lookup" 
+                                                                            data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc340/lov-part" 
+                                                                            data-lookup-pre-func="ahmmosfc340p02PreSearchPart" 
+                                                                            data-columns='[   
+                                                                            {"id":"itemVpartnum",   "name":"part id","visible":"true","sortable":"true"},
+                                                                            {"id":"itemVpartDesc",  "name":"Part desc","visible":"true","sortable":"true"}]'    
+                                                                            data-callback='{"ahmmosfc340p02PartId":"itemVpartnum","ahmmosfc340p02PartDesc":"itemVpartDesc","ahmmosfc340p02Qty":"itemNtotal"}' 
+                                                                            data-lookup-change-func="">
+                                                                            <input id="ahmmosfc340p02PartId" class="form-control input-lookup" placeholder="Part Id" >
+                                                                            <span class="input-group-btn">
+                                                                                <button class="btn btn-default large-button btn-lookup" type="button" id="ahmmosfc340p02BtnSlocDestination"></button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div> 
+                                                                `;
+
+
+                    if ($('#ahmmosfc340p02SlocDestination').val() != "" || $('#ahmmosfc340p02SlocDestination').val() != null) {
+                        var partDescElement = document.querySelector('label[for="ahmmosfc340p02PartDesc"]').closest('.form-group');
+                        var parentElement = partDescElement.parentNode;
+                        parentElement.insertBefore(formGroupAdaIsi, partDescElement);
+                    } else {
+                        var partDescElement = document.querySelector('label[for="ahmmosfc340p02PartDesc"]').closest('.form-group');
+                        var parentElement = partDescElement.parentNode;
+                        parentElement.insertBefore(formGroup, partDescElement);
+
+                    }
+
+                    modeOutRadio.checked = false;
+                }
+            } else {
+                transIdReferenceInput.setAttribute('disabled', 'disabled');
+                transIdReferenceInput.removeAttribute('required');
+                wajibDiisiMessage.style.display = 'none';
+                $('#ahmmosfc340p02TransIdReference').val("");
+                $('#ahmmosfc340p02SlocDestination').val("");
+                slocIdDestination.removeAttribute('disabled');
+                $('#ahmmosfc340p02DocumentNo').val("");
+                dokumenNo.removeAttribute('disabled');
+                $('#ahmmosfc340p02PartId').val("");
+                $('#ahmmosfc340p02PartDesc').val("");
+                $('#ahmmosfc340p02Qty').val("");
+                $('#ahmmosfc340p02Input').val("");
+                if (!document.getElementById('ahmmosfc340p02PartId')) {
+
+                    var formGroup = document.createElement('div');
+                    formGroup.className = 'form-group large-font';
+                    formGroup.innerHTML = ` <div class="col-sm-5">
+                                                                        <label for="ahmmosfc340p02PartId" class="control-label">Part Id<span class="text-danger">*</span></label>
+                                                                    </div>
+                                                                    <div class="col-md-7">
+                                                                        <div class="input-group lookup"  
+                                                                            data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc340/lov-part" 
+                                                                            data-lookup-pre-func="ahmmosfc340p02PreSearchPart"  
+                                                                            data-columns='[    
+                                                                            {"id":"itemVpartnum",   "name":"part id","visible":"true","sortable":"true"},
+                                                                            {"id":"itemVpartDesc",  "name":"Part desc","visible":"true","sortable":"true"}]'   
+                                                                            data-callback='{"ahmmosfc340p02PartId":"itemVpartnum","ahmmosfc340p02PartDesc":"itemVitemName"}'
+                                                                            data-lookup-change-func="">
+                                                                            <input id="ahmmosfc340p02PartId" class="form-control input-lookup" placeholder="Part Id" >
+                                                                            <span class="input-group-btn">
+                                                                                <button class="btn btn-default large-button btn-lookup" type="button" id="ahmmosfc340p02BtnSlocDestination"></button>
+                                                                            </span>
+                                                                        </div> 
+                                                                    </div>   
+                                                                `;
+                    if ($('#ahmmosfc340p02SlocDestination').val() != "" || $('#ahmmosfc340p02SlocDestination').val() != null) {
+                        var partDescElement = document.querySelector('label[for="ahmmosfc340p02PartDesc"]').closest('.form-group');
+                        var parentElement = partDescElement.parentNode;
+                        parentElement.insertBefore(formGroupAdaIsi, partDescElement);
+
+                    } else {
+                        var partDescElement = document.querySelector('label[for="ahmmosfc340p02PartDesc"]').closest('.form-group');
+                        var parentElement = partDescElement.parentNode;
+                        parentElement.insertBefore(formGroup, partDescElement);
+
+                    }  
+                }
+                modeInRadio.checked = false;  
+            }
+        }
+
+        function ahmmosfc340p02BackClick(obj) {
+            _fw_reset_subpage($('#ahmmosfc340p01'));
+            _fw_subpage(obj, 'ahmmosfc340p01');
+            var focusNrp = document.getElementById('ahmmosfc340p01Nrp');
+            focusNrp.focus();
+        }
+
+        function ahmmosfc340p02PrintClick(obj) {
+            dataPrint = {};
+            var object = {
+                search: {},
+                limit: 10,
+                offset: 0
+            };
+            _fw_post(ahmmosfc340Root + "get-ip-port", object, function (data) {
+                printer_ip = data.message.ip;
+                printer_port = data.message.port;
+
+                setTimeout(function () {
+                    ahmmosfc340_epos_device.connect(printer_ip, printer_port, ahmmosfc340_print_check_01);
+                }, 1000);
+            });
+
+        } 
+
+        function ahmmosfc340_print_check_01(data) { 
+            if (data === 'OK' || data === 'SSL_CONNECT_OK') {
+                setTimeout(function () {
+                    var params = new Object();
+                    _fw_post(ahmmosfc340Root + "check-connect-print", params, function (data) {
+                        if (data.status === "1") {
+                            sfc340dataPrint();
+                        }
+                    });
+                }, 1000);
+            }
+        }
+        function sfc340dataPrint() {
+            var params = {
+                search: {
+                    "ptxnid": $('#ahmmosfc340p02TransID').val()
+                },
+                limit: 10,
+                offset: 0
+            };
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1; // Months are 0-based, so add 1
+            var year = currentDate.getFullYear();
+
+            if (day < 10) {
+                day = "0" + day;
+            }
+            if (month < 10) {
+                month = "0" + month;
+            }
+
+            var formattedDate = day + "-" + month + "-" + year;
+            _fw_post(ahmmosfc340Root + "cetak-moving", params, function (data) {
+                dataPrint = {
+                    itemVtxId: data.message.msg[0]["itemVtxId"],
+                    itemVsloc: data.message.msg[0]["itemVsloc"],
+                    itemDtx: data.message.msg[0]["itemDtx"],
+                    itemDoc: data.message.msg[0]["itemDoc"],
+                    itemVparnum: data.message.msg[0]["itemVparnum"],
+                    itemVdec: data.message.msg[0]["itemVdec"],
+                    itemNtotal: data.message.msg[0]["itemNtotal"],
+                    itemNqtyInput: data.message.msg[0]["itemNqtyInput"],
+                    itemVnumber: data.message.msg[0]["itemVnumber"],
+                    itemVcrea: data.message.msg[0]["itemVcrea"],
+                    itemDatePrint: formattedDate
+
+                };
+                for (var i = 0; i < data.data.length; i++) {
+                    var serNumb = [
+                        data.message.msg[i]["serialNumber"]
+                    ];
+                    dataPrint.serialNumber.push(serNumb);
+                }
+
+                console.log("Ini Data Print: ", dataPrint);
+                setTimeout(function () {
+                    ahmmosfc340_epos_device.connect(printer_ip, printer_port, ahmmosfc340_print_connect_after);
+                }, 1000);
+            });
+        }
+        function ahmmosfc340_print_connect_after(data) {
+            if (data === 'OK' || data === 'SSL_CONNECT_OK') {
+                setTimeout(function () {
+                    ahmmosfc340_epos_device.createDevice('local_printer', ahmmosfc340_epos_device.DEVICE_TYPE_PRINTER, { 'crypto': false, 'buffer': false }, ahmmosfc340_cb_create_device_printer);
+                }, 1000);
+            }
+        }
+        function ahmmosfc340_cb_create_device_printer(devobj, retcode) {
+            if (retcode === 'OK') {
+                ahmmosfc340_printer = devobj;
+                ahmmosfc340_printer.timeout = 60000;
+                ahmmosfc340_printer.onreceive = function (res) { };
+                ahmmosfc340_printer.oncoveropen = function () { };
+                ahmmosfc340_print_now(dataPrint);
+            }
+        }
+
+        function ahmmosfc340_print_now(data) {
+            var str = $('#ahmmosfc340p02TransID').val();
+            ahmmosfc340_printer.addTextAlign(ahmmosfc340_printer.ALIGN_CENTER);
+            ahmmosfc340_printer.addTextFont(ahmmosfc340_printer.FONT_C);
+            ahmmosfc340_printer.brightness = 1.0;
+            ahmmosfc340_printer.halftone = ahmmosfc340_printer.HALFTONE_ERROR_DIFFUSION;
+            ahmmosfc340_printer.message += '<image width="400" height="134" color="color_1" mode="mono">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AAAAAALa12YAEsy9+AAAAAABXd3bpUkRERERFm2q2AAAAO7e6gfXc2AAAdW1aBbv70AAAAAAB7dqvAAfe9NUAAAAAAHra3be///////7s31oAAABk2k2Am2u0AACrt6wG7U14AAAAAAM2r3QAAqWruwAAAAAATW2rXWSVVVVVVVex7gAAAD9v+wDu3uwAAN7Y9AU2upAAAAAAAtty2gADf37mgAAAAAB3s3Xm3/rararbuW8yAAAAVbFWgFWzWAABc29IB9vv8AAAAAAHrN2sAAGpxV2AAAAAAFle3jtpJ7f7f7bvut4AAAA6362Ae222AAGtkvgErFFQAAAAAAz3q3QAANZ7tsAAAAAAbuWr1bbdbJbJbTJnagAAAGdlewAuttsAAtr/kAdz72gAAAAAC1l22AAAvZbbQAAAAABVvvVu3ba3e3e239zWAAAAPb6mgDNtbQADbypwBd6dsAAAAAAdr62gAABr/W2gAAAAAHtTHttna9nMrVvkt7wAAABWyd2ALdu2AAKy9cAGq/bQAAAAADNydtAAAFZTsvAAAAAATu3ptbrcb3fa7J9pagAAADl/doAarVuAB92vYAV1K2gAAAAALt/LYAAAPe7fKAAAAAB1u19uzbfVWXezdd+2AAAAZ5KrgBd27UAEZ1mgB978sAAAAAB1qX2gAAArNWXYAAAAAFtOstt3arrvml7aaloAAAA9fdyADdmywA+99sAEU4fQAAAAAK92lsAAABbbnnQAAAAAbbXtta3f77V366+17gAAAErXa4AKr1+ACtUtgAfterAAAAAA2a37AAAADa713AAAAABW7ptCEAAAAAAFdN9SAAAAP6q2gAdy5WAdq9cABVutaAAAAAG2202AAAALdVtmAAAAAHs5dsAAAAAAAAbbor4AAABpfd2ABc9e4Bd+eYAGtnvQAAAAAttttgAAAAbbrZsAAAAATdfdoAAAAAAABa7/agAAADbLJoADOumQOtOvAAXtzrgAAAADbbbrAAAAA2129QAAAAB2bWbAAAAAAAAHcxTWAAAAXbb7gALtn3AtrVUAB1tzYAAAAAW2214AAAACttsugAAAAFvau0AAAAAAAATd+7wAAAArbayAA7by2Hbb+gAFra24AAAADttltAAAAAHLZfXAAAAAbLfNoAAAAAAAA6ZW6gAAAHbbV4ABWy9oW3YmAAZ23tA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</image>';
+            ahmmosfc340_printer.addText('Accessories Serial Number Information\n\n');
+
+            QRCode.toCanvas(str, function (error, canvas) {
+                if (error) {
+                    console.error(error);
+                } else {
+                    // Jika QR code berhasil dibuat, tambahkan teks dan QR code ke printer
+                    ahmmosfc340_printer.addTextAlign(ahmmosfc340_printer.ALIGN_RIGHT);
+                    ahmmosfc340_printer.addTextLineSpace(30);
+                    ahmmosfc340_printer.addText(str);
+                    // Cetak teks dan QR code
+                    ahmmosfc340_printer.print();
+                }
+            });
+            //                                        ahmmosfc340_printer.addTextAlign(ahmmosfc340_printer.ALIGN_RIGHT);
+            //                                        ahmmosfc340_printer.addTextLineSpace(30);
+            //                                        ahmmosfc340_printer.addText(data.itemVsloc);
+            ahmmosfc340_printer.addTextAlign(ahmmosfc340_printer.ALIGN_LEFT);
+            ahmmosfc340_printer.addTextLineSpace(30);
+            ahmmosfc340_printer.addText('Sloc ID From ' + data.itemVsloc + '\n');
+            ahmmosfc340_printer.addText('Sloc ID To ' + data.itemVsloc + '\n\n');
+
+            ahmmosfc340_printer.addText('Transaction Date: ' + data.itemDtx + '\n');
+            ahmmosfc340_printer.addText('Transaction ID: ' + data.itemVtxId + '\n');
+
+            ahmmosfc340_printer.addText('Document No. : ' + data.documentNo + '\n\n');
+            ahmmosfc340_printer.addText('--------------------------------\n');
+
+            var columnWidth = 40;
+            console.log(ahmmosfc340_printer);
+            ahmmosfc340_printer.addText('Deskripsi Part / Part ID'.padEnd(columnWidth)).addText('QTY'.padEnd(5)).addText('Serial Number List: \n');
+
+            ahmmosfc340_printer.addText((data.itemVdec + ' / ' + data.partId).padEnd(40)).addText(String(data.itemNtotal).padEnd(5));
+            for (let i = 0; i < data.serialNumber.length; i++) {
+                ahmmosfc340_printer.addText((data.serialNumber[i] + ' \n'));
+            }
+            ahmmosfc340_printer.addText('--------------------------------\n');
+            ahmmosfc340_printer.addTextStyle(false, false, true, ahmmosfc340_printer.COLOR_1);
+            ahmmosfc340_printer.addText('CREATED by : ' + data.itemVcrea + ' \n');
+            ahmmosfc340_printer.addTextLineSpace(60);
+            ahmmosfc340_printer.addText('PRINTED Date ' + data.itemDatePrint + '\n');
+            ahmmosfc340_printer.addTextSmooth(false);
+            ahmmosfc340_printer.addCut(ahmmosfc340_printer.CUT_FEED);
+            ahmmosfc340_printer.send(); 
+        }
+  
+    </script>

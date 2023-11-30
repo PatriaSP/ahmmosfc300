@@ -1,0 +1,555 @@
+<style>
+    #AHMMOSFC301 .minWidthDate {
+        min-width: 40px;
+    }
+    #ahmmosfc301p02SearchTable > thead > tr:nth-child(1) > th:nth-child(4),
+    #ahmmosfc301p02SearchTable > thead > tr:nth-child(1) > th:nth-child(5){
+        width: 7px;
+    }
+    #ahmmosfc301p01SearchTable > tbody > tr > td:nth-child(10){
+        min-width: 350px;
+    }
+</style>
+
+<!--HEADER SEARCH-->
+<div id="AHMMOSFC301" class="div-app" data-version="1.0">
+    <div class="global_message">
+    </div>
+    
+    <div style="display: none;">
+        <form id="ahmmosfc301_download_form" method="post" action="#">
+            <input type="hidden" name="category" value="" />
+            <input type="hidden" name="transaction" value="" />
+            <input type="hidden" name="dateFrom" value="" />
+            <input type="hidden" name="dateTo" value="" />
+            <input type="hidden" name="shiftid" value="" />
+            <input type="hidden" name="plantid" value="" />
+            <input type="hidden" name="lineid" value="" />
+            <input type="hidden" name="mctypeid" value="" />
+        </form>
+    </div>
+    
+    <div id="ahmmosfc301p01" class="subpage subpage-default" data-path="Monitoring Straight Pass Assembly">
+        <div class="col-md-3" > 
+            <div class="row form-panel form-horizontal">
+                <!--SEARCH-->
+                <div class="panel-heading">
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Search Data</span></h6>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Category" class="col-sm-6 control-label">
+                            Category <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc301p01Category" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Transaction" class="col-sm-6 control-label" onclick="ahmmosfc301p01FilterSearch(this)">
+                            Transaction <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc301p01Transaction" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01DateFrom" class="col-sm-6 control-label">
+                            Date From <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group date" id="ahmmosfc301p01DateFromGroup">
+                                <input id="ahmmosfc301p01DateFrom" name="ahmmosfc301p01DateFrom" type="text" placeholder="dd-mmm-yyyy" class="form-control" maxlength="11"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01DateTo" class="col-sm-6 control-label">
+                            Date To <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group date" id="ahmmosfc301p01DateToGroup">
+                                <input id="ahmmosfc301p01DateTo" name="ahmmosfc301p01DateTo" type="text" placeholder="dd-mmm-yyyy" class="form-control" maxlength="11"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Shift" class="col-sm-6 control-label">
+                            Shift Id 
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc301p01Shift" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Plant" class="col-sm-6 control-label">
+                            Plant Id 
+                        </label>
+                        <div class="col-sm-6">
+                            <select id="ahmmosfc301p01Plant" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Line" class="col-sm-6 control-label">
+                            Line Id
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc301/get-lov-line"
+                                 data-lookup-pre-func="ahmmosfc301p01LineLookup" 
+                                 data-columns='[{"id":"lineid","name":"Line Id","visible":"true"},
+                                 {"id":"linedesc","name":"Line Desc","visible":"true"}]'
+                                 data-callback='{"ahmmosfc301p01Line":"lineid", "ahmmosfc301p01LineDesc":"linedesc"}'>
+                                <input id="ahmmosfc301p01Line" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc301p01LineDesc" class="col-sm-6 control-label">
+                            Line Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc301p01LineDesc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01McType" class="col-sm-6 control-label">
+                            M/C Type Id
+                        </label>
+                        <div class="col-sm-6">
+                            <div class="input-group lookup" 
+                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc301/get-lov-mctype"
+                                 data-lookup-pre-func="ahmmosfc301p01MctypeLookup" 
+                                 data-columns='[{"id":"mctypeid","name":"M/C Type Id","visible":"true"},
+                                 {"id":"mcdesc","name":"M/C Type Desc","visible":"true"}]'
+                                 data-callback='{"ahmmosfc301p01McType":"mctypeid", "ahmmosfc301p01McTypeDesc":"mcdesc"}'>
+                                <input id="ahmmosfc301p01McType" class="form-control input-lookup">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default large-button btn-lookup" type="button">LOV</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="form-group large-font">
+                        <label for="ahmmosfc301p01McTypeDesc" class="col-sm-6 control-label">
+                            M/C Type Desc
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ahmmosfc301p01McTypeDesc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc301p01Search(this)">
+                            <i class="glyphicon glyphicon-search fg-white"></i> Search</button>
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc301p01ResetBtn(this)">
+                            <i class="glyphicon glyphicon-refresh fg-white"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--TABLE HEADERR-->
+        <div id="ahmmosfc301p01-table" class="subpage subpage-default col-md-7">
+            <div class="row form-panel">
+                <div class="panel-body">
+                    <div class="form-group-button">
+                        <button class="btn large-button bg-blue" onclick="ahmmosfc301p01ExportExcel(this); return false;">
+                            <i class="glyphicon glyphicon-download-alt fg-white"></i> Export To Excel</button> 
+                    </div>
+                    <table id="ahmmosfc301p01SearchTable" 
+                           data-method="post"
+                           data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc301/search-data-monitoring"
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-query-params-type="limit"
+                           data-query-params="ahmmosfc301p01TableParam"
+                           data-response-handler="_fw_loadData"
+                           data-side-pagination="server"
+                           data-pagination="true"
+                           data-unique-id="id">
+                        <thead>
+                            <tr>
+                                <th data-sortable="false" data-align="center"               data-visible="true" data-formatter="ahmmosfc301p01rowNumFormatter"> No. </th> 
+                                <th data-sortable="true" data-field="tbplant"               data-align="center"> Plant Id </th>
+                                <th data-sortable="true" data-field="tbline"                data-align="center"> Line Id </th>
+                                <th data-sortable="true" data-field="tbshift"               data-align="center"> Shift Id </th>
+                                <th data-sortable="true" data-field="tbmctype"              data-align="center"> M/C Type Id </th>                                
+                                <th data-sortable="true" data-field="tbstraightpass"        data-align="center"> Straightpass QTY </th>
+                                <th data-sortable="true" data-field="tbproduction"          data-align="center"> Production QTY </th>
+                                <th data-sortable="true" data-field="tbstraightpassPercent" data-align="center"> Straightpass % </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" > 
+            <div class="row form-panel form-horizontal">
+                <!--SUMMARY-->
+                <div class="panel-heading">
+                    <!-- <ul class="nav navbar-left panel_toolbox">
+                        <li onclick="_fw_contentCollapse(this)"><a class="collapse-link"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                    </ul> -->
+                    <h6><i class="glyphicon glyphicon-search fg-green"></i><span>Summary</span></h6>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Starightpass" class="col-sm-6 control-label">
+                            Straightpass QTY 
+                        </label>
+                        <div class="col-sm-6 control-label">
+                            <span id="ahmmosfc301p01Starightpass"></span>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01Production" class="col-sm-6 control-label">
+                            Production QTY
+                        </label>
+                        <div class="col-sm-6 control-label">
+                            <span id="ahmmosfc301p01Production"></span>
+                        </div>
+                    </div>
+                    <div class="form-group large-font">
+                        <label for="ahmmosfc301p01StarightpassPercent" class="col-sm-6 control-label">
+                            Straightpass %
+                        </label>
+                        <div class="col-sm-6 control-label">
+                            <span id="ahmmosfc301p01StarightpassPercent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END HEADER-->
+
+<script type="text/javascript">
+    var offsetUnitLoad = 0;
+    var ahmmosfc301Url = '/imo05/ahmmosfc300-ahs/rest/mo/sfc301/';
+    
+    $(document).ready(function () {   
+        ahmmotrc030p01GetCategory();
+        ahmmotrc030p01GetTransaction();
+        ahmmotrc030p01GetShift();
+        ahmmotrc030p01GetPlant();
+    });
+    
+    function ahmmosfc301p01FilterSearch() {
+        var tr = $('#ahmmosfc301p01Transaction').val();
+        console.log("tr"+tr);
+
+        if (tr === 'F') {
+            $('#ahmmosfc301p01Shift').hide();
+//            document.getElementById("ahmmosfc301p01Shift").disabled = true;
+        } 
+            else {
+        }
+    }
+    
+    function ahmmotrc030p01GetCategory() {
+	_fw_post(ahmmosfc301Url+'get-lov-category', null, function (data) {
+            if (data.status === '1') {
+                init301DropdownList('ahmmosfc301p01','ahmmosfc301p01Category', data.data);
+            }
+        });
+    }
+    
+    function ahmmotrc030p01GetTransaction() {
+	_fw_post(ahmmosfc301Url+'get-lov-trans', null, function (data) {
+            if (data.status === '1') {
+                init301DropdownList('ahmmosfc301p01','ahmmosfc301p01Transaction', data.data);
+            }
+        });
+    }
+    
+    function init301DropdownList(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+		if (value.length > 0) {
+//                    console.log("value"+value.item);
+//                    console.log(Object.values.value);
+
+//                            console.log("item.name "+value.value);
+
+                        $page.append('<option value=""></option>');
+			value.forEach(function (item, index) {
+                            $page.append('<option value=' + item.code + '>' + item.name + '</option>');
+                });
+			
+	}
+    }
+    
+    function ahmmotrc030p01GetShift() {
+	_fw_post(ahmmosfc301Url+'get-lov-shift', null, function (data) {
+            if (data.status === '1') {
+                init301DropdownListShift('ahmmosfc301p01','ahmmosfc301p01Shift', data.data);
+            }
+        });
+    }
+    
+    function init301DropdownListShift(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+		if (value.length > 0) {
+                        $page.append('<option value=""></option>');
+			value.forEach(function (item, index) {
+                            $page.append('<option value=' + item.shiftid + '>' + item.shiftid + '</option>');
+                });
+			
+	}
+    }
+    
+    function ahmmotrc030p01GetPlant() {
+	_fw_post(ahmmosfc301Url+'get-lov-plant', null, function (data) {
+            if (data.status === '1') {
+                init301DropdownListPlant('ahmmosfc301p01','ahmmosfc301p01Plant', data.data);
+            }
+        });
+    }
+    
+    function init301DropdownListPlant(subpage, idInput, value) {
+        var $page = $("#" + subpage).find("#" + idInput);
+		if (value.length > 0) {
+                        $page.append('<option value=""></option>');
+			value.forEach(function (item, index) {
+                            $page.append('<option value=' + item.plantid + '>' + item.plantdesc2 + '</option>');
+                });
+			
+	}
+    }
+    
+    function ahmmosfc301p01rowNumFormatter(value, row, index) {
+        return index + 1 + offsetUnitLoad;
+    }
+    
+    function ahmmosfc301p01LineLookup(params) {
+        params.search = {
+            "plantid": $("#ahmmosfc301p01Plant").val()
+        };
+
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+    function ahmmosfc301p01MctypeLookup(params) {
+        params.search = {
+            "any": ""
+        };
+        
+        if (params.sort === undefined) {
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            };
+        }
+        return params;
+    }
+    
+
+//    VALIDASI SEARCH
+
+//    BUTTON SEARCH
+    function ahmmosfc301p01Search(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc301p01-table"));
+        let dayDiff = _fw_dayDiff($('#ahmmosfc301p01DateFrom').val(), $('#ahmmosfc301p01DateTo').val());
+        
+        _fw_validation_add(obj, 'ahmmosfc301p01Category', 'required');
+        _fw_validation_add(obj, 'ahmmosfc301p01Transaction', 'required');
+        _fw_validation_add(obj, 'ahmmosfc301p01DateFrom', 'required');
+        _fw_validation_add(obj, 'ahmmosfc301p01DateTo', 'required');
+        if (_fw_validation_validate(obj)) {
+            if (dayDiff < 0) {
+                _fw_setMessage(obj, 0, ' Date To must be equal or more than Date From');
+            }
+        } else {
+            $('#ahmmosfc301p01Category').css('padding-right', '5px'); 
+            $('#ahmmosfc301p01Transaction').css('padding-right', '5px');
+            $('#ahmmosfc301p01DateFrom').css('padding-right', '5px');
+            $('#ahmmosfc301p01DateTo').css('padding-right', '5px');
+            _fw_setMessage(obj, 0, data.message.m);
+        }
+         
+        $('#ahmmosfc301p01SearchTable').bootstrapTable('refresh');
+        ahmmosfc301p01GetSummary(); 
+    }
+
+    function ahmmosfc301p01ResetBtn(obj) {
+        _fw_validation_clear(obj);
+        _fw_reset_subpage($("#ahmmosfc301p01"));
+        
+        $('#ahmmosfc301p01SearchTable').bootstrapTable('removeAll');
+
+    }
+    
+    function ahmmosfc301p01TableParam(params) {
+        params.search =
+                {
+                    category: $('#ahmmosfc301p01Category').val(),
+                    transaction: $('#ahmmosfc301p01Transaction').val(),
+                    dateFrom: $('#ahmmosfc301p01DateFrom').val(),
+                    dateTo: $('#ahmmosfc301p01DateTo').val(),
+                    shiftid: $('#ahmmosfc301p01Shift').val(),
+                    plantid: $('#ahmmosfc301p01Plant').val(),
+                    lineid: $('#ahmmosfc301p01Line').val(),
+                    mctypeid: $('#ahmmosfc301p01McType').val()
+                };
+        if (params.sort === undefined) { 
+            offsetUnitLoad = params.offset;
+            return{
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search
+            }; 
+        } else { 
+            offsetUnitLoad = params.offset;
+        }
+        return params;
+    }
+
+    function ahmmosfc301p01ExportExcel() {
+
+        var category = $("#ahmmosfc301p01Category").val();
+        var transaction = $("#ahmmosfc301p01Transaction").val();
+        var dateFrom = $("#ahmmosfc301p01DateFrom").val();
+        var dateTo = $("#ahmmosfc301p01DateTo").val();
+        var shiftid = $("#ahmmosfc301p01Shift").val();
+        var plantid = $("#ahmmosfc301p01Plant").val();
+        var lineid = $("#ahmmosfc301p01Line").val();
+        var mctypeid = $("#ahmmosfc301p01McType").val();
+
+        var downloadForm = document.getElementById('ahmmosfc301_download_form');
+        downloadForm.action = ahmmosfc301Url + '/export-excel';
+        downloadForm.category.value = category;
+        downloadForm.transaction.value = transaction;
+        downloadForm.dateFrom.value = dateFrom;
+        downloadForm.dateTo.value = dateTo;
+        downloadForm.shiftid.value = shiftid;
+        downloadForm.plantid.value = plantid;
+        downloadForm.lineid.value = lineid;
+        downloadForm.mctypeid.value = mctypeid;
+
+        downloadForm.submit();
+    }
+
+    function ahmmosfc301p01GetSummary() {
+        var param = {
+            search: {
+                category: $('#ahmmosfc301p01Category').val(),
+                transaction: $('#ahmmosfc301p01Transaction').val(),
+                dateFrom: $('#ahmmosfc301p01DateFrom').val(),
+                dateTo: $('#ahmmosfc301p01DateTo').val(),
+                shiftid: $('#ahmmosfc301p01Shift').val(),
+                plantid: $('#ahmmosfc301p01Plant').val(),
+                lineid: $('#ahmmosfc301p01Line').val(),
+                mctypeid: $('#ahmmosfc301p01McType').val()
+            }
+        };
+        _fw_post(ahmmosfc301Url+'get-sum', param, function (data) {
+            if (data.status === '1') {
+                var sumPass = 0;
+                var sumProd = 0;
+                var sumPer = 0;
+                var sumPassG = 0;
+                var sumProdG = 0;
+                var sumPerG = 0;
+                  
+                for(let a of data.data) {
+                  if ($('#ahmmosfc301p01Category').val() == 'E') {
+                    if ($('#ahmmosfc301p01Transaction').val() == 'R') {
+                        if (a.vitemcode == 'ETR') {
+                          sumPass = a.qty;
+                          sumProd = a.qty;
+                        } else if (a.vitemcode == 'RE') {
+                          sumProd = a.qty;
+                        } 
+                        if (sumProd > 0) {
+                          sumPer = sumPass / (sumProd) * 100;
+                        } else {
+                          sumPer = 0;
+                        } 
+                        sumPassG = sumPass;
+                        sumProdG = sumProd;
+                        sumPerG = sumPer;
+                    } else {
+                        if (a.vitemcode == 'ETR') {
+                          sumPass = a.qty;
+                          sumProd = a.qty;
+                        } else if (a.vitemcode == 'RE') {
+                          sumProd = a.qty;
+                        } else if (a.vitemcode == 'ERSI') {
+                          sumPass = a.qty;
+                        } 
+                        if (sumProd > 0) {
+                          sumPer = sumPass / (sumProd) * 100;
+                        } else {
+                          sumPer = 0;
+                        } 
+                        sumPassG = sumPass;
+                        sumProdG = sumProd;
+                        sumPerG = sumPer;
+                    } 
+                  } else if ($('#ahmmosfc301p01Category').val() == 'U') {
+                    if ($('#ahmmosfc301p01Transaction').val() == 'R') {
+                        if (a.vitemcode == 'URSP') {
+                          sumPass = a.qty;
+                        } else if (a.vitemcode == 'PU') {
+                          sumProd = a.qty;
+                        } 
+                        if (sumProd > 0) {
+                          sumPer = sumPass / (sumProd) * 100;
+                        } else {
+                          sumPer = 0;
+                        } 
+                        sumPassG = sumPass;
+                        sumProdG = sumProd;
+                        sumPerG = sumPer;
+                    } else {
+                        if (a.vitemcode == 'UFSP') {
+                          sumPass = a.qty;
+                        } else if (a.vitemcode == 'PU') {
+                          sumProd = a.qty;
+                        } 
+                        if (sumProd > 0) {
+                          sumPer = sumPass / (sumProd) * 100;
+                        } else {
+                          sumPer = 0;
+                        } 
+                        sumPassG = sumPass;
+                        sumProdG = sumProd;
+                        sumPerG = sumPer;
+                    } 
+                  } 
+                }
+                console.log("sumPassG "+sumPassG);
+                console.log("sumProdG "+sumProdG);
+                console.log("sumPerG "+sumPerG);
+                document.getElementById("ahmmosfc301p01Starightpass").innerHTML = sumPassG;
+                document.getElementById("ahmmosfc301p01Production").innerHTML = sumProdG;
+                document.getElementById("ahmmosfc301p01StarightpassPercent").innerHTML = sumPerG;
+            }
+        });
+    }
+    
+</script>

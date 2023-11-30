@@ -1,0 +1,528 @@
+<style>
+    #ahmmosfc304_main{
+        text-transform: uppercase;
+    }
+</style>
+<div id="AHMMOSFC304" class="div-app" data-version="1.0">
+    <link rel="stylesheet" href="/imo05/ahmmosfc300-ahs/resources/css/AHMMOSFC304.css">
+    <link rel="stylesheet" href="/imo05/ahmmosfc300-ahs/resources/extensions/sticky-header/bootstrap-table-sticky-header.css">
+    <link rel="stylesheet" href="/imo05/ahmmosfc300-ahs/resources/extensions/custom-datetimepicker/AHMMOSFC304-datetimepicker.min.css">
+    <div class="global_message"></div>
+    <div id="ahmmosfc304p01" class="subpage subpage-default" data-path="Monitoring Delivery Part">
+        <div class="panel">
+            <div class="panel-body">
+                <div  class="row form-filter-panel" id="ahmmosfc304p01formarea">
+                    <div class="form-horizontal">
+                        <div class="row g-0 filter-groups">
+                            <!--Column 1-->
+                            <div class="col-xs-12 col-sm-12 col-md-5-25 col-lg-4">
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_wctfrid" class="col-xs-12 col-sm-3 control-label">WCT From</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9 row">
+                                        <div class="col-sm-6 col-md-4 col-xs-12">
+                                            <div class="lookup flex flex-stretch" id="ahmmosfc304_wctfrselection"
+                                                 data-lookup-pre-func="ahmmosfc304p01_WCT_From_Lookup"
+                                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc304/get-lov-wct"
+                                                 data-query-params-type="limit" 
+                                                 data-columns='[
+                                                 {"id":"wctid","name":"WCT ID","visible":"true","sortable":"true"},
+                                                 {"id":"wctdesc","name":"WCT Description","visible":"true","sortable":"true"},
+                                                 {"id":"plantid","name":"Plant ID","visible":"true","sortable":"true"}
+                                                 ]' 
+                                                 data-callback='{"ahmmosfc304p01_wctfrid":"wctid","ahmmosfc304p01_wctfr":"wctdesc","ahmmosfc304p01_plantfrid":"plantid"}'
+                                                 >
+                                                <input id="ahmmosfc304p01_wctfrid" class="form-control input-lookup" placeholder="WCT From..."  >
+                                                <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-8 col-xs-12">
+                                            <input id="ahmmosfc304p01_wctfr" class="form-control"  readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_plantfrid" class="col-xs-12 col-sm-3 control-label">Plant From</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9">
+                                        <div class="col-sm-6 col-md-4 col-xs-12">
+                                            <div class="lookup flex flex-stretch" 
+                                                 data-lookup-pre-func="ahmmosfc304p01_Plant_From_Lookup"
+                                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc304/get-lov-plant"
+                                                 data-query-params-type="limit" 
+                                                 data-columns='[
+                                                 {"id":"plantid","name":"Plant ID","visible":"true","sortable":"true"},
+                                                 {"id":"plantname","name":"Plant Description","visible":"true","sortable":"true"}
+                                                 ]' 
+                                                 data-callback='{"ahmmosfc304p01_plantfrid":"plantid","ahmmosfc304p01_plantfr":"plantname"}'
+                                                 >
+
+                                                <input id="ahmmosfc304p01_plantfrid" class="form-control input-lookup" placeholder="Plant From...">
+                                                <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-8 col-xs-12">
+                                            <input id="ahmmosfc304p01_plantfr" class="form-control"  readonly="">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_datedeliv" class="col-xs-12 col-sm-3 control-label">Delivery Date</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9">
+                                        <div class="col-sm-5 col-md-5-5">
+                                            <div class="flex flex-stretch">
+                                                <input type="text" id="ahmmosfc304p01_datedelivfr" class="form-control" placeholder="Delivery Date From">
+                                                <label for="ahmmosfc304p01_datedelivfr" class="btn btn-default flex flex-middle flex-center"><i class="fa fa-calendar"></i></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-md-1-5 rangeSeparator">
+                                            <span>To</span>
+                                        </div>
+                                        <div class="col-sm-5 col-md-5-5">
+                                            <div class="flex flex-stretch">
+                                                <input type="text" id="ahmmosfc304p01_datedelivto" class="form-control" placeholder="Delivery Date To">
+                                                <label for="ahmmosfc304p01_datedelivto" class="btn btn-default flex flex-middle flex-center"><i class="fa fa-calendar"></i></label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Column Two-->
+                            <div class="col-xs-12 col-sm-12 col-md-5-25 col-lg-4">
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_wcttoid" class="col-xs-12 col-sm-3 control-label">WCT To</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9">
+                                        <div class="col-sm-6 col-md-4 col-xs-12">
+                                            <div class="lookup flex flex-stretch" id="ahmmosfc304_wcttoselection"
+                                                 data-lookup-pre-func="ahmmosfc304p01_WCT_To_Lookup"
+                                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc304/get-lov-wct"
+                                                 data-query-params-type="limit" 
+                                                 data-columns='[
+                                                 {"id":"wctid","name":"WCT ID","visible":"true","sortable":"true"},
+                                                 {"id":"wctdesc","name":"WCT Description","visible":"true","sortable":"true"},
+                                                 {"id":"plantid","name":"Plant ID","visible":"true","sortable":"true"}
+                                                 ]' 
+                                                 data-callback='{"ahmmosfc304p01_wcttoid":"wctid","ahmmosfc304p01_wctto":"wctdesc","ahmmosfc304p01_planttoid":"plantid"}'
+                                                 >
+
+                                                <input placeholder="WCT To..." id="ahmmosfc304p01_wcttoid" class="form-control input-lookup" data-field="desc">
+                                                <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i> </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-8 col-xs-12">
+                                            <input id="ahmmosfc304p01_wctto" class="form-control" readonly>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_planttoid" class="col-xs-12 col-sm-3 control-label">Plant To</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9">
+                                        <div class="col-sm-6 col-md-4 col-xs-12">
+                                            <div class="lookup flex flex-stretch" 
+                                                 data-lookup-pre-func="ahmmosfc304p01_Plant_To_Lookup"
+                                                 data-url="/imo05/ahmmosfc300-ahs/rest/mo/sfc304/get-lov-plant"
+                                                 data-query-params-type="limit" 
+                                                 data-columns='[
+                                                 {"id":"plantid","name":"Plant ID","visible":"true","sortable":"true"},
+                                                 {"id":"plantname","name":"Plant Description","visible":"true","sortable":"true"}
+                                                 ]' 
+                                                 data-callback='{"ahmmosfc304p01_planttoid":"plantid","ahmmosfc304p01_plantto":"plantname"}'
+                                                 >
+
+                                                <input id="ahmmosfc304p01_planttoid" class="form-control input-lookup" placeholder="Plant To..." data-field="desc">
+                                                <button class="btn btn-default btn-lookup" type="button"> <i class="glyphicon glyphicon-search"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-8 col-xs-12">
+                                            <input id="ahmmosfc304p01_plantto" class="form-control"  readonly>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_datereceive" class="col-xs-12 col-sm-3 control-label">Receive Date</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9">
+                                        <div class="col-sm-5 col-md-5-5">
+                                            <div class="flex flex-stretch">
+                                                <input type="text" id="ahmmosfc304p01_datereceivefr" class="form-control" placeholder="Receiving Date From">
+                                                <label for="ahmmosfc304p01_datereceivefr" class="btn btn-default flex flex-middle flex-center"><i class="fa fa-calendar"></i></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-md-1-5 rangeSeparator" >
+                                            <span>To</span>
+                                        </div>
+                                        <div class="col-sm-5 col-md-5-5">
+                                            <div class="flex flex-stretch">
+                                                <input type="text" id="ahmmosfc304p01_datereceiveto" class="form-control" placeholder="Receiving Date To">
+                                                <label for="ahmmosfc304p01_datereceiveto" class="btn btn-default flex flex-middle flex-center"><i class="fa fa-calendar"></i></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Column 3-->
+                            <div class="col-xs-12 col-sm-12 col-md-2-5 col-lg-4">
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_partnum" class="col-xs-12 col-sm-3 col-md-4 freetext control-label">Part Number</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9 col-md-8 freetext">
+                                        <div class="flex flex-stretch">
+                                            <input type="text" id="ahmmosfc304p01_partnum" class="form-control" placeholder="Part Number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_idkreta" class="col-xs-12 col-sm-3 col-md-4 freetext control-label">ID Kereta</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9 col-md-8 freetext">
+                                        <div class="flex flex-stretch">
+                                            <input type="text" id="ahmmosfc304p01_idkreta" class="form-control" placeholder="ID Kereta">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ahmmosfc304p01_delcode" class="col-xs-12 col-sm-3 col-md-4 freetext control-label">Delivery Code</label>
+                                    <div class="lookup-wrapper col-xs-12 col-sm-9 col-md-8 freetext">
+                                        <div class="flex flex-stretch">
+                                            <input type="text" id="ahmmosfc304p01_delcode" class="form-control" placeholder="Delivery Code">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-filter-buttons p-0-im flex flex-line-stretch">
+                            <div class="col-xs-6">
+                                <div class="flex flex-top no-wrap">
+                                    <div class="w-100 text-left">
+                                        <button class="btn btn-primary" id="ahmmosfc304p01_search_btn" onclick="ahmmosfc304_SetFilterValue(this)">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-search fg-white mr-10"></i>Search
+                                            </div>
+                                        </button>
+                                        <button class="btn btn-warning" id="ahmmosfc306p01_reset_btn" onclick="ahmmosfc304_ResetField('ahmmosfc304p01formarea');return false">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-refresh fg-white mr-10"></i>Reset
+                                            </div>
+                                        </button>
+                                        <button class="btn btn-success" id="ahmmosfc304p01_export_btn" onclick="ahmmosfc304_Export(this)">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="glyphicon glyphicon-export fg-white mr-10"></i>Export to Excel
+                                            </div>
+                                        </button>
+                                        <button class="btn btn-success" id="ahmmosfc304p01_letter_print_btn" onclick="ahmmosfc304_printJasperSuratJalan(this)">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-print fg-white mr-10"></i>Print Surat Jalan
+                                            </div>
+                                        </button>
+                                        <button class="btn btn-danger" id="ahmmosfc304p01_canceldel_btn" onclick="ahmmosfc304_CancelTxn(this)" disabled >
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="fa fa-times fg-white mr-10"></i>Cancel
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="flex flex-top flex-right no-wrap">
+                                    <div class="w-100 text-left">
+                                        <button class="btn btn-collapse" id="ahmmosfc304_collapsetrigger" onclick="$('#ahmmosfc304p01formarea').toggleClass('collapsible')">
+                                            <div class="flex flex-middle no-wrap">
+                                                <i class="glyphicon glyphicon-chevron-up mr-10"></i>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ahmmosfc304p01tablearea">
+                    <table id="ahmmosfc304p01_tablemonitoringdelivery" class="table"              
+                           data-url=""
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-query-params-type="limit"
+                           data-pagination="true"
+                           >
+                        <thead>
+                            <tr>
+                                <th class=" rowspanBottomclass"></th>  
+                                <th class=" rowspanBottomclass"></th>
+
+                                <th data-sortable="true" data-field="sort_ddelivery" data-align="center"
+                                    data-valind="center">Delivery Date</th>
+                                <th data-sortable="true" data-field="sort_dreceive" data-align="center"
+                                    data-valind="center">Receiving Date</th>
+                                <th data-sortable="true" data-field="sort_dcanceldelivery" data-align="center"
+                                    data-valind="center">Cancel Delivery Date</th>
+                                <th data-sortable="true" data-field="sort_dcancelreceive" data-align="center"
+                                    data-valind="center">Cancel Receiving Date</th>
+                                <th data-sortable="true" data-field="sort_wctfr" data-align="center"
+                                    data-valind="center">WCT From</th>
+                                <th data-sortable="true" data-field="sort_plantfr" data-align="center"
+                                    data-valind="center">Plant From</th>
+                                <th data-sortable="true" data-field="sort_wctto" data-align="center"
+                                    data-valind="center">WCT To</th>
+                                <th data-sortable="true" data-field="sort_plantto" data-align="center"
+                                    data-valind="center">Plant To</th>
+                                <th data-sortable="true" data-field="sort_krtid" data-align="center"
+                                    data-valind="center">ID Kereta</th>
+                                <th data-sortable="true" data-field="sort_rfid" data-align="center"
+                                    data-valind="center">RFID</th>
+                                <th data-sortable="true" data-field="sort_partnum" data-align="center"
+                                    data-valind="center">Part Number</th>
+                                <th data-sortable="true" data-field="sort_partdesc" data-align="center"
+                                    data-valind="center">Part Description</th>
+                                <th data-sortable="true" data-field="sort_nqty" data-align="center"
+                                    data-valind="center">Qty</th>
+                                <th data-sortable="true" data-field="sort_nqtyintr" data-align="center"
+                                    data-valind="center">Qty In Transit</th>
+                                <th data-sortable="true" data-field="sort_delcode" data-align="center"
+                                    data-valind="center">Delivery Code</th>
+                                <th data-sortable="false" data-field="sort_trnxstat" data-align="center"
+                                    data-valind="center">Status Transaksi</th>
+                                <th data-sortable="true" data-field="sort_headerdoc" data-align="center"
+                                    data-valind="center">Document Header Text</th>
+                                <th data-sortable="true" data-field="sort_nntrnid" data-align="center"
+                                    data-valind="center">Transaction ID SAP</th>
+                                <th data-sortable="true" data-field="sort_matdoc" data-align="center"
+                                    data-valind="center">Material Doc. SAP</th>
+                                <th data-sortable="true" data-field="sort_postDate" data-align="center"
+                                    data-valind="center">Posting Date</th>
+                                <th data-sortable="true" data-field="sort_vid" data-align="center" data-visible="false"
+                                    data-valind="center">vid</th>
+                            </tr>
+                            <tr>
+                                <th data-checkbox="true"  class="rowspanTopclass"  data-formatter="ahmmosfc304_stateFormatter"></th>  
+                                <th data-sortable="false" data-field="no" class="rowspanTopclass" data-align="center"
+                                    data-valind="top" data-fixed-columns="true">No</th>
+                                <th data-field="ddelivery" data-align="left" 
+                                    data-valind="center">                                   
+                                    <div class="input-group date">
+                                        <input id="ahmmosfc304_FilterDdelivery" type="text"
+                                               class="form-control" onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')" />
+                                        <span class="input-group-addon" style="font-size: unset">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-field="dreceive" data-align="left" 
+                                    data-valind="center">
+                                    <div class="input-group date">
+                                        <input id="ahmmosfc304_FilterDreceive" type="text"
+                                               class="form-control" onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')" />
+                                        <span class="input-group-addon" style="font-size: unset">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-field="dcanceldelivery" data-align="left" 
+                                    data-valind="center">
+                                    <div class="input-group date">
+                                        <input id="ahmmosfc304_FilterDcanceldelivery" type="text"
+                                               class="form-control" onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')" />
+                                        <span class="input-group-addon" style="font-size: unset">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-field="dcancelreceive" data-align="left"
+                                    data-valind="center">
+                                    <div class="input-group date">
+                                        <input id="ahmmosfc304_FilterDcancelreceive" type="text"
+                                               class="form-control" onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')" />
+                                        <span class="input-group-addon" style="font-size: unset">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-field="wctfr" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterwctfr" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="plantfr" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterplantfr" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="wctto" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterwctto" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="plantto" data-align="center"
+                                    data-valind="center">   
+                                    <input id="ahmmosfc304_Filterplantto" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="krtid" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filteridkreta" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="rfid" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterrfid" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="partnum" data-align="left"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterpartnum" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="partdesc" data-align="left"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterpartdesc" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="nqty" data-align="right"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterqty" type="number" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="nqtyintr" data-align="right" data-formatter="ahmmosfc304_Transitformatter"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterqtyintrs" type="number" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="delcode" data-align="left"
+                                    data-valind="center" data-formatter="ahmmosfc304_sdpformatter">
+                                    <input id="ahmmosfc304_Filterdelcode" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="trnxstat" data-align="left"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filtertrnxstat" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="headerdoc" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterdocheader" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="nntrnid" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filterntrnid" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+
+                                </th>
+                                <th data-field="matdoc" data-align="center"
+                                    data-valind="center">
+                                    <input id="ahmmosfc304_Filtermatdoc" type="text" class="form-control"
+                                           onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')">
+                                </th>
+                                <th data-field="potDate" data-align="left"
+                                    data-valind="center">
+                                    <div class="input-group date">
+                                        <input id="ahmmosfc304_Filterpostdate" type="text"
+                                               class="form-control" onkeyup="ahmmosfc304_tabEnter(event, 'ahmmosfc304p01_tablemonitoringdelivery')" />
+                                        <span class="input-group-addon" style="font-size: unset">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th data-field="vid" data-align="center" data-visible="false"
+                                    data-valind="center">
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ahmmosfc304p02_printablearea">
+        <div class="panel" id="ahmmosfc304_letter_page_0">
+            <div class="panel-body" id="ahmmosfc304_letterpage">
+                <div>
+                    <div class="row" id="ahmmosfc304_letterheader"> 
+                        <div class="col-xs-offset-3 col-xs-6" id="ahmmosfc304_lettercop">
+                            <div>SURAT JALAN PENGIRIMAN PART</div>
+                            <div id="ahmmosfc304_barcodezone"><svg id="ahmmosfc304_barcode"></svg></div>
+                        </div>
+                        <div class="col-xs-3" id="ahmmosfc304qrcodearea"><span id="ahmmosfc304_qrcode_page_0"></span></div>
+                    </div>
+                    <div class="row" id="ahmmosfc304_letter_body">
+                        <div class="col-xs-offset-2 col-xs-8">
+                            <table class="ahmmosfc304_letterinformation">
+                                <tr>
+                                    <td>No Delivery Code</td>
+                                    <td>:</td>
+                                    <td colspan="2"><span id="ahmmosfc304_printdelcode"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>From</td>
+                                    <td>:</td>
+                                    <td><span id="ahmmosfc304_printfrom"></span></td>
+                                    <td><span id="ahmmosfc304_printplantfrom"></span></td> 
+                                </tr>
+                                <tr>
+                                    <td>To</td>
+                                    <td>:</td>
+                                    <td><span id="ahmmosfc304_printto"></span></td>
+                                    <td><span id="ahmmosfc304_printplantto"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row" id="ahmmosfc304_letter_content">
+                        <div class="col-xs-offset-1 col-xs-10">
+                            <div id="ahmmosfc304_sortbypartnum" class="ahmmosfc304_hiddenTable">
+                                <table id="ahmmosfc304_tablepartnum_page_0" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th data-align="center" data-field="no">No</th>
+                                            <th data-align="center" data-field="partnum">Part Number</th>
+                                            <th data-align="center" data-field="partdesc">Part Description</th>
+                                            <th data-align="center" data-field="qty">Qty</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div id="ahmmosfc304_sortbyidkreta" class="ahmmosfc304_hiddenTable">
+                                <table id="ahmmosfc304_tableidkreta_page_0" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th data-align="center" data-field="no">No</th>
+                                            <th data-align="center" data-field="vkrtid">ID Kereta</th>
+                                            <th data-align="center" data-field="partnum">Part Number</th>
+                                            <th data-align="center" data-field="partdesc">Part Description</th>
+                                            <th data-align="center" data-field="qty">Qty</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>                     
+                    </div>
+                </div>
+
+                <div class="row no-gutter" id="ahmmosfc304_signtablearea">
+                    <div class="col-xs-3">
+                        <div>Pengirim</div>
+                        <div style="height:70px"></div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>Pembawa</div>
+                        <div style="height:70px"></div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>Keamanan</div>
+                        <div style="height:70px"></div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>Penerima</div>
+                        <div style="height:70px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/extensions/sticky-header/bootstrap-table-sticky-table.min.js"></script>
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/extensions/cutom-datetimepicker/AHMMOSFC304-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC304_Generator_Barcode.min.js"></script>
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC304_Generator_QR.min.js"></script>
+    <script type="text/javascript" src="/imo05/ahmmosfc300-ahs/resources/js/AHMMOSFC304.js"></script>
+</div>
